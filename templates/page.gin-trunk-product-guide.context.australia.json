@@ -1,0 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.gin-trunk-product-guide.json",
+  "context": {
+    "market": "australia"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/gin-trunk-waitlist"
+      },
+      "blocks": {}
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/gin-trunk-waitlist\" id='fancy_hover'>JOIN THE WAITLIST</a></div>",
+            "link": "shopify://pages/gin-trunk-waitlist"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {},
+      "blocks": {
+        "option_cqJB7y": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_pzfFdx": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_N8dCWQ": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_wHnfeT": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_p3Uptj": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_ThACtB": {
+          "settings": {
+            "product_link": ""
+          }
+        }
+      }
+    },
+    "fieldbar_collection_related_9rwTkz": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/gin-trunk-waitlist"
+      },
+      "blocks": {}
+    }
+  }
+}

@@ -1,0 +1,79 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "multicolumn_8daJAn": {
+      "settings": {},
+      "blocks": {
+        "column_cAPd9n": {
+          "settings": {
+            "custom_liquid": "<div class=\"full-video-section\">\n  <div class=\"video-wrapper\">\n    <video\n      class=\"bg-video\"\n poster=\"https://cdn.shopify.com/s/files/1/0654/1610/2127/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07.webp?v=1745327402\" \n      autoplay\n      muted\n      loop\n      playsinline\n    >\n      <source src=\"https://cdn.shopify.com/videos/c/o/v/19118391fdac4dc4ab03617371700f3f.mp4\" />\n      Your browser does not support the video tag.\n    </video>\n  </div>\n</div>\n\n<style>\n.full-video-section {\n  width: 100%;\n  height: 100vh; /* Full screen height */\n  display: flex;\n}\n\n.video-wrapper {\n  flex: 1;\n  position: relative;\n  height: auto;\n  overflow: hidden;\n}\n\n.bg-video {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 75vh;\n  object-fit: cover;\nobject-position: center center;\n}\n</style>"
+          }
+        }
+      }
+    },
+    "multicolumn_6rMRJW": {
+      "settings": {},
+      "blocks": {
+        "column_DjKrmC": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><p></p></div>\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\" class=\"fieldbar_button-link\">\n    <button class=\"fieldbar_button\">SHOP CATALOGUE</button>\n  </a><p class=\"txtbelow\" style=\"margin-top: 10px\">To ensure a safe purchase, <strong>ONLY</strong> buy directly with us or our <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Authorized Retailers.</a></span></p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "multicolumn_DMY9h7": {
+      "settings": {},
+      "blocks": {
+        "column_eCDCC4": {
+          "settings": {
+            "custom_liquid": "<div class=\"mob-center\">\n  <a style=\" font-family: 'Gotham Book' !important;\" id=\"fancy_hover\" style='text-decoration: none!important; ' href=\"{{ market_friendly_url }}/collections/all\">\n    SHOP CATALOGUE\n  </a>\n</div>"
+          }
+        },
+        "column_Q9YLiA": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\">\n    <button class=\"fieldbar_button\">SHOP CATALOGUE</button>\n  </a>\n\n<p></p></div>\n      <div><p class=\"txtbelow\" style=\"margin-top: 10px\"><br>To ensure a safe purchase, <strong>ONLY</strong> buy directly with us or our <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Authorised Retailers.</a></span></p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "multicolumn_gcEbWE": {
+      "settings": {},
+      "blocks": {
+        "column_HKqMgE": {
+          "settings": {
+            "div-link": "shopify://products/bazaruto-blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16.webp",
+            "link_label": "Drinks Box / Bazaruto Blue",
+            "link": "shopify://products/bazaruto-blue"
+          }
+        },
+        "column_iFbzMH": {
+          "settings": {
+            "div-link": "shopify://products/orchard-orange",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07.webp",
+            "link_label": "Drinks Box / Orchard Orange",
+            "link": "shopify://products/orchard-orange"
+          }
+        }
+      }
+    },
+    "custom_liquid_YkVBBF": {
+      "settings": {
+        "custom_liquid": "<div class=\"custom-videox-wrapper\">\n<a href=\"{{ market_friendly_url }}/collections/all\" class=\"video-link\">\n  <video src=\"https://cdn.shopify.com/videos/c/o/v/f9b175939d304900af0d173826d3e6b6.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    class=\"custom-videox\"\n  >\n   \n    Your browser does not support the video tag.\n  </video>\n</a>\n</div>\n\n<style>\n.custom-videox-wrapper {\n  width: 100%;\n  height: 65vh;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n}\n\n.custom-videox {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n</style>"
+      },
+      "blocks": {}
+    }
+  }
+}

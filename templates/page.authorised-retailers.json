@@ -1,0 +1,294 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "store_locator_YWm6Tj": {
+      "type": "store-locator",
+      "blocks": {
+        "location_A6LJMg": {
+          "type": "location",
+          "name": "Fieldbar SA",
+          "settings": {
+            "name": "Fieldbar South Africa",
+            "address": "",
+            "lat": "-23.907974",
+            "lng": "18.420036",
+            "online_only": true,
+            "flagship": true,
+            "opening_times": "<p>Mon–Fri: 10:00–19:00<br/>Sat: 10:00–18:00<br/>Sun: Closed</p>"
+          }
+        },
+        "location_pgCNPt": {
+          "type": "location",
+          "name": "Fieldbar International",
+          "settings": {
+            "name": "Fieldbar International",
+            "address": "",
+            "lat": "43.907974",
+            "lng": "18.420036",
+            "online_only": true,
+            "flagship": true,
+            "opening_times": "<p>Mon–Fri: 10:00–19:00<br/>Sat: 10:00–18:00<br/>Sun: Closed</p>"
+          }
+        },
+        "location_qDyYmL": {
+          "type": "location",
+          "name": "Yuppiechef",
+          "settings": {
+            "name": "Yuppiechef",
+            "address": "Shop No 146A, Victoria & Alfred Waterfront, Cape Town, 8001",
+            "lat": "-33.907974",
+            "lng": "18.420036",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<p>Mon–Fri: 10:00–19:00<br/>Sat: 10:00–18:00<br/>Sun: Closed</p>"
+          }
+        },
+        "location_3J8wDb": {
+          "type": "location",
+          "name": "Pantry by Marble",
+          "settings": {
+            "name": "Pantry by Marble",
+            "address": "170 Jan Smuts Ave, Rosebank, Johannesburg, 2196",
+            "lat": "51.5134",
+            "lng": "-0.1533",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<p>Mon–Fri: 10:00–19:00<br/>Sat: 10:00–18:00<br/>Sun: Closed</p>"
+          }
+        },
+        "location_dDmraL": {
+          "type": "location",
+          "name": "Always Sunday",
+          "settings": {
+            "name": "Always Sunday",
+            "address": "Online only, Bath, Bath and North East Somerset, BA1 5BG, United Kingdom",
+            "lat": "51.3843",
+            "lng": "–2.3593",
+            "online_only": true,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li><li>Sat: 10:00–18:00</li><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_JUjPDk": {
+          "type": "location",
+          "name": "Hudson House & Home",
+          "settings": {
+            "name": "Hudson House & Home",
+            "address": "The Studio, Black and White Farmhouse, Hollington, Newbury, Hampshire, RG20 9XN, United Kingdom",
+            "lat": "51.3380",
+            "lng": "–2.3593",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li><li>Sat: 10:00–18:00</li><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_4HHpwi": {
+          "type": "location",
+          "name": "The Home Library",
+          "settings": {
+            "name": "The Home Library",
+            "address": "25 Alderley Road, Wilmslow, Cheshire, SK9 1HY, United Kingdom",
+            "lat": "53.32572",
+            "lng": " –2.23210",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_E9gkTb": {
+          "type": "location",
+          "name": "Willow & Co Stockbridge\t",
+          "settings": {
+            "name": "Willow & Co Stockbridge",
+            "address": "2 Beaumonde Cottages, High Street, Sockbridge, Hampshire, SO20 6HF, United Kingdom",
+            "lat": "51.2235",
+            "lng": "–1.5312",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_ie9mrB": {
+          "type": "location",
+          "name": "Via Garibaldi 12 Lifestylestore",
+          "settings": {
+            "name": "Via Garibaldi 12 Lifestylestore",
+            "address": "Via Giuseppe Garibaldi 12, Genova, GE, 16124, Italy",
+            "lat": "44.41124",
+            "lng": "8.93238",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li><li>Sat: 10:00–18:00</li><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_pyQnbn": {
+          "type": "location",
+          "name": "WAHO",
+          "settings": {
+            "name": "WAHO",
+            "address": "12 Avenue Albert Schweitzer, Saint-Rémy-de-Provence, Bouches-du-Rhône, 13210, France",
+            "lat": "0",
+            "lng": "0",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li><li>Sat: 10:00–18:00</li><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_VqU7xn": {
+          "type": "location",
+          "name": "Gavetão – Decoração de Interiores\t",
+          "settings": {
+            "name": "Gavetão – Decoração de Interiores",
+            "address": "Rua Sampaio Bruno 3A, Lisboa, 1350-281, Portugal",
+            "lat": "38.71766",
+            "lng": "-9.16961",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_8zXA3D": {
+          "type": "location",
+          "name": "La Perla Rosa",
+          "settings": {
+            "name": "La Perla Rosa",
+            "address": "Carrer del Bisbe Verger 20, Santanyí, Illes Balears, 07650, Spain",
+            "lat": "39.3200",
+            "lng": "3.1850",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_LThyCY": {
+          "type": "location",
+          "name": "Garten-Stuhl",
+          "settings": {
+            "name": "Garten-Stuhl",
+            "address": "Bahnhofstraße 14, Rostock, Mecklenburg-Vorpommern, 18055, Germany",
+            "lat": "54.07842",
+            "lng": " 12.13182",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_hVcVVD": {
+          "type": "location",
+          "name": "RAUM concept store",
+          "settings": {
+            "name": "RAUM concept store",
+            "address": "Marktstraße 6, Wendelstein, Bavaria, 90530, Germany",
+            "lat": "49.3445",
+            "lng": " 11.1990",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_qRtYXb": {
+          "type": "location",
+          "name": "The Magnum Company",
+          "settings": {
+            "name": "The Magnum Company",
+            "address": "Unit 16, Waldgraves Business Park, Waldegraves Lane, West Mersea, Essex, CO5 8SE, United Kingdom",
+            "lat": "51.7965",
+            "lng": " 0.9960",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_JPX6jJ": {
+          "type": "location",
+          "name": "* elbsterne *",
+          "settings": {
+            "name": "* elbsterne *",
+            "address": "Hasenhöhe 6, Hamburg, 22587, Germany",
+            "lat": "53.6040",
+            "lng": " 9.9300",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_FaqUU7": {
+          "type": "location",
+          "name": "Twin GmbH – Conception · Planning · Interior Design · Realization\t",
+          "settings": {
+            "name": "Twin GmbH – Conception · Planning · Interior Design · Realization",
+            "address": "Louisenstraße 99, Bad Homburg, Hessen, 61348, Germany",
+            "lat": "50.2240",
+            "lng": " 8.6220",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        },
+        "location_6ttQQC": {
+          "type": "location",
+          "name": "Magazin",
+          "settings": {
+            "name": "Magazin",
+            "address": "Augustinergasse 13, Salzburg, 5020, Austria",
+            "lat": "47.8037",
+            "lng": " 13.0481",
+            "online_only": false,
+            "flagship": false,
+            "opening_times": "<ul><li>Mon–Fri: 10:00–19:00</li></ul><ul><li>Sat: 10:00–18:00</li></ul><ul><li>Sun: Closed</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "location_A6LJMg",
+        "location_pgCNPt",
+        "location_qDyYmL",
+        "location_3J8wDb",
+        "location_dDmraL",
+        "location_JUjPDk",
+        "location_4HHpwi",
+        "location_E9gkTb",
+        "location_ie9mrB",
+        "location_pyQnbn",
+        "location_VqU7xn",
+        "location_8zXA3D",
+        "location_LThyCY",
+        "location_hVcVVD",
+        "location_qRtYXb",
+        "location_JPX6jJ",
+        "location_FaqUU7",
+        "location_6ttQQC"
+      ],
+      "name": "Shop Locator",
+      "settings": {
+        "heading": "Fieldbar Authorised Retailers",
+        "center_lat": 0,
+        "center_lng": 0,
+        "zoom": 12
+      }
+    }
+  },
+  "order": [
+    "main",
+    "store_locator_YWm6Tj"
+  ]
+}

@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "d567ef1d-4049-49bb-a33f-a23a405ab3b1"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "custom_liquid_yACHpr": {
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "custom_liquid_4GW3nL": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "newsletter_sub_4NtYar": {
+      "type": "newsletter-sub",
+      "custom_css": [
+        ".message.success {border: 1px solid #ff8a3d; position: absolute; z-index: 101; background: #ff8a3d !important; padding: 6px; width: 100%; right: 0; bottom: 0;}",
+        ".globo-form-app .message.success .gfb__content-title {/* display: none; */ color: white; display: block !important; font-family: Gotham Book !important; font-size: 18px !important; font-weight: normal !important; margin-bottom: 10px !important;}"
+      ],
+      "name": "Newsletter Subscription Section",
+      "settings": {
+        "background_image": "shopify://shop_images/newsletter-imagebg.jpg",
+        "form_embed_code": "<div class=\"globo-formbuilder\" data-id=\"ODkzNzU=\"></div>"
+      }
+    },
+    "multicolumn_84GaVR": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_C9zb7H": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_363m4r": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/safari_engineered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NA8JBK": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/cape_town_icon_3af0f7c4-d479-4fb9-9d2a-129af00c6f0a.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Made in Cape Town</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NFGATC": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/sustainably_designed.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Sustainably Designed</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_C9zb7H",
+        "column_363m4r",
+        "column_NA8JBK",
+        "column_NFGATC"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        " {margin-top: %;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter_sub_4NtYar",
+    "multicolumn_84GaVR"
+  ]
+}

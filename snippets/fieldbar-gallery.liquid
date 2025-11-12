@@ -1,0 +1,161 @@
+{%- liquid
+  if section.settings.hide_variants and variant_images.size == product.media.size
+    assign single_media_visible = false
+  endif
+
+  if limit == 1
+    assign single_media_visible = false
+  endif
+
+  assign media_count = product.media.size
+  if section.settings.hide_variants and media_count > 1 and variant_images.size > 0
+    assign media_count = media_count | minus: variant_images.size | plus: 1
+  endif
+
+  if media_count == 1 or single_media_visible
+    assign single_media_visible_mobile = true
+  endif
+
+  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+    assign hide_mobile_slider = true
+  endif
+
+  if section.settings.media_size == 'large'
+    assign media_width = 0.65
+  elsif section.settings.media_size == 'medium'
+    assign media_width = 0.55
+  elsif section.settings.media_size == 'small'
+    assign media_width = 0.45
+  endif
+-%}
+
+<media-gallery
+  class="media-stick"
+  id="MediaGallery-{{ section.id }}"
+  role="region"
+  aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+  data-desktop-layout="{{ section.settings.gallery_layout }}">
+  <div
+    id="GalleryStatus-{{ section.id }}"
+    class="visually-hidden"
+    role="status"></div>
+  <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter custom_fb_gallery">
+    <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
+      {{ 'accessibility.skip_to_product_info' | t }}
+    </a>
+    <ul
+      id="Slider-Gallery-{{ section.id }}"
+      class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
+      role="list">
+      {%- for media in product.media -%}
+        {% if product.tags contains 'sling' %}
+          {% case localization.country.iso_code %}
+            {% when 'US' %}
+              {% assign skip = 1 %}
+              {%- if forloop.index == skip -%}
+                {% continue %}
+              {%- endif -%}
+            {% else %}
+              {% assign skip = 4 %}
+              {%- if forloop.index == skip -%}
+                {% continue %}
+              {%- endif -%}
+          {% endcase %}
+        {% else %}
+          {% if product.tags contains 'Drinks Box' %}
+            {% case localization.country.iso_code %}
+              {% when 'US' %}
+                {% assign skip = 5 %}
+                {%- if forloop.index == skip -%}
+                  {% continue %}
+                {%- endif -%}
+              {% else %}
+                {% assign skip = 4 %}
+                {%- if forloop.index == skip -%}
+                  {% continue %}
+                {%- endif -%}
+            {% endcase %}
+          {% endif %}
+        {% endif %}
+        {% assign img_numbers = forloop.index | prepend: '0' | slice: -2, 2 %}
+        {% if media_position >= limit or media_position >= 1 and section.settings.hide_variants and variant_images contains media.src
+        %}
+          {% continue %}
+        {% endif %}
+
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          <li
+            data-index="{{ forloop.index0 }}"
+            id="Slide-{{ section.id }}-{{ media.id }}"
+            class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            data-media-id="{{ media.id }}">
+            {% comment %}   <span class="slide-numbers"> {{ img_numbers }}. </span> {% endcomment %}
+
+            {%- liquid
+              assign media_position = media_position | default: 0 | plus: 1
+              assign lazy_load = false
+              if media_position > 1
+                assign lazy_load = true
+              endif
+            -%}
+            {% render 'product-thumbnail'
+              , media: media
+              , media_count: media_count
+              , position: media_position
+              , desktop_layout: section.settings.gallery_layout
+              , mobile_layout: section.settings.mobile_thumbnails
+              , loop: section.settings.enable_video_looping
+              , modal_id: section.id
+              , xr_button: true
+              , media_width: media_width
+              , media_fit: section.settings.media_fit
+              , constrain_to_viewport: section.settings.constrain_to_viewport
+              , lazy_load: lazy_load
+            %}
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </slider-component>
+</media-gallery>
+
+{% style %}
+  .slide-numbers {
+    position: relative;
+    font-family: 'Gotham Medium' !important;
+    color: #1e4465;
+    font-size: .7em;
+    text-align: end;
+    margin-bottom: 0;
+  }
+
+  .product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
+    border: none !important;
+  }
+
+  /* Ensure proper modal triggering */
+  .product__media-toggle {
+    cursor: pointer;
+  }
+
+  /* Fix for slider layout */
+  .product__media-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .product__media-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+
+  @media (min-width: 750px) {
+    .product__media-list {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1rem;
+    }
+  }
+{% endstyle %}

@@ -1,0 +1,657 @@
+/* Page Container Shared- account pages */
+.hSLMtg {
+  max-width: 1200px;
+}
+
+.bsm-account-page {
+  padding-bottom: 0px;
+}
+
+.bsm-static-section {
+  padding-bottom: 60px;
+}
+
+.bsm-customer-container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.bsm-customer-sub-para {
+  color: red !important;
+}
+
+/* Top Heading Section Shared- account pages */
+
+h4.bsm-welcome {
+  padding-bottom: 0px !important;
+  font-weight: 400 !important;
+  text-align: center;
+}
+
+
+.bsm-profile,
+.bsm-logout {
+  font-size: 12px;
+  font-weight: 300;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+.bsm-profile {
+  border-right: 1px solid black;
+  padding-right: 10px;
+}
+
+.col-account {
+  flex: 1 1 auto;
+}
+
+.row-account {
+  justify-content: center;
+}
+
+.bsm-acc-btn-selected {
+  background: #ff8a3d;
+}
+
+.bsm-acc-btn-selected:hover {
+  background: #ff8a3d;
+}
+
+.bsm-acc-btn {
+  width: 90%;
+  padding: 0px;
+}
+
+/* Tables Shared- account pages */
+
+.bsm-noproduct {
+  padding-bottom: 0px !important;
+}
+
+.bsm-table {
+  padding: 0 20px;
+  background: #fbfbfb;
+  border: 3px solid #f3efeb;
+}
+
+.bsm-table-order {
+  padding: 0 20px;
+  background: #fbfbfb;
+  border: 1px solid #f3efeb;
+}
+
+.bsm-shop-info {
+  display: flex;
+  max-width: 100%;
+}
+
+.bsm-item {
+  flex: 1 1 auto;
+  width: 100%;
+  margin: 0 !important;
+  padding-left: 10px;
+}
+
+.tt-shopping-layout .tt-link-back {
+  margin-top: 10px;
+  font-weight: 400;
+  color: #888e91;
+}
+
+.tt-table-shop-01.tt-table-address tbody td:first-child {
+  font-weight: 500;
+}
+
+.tt-table-shop-01 tbody tr {
+  border: none;
+}
+
+.tt-pagination-left {
+  margin-left: 1px;
+}
+
+.tt-pagination ul li a {
+  color: #888e91;
+}
+
+/* Table Profile Sections Shared- account pages */
+
+.bsm-row {
+  margin: 0px;
+  padding: 10px;
+}
+
+.bsm-account-item {
+  flex: 1 1 auto;
+  margin: 0 !important;
+}
+
+.bsm-acc-nav {
+  margin: 10px;
+}
+
+.bsm-side-nav {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 340px;
+}
+
+/* Table Order Detail Sections - account pages */
+.subtotal,
+.shipping,
+.discount {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #00334d;
+}
+
+.subtotal {
+  font-weight: 500 !important;
+}
+
+.order-total td strong {
+  font-size: 12px;
+  font-weight: 600 !important;
+  color: #00334d;
+}
+
+.order-total td {
+  font-size: 12px;
+  font-weight: 800 !important;
+  color: #00334d;
+}
+
+.order-items {
+  font-weight: 300;
+}
+
+.fulfilled {
+  font-size: 11px;
+  font-style: italic;
+  border-top: 1px solid #f3efeb;
+  padding-top: 2px;
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.cart-discount {
+  text-decoration: line-through;
+}
+
+.tt-table-shop-03 tr td:not(:nth-child(1)),
+.tt-table-shop-03 tr th:not(:nth-child(1)) {
+  text-align: right;
+}
+
+/* Edit Address Sections - account pages */
+.bsm-address-wrapper {
+  margin: 0px;
+  padding: 10px;
+}
+
+.bsm-address-sub {
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.tt-shopping-layout .tt-title.bsm-address-title {
+  font-size: 17px;
+  padding-bottom: 20px;
+}
+
+.tt-table-shop-01.tt-table-address tbody td {
+  padding-top: 3px;
+  word-wrap: anywhere;
+  line-break: normal;
+}
+
+.tt-shopping-layout .tt-wrapper.bsm-address {
+  margin-top: 30px;
+}
+
+/* Table Order Summary Sections - account pages */
+.tt-table-shop-02 thead tr {
+  border: none;
+}
+
+.tt-table-shop-02 tbody td:first-child {
+  width: unset;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-weight: 400;
+}
+
+.tt-table-shop-02 thead th {
+  color: #00334d;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* Registeration App MPR Fixes Summary Sections - account pages */
+
+#mpr-registered-warranty table tr td:nth-child(2) {
+  background: #ff8a3d;
+  color: white;
+  text-transform: uppercase;
+}
+
+#mpr-registered-owners-club table tr td:nth-child(2) {
+  background: #01324c;
+  color: white;
+  text-transform: uppercase;
+}
+
+#mpr-registered-owners-club table tr td:first-child,
+#mpr-registered-owners-club table tr th:first-child {
+  display: none;
+}
+
+#mpr-registered-warranty table tr td:first-child,
+#mpr-registered-warranty table tr th:first-child {
+  display: none;
+}
+
+#mpr-registered-warranty h1 {
+  background: #ff8a3d !important;
+  color: white !important;
+}
+
+#mpr-registered-owners-club h1 {
+  background: #01324c !important;
+  color: white !important;
+}
+
+.registered-products>h1 {
+  margin: 0 0 -15px;
+  text-transform: uppercase;
+  text-align: right;
+  padding-right: 40px;
+  display: block;
+  font-family: Noto Sans TC, sans-serif;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  letter-spacing: 1px;
+  line-height: 40px !important;
+}
+
+#mpr-root {
+  padding: 1rem 0 !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.mpr-modal {
+  position: absolute;
+  top: 150px;
+  left: 40px;
+  background-color: #fff;
+  width: 350px;
+  padding: 1rem;
+}
+
+.mpr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent !important;
+}
+
+#sumbit-success h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+#mpr-root .mpr-success-wrapper {
+  box-shadow: 0 0 5px #ccc;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.mpr-input-label {
+  display: block;
+  color: #00334d;
+}
+
+.pagination {
+  display: none;
+}
+
+.intro-wrapper {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.names {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 12px;
+  color: #00334d;
+}
+
+.register {
+  font-family: "SurveyorText Book Pro";
+  font-size: 5rem !important;
+  color: #00334d;
+}
+
+.register2 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  color: #00334d;
+  padding-bottom: 20px;
+}
+
+#mpr-registered .tt-title {
+  font-size: 16px;
+}
+
+#mpr-registered h1 {
+  font-size: 16px;
+  padding-bottom: 0px;
+}
+
+#submit-success h1 {
+  font-size: 16px;
+}
+
+.register .mpr-custom-label {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+#mpr-product-inputs .mpr-input-tickbox .mpr-input-label {
+  align-items: first baseline;
+}
+
+.mpr-custom-label {
+  font-size: 14px;
+}
+
+.register2 .mpr-custom-label {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 18px !important;
+  color: #00334d;
+  padding-bottom: 20px;
+}
+
+.mpr-product-search__control {
+  min-height: 46px;
+}
+
+#mpr-product-inputs .form-group .btn-primary,
+#mpr-product-inputs .form-group textarea,
+#mpr-product-inputs .form-group select,
+#mpr-product-inputs .form-group input {
+  border-radius: 0px !important;
+}
+
+#mpr-product-inputs .form-group .btn-primary {
+  text-transform: uppercase;
+  padding: 1em !important;
+  margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+  .register .mpr-custom-label {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+
+#mpr-submitted-content {
+  display: block !important;
+}
+
+.mpr-registered-form-container {
+  padding-bottom: 0px !important;
+}
+
+.button.btn.btn-primary {
+  text-transform: uppercase;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 1px;
+}
+
+.my-product-reg-listing>.button.btn.btn-primary {
+  min-width: 300px;
+}
+
+.button.btn.btn-primary.mpr-open {
+  text-transform: uppercase;
+  padding: 0;
+  background: transparent;
+  color: #00334c;
+  font-weight: 500 !important;
+  font-family: Noto Sans TC, sans-serif;
+  letter-spacing: 1px;
+  display: none;
+}
+
+#mpr-registered-owners-club>.button.btn.btn-primary.mpr-open {
+  /* color: transparent; */
+}
+
+#mpr-registered-owners-club>.button.btn.btn-primary {
+  float: right;
+  z-index: 9999;
+}
+
+#mpr-registered-warranty>.button.btn.btn-primary.mpr-open {
+  /* color: transparent; */
+}
+
+#mpr-registered-warranty>.button.btn.btn-primary {
+  float: right;
+  z-index: 9999;
+}
+
+#mpr-registered>h1 {
+  font-size: 18px;
+  padding-bottom: 0px;
+  text-transform: uppercase;
+  font-family: Noto Sans TC, sans-serif;
+}
+
+/* Mobile Fixes all - account pages */
+
+@media only screen and (max-width: 1020px) {
+  .row-account {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .col-account {
+    text-align: center;
+  }
+
+  .bsm-span-mobile {
+    display: block;
+  }
+
+  .bsm-acc-btn {
+    width: 90%;
+  }
+
+  #product-registration table tr td img {
+    margin-right: 0px !important;
+  }
+
+  .registered-products>h1 {
+    text-align: center;
+    padding: 0;
+  }
+}
+
+/* From Customer.css - Fixes for Order Summary Table on Mobile - account pages */
+
+/* Customer Table */
+.customer table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border-bottom: 0.01rem solid #e4e0e0;
+  box-shadow: none;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .customer table {
+    border: none;
+  }
+}
+
+@media screen and (forced-colors: active) {
+  .customer table {
+    border-top: 0.1rem solid transparent;
+    border-bottom: 0.1rem solid transparent;
+  }
+}
+
+.customer th,
+.customer td {
+  font-weight: 300;
+  line-height: 1;
+  border: none;
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .customer td {
+    padding-right: 2.2rem;
+  }
+}
+
+.customer tbody td {
+  border-top: none;
+}
+
+.customer td:empty {
+  display: initial;
+}
+
+.customer thead th {
+  text-transform: uppercase;
+}
+
+.customer tbody td:first-of-type {}
+
+@media screen and (min-width: 750px) {
+
+  .customer th,
+  .customer td:first-of-type {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 2.2rem;
+  }
+
+  .customer th:first-of-type,
+  .customer td:first-of-type {
+    padding-left: 2.2rem;
+  }
+
+  .customer tbody td {
+    vertical-align: middle;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .customer tbody td:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+.customer tbody tr {
+  border-top: 0.01rem solid #e4e0e0;
+}
+
+@media screen and (min-width: 750px) {
+  .customer tbody tr:first-of-type {
+    border-top: none;
+  }
+}
+
+@media screen and (forced-colors: active) {
+  .customer tbody tr {
+    border-top: 0.1rem solid transparent;
+  }
+}
+
+.customer tfoot td:first-of-type,
+.customer tfoot td {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.customer tfoot td:first-of-type {
+  text-align: left;
+}
+
+/* works around colspan phantom border issues */
+.customer thead::after,
+.customer tfoot::before {
+  content: " ";
+  height: 0.1rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background: #f5f0f08a;
+}
+
+/* mobile table overrides */
+@media screen and (max-width: 749px) {
+
+  .customer thead,
+  .customer th,
+  .customer tfoot td:first-of-type {
+    display: none;
+  }
+
+  .tt-table-shop-02 tbody td:first-child {
+    width: unset;
+    border-bottom: 1px solid #dbdbdb;
+  }
+
+  .customer tbody td {
+    border-top: none;
+  }
+
+  .customer td {
+    display: flex;
+    text-align: right;
+  }
+
+  .customer td::before {
+    color: #00334c;
+    content: attr(data-label);
+    padding-right: 2rem;
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .customer td:first-of-type {
+    display: flex;
+    align-items: center;
+  }
+
+  .customer tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+  }
+}

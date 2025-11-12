@@ -1,0 +1,85 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.our-story.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "custom_liquid_XHzFpX": {
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship-fr\" %}"
+      },
+      "blocks": {}
+    },
+    "mount_nelson_header_dB86DT": {
+      "settings": {
+        "headline": "À Propos de Nous",
+        "button_text": "DÉCOUVRIR LE CATALOGUE"
+      },
+      "blocks": {}
+    },
+    "rich_text_E6EnBr": {
+      "settings": {},
+      "blocks": {
+        "text_gUVT7U": {
+          "settings": {
+            "text": "<p>VUE DE NOTRE USINE AU PARC ST MICHAELS, OBSERVATOIRE, VILLE DU CAP</p>"
+          }
+        }
+      }
+    },
+    "mn_personalisation_Wwe6FY": {
+      "settings": {
+        "intro_text": "FABRIQUÉE À CAPE TOWN",
+        "headline": "Des produits plein air, fabriqués à la main d’une qualité incroyable.",
+        "short_description": "<br>Nous fabriquons nos produits dans notre usine de Cape Town – une ville qui a servi pendant des siècles de port de commerce et passerelle pour le continent africain. Ses habitants sont adroits et résilients, avec un instinct multigénérationnel pour l'artisanat, l'élégance et l'ingéniosité."
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_azn9CQ": {
+      "settings": {
+        "button_text": "ACHETER LA DRINKS BOX",
+        "heading": "Conçus Pour le Safari",
+        "description": "Les camps de safari isolés ont toujours eu besoin de produits de plein air élégants, de qualité, durables et facilement transportables.   \n\nNotre héritage est le safari et se trouve à la base de notre conception de produits plein air. C’est notre ADN. C’est la raison précise pour laquelle nous sommes bons dans ce que nous faisons."
+      },
+      "blocks": {}
+    },
+    "mn_towel_hnGKpp": {
+      "settings": {
+        "heading": "Un Style Intemporel",
+        "description": "Il fut un temps où l'aventure en plein air se faisait avec style. Peu importe où vous vivez, nous sommes d'avis que les loisirs en plein air sont les plus agréables et mémorables lorsqu'ils sont pratiqués avec élégance, style et grâce."
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_kia46R": {
+      "settings": {
+        "headline": "Les personnes avant la productivité",
+        "short_description": "Nous faisons passer les personnes avant la productivité. Nous nous poussons mutuellement à des normes élevées, mais par-dessus tout, nous sommes bienveillants envers tout le monde.\n<br><br>\nNous sommes un peuple diversifié. Nous avons une histoire qui fait encore mal. Une histoire que nous essayons toujours de réparer.\n<br><br>\nNous fabriquons nos produits avec le même ensemble de valeurs avec lesquelles nous les vendons. Les valeurs de notre marque sont nos valeurs internes. Nous travaillons des horaires raisonnables et payons des salaires équitables. Nous déjeunons ensemble. Nous partageons nos histoires. Nous faisons passer les personnes avant la productivité.\n\nAvant tout, nous travaillons dans notre entreprise avec bienveillance."
+      },
+      "blocks": {}
+    },
+    "rich_text_JtefD8": {
+      "settings": {},
+      "blocks": {
+        "heading_FeALyB": {
+          "settings": {
+            "heading": "Nos Actionnaires et Fondateurs"
+          }
+        },
+        "text_djxBkD": {
+          "settings": {
+            "text": "<p>Scott Hindmarch, Philip Lambrecht et Michael Minkley, vous y avez cru alors que ce n’était pas facile à faire.L'équipe d'Invenfin, votre confiance nous fait avancer.<br/><br/>Fondé par Lee Hartman et Corban Warrington.</p>"
+          }
+        }
+      }
+    }
+  }
+}

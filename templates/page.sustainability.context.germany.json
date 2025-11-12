@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.sustainability.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "specifications_product_guide_Ye7dCg": {
+      "settings": {
+        "left_title": "Drinks Box Technische Daten",
+        "left_subtitle": "Eine FIELDBAR Drinks Box besteht aus 58 Einzelteilen, die bei Bedarf alle entfernt, repariert und wiederverwertet werden können. Das ist nicht nur gut für Sie und uns, sondern auch für unseren Planeten."
+      },
+      "blocks": {
+        "left_item_EFEBpx": {
+          "settings": {
+            "text": "Doppelseitiger Griff aus Echtlederresten für noch mehr Tragekomfort"
+          }
+        },
+        "left_item_BrhATf": {
+          "settings": {
+            "text": "Reflektierender Lack, um Hitze zu reduzieren"
+          }
+        },
+        "left_item_hneHxq": {
+          "settings": {
+            "text": "Leistungsfähige, herausnehmbare und ozonfreundliche Schaumstoffisolierung"
+          }
+        },
+        "left_item_XhbErw": {
+          "settings": {
+            "text": "Verschluss mit angemeldetem Patent"
+          }
+        },
+        "left_item_aTp3iV": {
+          "settings": {
+            "text": "Luftstromresistente Dichtung"
+          }
+        },
+        "left_item_riqGLp": {
+          "settings": {
+            "text": "Lebensmittelechtes, BPA-freies, pflegeleichtes Inneres"
+          }
+        },
+        "right_item_3Jxin3": {
+          "settings": {
+            "text": "Versteckte Aluminiumscharniere – für eine lange Lebensdauer konzipiert"
+          }
+        },
+        "right_item_KdWiQz": {
+          "settings": {
+            "text": "Aluminium-Griffhalterungen"
+          }
+        },
+        "right_item_wppr9z": {
+          "settings": {
+            "text": "Stoß- und kratzfestes Gehäuse (durch handgefertigte Lackierung kann es zu leichten Farbabweichungen kommen)"
+          }
+        },
+        "right_item_wdUCe6": {
+          "settings": {
+            "text": "Vorgefertigte Messingplakette mit Seriennummer zur Qualitätskontrolle und Nachverfolgung"
+          }
+        },
+        "right_item_4fbTCq": {
+          "settings": {
+            "text": "Rutschfeste Silikonfüße"
+          }
+        }
+      }
+    },
+    "specifications_product_guide_34jgrq": {
+      "settings": {
+        "left_title": "Mini Bar Technische Daten",
+        "left_subtitle": "Die FIELDBAR Mini Bar besteht aus 82 Einzelteilen – alle so konzipiert, dass sie bei Bedarf entfernt, repariert oder ersetzt werden können. Und wie alle FIELDBAR-Kühlboxen wird sie durch die 5‑Jahres-Garantie von FIELDBAR auf Verarbeitung abgedeckt."
+      },
+      "blocks": {
+        "left_item_Tq7pNP": {
+          "settings": {
+            "text": "Austauschbarer Komfortgriff mit gummierter Einlage und optionalem langer Schulterriemen"
+          }
+        },
+        "left_item_FiwVRX": {
+          "settings": {
+            "text": "Personalisierungsbereich am Griff"
+          }
+        },
+        "left_item_jrNhUx": {
+          "settings": {
+            "text": "Hochleistungsfähige, herausnehmbare Isolierung ohne ozonschädigende Stoffe"
+          }
+        },
+        "left_item_tF9jR4": {
+          "settings": {
+            "text": "Zum Patent angemeldete Deckelverriegelung"
+          }
+        },
+        "left_item_7X9pqH": {
+          "settings": {
+            "text": "Luftdicht schließende Runddichtung"
+          }
+        },
+        "left_item_r6Jjt9": {
+          "settings": {
+            "text": "Lebensmittelechter, BPA-freier und leicht zu reinigender Innenraum"
+          }
+        },
+        "right_item_7c9dGK": {
+          "settings": {
+            "text": "Scharnier aus Aluminium in Industriequalität – für ein Leben lang gemacht"
+          }
+        },
+        "right_item_Ba9x76": {
+          "settings": {
+            "text": "Stoß- und kratzfeste Außenschale (leichte Farbabweichungen möglich durch handgefertigte Lackierung)"
+          }
+        },
+        "right_item_AVQ4PB": {
+          "settings": {
+            "text": "Individuell vorab nummerierte Messingplakette zur Qualitätskontrolle und Rückverfolgbarkeit"
+          }
+        },
+        "right_item_FTJwpK": {
+          "settings": {
+            "text": "Rutschfeste Füße aus Silikon"
+          }
+        }
+      }
+    },
+    "specifications_product_guide_9GUP6x": {
+      "settings": {
+        "left_title": "Gin Trunk Technische Daten",
+        "left_subtitle": "Die FIELDBAR Gin Trunk besteht aus 135 Einzelteilen, die bei Bedarf alle entfernt, repariert und wiederverwertet weren können. Wie alle FIELDBAR Kühlboxen verfügt Sie über eine 5-jährige FIELDBAR-Herstellergarantie."
+      },
+      "blocks": {
+        "left_item_bPyKPW": {
+          "settings": {
+            "text": "Geformter doppelseitiger Griff aus Echtlederresten für noch mehr Tragekomfort"
+          }
+        },
+        "left_item_VUMYYn": {
+          "settings": {
+            "text": "Hervorstehender Aluminiumgriff für robusten Halt und wackelfreien Transport"
+          }
+        },
+        "left_item_dwQE89": {
+          "settings": {
+            "text": "Reflektierender Lack, um Hitze zu reduzieren"
+          }
+        },
+        "left_item_iVVfaY": {
+          "settings": {
+            "text": "Verschlussriegel aus Aluminium"
+          }
+        },
+        "left_item_BXEXEe": {
+          "settings": {
+            "text": "Wasser- und luftstromresistente Dichtung"
+          }
+        },
+        "left_item_La8Rha": {
+          "settings": {
+            "text": "Lebensmittelechtes, BPA-freies, pflegeleichtes Inneres"
+          }
+        },
+        "right_item_znPRqV": {
+          "settings": {
+            "text": "Leistungsfähige, herausnehmbare und ozonfreundliche Schaumstoffisolierung"
+          }
+        },
+        "right_item_dQzThx": {
+          "settings": {
+            "text": "Versteckte Aluminiumscharniere – für eine lange Lebensdauer konzipiert"
+          }
+        },
+        "right_item_WkbgFm": {
+          "settings": {
+            "text": "Internes Druckverriegelungssystem für eine luftdichte Versiegelung im geschlossenen Zustand"
+          }
+        },
+        "right_item_H4ewnh": {
+          "settings": {
+            "text": "Stoß- und kratzfestes Gehäuse"
+          }
+        },
+        "right_item_Cm9gre": {
+          "settings": {
+            "text": "Vorgefertigte Messingplakette mit Seriennummer zur Qualitätskontrolle und Nachverfolgung"
+          }
+        },
+        "right_item_HfbY3P": {
+          "settings": {
+            "text": "Rutschfeste Silikonfüße"
+          }
+        }
+      }
+    }
+  }
+}

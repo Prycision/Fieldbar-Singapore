@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.warranty.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mount_nelson_splitscreen_higWDg": {
+      "settings": {
+        "intro_text": "DAS FIELD HOSPITAL",
+        "headline": "Garantie & Reparaturen",
+        "main_description": "Wir möchten das Wertesystem unserer Großeltern und früherer Generationen wiederbeleben, bei dem es galt, ein Produkt von Qualität und Langlebigkeit zu kaufen und es dann zu pflegen und bei Bedarf zu reparieren.\n<br><br>\nDiese Rückbesinnung auf Qualität ist unserer Überzeugung nach die Grundlage nachhaltigen Designs. Deshalb sind alle Teile unserer Produkte reparabel und austauschbar - denn man fertigt etwas anders, wenn man weiß, dass es für die Ewigkeit gemacht sein soll."
+      },
+      "blocks": {}
+    },
+    "warranty_scroll_sticky_wkCfK6": {
+      "settings": {
+        "warranty_heading": "5 Jahre Verarbeitungsgarantie",
+        "warranty_copy": "<p>Fieldbar (Pty) Ltd („Fieldbar“, „wir“, „uns“ oder „unser“) ist bestrebt, <strong>hochwertige, funktionale und stilvolle</strong> Produkte herzustellen.</p><p>Deshalb gewähren wir registrierten Eigentümern („Ihnen“) eine eingeschränkte <strong>5-jährige Garantie </strong>auf die Verarbeitung in Bezug auf bestimmte Herstellungs- und Schönheitsfehler, vorbehaltlich der nachstehenden Bedingungen.*</p><p>*Hinweis: Unsere Kühlboxen und Flaschen werden von <strong>Hand verziert</strong> und können kleine Lackunregelmäßigkeiten aufweisen. Diese gelten nicht als Herstellungs- oder Schönheitsfehler.</p>",
+        "accordion_heading": "Garantiebedingungen",
+        "button_1_text": "PRODUKT REGISTRIEREN",
+        "button_2_text": "ANMELDEN, UM ANSPRUCH GELTEND ZU MACHEN",
+        "accordion_1_title": "Abgedeckte Produkte",
+        "accordion_1_content": "<p>- The Drinks Box Cooler Box<br/>- The Gin Trunk Cooler Box<br/>- The Mini Bar Cooler Box<br/>- The Field Bottle<br/><br/>Textil- und Papierprodukte sind von der Garantie ausgenommen.</p>",
+        "accordion_2_title": "Was unsere 5-jährige Verarbeitungsgaranite abdeckt",
+        "accordion_2_content": "<p><strong>Funktionale Herstellungsfehler: </strong></p><p>Herstellungsfehler, die durch Fehler und Mängel bei der Fertigung des Produkts entstehen und dazu führen, dass es nicht mehr den vorgesehenen Qualitätsstandards entspricht (d. h. es ist nicht mehr für den vorgesehenen Gebrauch funktionsfähig).<br/></p><p><strong>Signifikante Schönheitsfehler als Folge der Herstellung: </strong></p><p>Ein signifikanter Schönheitsfehler ist jegliche Eigenschaft, die die Ästhetik erheblich beeinträchtigt, z. B. mehrere Lackabplatzungen, Lackmarkierungen, Kratzer im Lack oder große Farbabweichungen zwischen einzelnen Elementen. Alle kosmetischen Schäden, die durch die Nutzung des Produkts entstehen, sind nicht durch die Garantie abgedeckt, können jedoch auf Ihre Kosten repariert werden.</p>",
+        "accordion_3_title": "Garantiebedingungen",
+        "accordion_3_content": "<p>- Die Produktart muss für die Garantie berechtigt sein (Drinks Box, Gin Trunk oder Field Bottle).<br/><br/>- Sie müssen das Produkt über den Fieldbar-Webshop oder bei einem autorisierten Händler von Fieldbar-Produkten gekauft haben.<br/><br/>- Sie müssen Ihr Produkt innerhalb von 60 Tagen nach dem Kauf im Fieldbar Owners Club registriert haben (auch wenn Sie es als Geschenk erhalten haben).<br/><br/>- Sie müssen das Produkt nur zum vorgesehenen Zweck und gemäß den Pflegehinweisen verwendet haben. Die Garantie deckt weder normale Abnutzungserscheinungen noch natürlichen oder durch unsachgemäßen Gebrauch oder Missbrauch verursachten Farb- und Materialverschleiß ab.<br/><br/>- Sie müssen Ihren Garantieanspruch innerhalb des Garantiezeitraums geltend machen.<br/><br/>- Im Falle von Garantieansprüchen aufgrund angeblicher Schönheitsfehler muss das Produkt unbenutzt und in der Originalverpackung retourniert werden.<br/><br/>- Abgesehen von relevanten Verbrauchergesetzen deckt unsere Garantie die Reparaturkosten ab und gilt nicht für Rückerstattungen. Wenn wir ein für Reparaturen qualifiziertes Produkt nicht reparieren können, werden wir es ersetzen. Reparaturen führen nicht zwangsläufig zu einem „Wie-neu“-Produkt.<br/><br/>- Möglicherweise ist es erforderlich, dass Sie bestimmte Reparaturen selbst mit einem Reparaturset, das wir Ihnen dafür zusenden, durchführen.<br/><br/>- Sie sind dafür verantwortlich, ein unter dieser Garantie zurückgegebenes Produkt sicher zu verpacken. Jegliche während des Transports entstandene Schäden werden von dieser Garantie nicht abgedeckt.<br/><br/>- In einigen Fällen können limitierte Auflagen von Fieldbar-Produkten oder Lackfarben nicht repariert oder ersetzt werden. Funktionale Herstellungsfehler können jedoch auch bei limitierten Produkten repariert werden. Wenn ein durch die Garantie abdecktes Produkt aus einer limitierten Auflage oder eingestelltes Produkt nicht durch ein identisches Produkt ersetzt werden kann, wird es je nach Verfügbarkeit durch ein ähnliches oder gleichwertiges Modell oder eine gleichwertige Farbe ersetzt.<br/><br/>- Die Garantie gilt nicht für von Dritten modifizierte, angepasste, personalisierte, reparierte oder ersetzte Produkte.<br/><br/>- Die Garantie schließt Schäden durch gewerbliche Nutzung aus, es sei denn, das Produkt wurde im Rahmen des Fieldbar Hospitality-Programms gekauft.</p>",
+        "accordion_4_title": "Anspruch geltend machen",
+        "accordion_4_content": "<p>Wenn Sie Ihr berechtigtes Fieldbar-Produkt innerhalb von 60 Tagen nach dem Kauf erfolgreich registriert haben und das Produkt noch innerhalb des 5-jährigen Garantiezeitraums liegt, können Sie einen Garantieanspruch geltend machen.<br/></p><p>Melden Sie sich in Ihrem Owners Club-Konto auf fieldbar.co.za (Südafrika) oder fieldbar.com (international) an und folgen Sie den Anweisungen.</p><p>Die Bearbeitungs- und Reparaturzeiten können variieren. Sobald ein Antrag eingereicht wurde, werden die meisten Reparaturen innerhalb weniger Wochen abgeschlossen.</p>",
+        "accordion_5_title": "Haftungsausschluss",
+        "accordion_5_content": "<p>Soweit gesetzlich zulässig, schließt Fieldbar alle Garantien, sei es ausdrücklich oder stillschweigend, einschließlich, aber nicht beschränkt auf stillschweigende Garantien der Marktfähigkeit und Eignung für einen bestimmten Zweck, aus. Fieldbar haftet nicht für Schäden jeglicher Art, die durch die Nutzung seiner Produkte entstehen, einschließlich, aber nicht beschränkt auf direkte, indirekte, Neben- und Folgeschäden sowie Bußzahlungen.<br/><br/>Die einzige Verpflichtung von Fieldbar im Rahmen dieser Garantie besteht in der Reparatur oder dem Ersatz von Produkten, die die oben genannten Garantiebedingungen erfüllen.</p>",
+        "accordion_6_title": "Frühere Garantiebedingungen",
+        "accordion_6_content": "<p>Die Garantie für Produkte, die vor dem 1. September 2024 gekauft wurden, ist hier einsehbar.<br/><br/>DIE FIELDBAR 5-JAHRES-GARANTIE</p><p>Unser Ziel bei Fieldbar ist es, funktionale und elegante Produkte von hochwertiger Qualität zu fertigen. Daher bieten wir für alle registrierten Produkte ausnahmslos 5 Jahre Garantie auf jegliche Herstellungsmängel und -schäden.  </p><ul><li> Die Garantie gilt nur für Produkte, die direkt über uns oder von uns autorisierte Handelspartner bezogen wurden. </li><li> Eine Produktregistrierung ist erforderlich. Sie haben nur Anspruch auf die Garantie, wenn Sie sich als Fieldbar Owner registriert haben.<br/><br/><br/>BEDINGUNGEN</li><li> Sie müssen Ihr FIELDBAR-Produkt innerhalb von 60 Tagen ab Kauf registrieren (das gilt auch, wenn Sie es als Geschenk erhalten haben).</li><li> Außerhalb der einschlägigen Verbrauchergesetzgebung deckt unsere Garantie die Reparaturkosten ab und gilt nicht für Rückerstattungen. Falls wir Ihr Produkt nicht reparieren können, werden wir es ersetzen. Reparierte Produkte entsprechen keinem Neuprodukt.</li><li> Herstellungsfehler und Defekte schließen kosmetische Schäden durch normale Abnutzung aus.</li><li> Es kann erforderlich sein, dass Sie bestimmte Reparaturen selbst mit einem Reparatur-Set durchführen, das wir Ihnen zusenden.</li></ul>"
+      },
+      "blocks": {}
+    }
+  }
+}

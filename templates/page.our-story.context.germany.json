@@ -1,0 +1,85 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.our-story.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mount_nelson_header_dB86DT": {
+      "settings": {
+        "headline": "Über Uns",
+        "button_text": "DEN KATALOG ENTDECKEN"
+      },
+      "blocks": {}
+    },
+    "rich_text_E6EnBr": {
+      "settings": {},
+      "blocks": {
+        "text_gUVT7U": {
+          "settings": {
+            "text": "<p>BLICK AUS UNSEREM WERK IN ST MICHAELS PARK, OBSERVATORY, KAPSTADT</p>"
+          }
+        }
+      }
+    },
+    "mn_personalisation_Wwe6FY": {
+      "settings": {
+        "intro_text": "IN KAPSTADT GEFERTIGT",
+        "headline": "Handgefertigte Produkte für draußen von überragender Qualität.",
+        "short_description": "<br>Wir fertigen unsere Produkte in unserem Werk in Kapstadt, eine Stadt, die seit Jahrhunderten nicht nur als Handelsstätte, sondern auch als Tor zum afrikanischen Kontinent bekannt ist. Kapstadts Einwohner sind nicht nur handwerklich geschickt und resilient, sie haben auch einen unverkennbaren Sinn für Eleganz und Raffinesse."
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_azn9CQ": {
+      "settings": {
+        "heading": "Für Safaris Gemacht",
+        "description": "Abgelegene Safari-Camps vertrauen seit jeher auf Produkte von einfacher Eleganz, die technisch herausragend, nachhaltig sowie haltbar sind und einen komfortablen Transport erlauben.\n\nUnsere Produktentwicklung ist geprägt von unserem Safari-Erbe. Es liegt uns im Blut und daher sind wir gut in dem, was wir machen.",
+        "button_text": "DRINKS BOX KAUFEN"
+      },
+      "blocks": {}
+    },
+    "mn_towel_hnGKpp": {
+      "settings": {
+        "heading": "Zeitlose Eleganz",
+        "description": "Es war einmal … eine Zeit, in der man sich noch mit Stil und Eleganz auf Abenteuer in der freien Natur begab. Wir sind der Meinung, dass das auch heute noch möglich ist – und zwar unabhängig davon, wo Sie leben – und dass Ausflüge in die Natur gepaart mit müheloser Stilsicherheit am schönsten sind."
+      },
+      "blocks": {}
+    },
+    "custom_liquid_XHzFpX": {
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship-gr\" %}"
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_kia46R": {
+      "settings": {
+        "headline": "Menschlichkeit Geht Vor",
+        "short_description": "<br>Für uns hat die Menschlichkeit einen höheren Stellenwert als die Produktivität. Zwar haben wir hohe Standards, aber Freundlichkeit geht vor. Wir sind vielfältig und haben eine Geschichte, die Narben hinterlassen hat und die wir noch immer aufzuarbeiten versuchen.\n<br><br>\nWir haben ein Wertesystem, an dem wir uns sowohl bei der Fertigung als auch beim Verkauf unserer Produkte orientieren.\n<br><br>\nUnsere Markenwerte sind dieselben wie unsere inneren Werte. Wir arbeiten in einem vernünftigen Ausmaß und zahlen faire Löhne. Wir essen gemeinsam zu Mittag.\n<br><br>\nWir teilen unsere Geschichten. Bei uns kommt Menschlichkeit vor Produktivität. Vor allem betreiben wir unser Geschäft mit Freundlichkeit."
+      },
+      "blocks": {}
+    },
+    "rich_text_JtefD8": {
+      "settings": {},
+      "blocks": {
+        "heading_FeALyB": {
+          "settings": {
+            "heading": "Unsere Teilhaber & Gründer"
+          }
+        },
+        "text_djxBkD": {
+          "settings": {
+            "text": "<p>Scott Hindmarch, Philip Lambrecht und Michael Minkley, ihr habt auch in schwierigen Zeiten an uns geglaubt.Das Vertrauen, das uns das Team von Invenfin schenkt, treibt uns an.<br/><br/>Gegründet von Lee Hartman und Corban Warrington.</p>"
+          }
+        }
+      }
+    }
+  }
+}

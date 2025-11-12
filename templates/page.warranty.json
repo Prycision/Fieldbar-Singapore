@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "mount_nelson_splitscreen_higWDg": {
+      "type": "mount-nelson-splitscreen",
+      "settings": {
+        "media_type": "video",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/a7ddd934b7af401897cca4307e01ee6f.mp4",
+        "intro_text": "THE FIELD HOSPITAL",
+        "headline": "Warranty & Repairs",
+        "short_description": "",
+        "main_description": "We want to revive the belief system that our grandparents and the generations before them had, which is to buy something of <strong> quality</strong>  and <strong> longevity </strong> and then <strong> repair</strong>  and <strong> care</strong>  for that item.\n<br><br>\nThis <strong>  return-to-quality</strong>  is, we believe, the foundation of sustainable design. And it's why all parts of our products are <strong> repairable</strong>  and <strong> replaceable</strong>. Because you make something differently when you know it has to <strong>  last forever</strong>.",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "warranty_scroll_sticky_wkCfK6": {
+      "type": "warranty-scroll-sticky",
+      "custom_css": [
+        ".accordion-6-content a {color: #002b4d !important; font-family: \"Gotham Narrow Book\" !important; text-decoration: underline; transition: color 0.3s ease;}",
+        ".accordion-6-content a:hover {color: #ff8a3d;}"
+      ],
+      "settings": {
+        "warranty_heading": "5-Year Workmanship Warranty",
+        "warranty_copy": "<p>Fieldbar (Pty) Ltd (“Fieldbar”, “we”, “us”, or “our”) strives to produce<strong> high quality</strong>, <strong>functional</strong>, and <strong>stylish </strong>products.</p><p>That is why we provide a <strong>limited 5-year workmanship warranty</strong> to registered owners (“you”) in respect of certain manufacturing and cosmetic defects, subject to the conditions set out below.*</p><p>*Note: Our cooler boxes and bottles are <strong>hand decorated </strong>and may contain small paint imperfections. These are not considered to be manufacturing or cosmetic defects.</p>",
+        "accordion_heading": "Warranty Terms",
+        "button_1_text": "REGISTER YOUR PRODUCT",
+        "button_1_link": "https://fieldbar.com/account?view=register",
+        "button_2_text": "LOG IN TO MAKE A CLAIM",
+        "button_2_link": "https://fieldbar.com/account/login",
+        "right_image_1": "shopify://shop_images/warranty_1.webp",
+        "right_image_2": "shopify://shop_images/warranty_5_0.8x.webp",
+        "accordion_1_title": "Covered products",
+        "accordion_1_content": "<p>- The Drinks Box Cooler Box<br/>- The Gin Trunk Cooler Box<br/>- The Mini Bar Cooler Box<br/>- The Field Bottle<br/><br/>Textile and paper products are not covered by the warranty.</p>",
+        "accordion_2_title": "What our 5-year workmanship warranty covers",
+        "accordion_2_content": "<p><strong>Functional manufacturing defects:<br/></strong>Manufacturing defects resulting from errors in the creation of the product that cause it to not meet the quality standards the product is designed to meet (meaning it can no longer function for the intended use).<br/><br/><strong>Significant cosmetic defects from manufacturing:<br/></strong>A significant cosmetic defect is any characteristic which significantly hinders the aesthetics, e.g. multiple paint scuffs, paint marks, paint scratches or major colour variations between elements. Any cosmetic damages caused by your use of the product are not covered under the warranty, but may be repaired at a cost to you, depending on the nature and severity of the damage (see Field Hospital Programme).</p>",
+        "accordion_3_title": "Warranty criteria",
+        "accordion_3_content": "<p>- The product type must be eligible for the warranty (Drinks Box, Gin Trunk or Field Bottle).<br/><br/>- You must have purchased the product from the Fieldbar website store or an authorised retailer of Fieldbar products.<br/><br/>- You must have registered your product within 60 days of purchase on the Fieldbar Owners Club (even if received as a gift).<br/><br/>- You must have used the product only as intended and in accordance with the product's care instructions. The warranty does not cover normal wear and tear, the natural breakdown of colours and materials over an extended period of time, misuse or abuse.<br/><br/>- You must submit your warranty claim within the warranty period.<br/><br/>- In respect of warranty claims relating to alleged cosmetic defects, the product must be unused and returned in its original packaging.<br/><br/>- Outside of relevant consumer legislation, our warranty covers the cost of repair and does not apply to refunds. If we cannot repair a product that qualifies for warranty repairs, we will replace it. Repairs will not necessarily result in an 'as-good-as-new' product.<br/><br/>- You may be required to fulfil certain repairs yourself using repair kits which we will send to you.<br/><br/>- You are responsible for securely packaging a product returned under this warranty. Any damages incurred during transit will not be covered by this warranty.<br/><br/>- There may be some instances where limited edition Fieldbar products or paint colours are not available for repair or replacement. Functional manufacturing defects can still be repaired on limited edition products. Where a limited edition or discontinued product that falls under warranty cannot be repaired or replaced with an identical product, the product may be replaced with a similar or equivalent model or colour based on availability.<br/><br/>- The warranty does not apply to any products which have been modified, customised, personalised, repaired or replaced by a third party.<br/><br/>- The warranty excludes damages from commercial use unless the product was purchased under the Fieldbar Hospitality Programme.</p>",
+        "accordion_4_title": "How to make a claim",
+        "accordion_4_content": "<p>If you have successfully registered your eligible Fieldbar product within 60 days of purchase and your product falls within its 5-year warranty window, you will be able to submit a warranty claim.<br/><br/>Log in to your Owners Club account on fieldbar.co.za (South Africa) or fieldbar.com (international) and follow the registration prompts.</p><p>Assessment and repair lead times vary. Once a claim has been submitted, most repairs are completed within a few weeks.</p>",
+        "accordion_5_title": "Disclaimer",
+        "accordion_5_content": "<p>To the fullest extent permissible by law, Fieldbar disclaims all warranties, express or implied, including, but not limited to, implied warranties of merchantability and fitness for a particular purpose. Fieldbar will not be liable for any damages of any kind arising from the use of its products, including but not limited to direct, indirect, incidental, punitive and consequential damages.<br/><br/>Fieldbar's sole obligation under this warranty shall be repair or replacement of products which satisfy the warranty criteria set out above.</p>",
+        "accordion_6_title": "Prior warranty terms",
+        "accordion_6_content": "<p>The warranty for products purchased before 1 September 2024 is viewable here.<br/><br/>THE FIELDBAR 5 YEAR NO-QUESTIONS-ASKED WARRANTY</p><p>Fieldbar strives to produce high quality, functional, and stylish products. That’s why we provide a no-questions-asked 5‒year warranty to registered owners against all manufacturing damages and defects.</p><ul><li>Only covers products purchased directly from ourselves or from an authorised trade partner.  </li><li>Product registration required. You can only claim on this warranty if you have registered as a Fieldbar Owner. <br/><br/><br/>CONDITIONS</li><li>You must have registered your FIELDBAR product within 60 days of purchase (even if received as a gift).</li><li>Outside of relevant consumer legislation, our warranty covers the cost of repair and does not apply to refunds. If we can't repair your product, we will replace it. Repairs will not result in an as-good-as new product. </li><li>Manufacturing damages and defects excludes cosmetic damages from reasonable wear and tear.     </li><li>You may be required to fulfil certain repairs yourself from repair kits sent to you.</li></ul>"
+      }
+    },
+    "warranty3_t7FxwB": {
+      "type": "warranty3",
+      "disabled": true,
+      "settings": {
+        "heading": "Cosmetic Repairs",
+        "description": "We know you are careful but understand accidents happen. If your Fieldbar cooler box is scuffed, scratched or dented from vigorous use, we can assess and repair it in the Field Hospital.",
+        "accordion_1_title": "What we can repair",
+        "accordion_1_content": "<p>Cosmetic defects from reasonable wear and tear such as:<br/>- Paint scratches<br/>- Paint marks<br/>- Paint scuffs<br/>- Dents</p>",
+        "accordion_2_title": "Repair process",
+        "accordion_2_content": "<p>- The product type must be eligible for the repair (The Drinks Box Cooler Box, The Gin Trunk Cooler Box, The Field Bottle Flask).<br/><br/>- The product must have been registered on the Fieldbar Owners Club (even if received as a gift).</p>",
+        "accordion_3_title": "Terms",
+        "accordion_3_content": "<p>- The customer is responsible for the cost of returning the product to Fieldbar.<br/><br/>- Once a product has been assessed, the cost of the repair is quoted on an individual basis.<br/><br/>- The Field Hospital service is currently only available in South Africa.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "mount_nelson_splitscreen_higWDg",
+    "warranty_scroll_sticky_wkCfK6",
+    "warranty3_t7FxwB"
+  ]
+}

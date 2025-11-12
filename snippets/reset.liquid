@@ -1,0 +1,197 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+
+    .customer.reset-password {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background: #f9f9f9;
+      border: 1px solid #e3e3e3;
+      font-family: 'Gotham Medium', sans-serif;
+    }
+
+    .customer.reset-password h1 {
+      font-size: 24px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #002b4d;
+    }
+
+    .customer.reset-password p {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .customer.reset-password .field {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .customer.reset-password input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      background: #fff;
+      font-family: 'Gotham Medium', sans-serif;
+    }
+
+    .customer.reset-password label {
+      font-size: 13px;
+      color: #002b4d;
+      display: block;
+      margin-top: 8px;
+      text-transform: uppercase;
+    }
+
+    .customer.reset-password .form__message {
+      color: #d72c0d;
+      font-size: 13px;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .customer.reset-password .svg-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    .customer.reset-password button {
+      background-color: #002b4d;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .customer.reset-password button:hover {
+      background-color: #003456;
+    }
+
+    @media screen and (max-width: 767px) {
+      .customer.reset-password {
+        padding: 25px 20px;
+      }
+
+      .customer.reset-password h1 {
+        font-size: 20px;
+      }
+    }
+
+    .customer.reset-password input::placeholder {
+    color: #ccc; /* Default placeholder color */
+    transition: color 0.2s ease-in-out;
+  }
+
+  .customer.reset-password input:focus::placeholder {
+    color: #fff; /* White when focused */
+  }
+{%- endstyle -%}
+
+<div class="customer reset-password section-{{ section.id }}-padding">
+  <h1>
+    {{ 'customer.reset_password.title' | t }}
+  </h1>
+  <p>
+    {{ 'customer.reset_password.subtext' | t }}
+  </p>
+  {%- form 'reset_customer_password' -%}
+    {%- if form.errors -%}
+      <h2 class="form__message" tabindex="-1" autofocus>
+        <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+        {{ 'templates.contact.form.error_heading' | t }}
+      </h2>
+      <ul>
+        {%- for field in form.errors -%}
+          <li>
+            {%- if field == 'form' -%}
+              {{ form.errors.messages[field] }}
+            {%- else -%}
+              <a href="#{{ field }}">
+                {{ form.errors.translated_fields[field] | capitalize }}
+                {{ form.errors.messages[field] }}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <div class="form-field">
+      <input
+        type="password"
+        name="customer[password]"
+        id="password"
+        autocomplete="new-password"
+        {% if form.errors contains 'password' %}
+          aria-invalid="true"
+          aria-describedby="password-error"
+        {% endif %}
+        placeholder="{{ 'customer.reset_password.password' | t }}"
+      >
+      <label for="password">
+        {{ 'customer.reset_password.password' | t }}
+      </label>
+      {%- if form.errors contains 'password' -%}
+        <small id="password-error" class="form__message">
+          <span class="svg-wrapper">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+          </span>
+          {{ form.errors.translated_fields.password | capitalize }}
+          {{ form.errors.messages.password }}
+        </small>
+      {%- endif -%}
+    </div>
+
+    <div class="form-field">
+      <input
+        type="password"
+        name="customer[password_confirmation]"
+        id="password_confirmation"
+        autocomplete="new-password"
+        {% if form.errors contains 'password_confirmation' %}
+          aria-invalid="true"
+          aria-describedby="password_confirmation-error"
+        {% endif %}
+        placeholder="{{ 'customer.reset_password.password_confirm' | t }}"
+      >
+      <label for="password_confirmation">
+        {{ 'customer.reset_password.password_confirm' | t }}
+      </label>
+      {%- if form.errors contains 'password_confirmation' -%}
+        <small id="password_confirmation-error" class="form__message">
+          <span class="svg-wrapper">
+            {{- 'icon-error.svg' | inline_asset_content -}}
+          </span>
+          {{ form.errors.translated_fields.password_confirmation | capitalize }}
+          {{ form.errors.messages.password_confirmation }}
+        </small>
+      {%- endif -%}
+    </div>
+
+    <button>
+      {{ 'customer.reset_password.submit' | t }}
+    </button>
+  {%- endform -%}
+</div>

@@ -1,0 +1,186 @@
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
+    assign money_price_max = price_max | money_with_currency
+  endif
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+-%}
+
+<style>
+  .sticky-atc-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    background: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform .3s ease-in-out
+    , opacity .3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #ProductSubmitButton- > span {
+    font-family: 'Gotham Medium' !important;
+  }
+
+  .sticky-atc-bar.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .sticky-atc-bar.hidden {
+    transform: translateY(8vh);
+  }
+
+  .sticky-atc-bar .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sticky-atc-bar .right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sticky-atc-bar img {
+    max-height: 80px;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .sticky-atc-bar .product-name {
+    font-family: 'Gotham Medium' !important;
+    text-transform: uppercase;
+    font-size: .8em;
+    color: #002d53;
+  }
+
+  .sticky-atc-bar button {
+    padding: 9px 16px !important;
+    border: none;
+    background-color: #002d53;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0;
+    font-family: 'Gotham Medium' !important;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1em !important;
+  }
+
+
+  .product-form {
+    display: block;
+  }
+
+  .sticky-atc-bar button.edit-btn {
+    background-color: #6c757d00;
+    border: #626567 solid 1px;
+    border-radius: 0;
+    font-family: 'Gotham Medium';
+    text-transform: uppercase;
+    color: #626567;
+    padding-right: 1em;
+  }
+
+  .sticky-atc-bar button:hover {
+    opacity: 0.8;
+  }
+  #stickyBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity .3s ease
+    , transform .3s ease;
+    z-index: 9;
+  }
+
+  #stickyBar.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #stickyBar.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+</style>
+
+<div class="sticky-atc-bar" id="stickyBar">
+  <div class="left-section">
+    <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}">
+    <span class="product-name">
+      {{ product.title }}
+    </span>
+  </div>
+  <div class="right-section">
+    <button class="edit-btn" onclick="document.querySelector('#skip').scrollIntoView({behavior:'smooth'});">
+      Edit
+    </button>
+    <span>
+      {% render 'buy-buttons-sticky' %}
+    </span>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const stickyBar   = document.getElementById('stickyBar');
+    let lastScrollY   = window.scrollY;
+
+    const startPct = 0.2;
+    const endPct   = 0.8;
+
+    window.addEventListener('scroll', () => {
+      const scrollY      = window.scrollY;
+      const pageHeight   = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPct    = scrollY / pageHeight;
+
+      if (scrollPct > startPct && scrollPct < endPct) {
+        if (scrollY > lastScrollY) {
+          stickyBar.classList.add('visible');
+        } else {
+          stickyBar.classList.remove('visible');
+        }
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+
+      lastScrollY = scrollY;
+    });
+  });
+</script>

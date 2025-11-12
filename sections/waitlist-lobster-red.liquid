@@ -1,0 +1,222 @@
+<section class="lobster-waitlist" aria-label="Lobster Red Waitlist">
+  <div class="lobster-waitlist__inner">
+    {% if section.settings.left_media_url != blank %}
+      <div class="lobster-waitlist__media lobster-waitlist__media--left">
+        <img
+          src="{{ section.settings.left_media_url | img_url: '800x' }}"
+          alt=""
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+
+    <div class="lobster-waitlist__center">
+      {% if section.settings.subtitle_top != blank %}
+        <p class="lobster-waitlist__sub">{{ section.settings.subtitle_top }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h1 class="lobster-waitlist__title">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.subtitle_bottom != blank %}
+        <p class="lobster-waitlist__sub">{{ section.settings.subtitle_bottom }}</p>
+      {% endif %}
+      {% if section.settings.body_text != blank %}
+        <p class="lobster-waitlist__body">{{ section.settings.body_text }}</p>
+      {% endif %}
+      <div class="lobster-waitlist__form">
+        {{ section.settings.form_embed | raw }}
+      </div>
+    </div>
+
+    {% if section.settings.right_media_url != blank %}
+      <div class="lobster-waitlist__media lobster-waitlist__media--right">
+        <img
+          src="{{ section.settings.right_media_url | img_url: '800x' }}"
+          alt=""
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #shopify-section-{{ section.id }} .lobster-waitlist {
+    width: 100vw;
+    min-height: 100vh;
+    background: #970909;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .lobster-waitlist__inner {
+    display: grid;
+    grid-template-columns: 1fr minmax(280px, 640px) 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 2.5em;
+    width: 100%;
+    max-width: 1600px;
+    padding: 2em clamp(1em, 2vw, 3em);
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .lobster-waitlist__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__media img {
+    width: 100%;
+    max-width: 65%;
+    max-height: 80vh;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .lobster-waitlist__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+    color: #FFFBF6;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__sub,
+  #shopify-section-{{ section.id }} .lobster-waitlist__title,
+  #shopify-section-{{ section.id }} .lobster-waitlist__body {
+    color: #FFFBF6;
+    margin: 0;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__title {
+    line-height: 1.1;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__body {
+    max-width: 52ch;
+  }
+
+  /* FORM ADJUSTMENTS */
+  #shopify-section-{{ section.id }} .lobster-waitlist__form {
+    width: 100%;
+    z-index: 1!important;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__form * {
+    color: #FFFBF6; 
+  }
+
+  #shopify-section-{{ section.id }} .lobster-waitlist__form input,
+  #shopify-section-{{ section.id }} .lobster-waitlist__form select,
+  #shopify-section-{{ section.id }} .lobster-waitlist__form textarea {
+    width: 100%;
+    background: #FFFBF6; 
+    color: #970909;
+    border: 1px solid rgba(255, 251, 246, 0.45);
+    padding: 0.75em 1em;
+    border-radius: 0;
+    outline: none;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__form input::placeholder,
+  #shopify-section-{{ section.id }} .lobster-waitlist__form textarea::placeholder {
+    color: rgba(151, 9, 9, 0.7);
+  }
+
+  #shopify-section-{{ section.id }} .lobster-waitlist__form button,
+  #shopify-section-{{ section.id }} .lobster-waitlist__form [type="submit"] {
+    background: #002B4D;
+    color:#FFFBF6;
+    padding: 0.8em 1.2em;
+    cursor: pointer;
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  #shopify-section-{{ section.id }} .lobster-waitlist__form button:hover,
+  #shopify-section-{{ section.id }} .lobster-waitlist__form [type="submit"]:hover {
+    background: #FF8A3D; 
+    color: #FFFBF6;
+  }
+
+  @media (max-width: 960px) {
+    #shopify-section-{{ section.id }} .lobster-waitlist__inner {
+      grid-template-columns: 1fr;
+      gap: 1.25em;
+      padding: 1.5em 1em;
+    }
+    #shopify-section-{{ section.id }} .lobster-waitlist__media img {
+      max-height: 55vh;
+      max-width: 55%;
+    }
+       #shopify-section-{{ section.id }} .lobster-waitlist {
+    width: 100vw;
+    min-height: 100vh;
+    background:rgb(141, 7, 7);
+  }
+  }
+  @media (max-width: 420px) {
+    #shopify-section-{{ section.id }} .lobster-waitlist__media img {
+      max-width: 100%;
+      max-width: 55%;
+    }
+       #shopify-section-{{ section.id }} .lobster-waitlist {
+    width: 100vw;
+    min-height: 100vh;
+    background:rgb(141, 7, 7);
+  }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Lobster Red Waitlist",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_media_url",
+      "label": "Left media"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_top",
+      "label": "Top subtitle (p)",
+      "default": "Limited Release"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title (h1)",
+      "default": "Lobster Red"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_bottom",
+      "label": "Bottom subtitle (p)",
+      "default": "Join the waitlist to be the first in line."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body copy (p)",
+      "default": "This colour drops in small batches. Add your details below and we’ll notify you the moment it’s available."
+    },
+    {
+      "type": "textarea",
+      "id": "form_embed",
+      "label": "Form embed HTML (Powerful Form Builder)",
+      "default": "<div class='globo-formbuilder' data-id='YOUR_FORM_ID'></div>"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_media_url",
+      "label": "Right media"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lobster Red Waitlist"
+    }
+  ]
+}
+{% endschema %}

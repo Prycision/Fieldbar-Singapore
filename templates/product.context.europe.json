@@ -1,0 +1,23 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "europe"
+  },
+  "sections": {
+    "custom_liquid_9qj6Hy": {
+      "settings": {
+        "custom_liquid": "<script src=\"https://a.klaviyo.com/media/js/onsite/onsite.js\"></script>\n<script>\n    var klaviyo = klaviyo || [];\n    klaviyo.init({\n      account: \"RLiGCP\",\n      list: \"V624BM\",\n      platform: \"shopify\",\n    });\n    klaviyo.enable(\"backinstock\", { \n      trigger: {\n        product_page_text: \"Notify me when this product is available\",\n        product_page_class: 'btn',\n        product_page_text_align: \"center\",\n        product_page_margin: \"0px\",\n        replace_anchor: false\n      },\n      modal: {\n        headline: \"{product_name}\",\n         additional_styles: \"@import url('https://cdn.shopify.com/s/files/1/0654/1610/2127/files/klav-3.css');\",\n        body_content: \"Register to receive a notification when this item comes back in stock.\",\n        newsletter_subscribe_label: \"Subscribe to our newsletter to share our adventure and be the first to receive our offers, stories and surprises.\",\n        subscribe_checked: true,\n        email_field_label: \"Email\",\n        button_label: \"Notify Me\",\n        subscription_success_label: \"You're in! We'll let you know when it's back.\",\n      }\n    });\n</script>"
+      },
+      "blocks": {}
+    }
+  }
+}

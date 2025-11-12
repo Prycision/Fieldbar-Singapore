@@ -1,0 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.campaigns.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "campaigns_YBrde6": {
+      "settings": {},
+      "blocks": {
+        "slide_kbEUtg": {
+          "settings": {
+            "slide_title": "Boîtes Isothermes Signature Hardcases",
+            "slide_button_text": "Catalogue du magasin"
+          }
+        },
+        "slide_GJwNxj": {
+          "settings": {
+            "slide_title": "Le Pays des Merveilles de Fieldbar"
+          }
+        },
+        "slide_mraEAD": {
+          "settings": {
+            "slide_title": "Lancement de l'emballage Safari White"
+          }
+        },
+        "slide_egVBk4": {
+          "settings": {
+            "slide_title": "Le Swing Sling"
+          }
+        },
+        "slide_zzd8Bt": {
+          "settings": {
+            "slide_title": "Les Champions des Loisirs de Style"
+          }
+        }
+      }
+    }
+  }
+}

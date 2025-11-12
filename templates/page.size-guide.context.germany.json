@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.size-guide.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "size_guide_NpXWkK": {
+      "settings": {
+        "left_heading": "Größentabellen",
+        "left_intro": "Obwohl Champagner immer empfohlen wird, sind Fieldbar-Produkte so konzipiert, dass sie eine breite Palette von Getränkekonfigurationen aufnehmen können.",
+        "quote_text": "<h2>„Der Champagner sollte kalt, trocken und hoffentlich kostenlos sein.“</h2>"
+      },
+      "blocks": {
+        "product_block_mQTY8t": {
+          "settings": {
+            "link_label": "Jetzt einkaufen",
+            "detail_text_1": "2 Champagnerflaschen 750ml",
+            "detail_text_2": "10 Bierdosen 330ml",
+            "detail_text_3": "3 Weinflaschen 750ml",
+            "detail_text_4": "Pimm's & Limonade, 3 Tennisbälle"
+          }
+        },
+        "product_block_9KUekR": {
+          "settings": {
+            "link_label": "JETZT EINKAUFEN",
+            "detail_text_1": "8 Champagnerflaschen 750 ml",
+            "detail_text_2": "32 Bierdosen 440ml, stehend",
+            "detail_text_3": "10 Weinflaschen 750ml",
+            "detail_text_4": "3 Ginflaschen, 40 Dosen Tonic & 3 Tennisbälle"
+          }
+        },
+        "product_block_AfyXhT": {
+          "disabled": false,
+          "settings": {
+            "title": "Die Mini Bar",
+            "link_label": "Warteliste beitreten",
+            "detail_text_1": "23 Austern auf Eis, serviert mit Zitrone",
+            "detail_text_2": "6 Bierdosen 330 ml",
+            "detail_text_3": "4 Glasflaschen 330 ml",
+            "detail_text_4": "2 Tonics, 1 Kaviarglas, 4 Räucherlachs-Streifen & 4 Zitronenviertel",
+            "product_link": "shopify://pages/mini-bar-waitlist"
+          }
+        }
+      }
+    }
+  }
+}

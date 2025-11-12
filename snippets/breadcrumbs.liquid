@@ -1,0 +1,47 @@
+<nav
+  class="breadcrumb uppercase unstyled-link"
+  role="navigation"
+  aria-label="breadcrumbs">
+  <a class="breadcrumbs" href="/collections/all">
+  {% case localization.country.iso_code %}
+  {% when 'DE' %}
+    KATALOG
+  {% when 'FR' %}
+    CATALOGUE
+  {% else %}
+    CATALOGUE
+{% endcase %}
+  </a>
+  {% if product.type != blank %}
+    <span class="breadcrumbs">
+      / {{ product.type }}
+    </span>
+  {% endif %}
+  <span class="breadcrumbs" aria-current="page">
+    / {{ product.title | split: '/' | last }}
+  </span>
+</nav>
+
+<style>
+  .breadcrumbs {
+    text-transform: uppercase;
+    font-family: 'Gotham Narrow Book' !important;
+    text-decoration: none !important;
+    color: #3d6173;
+    font-size: 1em !important;
+  }
+  a.breadcrumbs {
+    text-transform: uppercase;
+    font-family: 'Gotham Narrow Book' !important;
+    text-decoration: none !important;
+    color: #3d6173;
+    font-size: 1em !important;
+  }
+  .breadcrumb {
+    text-transform: uppercase;
+    padding-top: 50px;
+    margin-left: 1em;
+    font-family: 'Gotham Narrow Book' !important;
+    font-size: 1em !important;
+  }
+</style>

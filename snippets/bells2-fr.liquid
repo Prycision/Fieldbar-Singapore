@@ -1,0 +1,263 @@
+<script src="{{ 'custom_sliders.js' | asset_url }}" defer="defer"></script>
+
+{% assign bells_handles = 'owners-club,handcrafted-in-cape-town,packaging,bells-n-whistles-slider-homepage' | split: ','
+%}
+
+<div class="bells2_title_block">
+  <div class="bells2_title">
+    <h2 style="color: #002741;">Nos petits plus et extras
+    </h2>
+    <p style="color: #002741;">Votre aventure FIELDBAR vous attend.
+    </p>
+  </div>
+  <div id="next_pre_bells2">
+    <div class="svg-wrapper swiper-next-bells2">
+      {{ 'right.svg' | inline_asset_content }}
+    </div>
+    <div class="svg-wrapper swiper-prev-bells2">
+      {{ 'left.svg' | inline_asset_content }}
+    </div>
+  </div>
+</div>
+
+{% if bells_handles != blank %}
+  <div class="bells-swiper-container">
+    <div class="swiper myBellsSwiper">
+      <div class="swiper-wrapper" id="bells2-swiper">
+        {% for handle in bells_handles %}
+          {% assign slide = shop.metaobjects.bells_n_whistles_slider[handle] %}
+          {% assign slide_number = forloop.index | prepend: '0' | slice: -2, 2 %}
+          <div class="swiper-slide" id="bells2-slide">
+            <div
+              class="bells-slide"
+              id="bells2-slides"
+              style="background-position: center center;background-image: url('{{ slide.background_image.value | image_url }}');">
+              <div class="slide-number">
+                {% comment %}
+                  {{ slide_number }}.
+                {% endcomment %}
+              </div>
+              {% if slide.code_embed.value == true %}
+                <div class="code-block">
+                  {{ slide.code_block.value | raw }}
+                </div>
+              {% endif %}
+
+              {% if slide.code_embed.value != true %}
+                <div class="bells-slide-content bottom-left">
+                  {% if slide.heading.value %}
+                    <h2 class="slide-heading">
+                      {{ slide.heading.value }}
+                    </h2>
+                  {% endif %}
+                  <div class="text_link">
+                    {% if slide.subtext.value %}
+                      <p class="slide-subheading">
+                        {{ slide.subtext.value }}
+                      </p>
+                    {% endif %}
+                    {% assign full_url = slide.cta_link.value.url %}
+                    {% assign market_friendly_url = full_url | replace: shop.url, '' | split: '?' | first %}
+                    {% if slide.cta_link.value %}
+                      <a
+                        style="color:white ; text-transform: capitalize; text-align: right; font-size: 1em; font-family: 'Gotham Narrow Book' !important"
+                        href="{{ market_friendly_url }}"
+                        id="fancy_hover">
+                        {{ slide.cta_link.value.text }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom styling to mimic your original layout -->
+  <style>
+    .slide-number {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 14px;
+      font-family: 'Gotham Narrow Book' !important;
+      color: #fff;
+    }
+
+    .code-block {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    .bells2_title_block {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding: 1em;
+    }
+
+    .bells2_title > h2 {
+      font-family: 'SurveyorText Book Light Pro';
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+
+    .bells2_title {
+      width: 80%;
+      font-family: 'Gotham Narrow Book' !important;
+      font-size: medium;
+    }
+    .bells-swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .myBellsSwiper {
+      height: 90vh;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bells-slide {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: flex-end;
+      justify-content: flex-start;
+      column-gap: 1em;
+    }
+
+    .swiper-slide {
+      width: 40%;
+    }
+
+    .swiper-slide:nth-child(2n),
+    .swiper-slide:nth-child(3n) {
+      width: 40%;
+    }
+
+    .bells-slide-content {
+      padding: 2rem;
+      max-width: 100%;
+    }
+
+    .bottom-left {
+      text-align: left;
+      width: 100%;
+    }
+
+    .text_link {
+      display: inline-flex;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+      align-items: flex-end;
+      font-size: 1.6rem;
+    }
+
+    .slide-heading {
+      margin: 0 0 .5em;
+      font-size: 2.5rem;
+      text-transform: capitalize;
+      color: white;
+      font-family: 'SurveyorText Book Light Pro' !important;
+    }
+
+    .slide-subheading {
+      margin: 0 0 1em;
+      color: white;
+      max-width: 80%;
+      font-size: 1.6rem;
+    }
+
+    .slide-button {
+      display: inline-block;
+      padding: .75em 1.5em;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    #next_pre_bells2 {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: end;
+      width: 30%;
+      column-gap: 1em;
+    }
+
+    .swiper-button-lock {
+      display: block;
+    }
+
+    .swiper-next-bells2,
+    .swiper-prev-bells2 {
+      color: #000;
+      cursor: pointer;
+    }
+  </style>
+
+{% else %}
+  <p>
+    No slides available. Ensure the metaobject handles are listed correctly in
+    <code>bells_handles
+    </code>
+    .
+  </p>
+{% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".myBellsSwiper", {
+      rewind: true,
+      allowTouchMove: true,
+      simulateTouch: true,
+      spaceBetween: 16,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: false,
+      },
+      navigation: {
+        nextEl: ".swiper-next-bells2",
+        prevEl: ".swiper-prev-bells2",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2.5,
+        },
+      },
+    });
+  });
+</script>

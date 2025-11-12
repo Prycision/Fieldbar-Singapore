@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.waitlist-gin-trunk.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "waitlist_template_ipKPiL": {
+      "settings": {
+        "headline": "The Gin Trunk",
+        "short_description": "25.4 qt<br>Join the list below and be the first to know."
+      },
+      "blocks": {}
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{% if localization.country.iso_code == 'GB' %}
+  {% assign root_url = request.root_url %}
+{% else %}
+  {% assign root_url = request.locale.root_url %}
+{% endif %}

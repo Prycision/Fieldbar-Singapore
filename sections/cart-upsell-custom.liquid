@@ -1,0 +1,595 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<script src="{{ 'gtm-upsell.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #-submit > span:nth-child(1) {
+    color: white !important
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign show_desktop_slider = true
+  assign show_mobile_slider = true
+-%}
+
+<product-recommendations
+  class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
+  data-section-id="{{ section.id }}"
+  data-cart-product-ids="{{ cart.items | map: 'product_id' | join: ',' }}"
+  style="padding-bottom: 50px;"
+>
+  <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="above_slider_new">
+      <div class="go_down">
+        <h3>HANDPICKED FOR YOU</h3>
+      </div>
+      {%- if show_mobile_slider or show_desktop_slider -%}
+        <div class="slider-buttons">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            <span class="svg-wrapper">
+              {{ 'left.svg' | inline_asset_content }}
+            </span>
+          </button>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            <span class="svg-wrapper">
+              {{ 'right.svg' | inline_asset_content }}
+            </span>
+          </button>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <ul
+      id="Slider-{{ section.id }}"
+      data-id="{{ section.id }}"
+      class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop  grid--{{ section.settings.columns_mobile }}-col-tablet-down {% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %} {% endif %}"
+      role="list"
+      aria-label="{{ 'general.slider.name' | t }}"
+      data-infinite="true"
+    >
+      {% if recommendations.performed and recommendations.products_count > 0 %}
+        {% assign cart_product_ids = cart.items | map: 'product_id' %}
+        {% for recommendation in recommendations.products limit: section.settings.products_to_show %}
+          {% unless cart_product_ids contains recommendation.id %}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              data-product-id="{{ recommendation.id }}"
+              data-product-id="{{ recommendation.id }}"
+              data-product-handle="{{ recommendation.handle }}"
+              data-product-title="{{ recommendation.title | escape }}"
+              data-product-price="{{ recommendation.price | divided_by: 100.0 }}"
+              data-product-vendor="{{ recommendation.vendor | escape }}"
+              data-variant-id="{{ recommendation.selected_or_first_available_variant.id }}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% render 'card-product',
+                card_product: recommendation,
+                section_id: section.id,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                show_sold_out_badge: false,
+                quick_add: section.settings.quick_add,
+                horizontal_quick_add: true
+              %}
+            </li>
+          {% endunless %}
+          {%- assign skip_card_product_styles = true -%}
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </slider-component>
+</product-recommendations>
+
+<div class="upsell-spinner" id="upsell-spinner">
+  <div class="spinner">
+    {%- render 'loading-spinner' -%}
+  </div>
+</div>
+
+<script>
+  (function() {
+  const root = document.querySelector('product-recommendations[data-cart-product-ids]');
+  if (!root) return;
+
+  const spinner = document.getElementById('upsell-spinner');
+  const sectionId = "{{ section.id }}";
+  const limit = {{ section.settings.products_to_show | default: 8 }};
+
+  async function getCart() {
+    try {
+      const res = await fetch('{{ routes.cart_url }}.js');
+      return res.ok ? res.json() : { items: [] };
+    } catch (e) {
+      console.error('Cart fetch error', e);
+      return { items: [] };
+    }
+  }
+
+  async function fetchComplementary(productId) {
+    const url = `/recommendations/products?section_id=${sectionId}&product_id=${productId}&limit=${limit}&intent=complementary`;
+    const html = await fetch(url).then(r => r.text());
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    return tempDiv.querySelector('slider-component'); 
+  }
+
+  async function refreshRecommendations() {
+    if (spinner) spinner.classList.add('active');
+
+    try {
+      const cart = await getCart();
+      const cartProductIds = cart.items.map(i => i.product_id).filter(Boolean);
+
+      if (cartProductIds.length === 0) {
+        root.style.display = 'none';
+        return;
+      }
+
+      const seen = new Set();
+      let newSlider = null;
+
+      for (const pid of cartProductIds) {
+        const fetchedSlider = await fetchComplementary(pid);
+        if (!fetchedSlider) continue;
+
+        fetchedSlider.querySelectorAll('li[data-product-id]').forEach(li => {
+          const recPid = parseInt(li.dataset.productId, 10);
+          if (cartProductIds.includes(recPid) || seen.has(recPid)) {
+            li.remove();
+            return;
+          }
+          seen.add(recPid);
+        });
+
+        if (!newSlider) {
+          newSlider = fetchedSlider;
+        } else {
+          const ul = newSlider.querySelector('ul');
+          fetchedSlider.querySelectorAll('li[data-product-id]').forEach(li => {
+            ul.appendChild(li);
+          });
+        }
+      }
+
+      if (newSlider) {
+        const oldSlider = root.querySelector('slider-component');
+        if (oldSlider) oldSlider.replaceWith(newSlider);
+
+        root.style.display = newSlider.querySelectorAll('li').length ? '' : 'none';
+
+        document.dispatchEvent(new CustomEvent('shopify:section:load', {
+          detail: { sectionId }
+        }));
+      } else {
+        root.style.display = 'none';
+      }
+
+    } catch (e) {
+      console.error('Complementary upsell failed', e);
+      root.style.display = 'none';
+    } finally {
+      if (spinner) spinner.classList.remove('active');
+    }
+  }
+
+  function scheduleRefresh() {
+    clearTimeout(window._upsellTimer);
+    window._upsellTimer = setTimeout(refreshRecommendations, 500);
+  }
+
+  refreshRecommendations();
+
+  document.addEventListener('cart:updated', scheduleRefresh);
+
+  document.addEventListener('submit', e => {
+    if (e.target.closest('form[action*="/cart/add"]')) scheduleRefresh();
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-add-to-cart], [name="add"], .quick-add__submit')) scheduleRefresh();
+    if (e.target.closest('[name="remove"], .cart-remove-button')) scheduleRefresh();
+  });
+  })();
+</script>
+
+<style>
+  .card__inner {
+    background-image: url('https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Studio_Background.png?v=1742984932');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+  .card-information,
+  .card__content {
+    text-align: left;
+  }
+
+  .card .media--hover-effect > img {
+    transform: scale(1) !important;
+  }
+
+  .card:hover .card__media .media--hover-effect > .secondary-image {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .slider[data-infinite='true'] {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  button:disabled {
+    visibility: hidden;
+  }
+
+  product-recommendations .go_down h3 {
+    margin-bottom: 1rem !important;
+    font-family: 'Gotham Medium' !important;
+  }
+
+  .above_slider_new {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 1em;
+  }
+
+  .upsell-spinner {
+    display: none;
+    text-align: center;
+    padding: 2em;
+  }
+  .upsell-spinner.active {
+    display: block;
+  }
+
+  #upsell-spinner.active {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  #upsell-spinner {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card__content {
+    display: flex !important;
+    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column-reverse !important;
+  }
+
+  slider-component ul.slider {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  slider-component ul.slider > li {
+    scroll-snap-align: start;
+  }
+
+  .slider-refresh-enter {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .slider-refresh-enter.slider-refresh-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .slider-refresh-exit {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .slider-refresh-exit.slider-refresh-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  product-recommendations ul {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  product-recommendations ul.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  product-recommendations ul.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  slider-component ul {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  slider-component li {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  slider-component li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideFadeIn 0.5s ease forwards;
+  }
+
+  @keyframes slideFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Cart upsell",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 25,
+      "step": 1,
+      "default": 25,
+      "label": "Products to show"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "Number of columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "Enable desktop slider",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Product cards"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image ratio"
+    },
+    {
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "arch",
+          "label": "Arch"
+        },
+        {
+          "value": "blob",
+          "label": "Blob"
+        },
+        {
+          "value": "chevronleft",
+          "label": "Chevron left"
+        },
+        {
+          "value": "chevronright",
+          "label": "Chevron right"
+        },
+        {
+          "value": "diamond",
+          "label": "Diamond"
+        },
+        {
+          "value": "parallelogram",
+          "label": "Parallelogram"
+        },
+        {
+          "value": "round",
+          "label": "Round"
+        }
+      ],
+      "default": "default",
+      "label": "Image shape",
+      "info": "For best results, use with square image ratio"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "Show secondary image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "Show product vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "Show product rating",
+      "info": "Requires product reviews to be enabled"
+    },
+    {
+      "type": "header",
+      "content": "Quick add"
+    },
+    {
+      "type": "select",
+      "id": "quick_add",
+      "label": "Quick add button",
+      "default": "standard",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "bulk",
+          "label": "Bulk"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cart upsell",
+      "category": "Products",
+      "settings": {
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "image_ratio": "square"
+      }
+    }
+  ]
+}
+{% endschema %}

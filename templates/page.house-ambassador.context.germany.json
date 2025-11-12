@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.house-ambassador.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mount_nelson_splitscreen_higWDg": {
+      "settings": {
+        "intro_text": "FIELDBAR MARKENBOTSCHAFTERIN",
+        "short_description": "Es ist uns eine große Freude, die britische Designerin, Schriftstellerin und Stilikone India Hicks, <strong>die sich auch in humanitären Angelegenheiten engagiert, als FIELDBAR Markenbotschafterin vorzustellen.</strong>\n\nMit ihrer großzügigen Art und ihrem zwanglosen Stil ist India Hicks die perfekte Markenbotschafterin für unsere edlen Produkte."
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_hRjX6g": {
+      "settings": {
+        "description": "<strong>Als mein Ehemann seinen Rum auf den Markt brachte, hatte er nur eine Anweisung: Verantwortungsvollen Genuss. Nur mit frischem Eis.</strong>\n<br><br>\nSie können sich vorstellen, wie erfreut wir waren, als wir die eleganten Kühlboxen von FIELDBAR entdeckten, die aus modernen Materialien doch mit einem gewissen altmodischen Charme und unter Anwendung überlieferter Techniken gefertigt sind und Eis bis zu FÜNFZIG Stunden lang kühlen.",
+        "button_text": "DRINKS BOX SHOPPEN",
+        "button_link": "shopify://collections/drinks-box"
+      },
+      "blocks": {}
+    },
+    "mn_towel_QCXnhE": {
+      "settings": {
+        "heading": "GENUSSMENSCH",
+        "description": "India verkörpert die Essenz von FIELDBAR auch jenseits ihrer Vorliebe für hochwertige Spirituosen.\n\nEgal ob in ihrer Heimat England oder ihrem tropischen Zuhause auf den Bahamas, India ist stets bestrebt, die Welt zu einem besseren und stilvolleren Ort zu machen."
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_wjDbgb": {
+      "settings": {
+        "headline": "STILIKONE",
+        "short_description": "<br><br>“Wenn Sie auf einer kleinen Insel leben, wo es immer wieder zu Stromausfällen kommt, dann brauchen Sie eine leistungsstarke Kühlbox.\n<br><br>\nDoch nicht nur auf der Insel, auch bei sommerlichen Picknicks auf einer englischen Wiese, als Zuschauer am Spielfeldrand oder bei einer gemächlichen Flussfahrt mit dem Boot, bei einem Picknick mit Kindern oder einer Veranstaltung im Festzelt ist solch eine Kühlbox unerlässlich … eigentlich weiß ich gar nicht mehr, was ich gemacht habe, bevor es die Fieldbar gab.\n<br><br>\nDie Hersteller geben uns 5 Jahre Garantie. Wir geben ihnen 5 Sterne.”",
+        "main_description": "Folgen Sie <strong>@fieldbar.co</strong> und <strong>@indiahicksstyle</strong>, um mehr zu erfahren."
+      },
+      "blocks": {}
+    }
+  }
+}

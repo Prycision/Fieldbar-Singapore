@@ -1,0 +1,181 @@
+<div class="sustainable-craft-section">
+  <div class="craft-left">
+    <video
+      class="craft-video"
+      autoplay
+      muted
+      loop
+      playsinline>
+      <source src="https://cdn.shopify.com/videos/c/o/v/a7ddd934b7af401897cca4307e01ee6f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="craft-righty">
+    <div class="text-block-craf">
+      <div class="craft-overlay">
+        <h2 class="craft-title">Sustainable Craftsmanship
+        </h2>
+        <p class="craft-text">
+          We want to revive the belief system that our grandparents and the generations before them had, which is to buy
+                                                                                something of
+          <strong>quality
+          </strong>
+          and
+          <strong>longevity
+          </strong>
+          and then
+          <strong>repair
+          </strong>
+          and
+          <strong>care
+          </strong>
+          for that item.
+          <br>
+          <br>
+          This
+          <strong>return-to-quality
+          </strong>
+          is, we believe, the
+          <strong>foundation of sustainable
+          </strong>
+          design.
+                                                                                And it's why all parts of our products are
+          <strong>repairable
+          </strong>
+          and
+          <strong>replaceable.
+          </strong>
+          Because you
+          <strong>make something differently
+          </strong>
+          when you know it has to
+          <strong>last forever.
+          </strong>
+        </p>
+        <div class="linky-craf">
+          <a href="{{ market_friendly_url }}/pages/about-us" id="fancy_hover">Discover Our Craft
+          </a>
+        </div>
+      </div>
+
+      <div class="craft-badge">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Group_17_1.jpg?v=1742116195"
+          alt=""
+          srcset="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sustainable-craft-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    column-gap: 4em;
+    padding: 0 16px;
+    margin-bottom: -5vh;
+  }
+
+  .text-block-craf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  .craft-badge > img {
+    width: 50%;
+    height: auto;
+  }
+
+  .linky-craf {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: first baseline;
+    margin-left: 10px;
+    width: 100%;
+  }
+
+
+  .craft-left {
+    width: 40%;
+    position: relative;
+
+  }
+
+  .craft-righty {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    color: white;
+    padding: 0 40px;
+    position: relative;
+    width: 60%;
+    s
+  }
+
+  .craft-overlay {
+
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .craft-title {
+    font-size: 2em;
+    font-family: 'SurveyorText Book Light Pro';
+    color: white;
+    margin-bottom: 10px;
+    color: #002f4d;
+
+  }
+
+  .craft-text {
+    margin-bottom: 10px;
+    columns: 2;
+    color: #002f4d;
+    column-gap: 1.5em;
+  }
+
+  strong {
+    font-weight: 900;
+  }
+  .craft-badge {
+    text-align: end;
+  }
+
+  .craft-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .craft-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .sustainable-craft-section {
+      flex-direction: column;
+      height: auto;
+    }
+    .craft-righty {
+      height: 60vh;
+    }
+    .craft-overlay {
+      bottom: 20px;
+      left: 20px;
+      padding: 20px;
+    }
+    .craft-left {
+      height: 40vh;
+    }
+  }
+</style>

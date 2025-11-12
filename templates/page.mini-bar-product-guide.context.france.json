@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.mini-bar-product-guide.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "intro_text": "PRÉSENTATION",
+        "headline": "Le Mini Bar",
+        "short_description": "4L\n<br><br>\nLe <strong>Mini Bar FIELDBAR</strong> est une réinterprétation moderne des anciennes boîtes à déjeuner portables des ouvriers. Avec une <strong>capacité de 4 litres</strong> pouvant contenir <strong>6 canettes de bière standard</strong>, un <strong>poids légèrement supérieur à 1 kg</strong> et une <strong>longue sangle interchangeable en option</strong>, le Mini Bar est la glacière FIELDBAR la plus <strong>portable</strong> – et la plus <strong>personnelle</strong> – à ce jour.",
+        "button_text": "REJOINDRE LA LISTE D’ATTENTE"
+      },
+      "blocks": {}
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_6zhifr": {
+          "settings": {
+            "text": "<h2>Un regard de plus près</h2><p>Solide, polyvalent et agréable à transporter.</p>"
+          }
+        },
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/mini-bar-waitlist\" id='fancy_hover'>REJOINDRE LA LISTE D’ATTENTE</a></div>"
+          }
+        }
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "title": "Parfaitement Proportionné",
+            "text": "<p>Avec sa capacité compacte de 4 litres, le Mini Bar FIELDBAR est parfaitement proportionné pour de petits pique-niques, des apéritifs élégants ou même des déjeuners du quotidien.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "title": "Pratiquement portable",
+            "text": "<p>Ne laissez plus jamais votre à la maison. Pesant un peu plus de 1 kg et équipé d’une poignée confortable ou d’une longue sangle en option, le Mini Bar est notre glacière la plus légère et la plus portable à ce jour.</p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "title": "Performance thermique supérieure",
+            "text": "<p>Rempli de glace et conservé à l’ombre, le Mini Bar  peut maintenir les boissons sous 10 °C pendant jusqu’à 24 heures. Grâce à sa forme thermiquement efficace, sa mousse exclusive à cellules fermées, sa peinture réfléchissante, son joint d’étanchéité hermétique et son fond surélevé.</p>"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {
+        "right_heading": "COULEURS SIGNATURE",
+        "right_copy": "Les couleurs iconiques de FIELDBAR que vous connaissez, adorez… et possédez peut-être déjà.\nComme pour la <strong>Drinks Box</strong> et le <strong>Gin Trunk</strong>, le Mini Bar présente des <strong>lignes droites</strong> et notre <strong>fini brillant emblématique</strong>.\nDisponible dans les <strong>six coloris signature</strong> pour vous permettre de <strong>compléter votre collection</strong>."
+      },
+      "blocks": {}
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {
+        "heading": "Plus De Place Que Vous Ne L'auriez Pensé",
+        "capacity_text": "Capacité | 4L",
+        "link_text": "REJOINDRE LA LISTE D’ATTENTE"
+      },
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "6 Canettes de Bière 330 ml"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "4 Bouteilles en Verre 330 ml"
+          }
+        },
+        "item_gLC84d": {
+          "settings": {
+            "label": "23 Huîtres, Glace & Citron"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "2 Tonics, 1 Pot de Caviar, 4 Rubans de Saumon Fumé & 4 Quartiers de Citron"
+          }
+        }
+      }
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "description": "<strong>CONSEILS D’UTILISATION</strong>\n<br>\n01. Remplissez le Mini Bar avec des boissons déjà fraîches et une bonne quantité de glace, ou une Ice Bar pré-congelée\n<br>\n02. Pour les encas ou les aliments, placez-les dans des contenants hermétiques et glissez-les parmi les glaçons ou sur l’Ice Bar pour les garder frais\n<br>\n03. Pour conserver l’air frais à l’intérieur du Mini Bar, ne l’ouvrez que si nécessaire\n<br>\n04. Assurez-vous que la poignée ou la sangle soit correctement fixée au Mini Bar avant utilisation\n<br><br>\n<strong>ENTRETIEN & VIEILLISSEMENT</strong>\n<br>\n01. Nettoyez à l’eau tiède avec un chiffon doux<br>\n02. Veillez à ce que le compartiment intérieur soit sec avant un rangement de longue durée<br>\n03. N’utilisez pas de produits de nettoyage<br>\n04. Ne pas utiliser de jet haute pression***<br>\n05. Non compatible lave-vaisselle",
+        "heading": "Instructions & Entretien",
+        "button_text": "REJOINDRE LA LISTE D’ATTENTE"
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_ArkfnL": {
+      "settings": {
+        "heading": "Deux façons de porter votre Mini Bar",
+        "description": "La poignée avec prise confort du Mini Bar est interchangeable avec une sangle plus longue, pour un port élégant en mode mains libres.",
+        "button_text": "REJOINDRE LA LISTE D’ATTENTE"
+      },
+      "blocks": {}
+    },
+    "multicolumn_mBL6kA": {
+      "settings": {
+        "title": "Instructions pour changer la poignée"
+      },
+      "blocks": {}
+    },
+    "specifications_product_guide_wcdjG6": {
+      "settings": {
+        "left_title": "Spécifications",
+        "left_subtitle": "Le <strong>Mini Bar FIELDBAR</strong> est composé de 82 pièces, toutes conçues pour être démontées, réparées et remplacées si nécessaire. Et, comme toutes les glacières FIELDBAR, il est couvert par la <strong>garantie de 5 ans</strong> contre les défauts de fabrication."
+      },
+      "blocks": {
+        "left_item_HXXt4A": {
+          "settings": {
+            "text": "Poignée interchangeable avec insert en caoutchouc et sangle longue en option"
+          }
+        },
+        "left_item_BhTebJ": {
+          "settings": {
+            "text": "Zone de personnalisation sur la poignée"
+          }
+        },
+        "left_item_YBXBVz": {
+          "settings": {
+            "text": "Isolation amovible haute performance, sans impact sur la couche d’ozone"
+          }
+        },
+        "left_item_FMjXah": {
+          "settings": {
+            "text": "Fermeture du couvercle en instance de brevet"
+          }
+        },
+        "left_item_gVgpP6": {
+          "settings": {
+            "text": "Joint d’étanchéité résistant aux flux d’air"
+          }
+        },
+        "left_item_3eacJJ": {
+          "settings": {
+            "text": "Compartiment intérieur alimentaire, sans BPA, facile à nettoyer"
+          }
+        },
+        "right_item_3hNykU": {
+          "settings": {
+            "text": "Charnières en aluminium de qualité industrielle – conçues pour durer toute une vie"
+          }
+        },
+        "right_item_UiyWPE": {
+          "settings": {
+            "text": "Coque extérieure résistante aux chocs et aux rayures (de légères variations de peinture peuvent survenir en raison de la décoration artisanale)"
+          }
+        },
+        "right_item_k3tqeT": {
+          "settings": {
+            "text": "Plaque en laiton numérotée individuellement pour le contrôle qualité et la traçabilité"
+          }
+        },
+        "right_item_jQwDhN": {
+          "settings": {
+            "text": "Pieds en silicone antidérapants"
+          }
+        }
+      }
+    }
+  }
+}

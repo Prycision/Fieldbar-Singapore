@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.waitlist-mini-bar.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "waitlist_template_ipKPiL": {
+      "settings": {
+        "intro_text": "BALD IM VEREINIGTEN KÖNIGREICH ERHÄLTLICH",
+        "headline": "The Mini Bar ",
+        "short_description": "Tragen Sie sich unten in die Warteliste ein und gehören Sie zu den Ersten, die informiert werden."
+      },
+      "blocks": {}
+    }
+  }
+}

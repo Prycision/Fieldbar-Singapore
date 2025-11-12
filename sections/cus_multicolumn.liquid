@@ -1,0 +1,189 @@
+<div class="an-cus-multi-coloumn">
+  <div class="an-cus-multi-col-1 page-width">
+    {%- if section.settings.head != blank -%}
+      <div class="an-cus-multi-col-head">
+        <h1>{{ section.settings.head }}</h1>
+         {%- if section.settings.head != content2 -%}<p>{{ section.settings.content2 }}<p>  {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="an-cus-multi-column-wraper">
+      {%- for block in section.blocks -%}
+        <div class="an-cus-multi-col-wraper">
+          <div class="an-cus-multi-col">
+            <div class="an-cus-multi-col-img-w">
+              <img
+                src="{{ block.settings.img_1 | img_url: 'master' }}"
+                alt=""
+                class="first">
+              <img
+                src="{{ block.settings.img_2 | img_url: 'master' }}"
+                alt=""
+                class="second">
+            </div>
+            <p class="head">{{ block.settings.phead }}</p>
+            <p class="cont">{{ block.settings.pcont }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .an-cus-multi-coloumn {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .an-cus-multi-col-head {
+    text-align: center;
+  }
+  .an-cus-multi-column-wraper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: -29px;
+    flex-wrap: wrap;
+  }
+  .an-cus-multi-col-wraper {
+    width: 25%;
+    padding-left: 29px;
+    padding-bottom: 29px;
+  }
+  .an-cus-multi-col-img-w {
+    height: 70px;
+    width: 70px;
+    position: relative;
+    border-radius: 50px;
+  }
+  .an-cus-multi-col-img-w img {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+  }
+  .an-cus-multi-col {
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #649BA3;
+    padding: 45px 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .an-cus-multi-col p {
+    color: #649BA3;
+  }
+  .an-cus-multi-col p.head {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    margin: 20px 0;
+    letter-spacing: -0.6px;
+  }
+  .an-cus-multi-col p.cont {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .an-cus-multi-col:hover {
+    background-color: #649BA3;
+  }
+  .an-cus-multi-col:hover p {
+    color: #ffffff;
+  }
+  .an-cus-multi-col-img-w img.second {
+    opacity: 0;
+  }
+  .an-cus-multi-col-img-w img.first {
+    opacity: 1;
+  }
+  .an-cus-multi-col:hover .an-cus-multi-col-img-w img.first {
+    opacity: 0;
+  }
+  .an-cus-multi-col:hover .an-cus-multi-col-img-w img.second {
+    opacity: 1;
+  }
+  .an-cus-multi-col-head h1 {
+    color: #004249;
+    margin: 0 0 35px;
+    font-size: 40px;
+  }
+
+  @media(max-width:1000px) {
+    .an-cus-multi-col-wraper {
+      width: 100%;
+    }
+    .an-cus-multi-coloumn {
+      padding-top: 35px;
+      padding-bottom: 25px;
+    }
+  }
+  @media(max-width:550px) {
+    .an-cus-multi-col-head h1 {
+      font-size: 30px;
+      margin: 0 0 20px;
+    }
+  }
+  @media(max-width:350px) {
+ .an-cus-multi-col-head h1 {
+    font-size: 26px;
+  line-height: 30px;
+}
+}
+
+
+</style>
+
+
+{% schema %}
+  {
+    "name": "cus_multicolumn",
+    "settings": [
+      {
+        "type": "text",
+        "id": "head",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content2",
+        "label": "Sub heading"
+      }
+      
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img_1",
+            "label": "First imgage"
+          }, {
+            "type": "image_picker",
+            "id": "img_2",
+            "label": "Second imgage"
+          }, {
+            "type": "text",
+            "id": "phead",
+            "label": "heading"
+          }, {
+            "type": "text",
+            "id": "pcont",
+            "label": "content"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "cus_multicolumn"
+      }
+    ]
+  }
+{% endschema %}

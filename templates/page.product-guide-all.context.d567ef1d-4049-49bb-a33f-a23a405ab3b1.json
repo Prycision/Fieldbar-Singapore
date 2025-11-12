@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.product-guide-all.json",
+  "context": {
+    "market": "d567ef1d-4049-49bb-a33f-a23a405ab3b1"
+  },
+  "sections": {
+    "horizontal_scroll_product_guide_PiUVFi": {
+      "settings": {},
+      "blocks": {
+        "slide_hnJ494": {
+          "settings": {
+            "subtitle": "Available worldwide."
+          }
+        },
+        "slide_WKMCcf": {
+          "settings": {
+            "subtitle": "Available in South Africa, Europe and United Kingdom. Coming to the USA and Australia soon."
+          }
+        },
+        "slide_eqkEwn": {
+          "settings": {
+            "subtitle": "Currently only available in South Africa. Coming to the United Kingdom soon."
+          }
+        }
+      }
+    }
+  }
+}

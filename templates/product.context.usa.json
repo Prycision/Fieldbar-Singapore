@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "custom_liquid_4bcWUb",
+        "price_RLnYW6",
+        "custom_liquid_8fA8PW",
+        "custom_liquid_b6wJCT",
+        "buy_buttons_NF8jyB",
+        "custom_liquid_3czzF6",
+        "custom_liquid_GEN4c6",
+        "custom_liquid_iCHxNY",
+        "custom_liquid_9GjMr7",
+        "custom_liquid_gh6c9D"
+      ]
+    },
+    "custom_liquid_9qj6Hy": {
+      "settings": {
+        "custom_liquid": "<script src=\"https://a.klaviyo.com/media/js/onsite/onsite.js\"></script>\n<script>\n    var klaviyo = klaviyo || [];\n    klaviyo.init({\n      account: \"RLiGCP\",\n      list: \"YzDjeZ\",\n      platform: \"shopify\",\n    });\n    klaviyo.enable(\"backinstock\", { \n      trigger: {\n        product_page_text: \"Notify me when this product is available\",\n        product_page_class: 'btn',\n        product_page_text_align: \"center\",\n        product_page_margin: \"0px\",\n        replace_anchor: false\n      },\n      modal: {\n        headline: \"{product_name}\",\n         additional_styles: \"@import url('https://cdn.shopify.com/s/files/1/0654/1610/2127/files/klav-3.css');\",\n        body_content: \"Register to receive a notification when this item comes back in stock.\",\n        newsletter_subscribe_label: \"Subscribe to our newsletter to share our adventure and be the first to receive our offers, stories and surprises.\",\n        subscribe_checked: true,\n        email_field_label: \"Email\",\n        button_label: \"Notify Me\",\n        subscription_success_label: \"You're in! We'll let you know when it's back.\",\n      }\n    });\n</script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const bannedWords = [\n    \"fuck\",\n    \"fucking\",\n    \"motherfucker\",\n    \"asshole\",\n    \"shit\",\n    \"bullshit\",\n    \"dick\",\n    \"cock\",\n    \"cunt\",\n    \"pussy\",\n    \"bitch\",\n    \"bastard\",\n    \"slut\",\n    \"whore\",\n    \"twat\",\n    \"wanker\",\n    \"douche\",\n    \"crap\",\n    \"damn\",\n    \"arse\",\n    \"dipshit\",\n    \"douchebag\",\n    \"jackass\",\n    \"stfu\",\n    \"wtf\",\n    \"lmao\",\n    \"lmfao\",\n    \"omfg\",\n    \"f*ck\",\n    \"f@ck\",\n    \"fuk\",\n    \"fck\",\n    \"sh1t\",\n    \"sh!t\",\n    \"b!tch\",\n    \"b1tch\",\n    \"c0ck\",\n    \"c*nt\",\n    \"d1ck\",\n    \"d!ck\",\n    \"a$$\",\n    \"@ss\",\n    \"wtf\",\n    \"nigger\",\n    \"nigga\",\n    \"fag\",\n    \"faggot\",\n    \"Cocksucker\",\n    \"Jesus\",\n  ];\n  const inputId = \"#text-box-1547867\";\n  const submitId = \"#ProductSubmitButton-template--25697579499907__main\";\n\n  function getInput() {\n    const input = document.querySelector(inputId);\n    if (!input) console.warn(\"❌ Input not found:\", inputId);\n    return input;\n  }\n\n  function getSubmitButton() {\n    const button = document.querySelector(submitId);\n    if (!button) console.warn(\"❌ Submit button not found:\", submitId);\n    return button;\n  }\n\n  function showError(input, message) {\n    const wrapper = input.closest(\".tpo_option-input-wrapper\");\n    const errorBox = wrapper?.parentElement.querySelector(\".tpo_error-message\");\n    if (errorBox) {\n      errorBox.textContent = message;\n      errorBox.classList.add(\"visible\");\n    }\n    input.classList.add(\"input-error\");\n  }\n\n  function clearError(input) {\n    const wrapper = input.closest(\".tpo_option-input-wrapper\");\n    const errorBox = wrapper?.parentElement.querySelector(\".tpo_error-message\");\n    if (errorBox) {\n      errorBox.textContent = \"\";\n      errorBox.classList.remove(\"visible\");\n    }\n    input.classList.remove(\"input-error\");\n  }\n\n  function containsBannedWord(value) {\n    return bannedWords.some((word) => {\n      const regex = new RegExp(`\\\\b${word}\\\\b`, \"i\");\n      return regex.test(value);\n    });\n  }\n\n  function validateInput() {\n    const input = getInput();\n    const button = getSubmitButton();\n    if (!input || !button) return;\n\n    const value = input.value.toLowerCase();\n    if (containsBannedWord(value)) {\n      showError(input, \"Please remove inappropriate language.\");\n      button.setAttribute(\"disabled\", \"disabled\");\n    } else {\n      clearError(input);\n      button.removeAttribute(\"disabled\");\n    }\n  }\n\n  function setupValidation() {\n    const input = getInput();\n    const button = getSubmitButton();\n    if (!input || !button) return;\n\n    input.removeAttribute(\"disabled\");\n\n    input.addEventListener(\"input\", validateInput);\n    input.addEventListener(\"blur\", validateInput);\n\n    button.addEventListener(\"click\", function (e) {\n      if (containsBannedWord(input.value.toLowerCase())) {\n        e.preventDefault();\n        validateInput();\n      }\n    });\n\n    validateInput();\n    console.info(\"✅ Profanity filter active on Easify input.\");\n  }\n\n  // Retry logic in case elements are injected late\n  let attempt = 0;\n  const maxAttempts = 20;\n  const interval = setInterval(() => {\n    const inputReady = document.querySelector(inputId);\n    const buttonReady = document.querySelector(submitId);\n\n    if (inputReady && buttonReady) {\n      clearInterval(interval);\n      setupValidation();\n    }\n\n    if (++attempt >= maxAttempts) {\n      clearInterval(interval);\n      console.warn(\"⏱️ Gave up waiting for Easify input or submit button.\");\n    }\n  }, 300);\n});\n</script>"
+      },
+      "blocks": {}
+    }
+  }
+}

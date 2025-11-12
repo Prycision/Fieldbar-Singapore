@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_Abebz7": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_dc4hKf": {
+          "type": "announcement",
+          "settings": {
+            "text": "SHIPS IMMEDIATELY FROM USA, EU, UK, AUS, ZA.",
+            "link": ""
+          }
+        },
+        "announcement_refq7k": {
+          "type": "announcement",
+          "settings": {
+            "text": "FREE SHIPPING OPTIONS.",
+            "link": ""
+          }
+        },
+        "announcement_WD63m6": {
+          "type": "announcement",
+          "settings": {
+            "text": "30 DAY RETURNS.",
+            "link": ""
+          }
+        },
+        "announcement_FnNM3K": {
+          "type": "announcement",
+          "settings": {
+            "text": "5-YEAR WARRANTY.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_dc4hKf",
+        "announcement_refq7k",
+        "announcement_WD63m6",
+        "announcement_FnNM3K"
+      ],
+      "custom_css": [
+        "span {font-family: \"Gotham Narrow Book\" !important;}",
+        ".announcement-bar {height: 100%;}",
+        "@media screen and (max-width: 749px) {.slider-buttons {display: flex !important; }}"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".svg-wrapper > svg {height: 100%; width: 16px;}",
+        "* {text-transform: uppercase; font-weight: 400 !important; font-family: \"Gotham Medium\" !important; color: #01324c;}"
+      ],
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-left-new",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_Abebz7",
+    "header"
+  ]
+}

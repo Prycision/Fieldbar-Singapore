@@ -1,0 +1,300 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "specifications_product_guide_Ye7dCg": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_EFEBpx": {
+          "type": "left_item",
+          "settings": {
+            "text": "Genuine off-cut double-sided leather handle for extra carry comfort"
+          }
+        },
+        "left_item_BrhATf": {
+          "type": "left_item",
+          "settings": {
+            "text": "Reflective paint to reduce heat absorption"
+          }
+        },
+        "left_item_hneHxq": {
+          "type": "left_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "left_item_XhbErw": {
+          "type": "left_item",
+          "settings": {
+            "text": "Patent-pending lid lock"
+          }
+        },
+        "left_item_aTp3iV": {
+          "type": "left_item",
+          "settings": {
+            "text": "Airflow resistant gasket"
+          }
+        },
+        "left_item_riqGLp": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free, easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_3Jxin3": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium hidden hinges - designed to last forever"
+          }
+        },
+        "right_item_KdWiQz": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium handle “ears”"
+          }
+        },
+        "right_item_wppr9z": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet (due to hand decorating slight variations in the paint may occur)"
+          }
+        },
+        "right_item_wdUCe6": {
+          "type": "right_item",
+          "settings": {
+            "text": "Pre-numbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_4fbTCq": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone nonslip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_EFEBpx",
+        "left_item_BrhATf",
+        "left_item_hneHxq",
+        "left_item_XhbErw",
+        "left_item_aTp3iV",
+        "left_item_riqGLp",
+        "right_item_3Jxin3",
+        "right_item_KdWiQz",
+        "right_item_wppr9z",
+        "right_item_wdUCe6",
+        "right_item_4fbTCq"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_view_drinks_box.png-2.webp",
+        "left_title": "Drinks Box Specifications",
+        "left_subtitle": "There are 58 parts in a FIELDBAR Drinks Box, all designed to be removed, repaired, and recirculated if required. That's good for you, ourselves, and the planet we live on.",
+        "right_background_image": "shopify://shop_images/Swing_Sling_Capri_Hero_Lifestyle_03_Large_0afbb7af-ff1d-4e45-aec3-cd36a93099b0.jpg"
+      }
+    },
+    "specifications_product_guide_9GUP6x": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_bPyKPW": {
+          "type": "left_item",
+          "settings": {
+            "text": "Moulded handle casing wrapped in genuine leather offcuts for comfort"
+          }
+        },
+        "left_item_VUMYYn": {
+          "type": "left_item",
+          "settings": {
+            "text": "Extruded aluminium handle for strength and anti-wobble when carrying"
+          }
+        },
+        "left_item_dwQE89": {
+          "type": "left_item",
+          "settings": {
+            "text": "Reflective paint to reduce heat absorption"
+          }
+        },
+        "left_item_iVVfaY": {
+          "type": "left_item",
+          "settings": {
+            "text": "Aluminium lid latch"
+          }
+        },
+        "left_item_BXEXEe": {
+          "type": "left_item",
+          "settings": {
+            "text": "Water- and airtight gasket"
+          }
+        },
+        "left_item_La8Rha": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free and easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_znPRqV": {
+          "type": "right_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "right_item_dQzThx": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium hidden hinges designed to last forever"
+          }
+        },
+        "right_item_WkbgFm": {
+          "type": "right_item",
+          "settings": {
+            "text": "Internal pressure lock system to ensure an airtight seal when in the closed position"
+          }
+        },
+        "right_item_H4ewnh": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet"
+          }
+        },
+        "right_item_Cm9gre": {
+          "type": "right_item",
+          "settings": {
+            "text": "Prenumbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_HfbY3P": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone non-slip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_bPyKPW",
+        "left_item_VUMYYn",
+        "left_item_dwQE89",
+        "left_item_iVVfaY",
+        "left_item_BXEXEe",
+        "left_item_La8Rha",
+        "right_item_znPRqV",
+        "right_item_dQzThx",
+        "right_item_WkbgFm",
+        "right_item_H4ewnh",
+        "right_item_Cm9gre",
+        "right_item_HfbY3P"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_view_gin_trunk_png.webp",
+        "left_title": "Gin Trunk Specifications",
+        "left_subtitle": "The FIELDBAR Gin Trunk is comprised of 135 parts all designed to be removed, repaired, and replaced if required. And, like all FIELDBAR cooler boxes, it comes with the FIELDBAR 5-year workmanship warranty.",
+        "right_background_image": "shopify://shop_images/Testimonials_GT_01.png"
+      }
+    },
+    "specifications_product_guide_34jgrq": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_Tq7pNP": {
+          "type": "left_item",
+          "settings": {
+            "text": "Interchangeable comfort handle with rubber grip inlay and optional long shoulder strap"
+          }
+        },
+        "left_item_FiwVRX": {
+          "type": "left_item",
+          "settings": {
+            "text": "Area for personalisation on handle"
+          }
+        },
+        "left_item_jrNhUx": {
+          "type": "left_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "left_item_tF9jR4": {
+          "type": "left_item",
+          "settings": {
+            "text": "Patent-pending lid lock"
+          }
+        },
+        "left_item_7X9pqH": {
+          "type": "left_item",
+          "settings": {
+            "text": "Airflow resistant solid ring gasket"
+          }
+        },
+        "left_item_r6Jjt9": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free, easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_7c9dGK": {
+          "type": "right_item",
+          "settings": {
+            "text": "Commercial grade aluminium hinges - designed to last forever"
+          }
+        },
+        "right_item_Ba9x76": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet (due to hand decorating slight variations in the paint may occur)"
+          }
+        },
+        "right_item_AVQ4PB": {
+          "type": "right_item",
+          "settings": {
+            "text": "Individually pre-numbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_FTJwpK": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone non-slip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_Tq7pNP",
+        "left_item_FiwVRX",
+        "left_item_jrNhUx",
+        "left_item_tF9jR4",
+        "left_item_7X9pqH",
+        "left_item_r6Jjt9",
+        "right_item_7c9dGK",
+        "right_item_Ba9x76",
+        "right_item_AVQ4PB",
+        "right_item_FTJwpK"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_mini_ba_webp.png",
+        "left_title": "Mini Bar Specifications",
+        "left_subtitle": "The FIELDBAR Mini Bar is comprised of 82 parts all designed to be removed, repaired, and replaced if required. And, like all FIELDBAR cooler boxes, it comes with the FIELDBAR 5-year workmanship warranty.",
+        "right_background_image": "shopify://shop_images/MINI-BAR_WEB-IMAGES__1_jpg.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "specifications_product_guide_Ye7dCg",
+    "specifications_product_guide_9GUP6x",
+    "specifications_product_guide_34jgrq"
+  ]
+}

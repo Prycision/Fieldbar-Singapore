@@ -1,0 +1,376 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+<script src="{{ 'cart_stick.js' | asset_url }}" defer="defer"></script>
+<div id="crt">
+  <div id="cart_em" class="page-width {% if cart == empty %} is-empty{% endif %}">
+    {% if cart.items != empty %}
+      <div class="cart-layout">
+        <div id="ct1" class="cart-layout__left">
+          <div class="totals_inner only-mobile">
+            <span id="carty">
+              <h2 id="sc" style="color: #002b4d; padding-right:10px">
+                {% case localization.country.iso_code %}
+                  {% when 'DE' %}
+                    Dein Warenkorb
+                  {% when 'FR' %}
+                    Votre Panier
+                  {% else %}
+                    Shopping Cart
+                {% endcase %}
+              </h2>
+              <h2 id="sc" class="cart-count bracks">
+                {{ cart.item_count }}
+              </h2>
+            </span>
+
+            {% if customer %}
+              <p style="color: #002b4d;text-transform:capitalize">
+                {% case localization.country.iso_code %}
+                  {% when 'DE' %}
+                    Willkommen zurück,
+                  {% when 'FR' %}
+                    Content de te revoir,
+                  {% else %}
+                    Welcome Back,
+                {% endcase %}
+                {{ customer.first_name }}
+                {{ customer.first_name }}
+              </p>
+            {% else %}
+              <p style="color: #002b4d;">
+                {% case localization.country.iso_code %}
+                  {% when 'DE' %}
+                    Sind Sie bereits Mitglied im Owners Club? Bitte
+                  {% when 'FR' %}
+                    Vous êtes déjà membre du Club des propriétaires ?
+                  {% else %}
+                    Already part of the Owners Club? Please
+                {% endcase %}
+                <a style=" color: #002b4d;" href="{{ routes.account_login_url }}">log in </a>
+              </p>
+            {% endif %}
+          </div>
+          {%- section 'main-cart-items' -%}
+          {%- section 'cart-upsell-custom' -%}
+          <div id="mobile-sticky" class="only-mobile sticky">
+            {% render 'sticky_cart' %}
+          </div>
+        </div>
+
+        <div class="cart-layout__right only-desktop">
+          {%- section 'main-cart-footer' -%}
+        </div>
+      </div>
+    {% else %}
+      <div style="height: 80vh; align-content: center;">
+        {%- section 'main-cart-items' -%}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const accordions = document.querySelectorAll('.accordion-title');
+
+    accordions.forEach(function (title) {
+      title.addEventListener('click', function () {
+        const currentParent = this.parentElement;
+        const isActive = currentParent.classList.contains('active');
+
+        document.querySelectorAll('.accordion-item').forEach(function (accordion) {
+          accordion.classList.remove('active');
+          const icon = accordion.querySelector('.accordion-title span');
+          if (icon) icon.textContent = '+';
+        });
+
+        if (!isActive) {
+          currentParent.classList.add('active');
+          const icon = this.querySelector('span');
+          if (icon) icon.textContent = '-';
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname === '/cart') {
+      if (window.CartDrawer) {
+        CartDrawer.prototype.open = function () {};
+      }
+
+      document.querySelectorAll('[data-ajax-cart-trigger]').forEach((button) => {
+        button.addEventListener('click', function (e) {
+          if (window.location.pathname === '/cart') {
+            e.preventDefault();
+            e.stopPropagation();
+            fetch('/cart.js')
+              .then((response) => response.json())
+              .then((cart) => {
+                console.log('Cart updated', cart);
+              });
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const stickyBar = document.getElementById('stck');
+
+    const observer = new MutationObserver(() => {
+      const menuDrawerOpen = document.querySelector('.menu-opening');
+      if (menuDrawerOpen) {
+        stickyBar.style.display = 'none';
+      } else {
+        stickyBar.style.display = 'block';
+      }
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+  });
+</script>
+
+<style>
+  @media screen and (max-width: 61.8125em) {
+    .cart-items,
+    .cart-footer {
+      margin: 0.5em 0;
+    }
+    #mobile-sticky.sticky-bottom {
+      position: fixed;
+      bottom: 0;
+    }
+
+    #mobile-sticky.sticky-top {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+    }
+
+    #cart_em {
+      position: relative;
+    }
+
+    #ct1 {
+      padding-bottom: 27vh;
+    }
+
+    #mobile-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      z-index: 999;
+      transition: transform 0.3s ease;
+      background: white;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .cart-layout__left {
+      max-height: 500vh !important;
+      width: 100% !important;
+      padding-right: 0;
+      height: 100%;
+      max-height: 500vh !important;
+      overflow: visible !important;
+    }
+    .only-desktop {
+      display: none !important;
+    }
+    .only-mobile {
+      display: block !important;
+    }
+
+    .stick {
+      overflow: visible !important;
+      height: auto !important;
+    }
+
+    #crt {
+      display: flex;
+      flex-direction: column;
+    }
+    div#small {
+      padding: 0 !important;
+      margin-bottom: 0 !important;
+      font-size: 0.8em !important;
+    }
+
+    svg {
+      width: 15px;
+    }
+
+    .cart-layout {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-layout {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 30px;
+      flex-direction: row;
+      height: 100% !important;
+      max-height: 500vh !important;
+    }
+  }
+  .only-mobile {
+    display: none;
+  }
+
+  .taxes_text {
+    font-size: 0.8em;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .custom-accordion {
+    border-top: 0 solid #ddd;
+    font-family: 'Gotham Narrow Book' !important;
+    padding: 0 20%;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+    font-size: medium;
+    font-family: 'Gotham Narrow Book' !important;
+    color: #002d53;
+  }
+
+  .accordion-title:hover {
+    color: #000;
+  }
+
+  .accordion-title span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 10px 0;
+    color: #486a7a;
+    font-family: 'Gotham Narrow Book' !important;
+    font-size: 0.9em;
+  }
+
+  .accordion-item.active .accordion-title span {
+    transform: rotate(0deg);
+  }
+
+  .accordion-item.active .accordion-content {
+    display: block;
+  }
+
+  .totals_inner.only-mobile {
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #002b4d2e;
+  }
+  .cart-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    flex-direction: row;
+    height: 85vh;
+  }
+
+  .card__content {
+    display: flex !important;
+    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+    padding: 1rem;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column-reverse !important;
+    justify-content: flex-end;
+    margin-top: 0 !important;
+  }
+
+  .cart-layout__left {
+    max-height: 85vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overscroll-behavior: auto;
+    width: 65%;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #002b4d #ffffff !important;
+  }
+
+  .cart-layout__right {
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-20%);
+    align-self: start;
+    will-change: transform;
+    width: 35%;
+  }
+
+  .cart-layout,
+  .cart-layout__right,
+  .cart-layout__right * {
+    overflow: visible;
+  }
+  .cart-layout__left::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  .cart-layout__left::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #dfe9eb;
+  }
+
+  .cart-layout__left::-webkit-scrollbar-track:hover {
+    background-color: #b8c0c2;
+  }
+
+  .cart-layout__left::-webkit-scrollbar-track:active {
+    background-color: #b8c0c2;
+  }
+
+  .cart-layout__left::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #00314b;
+  }
+
+  .cart-layout__left::-webkit-scrollbar-thumb:hover {
+    background-color: #004c74;
+  }
+
+  .cart-layout__left::-webkit-scrollbar-thumb:active {
+    background-color: #00314b;
+  }
+
+  .cart-items,
+  .cart-footer {
+    margin: 2em 0;
+  }
+
+  svg.icon.icon-remove {
+    color: #002b4d !important;
+  }
+
+  .card--card .quick-add {
+    margin: 0;
+  }
+
+  .quick-add__submit {
+    color: white;
+  }
+</style>

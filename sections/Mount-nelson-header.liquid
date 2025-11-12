@@ -1,0 +1,156 @@
+{% schema %}
+{
+  "name": "Header Video",
+  "tag": "section",
+  "class": "mn-hero",
+  "settings": [
+    {
+      "type": "url",
+      "id": "background_media_url",
+      "label": "Background Media URL (image or video)"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay Image"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Main Heading",
+      "default": "Two Cape Town <em>Icons</em>,\nOne <em>Exclusive</em> Release."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP THE COLLECTION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    { "name": "MN Hero Video" }
+  ]
+}
+{% endschema %}
+
+<style>
+.mn-hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.mn-hero__media {
+  width: 100%;
+  height: 75vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.mn-hero__media video,
+.mn-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay image centered */
+.mn-hero__overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 18vw;
+  height: auto;
+}
+
+.mn-hero__overlay img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mn-hero__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em 2em;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.mn-hero__headline h1{
+  font-size: inherit;
+  color: #002B4D;
+  margin: 0;
+}
+
+.mn-hero__button-wrapper {
+  flex-shrink: 0;
+}
+
+.mn-hero__button {
+  background-color: #002B4D;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7em 3em;
+  transition: background-color 0.3s ease;
+}
+
+.mn-hero__button:hover {
+  background-color: #FF8A3D;
+}
+
+@media screen and (max-width: 768px) {
+  .mn-hero__media {
+    height: 70vh;
+  }
+  .mn-hero__overlay {
+    width: 35vw;
+  }
+  .mn-hero__bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+  }
+  .mn-hero__headline {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+}
+</style>
+
+<div class="mn-hero">
+  <div class="mn-hero__media">
+    {% assign url = section.settings.background_media_url %}
+    {% if url contains '.mp4' or url contains '.webm' %}
+      <video src="{{ url }}" autoplay muted loop playsinline></video>
+    {% else %}
+      <img src="{{ url }}" alt="Background">
+    {% endif %}
+
+    {% if section.settings.overlay_image %}
+      <div class="mn-hero__overlay">
+        <img src="{{ section.settings.overlay_image | image_url }}" alt="Overlay">
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="mn-hero__bottom">
+    <h1 class="mn-hero__headline">{{ section.settings.headline | newline_to_br }}</h1>
+    <div class="mn-hero__button-wrapper">
+      <a href="{{ section.settings.button_link }}" class="mn-hero__button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,355 @@
+{% schema %}
+{
+  "name": "Warranty Header",
+  "tag": "section",
+  "class": "warranty-header",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "warranty_heading",
+      "label": "Heading",
+      "default": "5-Year Workmanship Warranty"
+    },
+    {
+      "type": "richtext",
+      "id": "warranty_copy",
+      "label": "Body Copy",
+      "default": "<p>We provide a 5-year workmanship warranty to registered owners. Learn more below.</p>"
+    },
+    {
+      "type": "text",
+      "id": "accordion_heading",
+      "label": "Accordion Heading",
+      "default": "Learn more below"
+    },
+    {
+      "type": "text",
+      "id": "button_1_text",
+      "label": "First Button Text",
+      "default": "REGISTER YOUR PRODUCT"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "First Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_2_text",
+      "label": "Second Button Text",
+      "default": "LOG IN TO MAKE A CLAIM"
+    },
+    {
+      "type": "url",
+      "id": "button_2_link",
+      "label": "Second Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image_1",
+      "label": "Right Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image_2",
+      "label": "Right Image 2"
+    },
+    {
+      "type": "text",
+      "id": "accordion_1_title",
+      "label": "Accordion 1 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_1_content",
+      "label": "Accordion 1 Content"
+    },
+    {
+      "type": "text",
+      "id": "accordion_2_title",
+      "label": "Accordion 2 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_2_content",
+      "label": "Accordion 2 Content"
+    },
+    {
+      "type": "text",
+      "id": "accordion_3_title",
+      "label": "Accordion 3 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_3_content",
+      "label": "Accordion 3 Content"
+    },
+    {
+      "type": "text",
+      "id": "accordion_4_title",
+      "label": "Accordion 4 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_4_content",
+      "label": "Accordion 4 Content"
+    },
+    {
+      "type": "text",
+      "id": "accordion_5_title",
+      "label": "Accordion 5 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_5_content",
+      "label": "Accordion 5 Content"
+    },
+    {
+      "type": "text",
+      "id": "accordion_6_title",
+      "label": "Accordion 6 Title"
+    },
+    {
+      "type": "richtext",
+      "id": "accordion_6_content",
+      "label": "Accordion 6 Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Warranty Header"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.warranty-header {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2em;
+  padding: 2em 1em;
+  color: #002B4D;
+  align-items: flex-start;
+}
+
+.warranty-header__text {
+  width: 45%;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.warranty-header__text h1,
+.accordion-title {
+  font-size: 1.6rem;
+  margin-bottom: 1em;
+}
+
+.warranty-header__text .rte {
+  font-size: 1em;
+  font-family: "Gotham Narrow Book" !important;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.warranty-header__buttons a {
+  display: block;
+  background-color: #002B4D;
+  color: white;
+  font-weight: 600;
+  padding: 0.75em 1em;
+  margin-bottom: 1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.warranty-header__buttons a:hover {
+  background-color: #FF8A3D;
+}
+
+details.accordion {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
+}
+
+details.accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1em;
+  font-family: "Gotham Narrow Book" !important;
+  padding: 0.5em 0;
+}
+
+details.accordion summary span {
+  font-family: "Gotham Narrow Book" !important;
+}
+
+details.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-icon {
+  color: #002B4D;
+  font-size: 1.2em;
+  margin-left: 1em;
+  transition: transform 0.3s ease;
+}
+
+.accordion__content {
+  margin-top: 0.5em;
+  padding-left: 2em;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: "Gotham Narrow Book" !important;
+}
+
+/* Custom link style for Accordion 6 */
+.accordion-6-content a {
+  color: #002B4D;
+  font-family: "Gotham Narrow Book" !important;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.accordion-6-content a:hover {
+  color: #FF8A3D;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Right side images */
+.warranty-header__images {
+  width: 55%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: sticky;
+  top: 2em;
+  height: fit-content;
+  padding: 0 1em;
+  gap: 1em;
+}
+
+.warranty-header__images img {
+  width: 48%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .warranty-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 2em 1em;
+  }
+
+  .warranty-header__text {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  .warranty-header__images {
+    width: 100%;
+    flex-wrap: nowrap; /* ✨ KEY CHANGE: make images stay side-by-side */
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+    padding: 0;
+    position: relative;
+    top: auto;
+  }
+
+  .warranty-header__images img {
+    width: 48%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const accordions = document.querySelectorAll("details.accordion");
+
+  accordions.forEach((accordion) => {
+    const summary = accordion.querySelector("summary");
+    const icon = summary.querySelector(".accordion-icon");
+
+    accordion.addEventListener("toggle", () => {
+      if (accordion.open) {
+        accordions.forEach((other) => {
+          if (other !== accordion) {
+            other.removeAttribute("open");
+            const otherIcon = other.querySelector(".accordion-icon");
+            if (otherIcon) otherIcon.textContent = "+";
+          }
+        });
+      }
+      if (icon) icon.textContent = accordion.open ? "–" : "+";
+    });
+  });
+});
+</script>
+
+<div class="warranty-header">
+  <div class="warranty-header__text">
+    <h1>{{ section.settings.warranty_heading }}</h1>
+    <div class="rte">{{ section.settings.warranty_copy }}</div>
+
+    <h1 class="accordion-title">{{ section.settings.accordion_heading }}</h1>
+
+    {% for i in (1..5) %}
+      {% capture title %}accordion_{{ i }}_title{% endcapture %}
+      {% capture content %}accordion_{{ i }}_content{% endcapture %}
+      {% if section.settings[title] != blank %}
+        <details class="accordion">
+          <summary>
+            <span>{{ section.settings[title] }}</span>
+            <span class="accordion-icon">+</span>
+          </summary>
+          <div class="accordion__content">
+            {{ section.settings[content] }}
+          </div>
+        </details>
+      {% endif %}
+    {% endfor %}
+
+    {% if section.settings.accordion_6_title != blank %}
+      <details class="accordion">
+        <summary>
+          <span>{{ section.settings.accordion_6_title }}</span>
+          <span class="accordion-icon">+</span>
+        </summary>
+        <div class="accordion__content accordion-6-content">
+          {{ section.settings.accordion_6_content }}
+        </div>
+      </details>
+    {% endif %}
+
+    <div class="warranty-header__buttons">
+      <a href="{{ section.settings.button_1_link }}">{{ section.settings.button_1_text }}</a>
+      <a href="{{ section.settings.button_2_link }}">{{ section.settings.button_2_text }}</a>
+    </div>
+  </div>
+
+  <div class="warranty-header__images">
+    {% if section.settings.right_image_1 %}
+      <img src="{{ section.settings.right_image_1 | image_url: width: 600 }}" alt="">
+    {% endif %}
+    {% if section.settings.right_image_2 %}
+      <img src="{{ section.settings.right_image_2 | image_url: width: 600 }}" alt="">
+    {% endif %}
+  </div>
+</div>

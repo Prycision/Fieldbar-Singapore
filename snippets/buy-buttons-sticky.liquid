@@ -1,0 +1,179 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+
+  Usage:
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
+    assign money_price_max = price_max | money_with_currency
+  endif
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+-%}
+<div {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <product-form
+      class="product-form2"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}">
+      <div
+        class="product-form__error-message-wrapper"
+        role="alert"
+        hidden>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+        <span class="product-form__error-message"></span>
+      </div>
+      {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null
+      %}
+        <div>
+          {% case localization.country.iso_code %}
+            {% when 'UK' %}
+              <button onclick="window.location.href='/products/custom-gift-card'" class="fieldbar_button">BUY A GIFT CARD
+              </button>
+            {% when 'EU' %}
+              <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">BUY A GIFT CARD
+              </button>
+            {% when 'DE' %}
+              <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">GESCHENKKARTE KAUFEN
+              </button>
+            {% when 'FR' %}
+              <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">ACHETER UNE CARTE CADEAU
+              </button>
+            {% when 'AU' %}
+              <button onclick="window.location.href='/products/gift-card-aus'" class="fieldbar_button">BUY A GIFT CARD
+              </button>
+            {% when 'US' %}
+              <button onclick="window.location.href='/products/gift-card-usa'" class="fieldbar_button">BUY A GIFT CARD
+              </button>
+            {% else %}
+              <button onclick="window.location.href='/products/custom-gift-card'" class="fieldbar_button">
+                GET A GIFT CARD
+              </button>
+          {% endcase %}
+        </div>
+      {% else %}
+        {%- form 'product'
+          , product
+          , id: product_form_id
+          , class: 'form'
+          , novalidate: 'novalidate'
+          , data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
+              disabled
+            {% endif %}
+            class="product-variant-id">
+
+          {%- if gift_card_recipient_feature_active -%}
+            {%- render 'gift-card-recipient-form'
+              , product: product
+              , form: form
+              , section: section -%}
+          {%- endif -%}
+
+          <div class="product-form__buttons ">
+            {%- liquid
+              assign check_against_inventory = true
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                assign check_against_inventory = false
+              endif
+              if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                assign quantity_rule_soldout = true
+              endif
+            -%}
+
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="essential-preorder-extra-add-to-cart-button product-form__submit fieldbar_button button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
+                disabled
+              {% endif %}>
+              <span class="foot-cart-but">
+                {%- if product.selected_or_first_available_variant == null -%}
+                  {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  <span>
+                    {{ 'products.product.add_to_cart' | t }}
+                  </span>
+                  <span style="color: white; font-family: 'Gotham Medium'" class="price">
+                    {{ money_price }}
+                  </span>
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
+            {%- if show_dynamic_checkout -%}
+              <span class="atc">
+                {{- form | payment_button }} |
+                <span class="price">
+                  {{ money_price }}
+                </span>
+              </span>
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      {% endif %}
+    </product-form>
+  {%- else -%}
+    <div class="product-form ">
+      <div class="product-form__buttons form ">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit fieldbar_button button button--full-width button--primary"
+          disabled>
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+</div>

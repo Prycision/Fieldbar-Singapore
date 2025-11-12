@@ -1,0 +1,297 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "john_legend01_rpUKa3": {
+      "type": "John-legend01",
+      "custom_css": [
+        ".message.success {border: 1px solid #ff8a3d; position: absolute; z-index: 101; background: #ff8a3d !important; min-height: 40px; max-height: 60px; padding: 6px; width: 100%; right: 0; bottom: 0;}",
+        ".message.success .gfb__content-title {/* display: none; */ color: white; display: block !important;}"
+      ],
+      "name": "John Legend Section",
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/f9196571231a4f398adcf9c8f0ae56f1.mp4",
+        "video_cover_image": "shopify://shop_images/John_Legend_Cover_Image.jpg",
+        "mute_icon": "shopify://shop_images/sound-off-svgrepo-com.svg",
+        "unmute_icon": "shopify://shop_images/sound-loud-svgrepo-com.svg",
+        "quote_text": "<h1>\"This cooler is <em>amazing</em>...<br/>It’s so <em>cool </em>!\"</h1>",
+        "person_name": "<p>- John Legend</p>",
+        "bottom_heading": "<h1><em>He</em> Owns One.</h1>",
+        "intro_text": "WIN WITH",
+        "headline": "Fieldbar & Loved01",
+        "short_description": "WIN a  <strong>FIELDBAR Drinks Box </strong> loaded with a curated bundle of <strong>LVE wine</strong>,  <strong>Loved01 skincare essentials  </strong>and  <strong>two tickets </strong> to see  <strong>John Legend live </strong> - including an  <strong>exclusive meet and greet </strong>.",
+        "form_code": "<div class=\"globo-formbuilder\" data-id=\"OTU1NDE=\"></div>",
+        "rich_text_content": "<p>By entering you consent to receive marketing communications from all participating brands. </p><p></p><p><a href=\"/pages/fieldbar-loved01-terms-and-conditions\" target=\"_blank\" title=\"Fieldbar & Loved01 Terms and Conditions\">TERMS & CONDITIONS</a></p>"
+      }
+    },
+    "john_legend02_g9YdaA": {
+      "type": "John-legend02",
+      "blocks": {
+        "feature_wyKAXe": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16.webp",
+            "feature_text": "<p>Perfectly Proportioned</p>",
+            "feature_subtext": "Inspired by the elegant wooden ‘Drinks Boxes’ of the Victorian era, the 2.64 gallon FIELDBAR Drinks Box is designed to accommodate two bottles of Champagne, or three bottles of still wine in an upright position. Perfectly proportioned for stylish parties and picnics."
+          }
+        },
+        "feature_wHDTmk": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/A_Closer_Look_GT_03_35a439a7-9aad-495e-8600-8dbc84b71213.png",
+            "feature_text": "<p>Superior Ice Performance</p>",
+            "feature_subtext": "Packed full of ice, and left outside in the shade, the FIELDBAR Drinks Box can keep Champagne below 50°F for an incredible 50 hours. Thermal effective shape, closed cell proprietary foam, radiation reflective paint, airtight lid gasket and a raised floor."
+          }
+        },
+        "feature_WtdE34": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/Bells_Whistles__ALL_08.jpg",
+            "feature_text": "<p>Safari Engineered</p>",
+            "feature_subtext": "The FIELDBAR Drinks Box only weighs 3.97lbs but can withstand a weight of 256lbs. Durable, scratch resistant and shockproof. FIELDBAR coolers are made from a special composite ABS plastic that's used in various high-impact protection products. That's why all Fieldbars come with a 5‒year warranty."
+          }
+        }
+      },
+      "block_order": [
+        "feature_wyKAXe",
+        "feature_wHDTmk",
+        "feature_WtdE34"
+      ],
+      "name": "Drinks Box Feature",
+      "settings": {
+        "main_title": "THE WORLD’S FINEST COOLER",
+        "subheading": "The Drinks Box",
+        "capacity": "2.64 GAL",
+        "description": "<p>The FIELDBAR Drinks Box is a 2.64 gallon hardcase cooler box designed for superior thermal performance.</p>",
+        "left_image": "shopify://shop_images/DBSBB01-Front1200x1600WEB.webp",
+        "link": "shopify://collections/catalogue",
+        "button_text": "Shop Now"
+      }
+    },
+    "fieldbar_collection_VG3ghb": {
+      "type": "Fieldbar-collection",
+      "custom_css": [
+        ".slider-buttons {display: flex; align-items: center; justify-content: end;}",
+        ".card-information {display: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; text-transform: uppercase; text-decoration: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; font-size: 0.7em !important; letter-spacing: 0 !important;}",
+        ".card__heading > p {display: none !important;}",
+        " {margin-top: 5em;}",
+        "p {color: #00334c;}",
+        ".lv-option-collection-image-swatch {border: 1px solid #f3efeb;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "drinks-box",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_LpyjAA": {
+      "type": "custom-liquid",
+      "name": "MARQUEE",
+      "settings": {
+        "custom_liquid": "{% render \"slider\" %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_GFtWeH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_ekmQVh": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jUMGcA": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_safari_enginreered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NUNUf8": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_superior_ice_performance.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PJ4jfP": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_sustainably_designed.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Sustainably Designed</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_ekmQVh",
+        "column_jUMGcA",
+        "column_NUNUf8",
+        "column_PJ4jfP"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        " {margin-top: 3%;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "interactive_hover_colours_zNHEAW": {
+      "type": "interactive-hover-colours",
+      "blocks": {
+        "option_AtNndN": {
+          "type": "option",
+          "settings": {
+            "label": "Sea Boat Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_03.webp",
+            "product_link": "shopify://products/sea-boat-blue"
+          }
+        },
+        "option_n6TXgb": {
+          "type": "option",
+          "settings": {
+            "label": "Orchard Orange",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07.webp",
+            "product_link": "shopify://products/orchard-orange"
+          }
+        },
+        "option_AP3JxF": {
+          "type": "option",
+          "settings": {
+            "label": "Bazaruto Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16.webp",
+            "product_link": "shopify://products/bazaruto-blue"
+          }
+        },
+        "option_jwKctj": {
+          "type": "option",
+          "settings": {
+            "label": "Parisian Green",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_HR20.jpg",
+            "product_link": "shopify://products/parisian-green"
+          }
+        },
+        "option_LzPNYC": {
+          "type": "option",
+          "settings": {
+            "label": "Safari White",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_11.webp",
+            "product_link": "shopify://products/safari-white"
+          }
+        },
+        "option_iy3BDJ": {
+          "type": "option",
+          "settings": {
+            "label": "Oyster Grey",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_26.webp",
+            "product_link": "shopify://products/oyster-grey"
+          }
+        }
+      },
+      "block_order": [
+        "option_AtNndN",
+        "option_n6TXgb",
+        "option_AP3JxF",
+        "option_jwKctj",
+        "option_LzPNYC",
+        "option_iy3BDJ"
+      ],
+      "settings": {
+        "left_background_image": "shopify://shop_images/John_Legend_02.jpg",
+        "right_heading": "SIGNATURE SHADES",
+        "right_copy": "With a high gloss finish and gold hardware accents. Choose from six signature shades."
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "john_legend01_rpUKa3",
+    "john_legend02_g9YdaA",
+    "fieldbar_collection_VG3ghb",
+    "custom_liquid_LpyjAA",
+    "multicolumn_GFtWeH",
+    "interactive_hover_colours_zNHEAW",
+    "main"
+  ]
+}

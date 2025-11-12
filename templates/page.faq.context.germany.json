@@ -1,0 +1,273 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.faq.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "faq_4dVF7r": {
+      "settings": {
+        "info_heading": "Häufig gestellte Fragen & Support",
+        "info_text": "<p>Tel: <a href=\"tel:+27213005875\">+27 (0) 21 300 5875<br/></a>E-Mail: <a href=\"mailto:hello@fieldbar.com\" target=\"_blank\">hello@fieldbar.com</a></p>",
+        "button1_text": "meine 5-Jahres-Garantie sichern",
+        "button2_text": "Kundenservice kontaktieren"
+      },
+      "blocks": {
+        "faq_group_H4zmBA": {
+          "settings": {
+            "group_name": "VERSAND & LIEFERUNG"
+          }
+        },
+        "faq_item_7qcpML": {
+          "settings": {
+            "question": "Wann wird meine Bestellung eintreffen?",
+            "answer": "<p>Wann wird meine Bestellung eintreffen?Die Versandzeiten variieren abhängig davon, wo auf der Welt Sie sich befinden. Die Bestellungen werden innerhalb von 2 Werktagen vom nächstgelegenen Lager versandt, danach gelten die üblichen Kurierzeiten. In der Regel werden Bestellungen innerhalb der folgenden Zeitspannen versandt:<br/>Australien: 5-10 Arbeitstage<br/>Europa: 3-5 Arbeitstage<br/>USA: 3-5 Arbeitstage<br/>UK: 1-2 Werktage<br/>Südafrika: 5-7 Werktage (von unserer südafrikanischen Webseite <a href=\"https://www.fieldbar.co.za\" title=\"https://www.fieldbar.co.za\">www.fieldbar.co.za</a>)</p>"
+          }
+        },
+        "faq_item_iVCUWP": {
+          "settings": {
+            "question": "Ist der Versand kostenlos?",
+            "answer": "<p>Wenn Ihre Region für den kostenlosen Versand qualifiziert ist, werden Ihnen an der Kasse keine Versandkosten berechnet.</p>"
+          }
+        },
+        "faq_item_rUNC68": {
+          "settings": {
+            "question": "Wie kann ich meine Bestellung verfolgen?",
+            "answer": "<p>Wie kann ich meine Bestellung verfolgen?Sie werden benachrichtigt, sobald Ihre Bestellung unser Werk verlassen hat, und die Informationen zur Sendungsverfolgung werden Ihnen per E-Mail zugesandt. Wenn Sie Schwierigkeiten haben, Ihre Bestellung nach dem Versand zu verfolgen, senden Sie uns bitte eine E-Mail an <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com </strong></a>- und vergessen Sie nicht, Ihre Bestellnummer anzugeben.</p>"
+          }
+        },
+        "faq_item_nPPy8r": {
+          "settings": {
+            "question": "Versenden Sie auch an Postfächer?",
+            "answer": "<p>Leider können wir nicht an Postfächer liefern.</p>"
+          }
+        },
+        "faq_item_wfWtGH": {
+          "settings": {
+            "question": "Von wo aus wird meine Bestellung verschickt?",
+            "answer": "<p>Bestellungen aus dem Vereinigten Königreich werden von unserem Lager in Brandon versandt, Bestellungen aus der EU von unserem Lager in den Niederlanden, Bestellungen aus Australien von unserem Lager in Sydney und Bestellungen aus den USA von unserem Lager in Virginia. Für Bestellungen an Lieferadressen in Südafrika besuchen Sie bitte <a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><strong>fieldbar.co.za</strong></a><strong>.</strong></p><p>Für andere internationale Anfragen kontaktieren Sie uns bitte unter <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com</strong></a>.</p>"
+          }
+        },
+        "faq_item_bMjhi7": {
+          "settings": {
+            "question": "Kann ich meine Bestellung stornieren oder ändern?",
+            "answer": "<p>Sollte Ihre Bestellung noch nicht versandt worden sein, werden wir unser Bestes tun, um sie zu ändern. Bitte senen Sie uns eine Mail an <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com</strong></a>.</p><p>Wenn Sie Ihre Bestellung bereits erhalten haben, können wir sie nicht mehr gegen eine andere Farbe oder ein anderes Produkt umtauschen. Sie müssen dann eine Rücksendung anmelden und einen neuen Kauf tätigen.</p>"
+          }
+        },
+        "faq_item_KyaGJc": {
+          "settings": {
+            "question": "Warum sind die Preise auf den verschiedenen Märkten unterschiedlich?",
+            "answer": "<p>Es wurden alle Anstrengungen unternommen, um eine Preisparität zwischen den Märkten zu erreichen, wobei die Versandkosten und Steuern für jedes Gebiet berücksichtigt wurden. </p>"
+          }
+        },
+        "faq_item_9hFjTB": {
+          "settings": {
+            "question": "Muss ich Zölle und Steuern bezahlen?",
+            "answer": "<p>Bei Bestellungen aus dem Vereinigten Königreich, der EU, AUS und den USA fallen keine Steuern und Abgaben an.</p>"
+          }
+        },
+        "faq_item_bFXUVc": {
+          "settings": {
+            "question": "Warum sollte ich an der Kasse ein Konto anlegen?",
+            "answer": "<p>Wenn Sie ein Konto einrichten, können Sie schneller bezahlen, frühere Bestellungen speichern, Ihre persönlichen Daten verwalten und, was am wichtigsten ist, sich für den FIELDBAR Owners Club anmelden und Ihre 5-Jahres-Garantie in Anspruch nehmen. <br/><br/>Klicken Sie <a href=\"https://fieldbar.com/account/\" title=\"https://fieldbar.com/account/\">hier</a>, um ein Konto zu erstellen.</p>"
+          }
+        },
+        "faq_group_rycPTe": {
+          "settings": {
+            "group_name": "GARANTIE"
+          }
+        },
+        "faq_item_KytjGL": {
+          "settings": {
+            "question": "Wie kann ich meine 5-Jahres-Garantie sichern?",
+            "answer": "<p>Sichern Sie sich Ihre 5-Jahres-Garantie, indem Sie dem <a href=\"https://fieldbar.com/account/login\" title=\"https://fieldbar.com/account/login\">FIELDBAR Owners Club</a> beitreten und Ihr FIELDBAR-Produkt innerhalb von 60 Tagen nach dem Kauf auf unserer Website registrieren. Lesen Sie auf unserer <a href=\"/pages/warranty\" title=\"Warranty & Repairs\">Garantie-Seite</a> mehr darüber, was abgedeckt ist.<br/></p>"
+          }
+        },
+        "faq_item_8kcA3E": {
+          "settings": {
+            "question": "Wie reiche ich einen Garantieantrag ein?",
+            "answer": "<p>Wenn Sie Ihr FIELDBAR-Produkt innerhalb von 60 Tagen nach dem Kauf erfolgreich registriert haben und Ihr Produkt in das 5-Jahres-Garantiefenster fällt, können Sie einen Garantieanspruch einreichen. Melden Sie sich mit Ihrem <a href=\"https://fieldbar.com/account/\" title=\"https://fieldbar.com/account/\">Owners Club-Konto</a> an und folgen Sie den Anweisungen. </p>"
+          }
+        },
+        "faq_item_wyeX6U": {
+          "settings": {
+            "question": "Was ist der FIELDBAR Owners Club?",
+            "answer": "<p>Zusätzlich zu den offensichtlichen Rechten auf Prahlerei erhalten Mitglieder des Owners Club verlängerte Produktgarantien, exklusive Angebote für neue Produkte und geheime Vergünstigungen.</p>"
+          }
+        },
+        "faq_item_p34eNd": {
+          "settings": {
+            "question": "Wie kann ich dem FIELDBAR Owners Club beitreten?",
+            "answer": "<p>Sie können dem FIELDBAR Owners Club auf unserer Webseite <a href=\"https://fieldbar.com\" title=\"https://fieldbar.com\">fieldbar.com</a> beitreten, indem Sie ein Konto erstellen und Ihr FIELDBAR-Produkt innerhalb von 60 Tagen nach dem Kauf registrieren. Sie finden Ihren einzigartigen Seriencode auf der Plakette auf der Rückseite Ihres FIELDBAR-Produkts eingraviert. Bei einigen Produkten befindet sich die goldene Plakette auf dem Echtheitszertifikat.</p>"
+          }
+        },
+        "faq_group_HhWqBy": {
+          "settings": {
+            "group_name": "PERSONALISIERUNG & GESCHENKARTIKEL"
+          }
+        },
+        "faq_item_pyww3R": {
+          "settings": {
+            "question": "Wie kann ich mein FIELDBAR-Produkt personalisieren?",
+            "answer": "<p>Die Personalisierung ist derzeit nur in den Vereinigten Staaten und Südafrika verfügbar.<br/><br/>Navigieren Sie zu dem Produkt Ihrer Wahl. Wenn Sie Ihre Auswahl getroffen haben, scrollen Sie nach unten zu dem Feld auf der Produktseite, wo Sie den Namen oder die Initialen eingeben können, die eingraviert werden sollen. Bitte beachten Sie, dass dies mit einem Aufpreis verbunden ist und dass die Personalisierung sowohl der Griffe als auch der Schlingen auf der Verpackung des Hauptartikels vermerkt wird, um die Identifizierung zu erleichtern. Wenn eine Bestellung eine FIELDBAR-Kühlbox enthält, werden alle zusätzlich bestellten Schlingen und Griffe in der Kühlbox geliefert.</p>"
+          }
+        },
+        "faq_item_ab4UAg": {
+          "settings": {
+            "question": "Wie bekomme ich meine Bestellung als Geschenk verpackt und mit einer handgeschriebenen Karte versehen?",
+            "answer": "<p>Geschenkverpackungen sind außerhalb Südafrikas noch nicht verfügbar.</p>"
+          }
+        },
+        "faq_group_HyWf87": {
+          "settings": {
+            "group_name": "ANLEITUNG & PFLEGE"
+          }
+        },
+        "faq_item_AqtGPg": {
+          "settings": {
+            "question": "Wie verwende und pflege ich mein FIELDBAR-Produkt?",
+            "answer": "<p>Die Anwendungs- und Pflegeanleitungen für die einzelnen Produkte sind im FIELDBAR-<a href=\"/pages/product-guide\" title=\"Product Guide\">Produkthandbuch</a> zu finden.</p>"
+          }
+        },
+        "faq_group_gX8BAp": {
+          "settings": {
+            "group_name": "RÜCKSENDUNGEN & ERSTATTUNGEN"
+          }
+        },
+        "faq_item_Lzr6aX": {
+          "settings": {
+            "question": "Kann ich mein FIELDBAR-Produkt zurückgeben?",
+            "answer": "<p>Wenn Sie mit Ihrem FIELDBAR-Produkt, das Sie in unserem Online-Shop gekauft haben, nicht ganz zufrieden sind, können Sie es in verkaufsfähigem Zustand und in der Originalverpackung innerhalb von 30 Tagen nach Lieferung gegen volle Rückerstattung des Kaufpreises an uns zurücksenden.<br/><br/>Senden Sie uns einfach eine E-Mail an <a href=\"mailto:hello@fieldbar.com\" title=\"mailto:hello@fieldbar.com\">hello@fieldbar.com</a> mit Ihrer Bestellnummer und wir leiten den Vorgang ein. Sie sind für die Kosten der Rücksendung des Produkts verantwortlich. FIELDBAR behält sich das Recht vor, eine Rücksendung abzulehnen, wenn das Produkt Gebrauchsspuren aufweist, beschädigt wurde oder sich nicht in der Originalverpackung befindet.</p>"
+          }
+        },
+        "faq_item_QRFVUq": {
+          "settings": {
+            "question": "Wie lange dauert die Bearbeitung einer Rückerstattung nach einer Rücksendung?",
+            "answer": "<p>Wir bemühhen uns, eine Rückerstattung so schnell wie möglich zu bearbeiten, aber in Zeiten hoher Nachfrage kann dies nach dem Eintreffen des Artikels bei uns bis zu drei Wochen dauern. Sie erhalten eine Benachrichtigung, sobald die Rückerstattung erfolgt ist. Je nach Bank kann es bis zu fünf Werktage dauern, bis der Betrag wieder auf Ihrem Konto eingegangen ist. Alle Rückerstattungen werden über die ursprüngliche Zahlungsweise zurückgeführt. Wenn Sie also ein Geschenk zurückgeben, müssen wir den Betrag an den Käufer zurückzahlen.</p>"
+          }
+        },
+        "faq_item_CeyJke": {
+          "settings": {
+            "question": "Welche Erstattungsmöglichkeiten gibt es bei einer Rücksendung?",
+            "answer": "<p><strong>Umtausch:</strong> Wenn Ihr Produkt beschädigt oder defekt geliefert wird, bieten wir Ihnen gerne einen Ersatz an.<br/><br/><strong>Rückerstattung:</strong> Rückerstattungen werden für unbenutzte Produkte in Übereinstimmung mit unseren Rückerstattungsrichtlinien gewährt.</p>"
+          }
+        },
+        "faq_item_H3Gy6r": {
+          "settings": {
+            "question": "Gibt es Produkte, die nicht zurückgegeben werden können?",
+            "answer": "<p>Individuell gestaltete oder personalisierte Produkte können nicht zurückgegeben werden, ebenso wenig wie Produkte, die in irgendeiner Weise benutzt oder verändert wurden.</p>"
+          }
+        },
+        "faq_item_CNTpqb": {
+          "settings": {
+            "question": "Kann ich einen Artikel zurückgeben, den ich bei einem anderen Händler gekauft habe?",
+            "answer": "<p>Bei Drittanbietern gekaufte Artikel müssen direkt mit dem Händler abgewickelt werden. Unser Rückgaberecht gilt nur für Einkäufe, die direkt in unserem Online-Shop getätigt wurden.</p>"
+          }
+        },
+        "faq_group_EndVCk": {
+          "settings": {
+            "group_name": "REPARATUREN"
+          }
+        },
+        "faq_item_DY8G4r": {
+          "settings": {
+            "question": "Welche Reparaturdienstleistungen bietet FIELDBAR an?",
+            "answer": "<p>Unser Field Hospital Programm ermöglicht es registrierten Besitzern, kosmetische Defekte, die durch angemessene Abnutzung entstanden sind, reparieren zu lassen. Lesen Sie auf unserer Seite <a href=\"/pages/warranty\" title=\"Warranty & Repairs\">Garantie & Reparaturen.</a> mehr darüber, was abgedeckt ist.</p>"
+          }
+        },
+        "faq_group_gT839w": {
+          "settings": {
+            "group_name": "PRODUKTREIHE"
+          }
+        },
+        "faq_item_QGCGBM": {
+          "settings": {
+            "question": "Welche verschiedenen Arten von FIELDBAR-Kühlboxen gibt es?",
+            "answer": "<p>Bislang hat FIELDBAR drei verschiedene Modelle von Hartschalen-Kühlboxen entwickelt.<br/><br/>Die FIELDBAR Drinks Box, der Gin Trunk und die Mini Bar sind derzeit über <a href=\"https://www.fieldbar.co.za\" title=\"https://www.fieldbar.co.za\">fieldbar.co.za</a>  (Südafrika) sowie über einige ausgewählte Einzelhändler erhältlich.<br/><br/>Die FIELDBAR Drinks Box ist auch über <a href=\"https://www.fieldbar.com\" title=\"https://www.fieldbar.com\">fieldbar.com</a> (international) und bei mehreren handverlesenen Einzelhändlern international erhältlich. Der FIELDBAR Gin Trunk ist derzeit nur im Vereinigten Königreich erhältlich, während die Mini Bar nur in Südafrika erhältlich ist.<br/><br/>Weitere Informationen über FIELDBAR-Kühlboxen und -Produkte finden Sie im FIELDBAR-<a href=\"/pages/product-guide\" title=\"Product Guide\">Produkthandbuch</a>.<br/><br/><br/>Wir laden Sie ein, unsere Produkte bei unseren <a href=\"/pages/fieldbar-retailers\" title=\"FIELDBAR RETAILERS\">Autorisierten Händlern</a> zu erwerben.<br/></p>"
+          }
+        },
+        "faq_item_x4cCBh": {
+          "settings": {
+            "question": "Was ist der Unterschied in der Kapazität zwischen der Drinks Box, dem Gin Trunk und der Mini Bar?",
+            "answer": "<p>Bitte sehen Sie sich unsere <a href=\"/pages/size-guide\" title=\"SIZE GUIDE\">Größentabelle</a> an, um die verschiedenen Modelle der FIELDBAR Kühlboxen zu vergleichen.</p>"
+          }
+        },
+        "faq_item_AD4UQq": {
+          "settings": {
+            "question": "Was bedeutet „limitierte Auflage“?",
+            "answer": "<p>Bei Fieldbar bringen wir gelegentlich Produkte in limitierter Auflage heraus. Diese Artikel werden in kleinen Mengen produziert und sind nur für kurze Zeit oder solange der Vorrat reicht erhältlich. Sobald eine limitierte Auflage ausverkauft ist, wird sie für einen Zeitraum von mindestens zwölf Kalendermonaten nicht wieder aufgelegt. Um sicher zu gehen, dass Sie nichts verpassen, melden Sie sich für unseren Newsletter an oder werden Sie Mitglied im Owners Club, um frühzeitigen Zugang und exklusive Angebote zu erhalten. Aufgrund des exklusiven Charakters von Limited-Edition-Produkten können die Garantiebedingungen von unserer Standardproduktgarantie abweichen. Besuchen Sie unsere <a href=\"/pages/warranty\" title=\"Warranty & Repairs\">Garantie-Seite</a> für weitere Informationen.</p>"
+          }
+        },
+        "faq_group_p3My6w": {
+          "settings": {
+            "group_name": "GESCHENKKARTEN"
+          }
+        },
+        "faq_item_NXyH6V": {
+          "settings": {
+            "question": "Bieten Sie in Ihrem Online-Shop Geschenkkarten an?",
+            "answer": "<p>Geschenkkarten können <a href=\"/collections/gift-cards\" title=\"Gift Cards\">hier</a> gekauft werden.</p>"
+          }
+        },
+        "faq_item_YdmWVG": {
+          "settings": {
+            "question": "Wie kann ich eine Geschenkkarte einlösen, die ich bereits besitze?",
+            "answer": "<p>Sie lösen einen Geschenkgutschein ein, indem Sie Ihren Geschenkgutschein-Code während des Bestellvorgangs eingeben.<br/><br/><strong>Allgemeine Geschäftsbedingungen für Geschenkkarten:</strong> FIELDBAR-Geschenkkarten („Geschenkkarten“) können nur auf <a href=\"https://www.fieldbar.co.za\" title=\"https://www.fieldbar.co.za\">fieldbar.co.za</a> oder <a href=\"https://www.fieldbar.com\" title=\"https://www.fieldbar.com\">fieldbar.com</a> eingelöst werden. Geschenkkarten können nicht zurückgegeben, umgetauscht oder gegen Bargeld erstattet werden, es sei denn, dies ist nach geltendem Recht erforderlich. Der Weiterverkauf von Geschenkkarten ist ohne unsere Zustimmung nicht gestattet.<br/><br/>Sie können eine Geschenkkarte nicht in Verbindung mit einem anderen Gutschein oder Rabattcode einlösen.<br/><br/>Verlorene oder gestohlene Karten werden nicht ersetzt. Das Verlustrisiko und das Eigentumsrecht für Geschenkkarten gehen mit dem Verkauf auf den Käufer über. FIELDBAR haftet Ihnen gegenüber nicht für verlorene, beschädigte oder gestohlene Geschenkkarten oder für die unbefugte Nutzung Ihrer Geschenkkarte durch Dritte.<br/><br/>Anfragen zum Kontostand können per E-Mail an <a href=\"mailto:hello@fieldbar.com\" title=\"mailto:hello@fieldbar.com\">hello@fieldbar.com</a> gestellt werden. Geschenkkarten sind nicht wieder aufladbar.<br/><br/>Geschenkkarten sind 5 Jahre lang gültig, jedoch ist der Inhaber der Geschenkkarte für die Zahlung aller weiteren ausstehenden Beträge verantwortlich. Bei FIELDBAR gekaufte Geschenkkarten verfallen am ersten Jahrestag des Kaufdatums, je nachdem, was später eintritt, oder bei einer längeren Verfallszeit, die durch geltendes Recht vorgeschrieben ist.</p>"
+          }
+        },
+        "faq_group_fMHXx7": {
+          "settings": {
+            "group_name": "SICHER EINKAUFEN"
+          }
+        },
+        "faq_item_3mP9ie": {
+          "settings": {
+            "question": "Wo kann ich Ihre authentifizierten Produkte kaufen?",
+            "answer": "<p>Um einen sicheren Einkauf zu gewährleisten, kaufen Sie direkt auf unserer offiziellen Webseite <a href=\"https://www.fieldbar.co.za\" title=\"https://www.fieldbar.co.za\">www.fieldbar.co.za</a> (Südafrika) oder <a href=\"https://www.fieldbar.com\" title=\"https://www.fieldbar.com\">www.fieldbar.com</a> (international) ein. <br/><br/>Betrüger werden immer raffinierter: Hüten Sie sich vor Webseiten mit URLs, die unserer eigenen ähnelt (die Schreibweise unterscheidet sich von der hier angegebenen). Eine Liste der von uns autorisierten Händler finden Sie unter <a href=\"https://fieldbar.com/pages/fieldbar-retailers\" title=\"https://fieldbar.com/pages/fieldbar-retailers\">https://fieldbar.com/pages/fieldbar-retailers.</a><br/><br/>Für weitere Informationen wenden Sie sich bitte an <a href=\"mailto:sales@fieldbar.com\" title=\"mailto:sales@fieldbar.com\">sales@fieldbar.com.</a></p>"
+          }
+        },
+        "faq_group_wkBiwX": {
+          "settings": {
+            "group_name": "VORBESTELLUNGEN"
+          }
+        },
+        "faq_item_tGQLmE": {
+          "settings": {
+            "question": "Wie funktionieren die Vorbestellungen?",
+            "answer": "<p>Von Zeit zu Zeit bietet FIELDBAR Vorbestellungen für neue Produkteinführungen an. Bei Vorbestellungen ist entweder eine Anzahlung oder der volle Betrag zu entrichten, um einen Artikel zu sichern, der noch nicht produziert wurde. Dies geschieht bei neuen Produkten im Voraus, um sicherzustellen, dass die richtige Anfangsfarbmischung produziert wird.<br/><br/><strong>BEVOR SIE EIN PRODUKT VORBESTELLEN, LESEN SIE BITTE DIE NACHSTEHENDEN REGELN UND VORSCHRIFTEN:</strong><br/><br/>FIELDBAR kann nicht für unvorhergesehene Verzögerungen haften, die auftreten können, wenn Sie einen Artikel vorbestellen möchten, daher sollten Sie bei Ihrer Bestellung besonders vorsichtig sein. Wir werden Sie jedoch nach der Vorbestellung auf dem Laufenden halten und Sie informieren, wenn Ihre Artikel verfügbar sind und von unserem Werk aus versandt werden können.<br/><br/>Wenn Sie eine Bestellung bei uns aufgeben, bedeutet dies, dass Sie bereit sind, diese Bedingungen zu akzeptieren:<br/>1. Für Vorbestellungen ist entweder eine Anzahlung oder der volle Wert des Artikels zu entrichten. Wird eine Anzahlung geleistet, muss der Restbetrag bezahlt werden, sobald das Produkt versandbereit ist.<br/><br/>2. Vorbestellungen können jederzeit storniert werden, bevor sie von unserem Werk versandt werden. Anzahlungen für Vorbestellungen können jederzeit vollständig zurückerstattet werden. Sollten Sie jedoch eine Rückerstattung beantragen, verlieren Sie Ihren Platz auf der Liste der Vorbestellungen.<br/><br/>3. Wir können kein bestimmtes Versanddatum garantieren und die geschätzten Versanddaten können sich ändern. Wir versenden Bestellungen, sobald sie verfügbar sind und die Restzahlung für das Produkt eingegangen ist.<br/><br/>4. Wenn Ihnen Ihr Produkt nicht gefällt, können Sie es innerhalb von 30 Tagen in der Originalverpackung (unbenutzt) zurückschicken und erhalten eine volle Rückerstattung (Standard-Rückgabebedingungen).<br/><br/>5. Bitte bestellen Sie nicht, wenn Sie nicht warten können.<br/><br/>6. Sobald Sie eine Bestellung bei uns aufgeben, bedeutet dies, dass Sie bereit sind, diese Bedingungen und Konditionen zu akzeptieren.</p>"
+          }
+        },
+        "faq_item_qLLfNt": {
+          "settings": {
+            "question": "Die Vorbestellungsliste",
+            "answer": "<p>Mit dieser Liste können Sie ein FIELDBAR-Produkt für eine künftige Lieferung reservieren, und zwar nach dem Prinzip „Wer zuerst kommt, mahlt zuerst“. Um Ihren Platz auf dieser Liste zu sichern, müssen Sie die Anzahlung oder den vollen Wert des Produkts bezahlen. Sie werden aufgefordert, den noch ausstehenden Restbetrag des Kaufpreises zu zahlen, wenn das Produkt zur Auslieferung bereit ist. Wenn Sie die Zahlung nicht innerhalb von 20 Tagen nach Aufforderung leisten, wird die Bestellung storniert.</p>"
+          }
+        },
+        "faq_item_4T3Dg4": {
+          "settings": {
+            "question": "Warum sind bestimmte Fieldbar-Produkte in meiner Region nicht erhältlich?",
+            "answer": "<p>Wir starten zunächst in Südafrika, um die Produkte in unserem Heimatmarkt gründlich zu testen, bevor wir sie unserem internationalen Publikum vorstellen.<br/><br/>Weitere Informationen zu den Kühlboxen und Produkten von FIELDBAR finden Sie im <a href=\"/pages/product-guide\" title=\"Product Guide\"><strong>FIELDBAR-Produktleitfaden</strong></a>.<br/><br/>Wir laden Sie ein, unsere Produkte direkt bei uns oder bei unseren <a href=\"/pages/fieldbar-retailers\" title=\"FIELDBAR RETAILERS\"><strong>autorisierten Händlern</strong></a><strong> </strong>zu erwerben.</p>"
+          }
+        }
+      }
+    },
+    "rich_text_mYgiJf": {
+      "settings": {},
+      "blocks": {
+        "text_8EERV6": {
+          "settings": {
+            "text": "<p>Sollten Sie nicht die gewünschten Antworten erhalten, wenden Sie sich bitte an folgende Adresse<br/><br/>Tel: <a href=\"tel:+27213005875\">+27 (0) 21 300 5875</a></p><p>E-Mail: <a href=\"mailto:hello@fieldbar.com\" target=\"_blank\">hello@fieldbar.com</a></p><p><br/>Montag - Donnerstag, 9 Uhr - 16 Uhr<br/>Freitag, 9 Uhr - 14 Uhr UTC+2<br/><br/>Wir bemühen uns, alle E-Mails innerhalb von 24 Stunden zu beantworten (Wochenenden und Feiertage ausgenommen).</p>"
+          }
+        }
+      }
+    }
+  }
+}

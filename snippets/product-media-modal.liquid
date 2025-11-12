@@ -1,0 +1,421 @@
+<product-modal id="ProductModal-{{ section.id }}" class="product-media-modal">
+  <div class="lightbox-highlight" id="LightboxHighlight"></div>
+  <div
+    class="product-media-modal__dialog"
+    role="dialog"
+    aria-label="{{ 'products.modal.label' | t }}"
+    aria-modal="true"
+    tabindex="-1">
+    <button
+      id="ModalClose-{{ section.id }}"
+      type="button"
+      class="product-media-modal__toggle close_but"
+      aria-label="{{ 'accessibility.close' | t }}">
+      {{ 'close.svg' | inline_asset_content }}
+    </button>
+
+    <div
+      class="product-media-modal__content"
+      role="document"
+      aria-label="{{ 'products.modal.label' | t }}"
+      tabindex="0">
+      <div class="product-media-slider">
+        {%- liquid
+          if product.selected_or_first_available_variant.featured_media != null
+            assign media = product.selected_or_first_available_variant.featured_media
+            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+          endif
+        -%}
+        {%- for media in product.media -%}
+          {% if section.settings.hide_variants and variant_images contains media.src or variant_images contains media.id %}
+            {% assign variant_image = true %}
+          {% else %}
+            {% assign variant_image = false %}
+          {% endif %}
+          {% unless media.id == product.selected_or_first_available_variant.featured_media.id %}
+
+            <div class="zoomable">
+              {%- render 'product-media'
+                , media: media
+                , loop: section.settings.enable_video_looping
+                , variant_image: variant_image -%}
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="slider-nav-button prev">
+        {{ 'left.svg' | inline_asset_content }}
+      </button>
+      <button class="slider-nav-button next">
+        {{ 'right.svg' | inline_asset_content }}
+      </button>
+
+      <!-- Pagination Container -->
+      <div class="pagination"></div>
+    </div>
+  </div>
+</product-modal>
+
+<style>
+  .lightbox-highlight {
+    position: relative;
+    width: 50%;
+    text-align: left;
+    padding-left: 5em;
+    padding-top: 2em;
+    color: rgb(var(--color-foreground));
+    font-family: 'Gotham Narrow Book';
+    z-index: 2;
+  }
+
+  .product-media-modal__content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Updated slider CSS with overflow-x set to auto */
+  .product-media-slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    /* Changed from hidden to auto so native swipe scrolling works */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .product-media-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .close_but > svg {
+    max-height: 20px;
+    color: #b19e95;
+    height: auto;
+  }
+  .product-media-modal__toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem;
+    z-index: 3;
+    background-color: rgba(var(--color-background), .8);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  .product-media-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 101;
+    background-color: rgba(var(--color-overlay), .5);
+    transition: opacity var(--duration-default) ease
+    , visibility var(--duration-default) ease;
+    scrollbar: none;
+  }
+  .product-media-modal[open] {
+    visibility: visible;
+    opacity: 1;
+  }
+  .product-media-modal__content > :not(.active) {
+    display: flex;
+  }
+  .product-media-modal__dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    background-color: rgb(var(--color-background));
+    overflow: hidden;
+  }
+  .product-media-slider > * {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  .product-media-slider img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  /* Navigation Buttons */
+  .slider-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    background: rgba(var(--color-background), .8);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .slider-nav-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .slider-nav-button.prev {
+    left: 1rem;
+  }
+  .slider-nav-button.next {
+    right: 1rem;
+  }
+  .slider-nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  /* Pagination Styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: 1rem;
+  }
+  .pagination button {
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  .pagination button.active {
+    background-color: #0c1e3a;
+  }
+
+  .zoomable {
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+
+  .zoomable img.zoom {
+    transition: transform .2s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+  }
+
+  /* Active zoomed state */
+  .zoomable.active img.zoom {
+    cursor: zoom-out;
+    transform: scale(2);
+    /* Adjust zoom level */
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.querySelector("#ProductModal-{{ section.id }}");
+    const slider = modal.querySelector(".product-media-slider");
+    const highlightContainer = document.getElementById("LightboxHighlight");
+    const highlightItems = document.querySelectorAll("ol > li.hov[data-index]");
+    const slides = slider.children;
+    const paginationContainer = modal.querySelector(".pagination");
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let initialScroll = 0;
+    let dragThreshold = 50; // Increased threshold for better reliability
+
+    // Create pagination dots based on the number of slides.
+    function createPagination() {
+      paginationContainer.innerHTML = "";
+      for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement("button");
+        dot.dataset.index = i;
+        if (i === currentIndex) dot.classList.add("active");
+        dot.addEventListener("click", function() {
+          currentIndex = parseInt(this.dataset.index, 10);
+          goToSlide(currentIndex);
+        });
+        paginationContainer.appendChild(dot);
+      }
+    }
+
+    function updatePagination() {
+      Array.from(paginationContainer.children).forEach(dot => {
+        dot.classList.toggle("active", parseInt(dot.dataset.index, 10) === currentIndex);
+      });
+    }
+
+    function updateHighlight(index) {
+      const matching = Array.from(highlightItems).find(item =>
+        item.getAttribute("data-index") === String(index)
+      );
+      highlightContainer.innerHTML = matching ? matching.innerHTML : "";
+    }
+
+    // goToSlide will loop around at the ends.
+    function goToSlide(index) {
+      if (index >= slides.length) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = slides.length - 1;
+      } else {
+        currentIndex = index;
+      }
+      slider.scrollTo({
+        left: currentIndex * slider.clientWidth,
+        behavior: "smooth"
+      });
+      updateHighlight(currentIndex);
+      updatePagination();
+    }
+
+    // Navigation buttons
+    modal.querySelectorAll(".slider-nav-button").forEach(button => {
+      button.addEventListener("click", function() {
+        if (this.classList.contains("next")) {
+          goToSlide(currentIndex + 1);
+        } else if (this.classList.contains("prev")) {
+          goToSlide(currentIndex - 1);
+        }
+      });
+    });
+
+    // Thumbnail click handler
+    document.querySelectorAll('[data-modal="#ProductModal-{{ section.id }}"]').forEach(button => {
+      button.addEventListener("click", function(e) {
+        const clickedMedia = e.target.closest("[data-index]");
+        if (clickedMedia) {
+          currentIndex = parseInt(clickedMedia.getAttribute("data-index"), 10);
+          slider.scrollTo({
+            left: currentIndex * slider.clientWidth,
+            behavior: "smooth"
+          });
+          updateHighlight(currentIndex);
+          updatePagination();
+        }
+      });
+    });
+
+    // Improved drag handling
+    function handleDragStart(e) {
+      if (e.type === 'mousedown' && e.button !== 0) return;
+      isDragging = true;
+      startX = e.clientX || e.touches[0].clientX;
+      initialScroll = slider.scrollLeft;
+      slider.style.cursor = "grabbing";
+      slider.style.scrollSnapType = 'none';
+      e.preventDefault();
+    }
+
+    function handleDragMove(e) {
+      if (!isDragging) return;
+      const x = e.clientX || e.touches[0].clientX;
+      const delta = startX - x;
+      slider.scrollLeft = initialScroll + delta;
+      if (Math.abs(delta) > 10) {
+        e.preventDefault();
+      }
+    }
+
+    function handleDragEnd(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      slider.style.cursor = "grab";
+      slider.style.scrollSnapType = 'x mandatory';
+      const x = e.clientX || (e.changedTouches && e.changedTouches[0].clientX);
+      if (!x) return;
+      const delta = startX - x;
+      if (Math.abs(delta) > dragThreshold) {
+        currentIndex = delta > 0 ? currentIndex + 1 : currentIndex - 1;
+      }
+      goToSlide(currentIndex);
+    }
+
+    slider.addEventListener('mousedown', handleDragStart);
+    slider.addEventListener('touchstart', handleDragStart, { passive: false });
+    document.addEventListener('mousemove', handleDragMove);
+    document.addEventListener('touchmove', handleDragMove, { passive: false });
+    document.addEventListener('mouseup', handleDragEnd);
+    document.addEventListener('touchend', handleDragEnd);
+
+    slider.querySelectorAll('img').forEach(img => {
+      img.addEventListener('dragstart', (e) => e.preventDefault());
+    });
+
+    window.addEventListener("resize", function() {
+      goToSlide(currentIndex);
+    });
+
+    slider.addEventListener('scroll', function() {
+      if (!isDragging) {
+        currentIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+        updateHighlight(currentIndex);
+        updatePagination();
+      }
+    }, { passive: true });
+
+    // Create pagination on page load.
+    createPagination();
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".zoomable").forEach(wrapper => {
+      const img = wrapper.querySelector("img.zoom");
+      let isZoomed = false;
+
+      wrapper.addEventListener("click", function (e) {
+        e.preventDefault();
+        isZoomed = !isZoomed;
+        wrapper.classList.toggle("active", isZoomed);
+
+        if (!isZoomed) {
+          img.style.transformOrigin = "center center";
+          return;
+        }
+
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xPercent = (x / rect.width) * 100;
+        const yPercent = (y / rect.height) * 100;
+
+        img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+      });
+
+      wrapper.addEventListener("mousemove", function (e) {
+        if (!isZoomed) return;
+
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xPercent = (x / rect.width) * 100;
+        const yPercent = (y / rect.height) * 100;
+
+        img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+      });
+    });
+  });
+</script>

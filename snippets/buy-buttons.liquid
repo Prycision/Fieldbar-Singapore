@@ -1,0 +1,305 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+
+  Usage:
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+{% endcomment %}
+<div {{ block.shopify_attributes }}>
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <div
+      class="product-form__error-message-wrapper"
+      role="alert"
+      hidden>
+      <span class="svg-wrapper">
+        {{- 'icon-error.svg' | inline_asset_content -}}
+      </span>
+      <span class="product-form__error-message"></span>
+    </div>
+    <div
+      class="klav-container"
+      {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
+        style="display: block !important"
+      {% endif %}>
+
+      {% case localization.country.iso_code %}
+        {% when 'UK' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Notify Me When Available
+          </a>
+        {% when 'EU' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Notify Me When Available
+          </a>
+        {% when 'DE' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+
+            Benachrichtigen Sie mich, wenn verfügbar
+
+          </a>
+        {% when 'FR' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Prévenez-moi lorsque disponible
+          </a>
+        {% when 'AU' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Notify Me When Available
+          </a>
+
+        {% when 'US' %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Notify Me When Available
+          </a>
+        {% else %}
+          <a class="klaviyo-bis-trigger fieldbar_button" href="#">
+            Notify Me When Available
+          </a>
+      {% endcase %}
+    </div>
+
+    {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null
+    %}
+      <div>
+        {% case localization.country.iso_code %}
+          {% when 'UK' %}
+            <button onclick="window.location.href='/products/custom-gift-card'" class="fieldbar_button">BUY A GIFT CARD
+            </button>
+          {% when 'EU' %}
+            <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">BUY A GIFT CARD
+            </button>
+          {% when 'DE' %}
+            <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">GESCHENKKARTE KAUFEN
+            </button>
+          {% when 'FR' %}
+            <button onclick="window.location.href='/products/gift-card-eu'" class="fieldbar_button">ACHETER UNE CARTE CADEAU
+            </button>
+          {% when 'AU' %}
+            <button onclick="window.location.href='/products/gift-card-aus'" class="fieldbar_button">BUY A GIFT CARD
+            </button>
+          {% when 'US' %}
+            <button onclick="window.location.href='/products/gift-card-usa'" class="fieldbar_button">BUY A GIFT CARD
+            </button>
+          {% else %}
+            <button onclick="window.location.href='/products/custom-gift-card'" class="fieldbar_button">
+              GET A GIFT CARD
+            </button>
+        {% endcase %}
+      </div>
+    {% else %}
+      <product-form
+        class="product-form"
+        data-hide-errors="{{ gift_card_recipient_feature_active }}"
+        data-section-id="{{ section.id }}">
+        {%- form 'product'
+          , product
+          , id: product_form_id
+          , class: 'form'
+          , novalidate: 'novalidate'
+          , data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+            class="product-variant-id">
+
+          {%- if gift_card_recipient_feature_active -%}
+            {%- render 'gift-card-recipient-form'
+              , product: product
+              , form: form
+              , section: section -%}
+          {%- endif -%}
+
+          <div class="product-form__buttons ">
+            {%- liquid
+              assign check_against_inventory = true
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+                assign check_against_inventory = false
+              endif
+              if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+                assign quantity_rule_soldout = true
+              endif
+            -%}
+
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="product-form__submit fieldbar_button button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
+                disabled
+              {% endif %}>
+              <span>
+                {%- if product.selected_or_first_available_variant == null -%}
+                  {{ 'products.product.unavailable' | t }}
+                {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {%- if product.handle == 'drinks-box-lobster-red' and localization.country.iso_code != 'US' -%}
+                    Pre-Order
+                  {%- else -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- endif -%}
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
+            {%- if show_dynamic_checkout -%}
+              {{ form | payment_button }}
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </product-form>
+    {% endif %}
+  {%- else -%}
+    <div class="product-form ">
+      <div class="product-form__buttons form ">
+        {% case localization.country.iso_code %}
+          {% when 'DE' %}
+            <button
+              style="text-transform:uppercase"
+              onclick="window.location.href='/products/gift-card-eu'"
+              class="fieldbar_button">
+              Eine Geschenkkarte kaufen
+            </button>
+          {% when 'FR' %}
+            <button
+              style="text-transform:uppercase"
+              onclick="window.location.href='/products/gift-card-eu'"
+              class="fieldbar_button">
+              Acheter une carte cadeau
+            </button>
+          {% when 'AU' %}
+            <button onclick="window.location.href='/products/gift-card-aus'" class="fieldbar_button">
+              GET A GIFT CARD
+            </button>
+          {% when 'US' %}
+            <button onclick="window.location.href='/products/gift-card-usa'" class="fieldbar_button">
+              GET A GIFT CARD
+            </button>
+          {% else %}
+            <button onclick="window.location.href='/products/custom-gift-card'" class="fieldbar_button">
+              GET A GIFT CARD
+            </button>
+        {% endcase %}
+      </div>
+    </div>
+  {%- endif -%}
+  <div
+    style="text-align: center !important"
+    class="shipping-info-box"
+    data-tooltip="{{ product.metafields.custom.ships_in_hover_state }}">
+    <span class="nfo">
+      {{ 'info.svg' | inline_asset_content }}
+    </span>
+    <span style="margin-left: 0.5em;">
+      {{ product.metafields.custom.shipping_info }}
+    </span>
+  </div>
+{% comment %}
+  {%- if show_pickup_availability -%}
+  {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+  {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true
+  -%}
+  <pickup-availability
+  class="product__pickup-availabilities quick-add-hidden"
+  {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+  available
+  {% endif %}
+  data-root-url="{{ request.path }}"
+  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+  data-has-only-default-variant="{{ product.has_only_default_variant }}"
+  data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}">
+  <template>
+  <pickup-availability-preview class="pickup-availability-preview">
+  <span class="svg-wrapper">
+  {{- 'icon-unavailable.svg' | inline_asset_content -}}
+  </span>
+  <div class="pickup-availability-info">
+  <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+  <button class="pickup-availability-button link link--text underlined-link">
+  {{ 'products.product.pickup_availability.refresh' | t }}
+  </button>
+  <div title="some text here">{{ 'Lock.svg' | inline_asset_content }} Payment options</div>
+  </div>
+  </pickup-availability-preview>
+  </template>
+  </pickup-availability>
+  <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+{% endcomment %}
+</div>
+{% style %}
+  .shipping-info-box {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .nfo > svg {
+    margin-bottom: -5px;
+  }
+
+  /* Tooltip styling */
+  .shipping-info-box::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -400%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #01324c;
+    padding: 8px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 100;
+    max-width: 70vw;
+    white-space: pre-wrap;
+    font-family: 'Gotham Narrow Book';
+  }
+
+  /* Arrow */
+  .shipping-info-box::before {
+    content: '';
+    position: absolute;
+    bottom: -48%;
+    left: 32%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #33333300 #2c6ecb00 #ffffff #ffffff00;
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+  }
+
+  /* Show tooltip on hover */
+  .shipping-info-box:hover::after,
+  .shipping-info-box:hover::before {
+    opacity: 1;
+  }
+{% endstyle %}

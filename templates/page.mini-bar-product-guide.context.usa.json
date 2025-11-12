@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.mini-bar-product-guide.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "short_description": "4.2 QT\n<br> <br>\nThe <strong>FIELDBAR Mini Bar</strong> is the modern reinterpretation of vintage workmen’s portable lunch boxes. With a <strong>4.2 quarts capacity</strong> accommodating <strong>6 standard beer cans</strong>, a <strong>weight of just over 2.2 lbs</strong> and an <strong>optional interchangeable long strap</strong>, the Mini Bar is the most <strong>portable</strong> - and <strong>personal</strong> - FIELDBAR cooler box to date."
+      },
+      "blocks": {}
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "text": "<p>With a compact 4.2 quarts litre capacity, the FIELDBAR Mini Bar is <strong>perfectly proportioned</strong> for <strong>petite picnics</strong>, <strong>elegant aperitivos</strong> or even <strong>everyday luncheons</strong>.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "text": "<p>Never leave your FIELDBAR at home again. Weighing <strong>just over 2 lbs </strong>and fitted with a <strong>comfort grip handle</strong> or <strong>optional long strap</strong>, the Mini Bar is our <strong>lightest</strong>, most portable cooler yet.</p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "text": "<p>Packed full of ice, and kept in the shade, the FIELDBAR Mini Bar can keep <strong>drinks below 50 °F for up to 24 hours</strong>. That’s thanks to its <strong>thermal effective shape</strong>,<strong> closed cell proprietary foam, radiation reflective paint, airtight lid gaske</strong>t and a <strong>raised floor.</strong></p>"
+          }
+        }
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {
+        "capacity_text": "Capacity | 4.2 QT"
+      },
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "6 Beer Cans 11.2 oz"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "4 Standard Glass Bottles 11.2 oz"
+          }
+        }
+      }
+    }
+  }
+}

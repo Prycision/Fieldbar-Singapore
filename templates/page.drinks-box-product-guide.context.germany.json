@@ -1,0 +1,190 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.drinks-box-product-guide.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "intro_text": "WIR STELLEN VOR",
+        "short_description": "10L<br><br>\nDie FIELDBAR Getränkebox ist eine Hartschalen-Kühlbox, die für eine herausragende Wärmeleistung entwickelt wurde. Die Getränkebox ist gut verarbeitet und perfekt proportioniert und bietet alles, was Sie von einer modernen Kühlbox erwarten. Langlebig, vielseitig und bequem zu tragen.",
+        "button_text": "JETZT EINKAUFEN"
+      },
+      "blocks": {}
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_6zhifr": {
+          "settings": {
+            "text": "<h2>Genauer betrachtet</h2><p>Haltbar, vielseitig und mit hohem Tragekomfort.</p>"
+          }
+        },
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"https://fieldbar.com/collections/drinks-box\" id='fancy_hover'>DRINKS BOX KAUFEN</a></div>"
+          }
+        }
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "title": "Perfekt proportioniert",
+            "text": "<p>Von den eleganten viktorianischen Getränkeboxen aus Holz inspiriert, bietet die <strong>10 Liter</strong> FIELDBAR Getränkebox Platz für <strong>2 Flaschen Champagner</strong> oder drei Flaschen Wein in aufrechter Position. Perfekt proportioniert für stilvolle Partys und Picknicks.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "title": "Für Safaris gemacht",
+            "text": "<p>Mit nur <strong>1.8kg</strong> Gewicht hat die FIELDBAR Getränkebox eine Tragfähigkeit von <strong>120kg</strong>. Strapazierfähig, kratzfest und stoßsicher. FIELDBAR-Kühlboxen sind aus einem speziellen ABS-Kunststoff-Verbundmaterial gefertigt, das auch in verschiedenen besonders widerstandsfähigen Produkten zum Einsatz kommt - und daher gilt auf jede FIELDBAR eine Garantie von <strong>5 Jahren</strong>.</p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "title": "Überragende Kühlleistung",
+            "text": "<p>Eine mit Eis vollgepackte und draußen im Schatten abgestellte FIELDBAR Getränkebox kann <strong>Champagner unglaubliche 50 Stunden lang auf unter 10°C kühlen</strong>. Thermisch effektive Form, geschlossenzelliger Spezial-Schaumstoff, strahlungsreflektierende Lackierung, luftdichte Deckeldichtung und erhöhter Boden.</p>"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {
+        "right_heading": "CHARAKTERISTISCHE FARBTÖNE",
+        "right_copy": "In hochglänzender Ausführung, Beschläge mit goldenen Akzenten. Wählen Sie aus sechs charakteristischen Farben."
+      },
+      "blocks": {}
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {
+        "heading": "Mehr Platz als Sie denken",
+        "capacity_text": "Fassungsvermögen | 10 L",
+        "link_text": "Größen vergleichen"
+      },
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "Pimm’s & Limo, 3 Tennisbälle"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "10 Bierdosen 330ml"
+          }
+        },
+        "item_gLC84d": {
+          "settings": {
+            "label": "3 Weinflachen 750ml"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "2 Champagnerflaschen 750ml"
+          }
+        }
+      }
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "heading": "Anweisungen & Pflege",
+        "description": "GEBRAUCHSANWEISUNG\n<br>\n01. Füllen Sie die Drinks Box mit bereits gekühlten Getränken und einer großzügigen Menge an Eis<br>\n02. Öffnen Sie die Drinks Box nur, wenn erforderlich, um die kühle Luft nicht entweichen zu lassen<br>\n03. Zur Verwendung als Eiskübel: Füllen Sie die Drinks Box bis zur Hälfte mit Eis und kaltem Wasser, bevor Sie die Getränke einstellen<br>\n\n<br>\nPFEGE & GEBRAUCHSSPUREN<br>\n01. Mit warmem Wasser und einem weichen Tuch reinigen<br>\n02. Keine Reinigungsmittel verwenden<br>\n03. Keinen Druckschlauch verwenden<br>\n04. Der Ledergriff verwittert mit der Zeit<br>\n05. Das Gehäuse kann mit der Zeit leichte Kratzer und Dellen abbekommen<br>\n06. Messingbeschichtete Eisenwaren können mit der Zeit oxidieren<br>\n07. Stellen Sie sicher, dass das Innere trocken ist, bevor Sie Drinks Box wegräumen<br>",
+        "button_text": "DRINKS BOX KAUFEN"
+      },
+      "blocks": {}
+    },
+    "specifications_product_guide_VPLnhc": {
+      "settings": {
+        "left_title": "Technische Daten",
+        "left_subtitle": "Eine FIELDBAR Drinks Box besteht aus 58 Einzelteilen, die bei Bedarf alle entfernt, repariert und wiederverwertet werden können. Das ist nicht nur gut für Sie und uns, sondern auch für unseren Planeten."
+      },
+      "blocks": {
+        "left_item_zhxGBV": {
+          "settings": {
+            "text": "Doppelseitiger Griff aus Echtlederresten für noch mehr Tragekomfort"
+          }
+        },
+        "left_item_9N3NtL": {
+          "settings": {
+            "text": "Reflektierender Lack, um Hitze zu reduzieren"
+          }
+        },
+        "left_item_T7dYBR": {
+          "settings": {
+            "text": "Leistungsfähige, herausnehmbare und ozonfreundliche Schaumstoffisolierung"
+          }
+        },
+        "left_item_VAqEQj": {
+          "settings": {
+            "text": "Luftstromresistente Dichtung"
+          }
+        },
+        "left_item_cmLi8A": {
+          "settings": {
+            "text": "Lebensmittelechtes, BPA-freies, pflegeleichtes Inneres"
+          }
+        },
+        "right_item_EWTUFj": {
+          "settings": {
+            "text": "Versteckte Aluminiumscharniere – für eine lange Lebensdauer konzipiert"
+          }
+        },
+        "right_item_7kWywW": {
+          "settings": {
+            "text": "Aluminium-Griffhalterungen"
+          }
+        },
+        "right_item_7iGixA": {
+          "settings": {
+            "text": "Stoß- und kratzfestes Gehäuse (durch handgefertigte Lackierung kann es zu leichten Farbabweichungen kommen)"
+          }
+        },
+        "right_item_Y68Hkf": {
+          "settings": {
+            "text": "Vorgefertigte Messingplakette mit Seriennummer zur Qualitätskontrolle und Nachverfolgung"
+          }
+        },
+        "right_item_VfJxjr": {
+          "settings": {
+            "text": "Rutschfeste Silikonfüße"
+          }
+        }
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "settings": {},
+      "blocks": {
+        "column_jyP4bd": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Fünf Jahre Garantie</a>"
+          }
+        },
+        "column_hwiqEW": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Riegelloser Verschluss</a>"
+          }
+        },
+        "column_pzegda": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Überragende Kühlleistung</a>"
+          }
+        },
+        "column_eVBBjF": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Für Safaris Gemacht</a>"
+          }
+        }
+      }
+    }
+  }
+}

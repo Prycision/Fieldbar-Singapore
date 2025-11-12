@@ -1,0 +1,218 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "fieldbar_collection_gr_z9CDk": {
+      "type": "Fieldbar-collection-gr",
+      "disabled": false,
+      "custom_css": [
+        ".slider-buttons {display: flex; align-items: center; justify-content: end;}",
+        ".card-information {display: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; text-transform: uppercase; text-decoration: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; font-size: 0.7em !important; letter-spacing: 0 !important;}",
+        ".card__heading > p {display: none !important;}",
+        " {margin-top: 5em;}",
+        "p {color: #00334c;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "header-3d8ced22378b37773213d43cf3111d13": null,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "header-8fa0b2f18db4d822093f69a350cb8221": null,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "header-f6714825c99acc4838c9ab4906d34f34": null,
+        "padding_top": 16,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.fieldbar-collection.presets.name"
+    },
+    "multicolumn_6rMRJW": {
+      "settings": {},
+      "blocks": {
+        "column_zcwcmb": {
+          "settings": {
+            "custom_liquid": "<h1 style=\"margin: 0\">Handgefertigte Kühlboxen <br>\n& Edles Zubehör.</h1>"
+          }
+        },
+        "column_DjKrmC": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><p></p></div>\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\" class=\"fieldbar_button-link\">\n    <button class=\"fieldbar_button\">KATALOG SHOPPEN</button>\n  </a><p class=\"txtbelow\" style=\"margin-top: 10px\">Um einen sicheren Kauf zu gewährleisten, empfehlen wir, <strong>NUR</strong> bei uns direkt oder bei unseren <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Autorisierten Händlern</a></span> zu kaufen.</p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "multicolumn_DMY9h7": {
+      "settings": {},
+      "blocks": {
+        "column_cb39Lp": {
+          "settings": {
+            "custom_liquid": "<h1 style=\"margin: 0\">Handgefertigte Kühlboxen\n& edles Zubehör.</h1>"
+          }
+        },
+        "column_eCDCC4": {
+          "settings": {
+            "custom_liquid": "<div class=\"mob-center\">\n  <a style=\" font-family: 'Gotham Book' !important;\" id=\"fancy_hover\" style='text-decoration: none!important; ' href=\"{{ market_friendly_url }}/collections/all\">\n    KATALOG SHOPPEN\n  </a>\n</div>"
+          }
+        },
+        "column_Q9YLiA": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\">\n    <button class=\"fieldbar_button\">KATALOG SHOPPEN\n</button>\n  </a>\n\n<p></div>\n      <div><p class=\"txtbelow\" style=\"margin-top: 10px\"><br>Um einen sicheren Kauf zu gewährleisten, empfehlen wir, <strong>NUR</strong> bei uns direkt oder bei unseren <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Autorisierten Händlern</a></span> zu kaufen.</p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "custom_liquid_X7UFxq": {
+      "settings": {
+        "custom_liquid": "{% render \"slider-de\" %}"
+      },
+      "blocks": {}
+    },
+    "rich_text_j8NttL": {
+      "settings": {},
+      "blocks": {
+        "heading_MwyQ7H": {
+          "settings": {
+            "heading": "Stylishe Freizeitgestaltung"
+          }
+        },
+        "text_yH4bXF": {
+          "settings": {
+            "text": "<p>Ob zu Land, zu Wasser, in der Stadt oder am Land - unsere Hartschalen-Kühlboxen verleihen jedem Ausflug Leichtigkeit und mühelosen Stil.</p>"
+          }
+        }
+      }
+    },
+    "multicolumn_gcEbWE": {
+      "settings": {},
+      "blocks": {
+        "column_HKqMgE": {
+          "settings": {
+            "link_label": "DRINKS BOX / BAZARUTO BLUE"
+          }
+        },
+        "column_iFbzMH": {
+          "settings": {
+            "link_label": "DRINKS BOX / ORCHARD ORANGE"
+          }
+        }
+      }
+    },
+    "custom_liquid_KRYc6X": {
+      "settings": {
+        "custom_liquid": "{% render \"safari-split-gr\" %}"
+      },
+      "blocks": {}
+    },
+    "multicolumn_9HQBDB": {
+      "settings": {},
+      "blocks": {
+        "column_CwnPNw": {
+          "settings": {
+            "custom_liquid": "{% render \"reviews2\" %}    <div style=\"\n  padding: 0 15% 10%;\n\">\n    <h2 style=\"margin-bottom: 16px; margin-top: 1em; text-align: center;\">Zeitlose Eleganz</h2>\n    <p style=\"text-align: center;\">Es war einmal … eine Zeit, in der man sich noch mit Stil und Eleganz auf Abenteuer in der freien Natur begab. Wir sind der Meinung, dass das auch heute noch möglich ist – und zwar unabhängig davon, wo Sie leben – und dass Ausflüge in die Natur gepaart mit müheloser Stilsicherheit am schönsten sind.</p>\n   </div>"
+          }
+        },
+        "column_XcGRXP": {
+          "settings": {
+            "custom_liquid": "{% render \"home_drinks_hover-gr\" %}"
+          }
+        }
+      }
+    },
+    "multicolumn_BBjqQh": {
+      "settings": {},
+      "blocks": {
+        "column_AqPX3z": {
+          "settings": {
+            "image": "shopify://shop_images/5_year_home_de.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">5 Jahre Garantie</a>"
+          }
+        },
+        "column_cpEYCL": {
+          "settings": {
+            "image": "shopify://shop_images/icon_safari_enginreered_de.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Safaritauglich</a>"
+          }
+        },
+        "column_3bBUXW": {
+          "settings": {
+            "image": "shopify://shop_images/icon_superior_ice_performance_de.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Überragende Eisleistung</a>"
+          }
+        },
+        "column_zLPEL4": {
+          "settings": {
+            "image": "shopify://shop_images/icon_sustainably_designed_de.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Nachhaltiges Design</a>"
+          }
+        }
+      }
+    },
+    "custom_liquid_MJjC6x": {
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship-gr\" %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_3bXtCQ": {
+      "settings": {
+        "custom_liquid": "{% render 'bells2-gr' %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_a4PKXU": {
+      "settings": {
+        "custom_liquid": "{% render \"india-gr\" %}"
+      },
+      "blocks": {}
+    }
+  },
+  "order": [
+    "multicolumn_8daJAn",
+    "custom_liquid_YkVBBF",
+    "multicolumn_6rMRJW",
+    "multicolumn_DMY9h7",
+    "custom_liquid_EyNKBJ",
+    "fieldbar_collection_gr_z9CDk",
+    "custom_liquid_X7UFxq",
+    "rich_text_j8NttL",
+    "multicolumn_gcEbWE",
+    "custom_liquid_KRYc6X",
+    "multicolumn_9HQBDB",
+    "multicolumn_BBjqQh",
+    "custom_liquid_MJjC6x",
+    "custom_liquid_3bXtCQ",
+    "custom_liquid_a4PKXU",
+    "custom_liquid_6PkVtg"
+  ]
+}

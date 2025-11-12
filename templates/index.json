@@ -1,0 +1,581 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multicolumn_8daJAn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_cAPd9n": {
+          "type": "column",
+          "settings": {
+            "div-link": "shopify://collections/all",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div class=\"full-video-section\">\n  <div class=\"video-wrapper\">\n    <video\n      class=\"bg-video\"\n poster=\"https://cdn.shopify.com/s/files/1/0654/1610/2127/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07.webp?v=1745327402\" \n      autoplay\n      muted\n      loop\n      playsinline\n    >\n      <source src=\"https://cdn.shopify.com/videos/c/o/v/fed7a757f40d4b56b99365d57e4d8310.mp4\" type=\"video/mp4\" />\n      Your browser does not support the video tag.\n    </video>\n  </div>\n</div>\n\n<style>\n.full-video-section {\n  width: 100%;\n  height: 100vh; /* Full screen height */\n  display: flex;\n}\n\n.video-wrapper {\n  flex: 1;\n  position: relative;\n  height: auto;\n  overflow: hidden;\n}\n\n.bg-video {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 75vh;\n  object-fit: cover;\nobject-position: center center;\n}\n</style>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_P8L8E3": {
+          "type": "column",
+          "settings": {
+            "div-link": "shopify://collections/all",
+            "image": "shopify://shop_images/May__web_home_banner_COM_right_desktop_and_mobile.jpg",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div class=\"custom2-video-wrapper\">\n  <video\n    autoplay\n    muted\n    loop\n    playsinline\n    class=\"custom-video\"\n  >\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/4614cdadf88e4d508b7ac13e365ce9df.mp4\" />\n    Your browser does not support the video tag.\n  </video>\n</div>\n\n<style>\n/* Make sure parent column allows height expansion */\n.custom2-video-wrapper {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n}\n\n.custom-video {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n</style>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_cAPd9n",
+        "column_P8L8E3"
+      ],
+      "custom_css": [
+        ".background-none .multicolumn-card__image-wrapper {margin-left: 0; margin-right: 0;}",
+        " {max-height: 75vh; margin: 0 1em;}",
+        "img {max-height: 80vh;}",
+        "img {max-height: 75vh;}",
+        ".media.media--transparent.media--square {height: 75vh;}",
+        "@media screen and (max-width: 61.8125em) {{display: none !important; }}"
+      ],
+      "settings": {
+        "css-class": "",
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_YkVBBF": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{display: none;}",
+        "@media screen and (max-width: 61.8125em) {{display: block !important; padding: 0 1em; min-height: 65vh; }}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"custom-videox-wrapper\">\n<a href=\"{{ market_friendly_url }}/collections/all\" class=\"video-link\">\n  <video src=\"https://cdn.shopify.com/videos/c/o/v/fed7a757f40d4b56b99365d57e4d8310.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    class=\"custom-videox\"\n  >\n   \n    Your browser does not support the video tag.\n  </video>\n</a>\n</div>\n\n<style>\n.custom-videox-wrapper {\n  width: 100%;\n  height: 65vh;\n  position: relative;\n  overflow: hidden;\n  display: flex;\n}\n\n.custom-videox {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_6rMRJW": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_zcwcmb": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<h1 style=\"margin: 0\">Handcrafted Cooler Boxes<br>\n& Fine Outdoor Goods.</h1>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DjKrmC": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div class=\"textButton\">\n      <div><p></p></div>\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\" class=\"fieldbar_button-link\">\n    <button class=\"fieldbar_button\">SHOP CATALOGUE</button>\n  </a><p class=\"txtbelow\" style=\"margin-top: 10px\">To ensure a safe purchase, <strong>ONLY</strong> buy directly with us or our <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Authorised Retailers.</a></span></p></div>\n    </div>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_zcwcmb",
+        "column_DjKrmC"
+      ],
+      "custom_css": [
+        ".textButton {display: flex;}",
+        ".textButton > * {width: 50%;}",
+        "p {color: #002b4d;}",
+        " {margin: 16px 2em;}",
+        "@media screen and (max-width: 61.8125em) {{margin: 1em !important; display: none !important; } li {display: flex !important; } .textButton {display: flex !important; } h1 {font-size: 2.5em !important; }}"
+      ],
+      "settings": {
+        "css-class": "desk-box",
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_DMY9h7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_cb39Lp": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<h1 style=\"margin: 0\">Handcrafted Cooler Boxes<br>\n& Fine Outdoor Goods.</h1>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eCDCC4": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div class=\"mob-center\">\n  <a style=\" font-family: 'Gotham Book' !important;\" id=\"fancy_hover\" style='text-decoration: none!important; ' href=\"/collections/all\">\n    SHOP CATALOGUE\n  </a>\n</div>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Q9YLiA": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div class=\"textButton\">\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\">\n    <button class=\"fieldbar_button\">SHOP CATALOGUE</button>\n  </a>\n\n<p></p></div>\n      <div><p class=\"txtbelow\" style=\"margin-top: 10px\"><br>To ensure a safe purchase, <strong>ONLY</strong> buy directly with us or our <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"{{ market_friendly_url }}/pages/fieldbar-retailers\">Authorised Retailers.</a></span></p></div>\n    </div>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_cb39Lp",
+        "column_eCDCC4",
+        "column_Q9YLiA"
+      ],
+      "custom_css": [
+        "{display: none !important;}",
+        ".textButton {display: flex;}",
+        ".textButton > * {width: 50%;}",
+        "p {color: #002b4d;}",
+        " {margin: 16px 2em;}",
+        "@media screen and (max-width: 61.8125em) {{margin: 1em !important; display: block !important; } li {display: flex !important; } .textButton {display: flex !important; } h1 {font-size: 2.1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "mobile-box",
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_EyNKBJ": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{display: none !important;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"hid\">\n  <a style='text-decoration: none!important; ' href=\"/collections/all\" class=\"fieldbar_button\">\n    <button class=\"fieldbar_button\">SHOP CATALOGUE</button>\n  </a>\n</div>",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "fieldbar_collection_rHYVRr": {
+      "type": "Fieldbar-collection",
+      "custom_css": [
+        ".slider-buttons {display: flex; align-items: center; justify-content: end;}",
+        ".card-information {display: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; text-transform: uppercase; text-decoration: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; font-size: 0.7em !important; letter-spacing: 0 !important;}",
+        ".card__heading > p {display: none !important;}",
+        " {margin-top: 5em;}",
+        "p {color: #00334c;"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_X7UFxq": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{margin: 18px 0;}"
+      ],
+      "name": "MARQUEE",
+      "settings": {
+        "custom_liquid": "{% render \"slider\" %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_j8NttL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MwyQ7H": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevated Outdoor Leisure",
+            "heading_size": "h1"
+          }
+        },
+        "text_yH4bXF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From <strong>beach</strong>, to <strong>boat</strong>, to <strong>picnics</strong>, to <strong>polo</strong>. </p><p>Our hardcase coolers lend ease and effortless style to any outdoor occasion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MwyQ7H",
+        "text_yH4bXF"
+      ],
+      "custom_css": [
+        "P {margin-top: 3%; margin-bottom: -3%; font-family: \"Gotham Book\"; color: #00334c;}",
+        "h2 {font-family: \"SurveyorText Book Light Pro\"; margin-bottom: 3%;}",
+        " {margin-top: 3em;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 84
+      }
+    },
+    "multicolumn_gcEbWE": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_HKqMgE": {
+          "type": "column",
+          "settings": {
+            "div-link": "shopify://products/gin-trunk-oyster-grey",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_25.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<img id=\"lion\" src=\"https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Media_3_4.svg?v=1739999924\">\n<style>\n#lion {\nposition: absolute;\nz-index: 10;\nright: -40px;\ntop: -92px;\n}\n@media screen and (max-width: 61.8125em) {\n#lion {\n    width: 123px;\ntop: -40px;\nright:-20px;\n  }\n}\n</style>",
+            "link_label": "gin trunk / Oyster Grey",
+            "link": "shopify://products/gin-trunk-oyster-grey"
+          }
+        },
+        "column_iFbzMH": {
+          "type": "column",
+          "settings": {
+            "div-link": "shopify://products/bazaruto-blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<img id=\"lion-green\" src=\"https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Media_3_4.png?v=1740000601\">\n<style>\n#lion-green {\n  position: absolute;\n  z-index: 10;\n  left: 14%;\n  bottom: -6%;\n}\n@media screen and (max-width: 61.8125em) {\n#lion-green {\n  width: 93px;\n  bottom: -180px !important;\n  right:-50px  !important;\n  left: unset;\n  overflow-y: visible;\n  }\n}\n</style>",
+            "link_label": "Drinks Box / Bazaruto Blue",
+            "link": "shopify://products/bazaruto-blue"
+          }
+        }
+      },
+      "block_order": [
+        "column_HKqMgE",
+        "column_iFbzMH"
+      ],
+      "custom_css": [
+        "{text-transform: uppercase;}",
+        "span.icon-wrap {display: none;}",
+        "li:nth-child(2) > div:nth-child(1) {padding: 20%;}",
+        "@media screen and (max-width: 61.8125em) {.multicolumn-card.content-container {margin-left: 1em; margin-right: 1em; margin-bottom: 0; } li:nth-child(2) > div:nth-child(1) {padding: 0%; } /* a.link {margin-top: -1em !important; } */ .isolate {z-index: 1; }}",
+        "a.link {margin-left: 2em;}",
+        "a {font-family: \"Gotham Medium\" !important;}"
+      ],
+      "settings": {
+        "css-class": "discover-col",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_KRYc6X": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "@media screen and (max-width: 61.8125em) {{margin-top: 6em; }}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render \"safari-split\" %}",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_9HQBDB": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CwnPNw": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "{% render \"reviews2\" %}    <div style=\"\n  padding: 0 15% 10%;\n\">\n    <h2 style=\"margin-bottom: 16px; margin-top: 1em; text-align: center;\">Timeless Style</h2>\n    <p style=\"text-align: center;\">There was a time when they did outdoor adventure with style. No matter where you live, our view is that outdoor leisure is most enjoyable and memorable when done with<strong> elegance, style</strong> and <strong>grace</strong>.</p>\n   </div>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_XcGRXP": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "{% render \"home_drinks_hover\" %}",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CwnPNw",
+        "column_XcGRXP"
+      ],
+      "custom_css": [
+        "a {font-family: \"Gotham Medium\" !important;}",
+        "p {color: #002b4d;}",
+        " {margin-top: 3%; margin-bottom: 16px;}",
+        "@media screen and (max-width: 61.8125em) {li {display: flex !important; height: 100%; }}"
+      ],
+      "settings": {
+        "css-class": "int-colours",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_BBjqQh": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_AqPX3z": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cpEYCL": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_safari_enginreered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3bBUXW": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_superior_ice_performance.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_zLPEL4": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/icon_sustainably_designed.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Sustainably Designed</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_AqPX3z",
+        "column_cpEYCL",
+        "column_3bBUXW",
+        "column_zLPEL4"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        " {margin-top: 3%;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_MJjC6x": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "p {color: #002b4d;}",
+        "@media screen and (max-width: 61.8125em) {{margin: 1em !important; padding: 0 !important; } .craft-overlay {margin: 0 !important; padding: 0 !important; } .craft-righty {padding: 0 1em !important; }}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship\" %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_3bXtCQ": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".bells2_title_block {display: flex; flex-direction: row; width: 100%; padding: 1em 2em;}",
+        "h2 {color: white;}",
+        "p {color: white;}",
+        " {height: auto;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'bells2' %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_a4PKXU": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "a {font-family: \"Gotham Medium\" !important; font-size: 0.8em;}",
+        " {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render \"india\" %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_6PkVtg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Elfsight Instagram Feed | Untitled Instagram Feed --> <script src=\"https://static.elfsight.com/platform/platform.js\" async></script> <div class=\"elfsight-app-9fa1cdd6-15db-46cf-8f13-656f3f90d4db\" data-elfsight-app-lazy></div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "multicolumn_8daJAn",
+    "custom_liquid_YkVBBF",
+    "multicolumn_6rMRJW",
+    "multicolumn_DMY9h7",
+    "custom_liquid_EyNKBJ",
+    "fieldbar_collection_rHYVRr",
+    "custom_liquid_X7UFxq",
+    "rich_text_j8NttL",
+    "multicolumn_gcEbWE",
+    "custom_liquid_KRYc6X",
+    "multicolumn_9HQBDB",
+    "multicolumn_BBjqQh",
+    "custom_liquid_MJjC6x",
+    "custom_liquid_3bXtCQ",
+    "custom_liquid_a4PKXU",
+    "custom_liquid_6PkVtg"
+  ]
+}

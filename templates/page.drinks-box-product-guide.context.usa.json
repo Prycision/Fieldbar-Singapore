@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.drinks-box-product-guide.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "short_description": "10.5 qt<br><br>\nThe FIELDBAR Drinks Box is a <strong>10.5 qt hardcase cooler box</strong> designed for <strong>superior thermal performance. Properly made</strong> and perfectly proportioned, the Drinks Box is everything you would expect from a modern cooler. <strong>Durable, versatile</strong> and <strong>comfortable to carry.</strong>"
+      },
+      "blocks": {}
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "text": "<p>Inspired by the elegant wooden ‘Drinks Boxes’ of the Victorian era, the <strong>10.5 qt </strong>FIELDBAR Drinks Box is <strong>designed to accommodate two bottles of Champagne</strong>, or three bottles of still wine in an upright position. Perfectly proportioned for stylish parties and picnics.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "text": "<p>The FIELDBAR Drinks Box <strong>only weighs 4 lbs </strong>but can <strong>withstand a weight of 265 lbs. Durable, scratch resistant and shockproof</strong>. FIELDBAR coolers are made from a special composite ABS plastic that's used in various high-impact protection products. That's why all Fieldbars come with a <strong>5‒year warranty.</strong></p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "text": "<p>Packed full of ice, and left outside in the shade, the FIELDBAR Drinks Box can <strong>keep Champagne below 50°F for an incredible 50 hours</strong>. Thermal effective shape, closed cell proprietary foam, radiation reflective paint, airtight lid gasket and a raised floor.</p>"
+          }
+        }
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {},
+      "blocks": {
+        "item_3QqRr7": {
+          "settings": {
+            "label": "10 Beers 11.2 oz"
+          }
+        },
+        "item_gLC84d": {
+          "settings": {
+            "label": "3 Wine Bottles 25.4 oz"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "2 Champagne Bottles 25.4 oz"
+          }
+        }
+      }
+    }
+  }
+}

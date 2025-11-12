@@ -1,0 +1,40 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "terms_and_conditions_KbVmq6": {
+      "type": "terms-and-conditions",
+      "custom_css": [
+        "a {font-family: \"Gotham Narrow Book\" !important;}",
+        "a:hover {color: #ff8a3d;}"
+      ],
+      "name": "T&Cs Editable Section",
+      "settings": {
+        "left_info": "<h2>Terms <br/>& Conditions</h2><p>If you have questions regarding these Terms and Conditions, please contact us at:<br/><br/>Call: <a href=\"tel:+27213005875\">+27 (0) 21 300 5875</a><br/>E-Mail Us: <a href=\"mailto:hello@fieldbar.com\" target=\"_blank\">hello@fieldbar.com</a></p>",
+        "right_content": "<p><strong>General Competition Terms & Conditions.<br/></strong>The following terms and conditions apply to prizes issued through competitions held on social media where applicable:<br/><br/>No exchanges or refunds on items purchased with discount codes issued from competitions.<br/>Valid for full price items only.<br/>Whole or partially redeemed discount codes cannot be cancelled or refunded.<br/>Discount code must be used in one transaction and no change will be given.<br/>Discount codes cannot be exchanged for cash or to purchase a gift card.<br/>Discount codes cannot be used in conjunction with any other promotion or offer.<br/><br/><strong>Benefits and Rewards.<br/></strong>By registering for an Owner's Club Account, you may have access to certain perks, rewards, exclusive offers and other benefits. Account benefits and rewards may change at any time but will be communicated to you. In order to receive marketing communication about perks and benefits you may be required to have registered products within your account.<br/><br/>Owner's Club Account Holders may receive early access to product and colour releases and exclusive perks and events.Exclusions may apply. See details when provided.<br/><br/><strong>Product Registration.</strong><br/>Owner's Club Account Holders have access to register products. Registering a product under the Owner's Club allows Account Holders to track and manage purchases and review warranty details. For more warranty information please visit our <a href=\"https://fieldbar.com/pages/warranty\" target=\"_blank\" title=\"https://fieldbar.com/pages/warranty\"><span style=\"text-decoration:underline\">Warranty and Repairs Page</span></a>. Only Fieldbar Owner's Club Members will have access to register a product.<br/><br/>Termination; Expiration; Changes to Your Account.<br/>Owner's Club Members may update certain Account information at any time. To do so, log into your Account and select “Edit” for the section you wish to update. You may also close your Account at any time by contacting us at hello@fieldbar.com. We may cancel your Account at any time if we determine that you have violated any applicable law or regulation, or engaged in any deception, forgery, fraud or committed any other abuse of the Account.<br/><br/><strong>Promotional Codes.</strong><br/>Promotional codes can be applied to your order at checkout.<br/>Promotional Codes cannot be used in conjunction with any other offer. Only one Promotional Code can be used per order.<br/><br/><strong>John Legend Competition.</strong><br/>This competition is only open to US residents 21+ only. <br/>Competition closed on 7 July 2025. <br/>The winner will be randomly selected. <br/>By entering, participants agree to join Fieldbar, Loved01 and LVE wines database. <br/>The prize is non-refundable and cannot be exchanged for cash or alternative Fieldbar, Loved01 and LVE products. <br/>The prize includes complimentary shipping. <br/>The prize does not include travel to or from the concert. <br/>Personalization and gift wrapping are not included with the prize. <br/>The prize will be dispatched within 30 days of the competition's closing date. <br/>One entry per person.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "terms_and_conditions_KbVmq6"
+  ]
+}

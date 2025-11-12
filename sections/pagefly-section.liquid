@@ -1,0 +1,422 @@
+
+{% if section.settings.section_id.size > 0 %}
+  <!-- PageFlyGlobalSection -->
+  {% render 'pagefly-main-js' %}
+  {% render 'pagefly-main-css' %}
+  {% include section.settings.section_id %}
+{% else %}
+  
+    {% if request.design_mode %}
+      <style>.pf-ph{font-size:14px!important;background:#fafafa;padding:20px;text-align:center;border:1px solid #f0f0f0;border-radius:4px;margin:15px}.pf-ph span{display:block;background:#e6f7ff;padding:8px 15px;border:1px solid #91d5ff}</style>
+      <div class="pf-ph">
+        <h3>PageFly Section</h3>
+        <span>No section selected. Please select your section from the list</span>
+      </div>
+    {% endif %}
+  
+{% endif %}
+
+{% schema %}
+{
+  "name": "PageFly Section",
+  "settings": [
+    {
+      "id": "section_id",
+      "type": "select",
+      "label": "Sections",
+      "options": [
+        {
+          "label": "Select section",
+          "value": ""
+        },
+        {
+          "label": "3 - Size Guide bottles - DE2",
+          "value": "pf-afe9cbb6"
+        },
+        {
+          "label": "Account - Owners Club - DE",
+          "value": "pf-4519cdbe"
+        },
+        {
+          "label": "9.Product Guide -DE 7 Icons",
+          "value": "pf-13ea7931"
+        },
+        {
+          "label": "6.Product Guide - DE5 performance",
+          "value": "pf-63df6535"
+        },
+        {
+          "label": "5. Product Guide - DE4 fits more than u think",
+          "value": "pf-52cc8358"
+        },
+        {
+          "label": "2. Product Guide - DE2",
+          "value": "pf-3aae93cd"
+        },
+        {
+          "label": "8.Product Guide - DE  - copy",
+          "value": "pf-2e6a2251"
+        },
+        {
+          "label": "About Us PEOPLE BEFORE PRODUCTIVITY -DE5",
+          "value": "pf-cc49a6a7"
+        },
+        {
+          "label": "About Us 1 DE",
+          "value": "pf-3bb7fde2"
+        },
+        {
+          "label": "product",
+          "value": "pf-60bc67af"
+        },
+        {
+          "label": "8.Product Guide - French ",
+          "value": "pf-0e3870f1"
+        },
+        {
+          "label": "10. Product Guide -DE8 instructions",
+          "value": "pf-13e5b8f5"
+        },
+        {
+          "label": "1. Trade Enquiries - DE2",
+          "value": "pf-8bcf0bc2"
+        },
+        {
+          "label": "3. Product Guide - DE3 Capacity",
+          "value": "pf-915de2c4"
+        },
+        {
+          "label": "Section - media",
+          "value": "pf-43e02ce7"
+        },
+        {
+          "label": "collection",
+          "value": "pf-b1ab7bc5"
+        },
+        {
+          "label": "Section - MEDIA de",
+          "value": "pf-a781f09a"
+        },
+        {
+          "label": "Badges and quotes - de",
+          "value": "pf-d74d2bb4"
+        },
+        {
+          "label": "2. FAQ - DE2",
+          "value": "pf-3b25a9ed"
+        },
+        {
+          "label": "1. FAQ - DE1",
+          "value": "pf-18947aa3"
+        },
+        {
+          "label": "2 Size Guide -Bottles - DE3",
+          "value": "pf-594d1b2d"
+        },
+        {
+          "label": "1 Size Guide Heading - DE1",
+          "value": "pf-85caf4e2"
+        },
+        {
+          "label": "3. Trade Enquiries - DE4",
+          "value": "pf-809047ec"
+        },
+        {
+          "label": "2. Trade Enquiries - DE3",
+          "value": "pf-f1d1d17d"
+        },
+        {
+          "label": "Trade Enquiries Header - DE1",
+          "value": "pf-cbb19d9f"
+        },
+        {
+          "label": "3. Sponsor-DE 3",
+          "value": "pf-faa51efe"
+        },
+        {
+          "label": "4. Sponsor - DE4",
+          "value": "pf-13eb276f"
+        },
+        {
+          "label": "2. Sponsor -DE2",
+          "value": "pf-75c080ba"
+        },
+        {
+          "label": "1. Sponsor - DE1",
+          "value": "pf-032d22e1"
+        },
+        {
+          "label": "7.Product Guide - DE6 Design",
+          "value": "pf-6fef8f0b"
+        },
+        {
+          "label": "1.Product Guide - DE1  swatches",
+          "value": "pf-581a977f"
+        },
+        {
+          "label": "About Us  3 Images - DE craft images",
+          "value": "pf-6bea297b"
+        },
+        {
+          "label": "About Us Bottom Section - DE6",
+          "value": "pf-5d7d8fd1"
+        },
+        {
+          "label": "About Us SUSTAINABLE CRAFT -DE4",
+          "value": "pf-af3c03e2"
+        },
+        {
+          "label": "About Us Timeless Style - DE3",
+          "value": "pf-83dfef78"
+        },
+        {
+          "label": "About Us Safari Engineered - DE2",
+          "value": "pf-e853292b"
+        },
+        {
+          "label": "About Us  DE Title",
+          "value": "pf-bb933b5a"
+        },
+        {
+          "label": "warranty-DE",
+          "value": "pf-96e51886"
+        },
+        {
+          "label": "productPage DE",
+          "value": "pf-0282696e"
+        },
+        {
+          "label": "1 - Section _ product page - 2024-05-28 9:57:19",
+          "value": "pf-d5f73bab"
+        },
+        {
+          "label": "Safari Engineered - DE",
+          "value": "pf-a1a42bd3"
+        },
+        {
+          "label": "Timeless Style  - DE",
+          "value": "pf-45666cb7"
+        },
+        {
+          "label": "3 - Size Guide bottles - French",
+          "value": "pf-83d6b5c3"
+        },
+        {
+          "label": "2 Size Guide -Bottles - French",
+          "value": "pf-ad4ff3e1"
+        },
+        {
+          "label": "1 Size Guide Heading - French",
+          "value": "pf-832700b4"
+        },
+        {
+          "label": "1. Sponsor - French ",
+          "value": "pf-09a5c023"
+        },
+        {
+          "label": "2. Product Guide - French",
+          "value": "pf-51fd9dd1"
+        },
+        {
+          "label": "About Us Timeless Style - French ",
+          "value": "pf-a1563506"
+        },
+        {
+          "label": "About Us  Safari Engineered - French ",
+          "value": "pf-871e4bff"
+        },
+        {
+          "label": "About Us Image - French ",
+          "value": "pf-976da361"
+        },
+        {
+          "label": "About Us SUSTAINABLE CRAFT - French ",
+          "value": "pf-435cbfbb"
+        },
+        {
+          "label": "Trade Enquiries Header - French ",
+          "value": "pf-32392761"
+        },
+        {
+          "label": "2. Trade Enquiries - French",
+          "value": "pf-f0a39d1e"
+        },
+        {
+          "label": "Badges and quotes",
+          "value": "pf-23ff7d78"
+        },
+        {
+          "label": "2. Sponsor - French ",
+          "value": "pf-7e17a47d"
+        },
+        {
+          "label": "House Ambassador - French ",
+          "value": "pf-99fc91f7"
+        },
+        {
+          "label": "10. Product Guide - French ",
+          "value": "pf-2090787c"
+        },
+        {
+          "label": "7.Product Guide - French ",
+          "value": "pf-4b7b39af"
+        },
+        {
+          "label": "About Us PEOPLE BEFORE PRODUCTIVITY - French ",
+          "value": "pf-4a80cb6f"
+        },
+        {
+          "label": "HP Handcrafted Cooler Boxes - French ",
+          "value": "pf-eb2a8854"
+        },
+        {
+          "label": "1. Trade Enquiries - French ",
+          "value": "pf-8a36bb97"
+        },
+        {
+          "label": "Account - Warranty Section",
+          "value": "pf-1bc91265"
+        },
+        {
+          "label": "5. FAQ - French ",
+          "value": "pf-7ce3ba1c"
+        },
+        {
+          "label": "3. Product Guide - French ",
+          "value": "pf-3fe11ea7"
+        },
+        {
+          "label": "About Us Bottom Section - French ",
+          "value": "pf-f10f9b2b"
+        },
+        {
+          "label": "3. Trade Enquiries - French ",
+          "value": "pf-447b5e1d"
+        },
+        {
+          "label": "3. Sponsor- French ",
+          "value": "pf-ca97c922"
+        },
+        {
+          "label": "4. Sponsor - French",
+          "value": "pf-27b6285d"
+        },
+        {
+          "label": "1. FAQ - French ",
+          "value": "pf-58cc4be4"
+        },
+        {
+          "label": "2. FAQ - French ",
+          "value": "pf-fd496400"
+        },
+        {
+          "label": "3. FAQ - French ",
+          "value": "pf-3f865f6d"
+        },
+        {
+          "label": "4. FAQ - French ",
+          "value": "pf-faaa4884"
+        },
+        {
+          "label": "7. FAQ - French ",
+          "value": "pf-ccc52687"
+        },
+        {
+          "label": "8. FAQ - French ",
+          "value": "pf-6b8985af"
+        },
+        {
+          "label": "9. FAQ - French ",
+          "value": "pf-05996edf"
+        },
+        {
+          "label": "10. FAQ - French ",
+          "value": "pf-85fad19d"
+        },
+        {
+          "label": "11. FAQ - French ",
+          "value": "pf-312bb4d1"
+        },
+        {
+          "label": "12. FAQ - French ",
+          "value": "pf-b157d531"
+        },
+        {
+          "label": "4. Product Guide - French ",
+          "value": "pf-e7c3288f"
+        },
+        {
+          "label": "5. Product Guide - French ",
+          "value": "pf-8b325318"
+        },
+        {
+          "label": "6.Product Guide - French ",
+          "value": "pf-21e974cc"
+        },
+        {
+          "label": "9.Product Guide - French ",
+          "value": "pf-44a493ba"
+        },
+        {
+          "label": "1.Product Guide - French ",
+          "value": "pf-1208cffb"
+        },
+        {
+          "label": "Account - Top Slider Section - French",
+          "value": "pf-21e8a7d9"
+        },
+        {
+          "label": "About Us Top Section - French",
+          "value": "pf-d1eb1227"
+        },
+        {
+          "label": "About Us  3 Images - French Section",
+          "value": "pf-048bb598"
+        },
+        {
+          "label": "Current Mood - French ",
+          "value": "pf-7f1b7955"
+        },
+        {
+          "label": "Warranty - French ",
+          "value": "pf-ccf1a75a"
+        },
+        {
+          "label": "Account - Top Slider Section",
+          "value": "pf-836ff526"
+        },
+        {
+          "label": "Timeless Style ",
+          "value": "pf-d5db7d57"
+        },
+        {
+          "label": "Safari Engineered",
+          "value": "pf-747db02f"
+        },
+        {
+          "label": "Top Block section",
+          "value": "pf-68be5869"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Find and edit your section on the [section listing](https://fieldbar-co.myshopify.com/admin/apps/pagefly/sections)"
+    },
+    {
+      "type": "paragraph",
+      "content": "To add block to a section, please use the App Block element on PageFly section editor."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PageFly Section"
+    }
+  ]
+}
+{% endschema %}

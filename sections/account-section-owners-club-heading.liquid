@@ -1,0 +1,33 @@
+<div class="container-indent bsm-customer-container-title nomargin">
+  <div class="container">
+    <h3 class=" noborder bsm-customer-title">OWNERS CLUB</h3>
+  </div>
+</div>
+
+{% schema %}
+    {
+  "name": "Owners Club Top Heading",
+  "class": "index-header-account",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "only use on account and login pages"
+    }
+  ],
+      "enabled_on": {
+    "templates": ["customers/account", "customers/register", "customers/addresses", "customers/login"]
+  },
+      "presets": [
+{
+"name": "Owners Club Top Heading",
+"category": "Custom"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,135 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.gin-trunk-product-guide.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "short_description": "25.4 qt\n<br> <br>\nThe FIELDBAR Gin Trunk is a <strong>25.4 qt hardcase cooler box</strong> designed with generous gatherings in mind. <strong>Properly made</strong> and perfectly proportioned, the Gin Trunk is everything you would expect from a large format cooler. <strong>Durable, versatile</strong> and <strong>comfortable to carry.</strong>",
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/gin-trunk-waitlist"
+      },
+      "blocks": {}
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "text": "<p>Fits (even) more than you think. Approximately <strong>2.5x the size of the FIELDBAR Drinks Box</strong>, the FIELDBAR Gin Trunk is a <strong>25.4 qt </strong>hardcase cooler box that accommodates a broad range of drinks configurations - keeping the party going that much longer.</p>"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {
+        "right_copy": "The iconic FIELDBAR colors you know and love… and possibly already have.\n<br><br>\nAs with the FIELDBAR Drinks Box, the Gin Trunk bears straight lines and our trademark high-gloss finish. Available in all six signature colors for you to complete your set."
+      },
+      "blocks": {
+        "option_cqJB7y": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_pzfFdx": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_N8dCWQ": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_wHnfeT": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_p3Uptj": {
+          "settings": {
+            "product_link": ""
+          }
+        },
+        "option_ThACtB": {
+          "settings": {
+            "product_link": ""
+          }
+        }
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {},
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "10 Wine Bottles 25.4 oz"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "32 Standing Beer Cans 14.9 oz"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "8 Champagne Bottles 25.4 oz"
+          }
+        }
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "settings": {},
+      "blocks": {
+        "column_hwiqEW": {
+          "settings": {
+            "custom_liquid": "<a href=\"https://fieldbar.com/pages/about-us\" id=\"fancy_hover\">Latchless Locking </a>"
+          }
+        },
+        "column_pzegda": {
+          "settings": {
+            "custom_liquid": "<a href=\"https://fieldbar.co.za/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>"
+          }
+        },
+        "column_eVBBjF": {
+          "settings": {
+            "custom_liquid": "<a href=\"https://fieldbar.co.za/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>"
+          }
+        }
+      }
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/gin-trunk-waitlist\" id='fancy_hover'>JOIN THE WAITLIST</a></div>",
+            "link": "shopify://pages/gin-trunk-waitlist"
+          }
+        }
+      }
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/gin-trunk-waitlist"
+      },
+      "blocks": {}
+    },
+    "fieldbar_collection_related_9rwTkz": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  }
+}

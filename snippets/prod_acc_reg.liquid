@@ -1,0 +1,113 @@
+{% style %}
+  a {
+    text-decoration: none;
+    font-family: 'Gotham Medium' !important;
+    color: #002b4d;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .owners-club-wrapper {
+    background: #f3efeb;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Gotham Narrow Book' !important;
+    color: #002b4d;
+    text-align: center;
+  }
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-family: 'Gotham Medium' !important;
+  }
+
+  .dashboard-header .welcome-text {
+    font-size: 16px;
+    color: #002b4d;
+    text-transform: uppercase;
+  }
+
+  .dashboard-header .profile-links {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .dashboard-header .profile-links a {
+    margin-left: 10px;
+    font-weight: normal;
+  }
+
+  .dashboard-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-buttons .bsm-acc-btn {
+    background-color: #002b4d;
+    color: #fff;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-family: 'Gotham Medium' !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    min-width: 220px;
+    cursor: pointer;
+  }
+
+  .dashboard-buttons .bsm-acc-btn:hover {
+    background-color: #00172a;
+  }
+{% endstyle %}
+
+<div class="container-indent bsm-customer-container nomargin owners-club-wrapper">
+  <div class="container">
+    <div class="dashboard-header">
+      <div class="welcome-text">Welcome {{ customer.first_name }}</div>
+      <div class="profile-links">
+        <a href="/account?view=profile">View Profile</a> |
+        <a href="{{ routes.account_logout_url }}">Log Out</a>
+      </div>
+    </div>
+
+    <div class="dashboard-buttons">
+      <a href="/account?view=register" class="bsm-acc-btn">Register a New Product</a>
+      <a href="/account?view=registered-products" class="bsm-acc-btn">MAKE A CLAIM</a>
+      <a href="/account?view=summary" class="bsm-acc-btn">View Order History</a>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} Start - Remove this section to use the Customiser App instead {%- endcomment -%}
+<div class="shopify-app-block bsm-static section">
+  <div class="container">
+    <div id="mpr-root"></div>
+    <script type="text/javascript">
+      window.productReg = {
+        defaultFormSlug: 'owners-club',
+        openRegisteredEntities: false,
+        mode: "form",
+        customer: {
+          id: {{ customer.id | json }},
+          email: {{ customer.email | json }},
+          firstName: {{ customer.first_name | json }},
+          lastName: {{ customer.last_name | json }},
+          surname: {{ customer.last_name | json }},
+          address: {{ customer.default_address | json }},
+          tags: {{ customer.tags | json }},
+        }
+      }
+    </script>
+    <script type="text/javascript" src="https://product-reg.varify.xyz/v2/mpr-embeded-frontend.js"></script>
+  </div>
+</div>
+{%- comment -%} End {%- endcomment -%}

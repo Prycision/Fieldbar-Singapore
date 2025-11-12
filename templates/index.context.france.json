@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "fieldbar_collection_fr_7NaYc": {
+      "type": "Fieldbar-collection-fr",
+      "disabled": false,
+      "custom_css": [
+        ".slider-buttons {display: flex; align-items: center; justify-content: end;}",
+        ".card-information {display: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; text-transform: uppercase; text-decoration: none;}",
+        ".card__heading {margin-top: 0; margin-bottom: 0; font-size: 0.7em !important; letter-spacing: 0 !important;}",
+        ".card__heading > p {display: none !important;}",
+        " {margin-top: 5em;}",
+        "p {color: #00334c;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "header-bc1b070c2e2bdea2275982200489fbf9": null,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "header-60f743b198906e18ebf55708ee71e854": null,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "header-b09c345b2171fc28052a0cea4fb3a110": null,
+        "padding_top": 16,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.fieldbar-collection.presets.name"
+    },
+    "multicolumn_6rMRJW": {
+      "settings": {},
+      "blocks": {
+        "column_zcwcmb": {
+          "settings": {
+            "custom_liquid": "<h1 style=\"margin: 0\">Glacières Artisanales<br>\n& Produits Fins D’extérieur</h1>"
+          }
+        },
+        "column_DjKrmC": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><p></p></div>\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\">\n    <button class=\"fieldbar_button\">DÉCOUVRIR LE CATALOGUE</button>\n  </a><p class=\"txtbelow\" style=\"margin-top: 10px\">Pour assurer vos achats en toute sécurité, achetez <strong>UNIQUEMENT</strong> avec nous directement ou auprès de nos <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"https://fieldbar.com/pages/fieldbar-retailers\">Distributeurs Agréés.</a></span></p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "multicolumn_DMY9h7": {
+      "settings": {},
+      "blocks": {
+        "column_cb39Lp": {
+          "settings": {
+            "custom_liquid": "<h1 style=\"margin: 0\">Glacières Artisanales & Produits Fins D’extérieur.</h1>"
+          }
+        },
+        "column_eCDCC4": {
+          "settings": {
+            "custom_liquid": "<div class=\"mob-center\">\n  <a style=\" font-family: 'Gotham Book' !important;\" id=\"fancy_hover\" style='text-decoration: none!important; ' href=\"/fr-fr/collections/all\">\n    DÉCOUVRIR LE CATALOGUE\n  </a>\n</div>"
+          }
+        },
+        "column_Q9YLiA": {
+          "settings": {
+            "custom_liquid": "<div class=\"textButton\">\n      <div><a id='hidmob' style='text-decoration:none; margin-bottom: 10px' href=\"{{ market_friendly_url }}/collections/all\" >\n    <button class=\"fieldbar_button\">DÉCOUVRIR LE CATALOGUE</button>\n  </a>\n\n<p></p></div>\n      <div><p class=\"txtbelow\" style=\"margin-top: 10px\"><br>Pour assurer vos achats en toute sécurité, achetez <strong>UNIQUEMENT</strong> avec nous directement ou auprès de nos <span style=\"color: #002b4d;\"><a id=\"fancy_hover2\" style=\"color: #002b4d;\" href=\"https://fieldbar.com/pages/fieldbar-retailers\">Distributeurs Agréés.</a></span></p></div>\n    </div>"
+          }
+        }
+      }
+    },
+    "custom_liquid_X7UFxq": {
+      "settings": {
+        "custom_liquid": "{% render \"slider-fr\" %}"
+      },
+      "blocks": {}
+    },
+    "rich_text_j8NttL": {
+      "settings": {},
+      "blocks": {
+        "heading_MwyQ7H": {
+          "settings": {
+            "heading": "Élevez vos loisirs de plein air"
+          }
+        },
+        "text_yH4bXF": {
+          "settings": {
+            "text": "<p>De la plage au <strong>bateau</strong>, en passant par les <strong>pique-niques</strong> et le <strong>polo</strong>.<br/>Nos glacières rigides ajoutent une touche de style et une aisance naturelle à toutes vos sorties en plein air.</p>"
+          }
+        }
+      }
+    },
+    "multicolumn_gcEbWE": {
+      "settings": {},
+      "blocks": {
+        "column_HKqMgE": {
+          "settings": {
+            "div-link": "shopify://products/sea-boat-blue",
+            "link_label": "DRINKS BOX / BAZARUTO BLUE",
+            "link": "shopify://products/sea-boat-blue"
+          }
+        },
+        "column_iFbzMH": {
+          "settings": {
+            "div-link": "https://fieldbar.com/products/gin-trunk-orchard-orange-hcfb2-p2025-m1?_pos=6&_fid=0b094af6f&_ss=c",
+            "link_label": "DRINKS BOX / ORCHARD ORANGE",
+            "link": "https://fieldbar.com/products/gin-trunk-orchard-orange-hcfb2-p2025-m1?_pos=6&_fid=0b094af6f&_ss=c"
+          }
+        }
+      }
+    },
+    "custom_liquid_KRYc6X": {
+      "settings": {
+        "custom_liquid": "{% render \"safari-split-fr\" %}"
+      },
+      "blocks": {}
+    },
+    "multicolumn_9HQBDB": {
+      "settings": {},
+      "blocks": {
+        "column_CwnPNw": {
+          "settings": {
+            "custom_liquid": "{% render \"reviews2\" %}    <div style=\"\n  padding: 0 15% 10%;\n\">\n    <h2 style=\"margin-bottom: 16px; margin-top: 1em; text-align: center;\">Un Style Intemporel</h2>\n    <p style=\"text-align: center;\">Il fut un temps où l'aventure en plein air se faisait avec style. Peu importe où vous vivez, nous sommes d'avis que les loisirs en plein air sont les plus agréables et mémorables lorsqu'ils sont pratiqués avec <strong>élégance</strong>, <strong>style</strong> et <strong>grâce</strong>.</p>\n   </div>"
+          }
+        },
+        "column_XcGRXP": {
+          "settings": {
+            "custom_liquid": "{% render \"home_drinks_hover-fr\" %}"
+          }
+        }
+      }
+    },
+    "multicolumn_BBjqQh": {
+      "settings": {},
+      "blocks": {
+        "column_AqPX3z": {
+          "settings": {
+            "image": "shopify://shop_images/5_year_home_fr.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\"> Garantie 5 ans </a>"
+          }
+        },
+        "column_cpEYCL": {
+          "settings": {
+            "image": "shopify://shop_images/icon_safari_enginreered_fr.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Conçus Pour Un Safari</a>"
+          }
+        },
+        "column_3bBUXW": {
+          "settings": {
+            "image": "shopify://shop_images/icon_superior_ice_performance_fr.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Performance Froid Supérieure</a>"
+          }
+        },
+        "column_zLPEL4": {
+          "settings": {
+            "image": "shopify://shop_images/icon_sustainably_designed_fr.webp",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/about-us\" id=\"fancy_hover\">Conception Durable</a>"
+          }
+        }
+      }
+    },
+    "custom_liquid_MJjC6x": {
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship-fr\" %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_3bXtCQ": {
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "{% render 'bells2-fr' %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_a4PKXU": {
+      "settings": {
+        "custom_liquid": "{% render \"india-fr\" %}"
+      },
+      "blocks": {}
+    }
+  },
+  "order": [
+    "multicolumn_8daJAn",
+    "custom_liquid_YkVBBF",
+    "multicolumn_6rMRJW",
+    "multicolumn_DMY9h7",
+    "custom_liquid_EyNKBJ",
+    "fieldbar_collection_fr_7NaYc",
+    "custom_liquid_X7UFxq",
+    "rich_text_j8NttL",
+    "multicolumn_gcEbWE",
+    "custom_liquid_KRYc6X",
+    "multicolumn_9HQBDB",
+    "multicolumn_BBjqQh",
+    "custom_liquid_MJjC6x",
+    "custom_liquid_3bXtCQ",
+    "custom_liquid_a4PKXU",
+    "custom_liquid_6PkVtg"
+  ]
+}

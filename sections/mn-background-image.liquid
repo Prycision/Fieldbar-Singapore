@@ -1,0 +1,39 @@
+{% schema %}
+{
+  "name": "MN Background Image",
+  "tag": "section",
+  "class": "mn-background-image",
+  "settings": [],
+  "presets": [
+    {
+      "name": "MN Background Image"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.mn-background-image {
+  width: 100vw;
+  height: 70vh;
+  background-image: url('https://cdn.shopify.com/s/files/1/0729/3753/7840/files/MountNelson-Waitlist.webp?v=1744267657');
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .mn-background-image {
+    height: 60vh;
+    background-size: 200%;
+    background-position: center bottom;
+  }
+}
+</style>
+
+<div class="mn-background-image">
+  <!-- Optional content -->
+</div>

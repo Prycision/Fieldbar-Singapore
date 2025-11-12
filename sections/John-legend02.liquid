@@ -1,0 +1,335 @@
+{% schema %}
+{
+  "name": "Drinks Box Feature Scroll",
+  "tag": "section",
+  "class": "drinks-box-feature",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "THE WORLD’S FINEST COOLER"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "The Drinks Box"
+    },
+    {
+      "type": "text",
+      "id": "capacity",
+      "label": "Capacity",
+      "default": "2.64 GAL"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>The FIELDBAR Drinks Box is a 2.64 gallon hardcase cooler box designed for superior thermal performance.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Shop Now Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "feature_image",
+          "label": "Feature Image"
+        },
+        {
+          "type": "richtext",
+          "id": "feature_text",
+          "label": "Feature Description",
+          "default": "<p>Your feature description here</p>"
+        },
+        {
+          "type": "text",
+          "id": "feature_subtext",
+          "label": "Extra Copy",
+          "default": "Additional details here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Drinks Box Feature Scroll",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="drinks-box-feature">
+  <div class="left-col">
+    <p class="intro">{{ section.settings.main_title }}</p>
+    <h1>{{ section.settings.subheading }}</h1>
+    <p class="capacity">{{ section.settings.capacity }}</p>
+    <div class="description">
+      {{ section.settings.description }}
+    </div>
+    {% if section.settings.left_image %}
+      <div class="left-image">
+        <img src="{{ section.settings.left_image | image_url: width: 600 }}" alt="Left Image" />
+      </div>
+    {% endif %}
+    {% if section.settings.link and section.settings.button_text != blank %}
+     <a href="{{ section.settings.link }}" class="shop-now-link">
+        {{ section.settings.button_text }}
+     </a>
+    {% endif %}
+  </div>
+
+  <div class="right-col">
+    {% for block in section.blocks %}
+      <div class="feature-block">
+        {% if block.settings.feature_image %}
+          <div class="feature-img">
+            <img src="{{ block.settings.feature_image | image_url: width: 1000 }}" alt="Feature Image">
+          </div>
+        {% endif %}
+        <div class="feature-copy">
+          {{ block.settings.feature_text }}
+          <p class="extra-copy">{{ block.settings.feature_subtext }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.drinks-box-feature {
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.drinks-box-feature .left-col {
+  width: 30vw;
+  padding: 2rem;
+  background: #F3EFEB;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.drinks-box-feature .left-col p,
+.drinks-box-feature .left-col h1 {
+  margin: 0 0 1rem 0;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  font-size: inherit;
+  color: #002B4D;
+}
+
+.drinks-box-feature .left-col h1 {
+  font-family: 'Surveyor Fine Light', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.drinks-box-feature .left-col .capacity {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.drinks-box-feature .left-col .intro {
+  margin-bottom: 1.5rem;
+}
+
+.drinks-box-feature .description p {
+  font-size: inherit;
+  margin-bottom: 1em;
+  color: #002B4D;
+}
+
+.drinks-box-feature .left-image img {
+  width: auto;
+  height: 27vh;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.shop-now-link {
+  position: relative;
+  display: inline-block;
+  color: #002B4D;
+  font-weight: 600;
+  font-size: 1em;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  text-decoration: none;
+  padding: 0 0 0.25em 0;
+  margin: 0 auto;
+}
+
+.shop-now-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #FF8A3D;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.shop-now-link:hover::after {
+  transform: scaleX(0);
+}
+
+.shop-now-link:hover {
+  color: #FF8A3D;
+}
+
+.drinks-box-feature .right-col {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.drinks-box-feature .feature-block {
+  flex: 0 0 45vw;
+  height: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.feature-img {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.feature-copy {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  color: #002B4D;
+  overflow: hidden;
+}
+
+.feature-copy p {
+  margin: 0.25rem 0;
+  font-size: inherit;
+}
+
+.feature-copy .extra-copy {
+  font-size: 0.9em;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 991px) {
+  .drinks-box-feature {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .drinks-box-feature .left-col,
+  .drinks-box-feature .right-col {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .drinks-box-feature .left-col .intro {
+    margin-bottom: 1.25rem;
+  }
+
+  .drinks-box-feature .left-col h1 {
+     margin-top: 0;
+    margin-bottom: -0.5rem;
+  }
+
+  .drinks-box-feature .left-col .capacity {
+    margin-top: -2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .drinks-box-feature .right-col {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1em;
+    gap: 1em;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drinks-box-feature .feature-block {
+    width: 75vw;
+    flex: 0 0 75vw;
+    height: auto;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-img {
+    height: 60%;
+  }
+
+  .feature-copy {
+    padding: 1em 1em;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+  
+</style>

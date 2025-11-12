@@ -1,0 +1,162 @@
+<style>
+  .custom-accordion {
+    border-top: 0 solid #ddd;
+    font-family: 'Gotham Narrow Book' !important;
+    padding: 0 20%;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 0;
+    font-size: medium;
+    font-family: 'Gotham Narrow Book' !important;
+    color: #002d53;
+  }
+
+  .accordion-title:hover {
+    color: #000;
+  }
+
+  .accordion-title span {
+    font-size: 18px;
+    transition: transform .3s ease;
+  }
+
+  .accordion-content {
+    display: none;
+    padding: 10px 0;
+    color: #486a7a;
+    font-family: 'Gotham Narrow Book' !important;
+  }
+
+  .accordion-item.active .accordion-title span {
+    transform: rotate(0deg);
+  }
+
+  .accordion-item.active .accordion-content {
+    display: block;
+  }
+</style>
+
+<div class="custom-accordion">
+  <!-- Full Description -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          Vollständige Beschreibung
+        {% when 'FR' %}
+          Description complète
+        {% else %}
+          Full Description
+      {% endcase %}
+      <span>+ </span>
+    </div>
+    <div class="accordion-content">
+      {{ product.metafields.description['description-key'] | newline_to_br | raw }}
+    </div>
+  </div>
+
+  <!-- Product Care -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          Produktpflege
+        {% when 'FR' %}
+          Entretien du produit
+        {% else %}
+          Product Care
+      {% endcase %}
+
+      <span>+ </span>
+    </div>
+    <div class="accordion-content">
+      {{ product.metafields.description['care-key'] | newline_to_br | raw }}
+    </div>
+  </div>
+
+  <!-- Ageing & Imperfections -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          Alterserscheinungen & Unvollkommenheiten
+        {% when 'FR' %}
+          Effet du temps & Imperfections
+        {% else %}
+          Ageing & Imperfections
+      {% endcase %}
+
+      <span>+ </span>
+    </div>
+    <div class="accordion-content">
+      {{ product.metafields.custom.aging_and_imperfections | newline_to_br | raw }}
+    </div>
+  </div>
+
+  <!-- Size & Weight -->
+  <div class="accordion-item">
+    <div class="accordion-title">
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          Größe & Gewicht
+        {% when 'FR' %}
+          Dimensions & Poids
+        {% else %}
+          Size & Weight
+      {% endcase %}
+
+      <span>+ </span>
+    </div>
+    <div class="accordion-content">
+      <div>
+        {% if product.metafields.custom.accordian_image %}
+          <div class="product-metafield-image">
+            <img
+              src="{{ product.metafields.custom.accordian_image | image_url }}"
+              alt="{{ product.title }} - Additional Image"
+            >
+          </div>
+        {% else %}
+
+        {% endif %}
+      </div>
+      {{ product.metafields.description['additional-key'] | newline_to_br | raw }}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordions = document.querySelectorAll(".accordion-title");
+
+    accordions.forEach(function (title) {
+      title.addEventListener("click", function () {
+        const currentParent = this.parentElement;
+        const isActive = currentParent.classList.contains("active");
+
+        // Close all accordions
+        document.querySelectorAll(".accordion-item").forEach(function (accordion) {
+          accordion.classList.remove("active");
+          const icon = accordion.querySelector(".accordion-title span");
+          if (icon) icon.textContent = "+";
+        });
+
+        // If it wasn't active, open this one
+        if (!isActive) {
+          currentParent.classList.add("active");
+          const icon = this.querySelector("span");
+          if (icon) icon.textContent = "-";
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,290 @@
+{% schema %}
+{
+  "name": "John Legend Section",
+  "tag": "section",
+  "class": "john-legend-section",
+  "settings": [
+    { "type": "url", "id": "video_url", "label": "Video File URL" },
+    { "type": "image_picker", "id": "video_cover_image", "label": "Cover Image" },
+    { "type": "image_picker", "id": "mute_icon", "label": "Mute Icon" },
+    { "type": "image_picker", "id": "unmute_icon", "label": "Unmute Icon" },
+    { "type": "richtext", "id": "quote_text", "label": "Quote Text" },
+    { "type": "richtext", "id": "person_name", "label": "Person Name" },
+    { "type": "richtext", "id": "bottom_heading", "label": "Bottom Heading" },
+    { "type": "text", "id": "intro_text", "label": "Intro Text", "default": "INTRODUCING" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "NELLIE PINK" },
+    { "type": "textarea", "id": "short_description", "label": "Short Description", "default": "A distinctly FIELDBAR expression of the Mount Nelson’s signature shade." },
+    { "type": "textarea", "id": "form_code", "label": "Form Embed Code", "default": "<!-- Paste your Powerful Form Builder embed code here -->" },
+    { "type": "richtext", "id": "rich_text_content", "label": "Rich Text Content", "default": "<p>This is additional rich text content.</p>" }
+  ],
+  "presets": [
+    { "name": "John Legend Section" }
+  ]
+}
+{% endschema %}
+
+<div class="john-legend-section">
+  <div class="left-col">
+    <div class="quote-block">
+      <h1>{{ section.settings.quote_text }}</h1>
+      <p>{{ section.settings.person_name }}</p>
+    </div>
+
+    <div class="video-wrapper muted" id="video-container">
+      <div class="video-container-bg">
+        <video
+          id="legend-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          controlslist="nodownload nofullscreen noremoteplayback"
+          disablepictureinpicture
+          oncontextmenu="return false;"
+          {% if section.settings.video_cover_image %}
+            poster="{{ section.settings.video_cover_image | image_url }}"
+          {% endif %}
+        >
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-icon" id="toggle-audio">
+          {% if section.settings.mute_icon %}
+            <img id="video-icon-img" src="{{ section.settings.mute_icon | image_url }}" alt="Audio Icon" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <h1 class="bottom-heading">{{ section.settings.bottom_heading }}</h1>
+  </div>
+
+  <div class="right-col">
+    <div class="text-wrapper">
+      <p>{{ section.settings.intro_text }}</p>
+      <h1>{{ section.settings.headline }}</h1>
+      <p>{{ section.settings.short_description }}</p>
+
+      <div class="form-wrapper">
+        {{ section.settings.form_code | raw }}
+      </div>
+
+      <div class="richtext-content">
+        {{ section.settings.rich_text_content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.john-legend-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+  color: #002B4D;
+  align-items: stretch;
+}
+
+.left-col {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  gap: 1rem;
+  height: 100%;
+}
+
+.video-wrapper {
+  width: auto;
+  height: 65vh;
+  position: relative;
+}
+
+.video-container-bg {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  background-color: #002B4D;
+  overflow: hidden;
+}
+
+.video-container-bg video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  background-color: #002B4D;
+}
+
+.video-wrapper.muted video {
+  opacity: 0.9;
+}
+
+.video-icon {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: #002B4D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.video-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.quote-block {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.quote-block h1,
+.quote-block p {
+  margin: 0.2em 0;
+  font-family: 'Gotham Narrow Book', sans-serif;
+}
+
+.bottom-heading {
+  margin-top: 1rem;
+  font-family: 'Surveyor Fine Light', serif;
+  font-size: 1.5rem;
+}
+
+.right-col {
+  width: 50%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index:0;
+}
+
+.text-wrapper {
+  width: 70%;
+  max-width: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-wrapper h1 {
+  font-family: 'Surveyor Fine Light', serif;
+  margin-bottom: 0.5rem;
+}
+
+.text-wrapper p {
+  font-family: 'Gotham Narrow Book', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.richtext-content {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: 'Gotham Narrow Book', sans-serif;
+}
+  .richtext-content a {
+  color: #002B4D;
+}
+
+.form-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.form-wrapper iframe,
+.form-wrapper form,
+.form-wrapper > div {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 991px) {
+  .john-legend-section {
+     flex-direction: column-reverse;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+
+  .left-col,
+  .right-col {
+    width: 100vw !important;
+    padding: 1em 1em;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .right-col {
+    overflow-x: hidden;
+  }
+
+  .text-wrapper {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-wrapper,
+  .form-wrapper iframe,
+  .form-wrapper form,
+  .form-wrapper > div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .video-container-bg {
+    aspect-ratio: 9 / 16;
+  }
+
+  .video-container-bg video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const video = document.getElementById('legend-video');
+  const wrapper = document.getElementById('video-container');
+  const toggleBtn = document.getElementById('toggle-audio');
+  const iconImg = document.getElementById('video-icon-img');
+
+  const muteIcon = "{{ section.settings.mute_icon | image_url }}";
+  const unmuteIcon = "{{ section.settings.unmute_icon | image_url }}";
+
+  if (video && toggleBtn && iconImg) {
+    toggleBtn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      iconImg.src = video.muted ? muteIcon : unmuteIcon;
+      if (video.muted) {
+        wrapper.classList.add('muted');
+      } else {
+        wrapper.classList.remove('muted');
+      }
+    });
+  }
+});
+</script>

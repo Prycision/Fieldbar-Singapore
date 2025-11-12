@@ -1,0 +1,217 @@
+<nav style="z-index: 11" class="header-mega-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {% for link in section.settings.menu.links %}
+      <li data-index="{{ forloop.index0 }}">
+        {% if link.links != blank %}
+          <details id="mega-menu-{{ forloop.index }}" class="mega-menu">
+            <summary class="header__menu-item list-menu__item link focus-inset unstyled-link" role="button">
+              <span
+                id="menu_item"
+                {% if link.child_active %}
+                  class="header__active-menu-item"
+                {% endif %}>
+                {{ link.title | escape }}
+              </span>
+              <span class="icon-caret">
+                {{ 'icon-caret.svg' | inline_asset_content }}
+              </span>
+            </summary>
+            <div class="mega-menu__content gradient motion-reduce global-settings-popup">
+
+              <div class="mega-menu__flex-container">
+                <div class="mega-menu-links" role="list">
+                  {% assign country_code = localization.country.iso_code | default: 'GB' | upcase %}
+
+                  {% case country_code %}
+                    {% when 'GB' %}
+                      {% case forloop.index0 %}
+                        {% when 0 %}
+                          {% assign sub_menus = 'mega1uk,mega2uk,mega3uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid' %}
+                        {% when 1 %}
+                          {% assign sub_menus = 'mega_about_uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid2' %}
+                        {% when 2 %}
+                          {% assign sub_menus = 'mega_product_guide_uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid3' %}
+                        {% else %}
+                          {% assign sub_menus = '' | split: ',' %}
+                          {% assign image_snippet = '' %}
+                      {% endcase %}
+                    {% when 'AU' %}
+                      {% case forloop.index0 %}
+                        {% when 0 %}
+                          {% assign sub_menus = 'mega1_other_nogt,mega2uk,mega3uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid' %}
+                        {% when 1 %}
+                          {% assign sub_menus = 'mega_about_uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid2' %}
+                        {% when 2 %}
+                          {% assign sub_menus = 'mega_product_guide_excl' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid3' %}
+                        {% else %}
+                          {% assign sub_menus = '' | split: ',' %}
+                          {% assign image_snippet = '' %}
+                      {% endcase %}
+                    {% when 'US' %}
+                      {% case forloop.index0 %}
+                        {% when 0 %}
+                          {% assign sub_menus = 'mega1_other_nogt,mega2uk,mega3uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid' %}
+                        {% when 1 %}
+                          {% assign sub_menus = 'mega_about_uk' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid2' %}
+                        {% when 2 %}
+                          {% assign sub_menus = 'mega_product_guide_excl' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid3' %}
+                        {% else %}
+                          {% assign sub_menus = '' | split: ',' %}
+                          {% assign image_snippet = '' %}
+                      {% endcase %}
+                    {% else %}
+                      {% case forloop.index0 %}
+                        {% when 0 %}
+                          {% assign sub_menus = 'mega1_other,mega2_other,mega3_other' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid' %}
+                        {% when 1 %}
+                          {% assign sub_menus = 'mega_about_other' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid2' %}
+                        {% when 2 %}
+                          {% assign sub_menus = 'mega_product_guide_other' | split: ',' %}
+                          {% assign image_snippet = 'mega-grid3' %}
+                        {% else %}
+                          {% assign sub_menus = '' | split: ',' %}
+                          {% assign image_snippet = '' %}
+                      {% endcase %}
+                  {% endcase %}
+
+
+                  <div class="mega-menu__flex-container">
+                    <div class="mega-menu-links multi-column" role="list">
+                      {% for menu_handle in sub_menus %}
+                        {% assign menu = linklists[menu_handle] %}
+                        {% if menu.links.size > 0 %}
+                          <div class="mega-menu-column">
+                            {% for item in menu.links %}
+                              <a
+                                id="menu_item"
+                                href="{{ item.url }}"
+                                class="mega-menu__link list-menu__item link focus-inset uppercase unstyled-link{% if item.current %} mega-menu__link--active{% endif %}">
+                                {{ item.title | escape }}
+                              </a>
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+
+                    {% if image_snippet != '' %}
+                      <div class="mega-menu__image-container">
+                        {% render image_snippet %}
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  {% if sub_menu %}
+                    {% for item in sub_menu.links %}
+                      <a
+                        id="menu_item"
+                        href="{{ item.url }}"
+                        class="mega-menu__link list-menu__item link focus-inset uppercase unstyled-link{% if item.current %} mega-menu__link--active{% endif %}">
+                        {{ item.title | escape }}
+                      </a>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% case forloop.index0 %}
+                  {% when 0 %}
+                    <div class="mega-menu__image-container">
+                      {% render 'mega-grid' %}
+                    </div>
+                  {% when 1 %}
+                    <div class="mega-menu__image-container">
+                      {% render 'mega-grid2' %}
+                    </div>
+                  {% when 2 %}
+                    <div class="mega-menu__image-container">
+                      {% render 'mega-grid3' %}
+                    </div>
+                {% endcase %}
+              </div>
+            </div>
+          </details>
+        {% else %}
+          <a
+            id="menu_item"
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text">
+            {{ link.title | escape }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const detailsElements = document.querySelectorAll('.header-mega-menu details');
+
+    detailsElements.forEach((details) => {
+      const summary = details.querySelector('summary');
+      summary.addEventListener('click', function(e) {
+        if (!details.hasAttribute('open')) {
+          detailsElements.forEach((otherDetails) => {
+            if (otherDetails !== details && otherDetails.hasAttribute('open')) {
+              otherDetails.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      detailsElements.forEach(details => {
+        if (details.hasAttribute('open')) {
+          details.removeAttribute('open');
+        }
+      });
+    }, { passive: true });
+  });
+</script>
+
+<style>
+  .mega-menu__flex-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mega-menu-links.multi-column {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+
+  .mega-menu-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 300px;
+    width: auto;
+  }
+
+
+  @media screen and (max-width: 80em) {
+
+
+    .mega-menu-column {
+      display: flex;
+      flex-direction: column;
+      min-width: 150px;
+      max-width: 250px;
+      width: auto;
+    }
+
+  }
+</style>

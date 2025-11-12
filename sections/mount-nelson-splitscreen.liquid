@@ -1,0 +1,241 @@
+{% schema %}
+{
+  "name": "MN Intro Column",
+  "tag": "section",
+  "class": "mn-intro-column",
+  "settings": [
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Left Column Media Type",
+      "default": "video",
+      "options": [
+        { "value": "video", "label": "Video" },
+        { "value": "image", "label": "Image" }
+      ]
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Column Image"
+    },
+    {
+      "type": "text",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "INTRODUCING"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "NELLIE PINK"
+    },
+    {
+      "type": "textarea",
+      "id": "short_description",
+      "label": "Short Description",
+      "default": "A distinctly FIELDBAR expression of the Mount Nelson’s signature shade."
+    },
+    {
+      "type": "textarea",
+      "id": "main_description",
+      "label": "Main Description",
+      "default": "Shared Cape Town provenance, with a mutual devotion to poolside lounging. This exclusive collection unites two of the city's most beloved symbols, in a celebration of timeless outdoor style."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Column Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP THE COLLECTION"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MN Intro Column"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .mn-intro-column {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1em;
+    color: #002B4D;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .mn-intro-column .media-col,
+  .mn-intro-column .text-col {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .mn-intro-column .media-col {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .mn-intro-column .media-col video,
+  .mn-intro-column .media-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mn-intro-column .text-col {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mn-intro-column .text-wrapper {
+    padding: 0 23%;
+  }
+
+  .mn-intro-column .text-col > * {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+  }
+
+  .mn-intro-column .text-col > *:first-child {
+    margin-top: 0;
+  }
+
+  .mn-intro-column img.right-image {
+    width: 15%;
+    min-width: 100px;
+    margin: 1.5em auto 0;
+    height: auto;
+  }
+
+  .mn-intro-button-wrapper {
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mn-intro-button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #002B4D;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .mn-intro-button::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #FF8A3D;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+
+  .mn-intro-button:hover {
+    color: #FF8A3D;
+  }
+
+  .mn-intro-button:hover::after {
+    transform: scaleX(0);
+    background-color: #FF8A3D;
+  }
+
+  @media screen and (max-width: 991px) {
+    .mn-intro-column {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+
+    .mn-intro-column .media-col,
+    .mn-intro-column .text-col {
+      width: 100%;
+      height: auto;
+      min-height: 85vh;
+    }
+
+    .mn-intro-column .media-col {
+      height: 65vh;
+    }
+
+    .mn-intro-column .text-col {
+      padding-bottom: 2em;
+    }
+
+    .mn-intro-column .text-wrapper {
+      padding: 0 2em;
+    }
+
+    .mn-intro-column img.right-image {
+      width: 35%;
+    }
+  }
+</style>
+
+<div class="mn-intro-column">
+  <div class="media-col">
+    {% if section.settings.media_type == 'video' %}
+      <video autoplay muted loop playsinline>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% elsif section.settings.media_type == 'image' and section.settings.left_image %}
+      <img src="{{ section.settings.left_image | image_url }}" alt="Intro Image">
+    {% endif %}
+  </div>
+
+  <div class="text-col">
+    <div class="text-wrapper">
+      <p>{{ section.settings.intro_text }}</p>
+      <h1>{{ section.settings.headline }}</h1>
+      <p>{{ section.settings.short_description }}</p>
+    </div>
+
+    {% if section.settings.image %}
+      <img
+        class="right-image"
+        src="{{ section.settings.image | image_url }}"
+        alt="{{ section.settings.headline | escape }}"
+      >
+    {% endif %}
+
+    <div class="text-wrapper">
+      <p>{{ section.settings.main_description }}</p>
+
+      <div class="mn-intro-button-wrapper">
+        <a class="mn-intro-button" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

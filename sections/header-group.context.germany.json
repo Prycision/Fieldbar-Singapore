@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "announcement_bar_Abebz7": {
+      "settings": {},
+      "blocks": {
+        "announcement_dc4hKf": {
+          "settings": {
+            "text": "SOFORTIGER VERSAND AUS USA, EU, UK, AUS, ZA."
+          }
+        },
+        "announcement_refq7k": {
+          "settings": {
+            "text": "KOSTENLOSE VERSANDOPTIONEN."
+          }
+        },
+        "announcement_WD63m6": {
+          "settings": {
+            "text": "30 TAGE RÜCKGABERECHT."
+          }
+        },
+        "announcement_FnNM3K": {
+          "settings": {
+            "text": "5 JAHRE GARANTIE."
+          }
+        }
+      }
+    }
+  }
+}

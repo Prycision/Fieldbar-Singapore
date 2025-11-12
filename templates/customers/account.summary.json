@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "wrapper": "div#account_order_summary.bsm_account_page",
+  "sections": {
+    "main": {
+      "type": "main-account-order-summary",
+      "custom_css": [
+        "td,table,tr, .order-summary-wrapper {background-color: #f3efeb !important;}"
+      ],
+      "settings": {}
+    },
+    "f2123bd3-b457-4f12-a95b-58997b191253": {
+      "type": "index-section-custom_html",
+      "settings": {
+        "topoffset": false,
+        "fullwidth": false,
+        "fullwidth2": false,
+        "data": "<div style=\"width:100%;margin:-35px auto -70px\"><img src=\"https://cdn.shopify.com/s/files/1/0729/3753/7840/files/OC__mobile1_960x.png?v=1685064198\" style=\"max-width:200px; margin:0 auto;display:block\"></div>\n<style> .style-4{display:none}</style>",
+        "usebgcolor": false,
+        "usebgcolorfullwidth": false,
+        "bgco": "#ffffff"
+      }
+    },
+    "17435452998a9b7b52": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "custom_liquid_Bh6f9w": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"height: 25vh !important\">.</div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f2123bd3-b457-4f12-a95b-58997b191253",
+    "17435452998a9b7b52",
+    "custom_liquid_Bh6f9w"
+  ]
+}

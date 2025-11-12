@@ -1,0 +1,171 @@
+{% schema %}
+{
+  "name": "MN Personalisation",
+  "tag": "section",
+  "class": "mn-personalisation",
+  "settings": [
+    {"type": "image_picker","id": "left_bg_image","label": "Left Column Background Image"},
+    {"type": "text","id": "intro_text","label": "Intro Text","default": "INTRODUCING"},
+    {"type": "text","id": "headline","label": "Headline","default": "NELLIE PINK"},
+    {"type": "textarea","id": "short_description","label": "Short Description","default": "A distinctly FIELDBAR expression of the Mount Nelson’s signature shade."},
+    {"type": "textarea","id": "main_description","label": "Main Description","default": "Shared Cape Town provenance, with a mutual devotion to poolside lounging. This exclusive collection unites two of the city's most beloved symbols, in a celebration of timeless outdoor style."},
+    {"type": "image_picker","id": "image","label": "Right Column Image"},
+    {"type": "text","id": "button_text","label": "Button Text","default": "SHOP THE COLLECTION"},
+    {"type": "url","id": "button_link","label": "Button Link"}
+  ],
+  "presets": [{"name": "MN Personalisation"}]
+}
+{% endschema %}
+
+<style>
+.mn-personalisation {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.5em;
+  color: #002B4D;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.mn-personalisation .left-col,
+.mn-personalisation .right-col {
+  width: 50vw;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mn-personalisation .left-col {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.mn-personalisation .right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.mn-personalisation .text-wrapper {
+  width: 100%;
+  padding: 0 15%;
+}
+
+.mn-personalisation .text-wrapper p,
+.mn-personalisation .text-wrapper h1 {
+  margin: 0;
+}
+
+/* 10% left/right padding for the short description */
+.mn-personalisation .short-description {
+  padding: 0 10%;
+}
+
+.mn-personalisation .right-image-container {
+  width: 25%;   /* increased by 5% from 20% */
+  height: 35%;  /* increased by 5% from 30% */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.mn-personalisation h1,
+.mn-personalisation p {
+  opacity: 1;
+  transition: none;
+}
+
+.mn-intro-button-wrapper {
+  margin-top: 1em;
+}
+
+.mn-intro-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #002B4D;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.3s ease-in-out;
+}
+
+.mn-intro-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #FF8A3D;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.mn-intro-button:hover {
+  color: #FF8A3D;
+}
+
+.mn-intro-button:hover::after {
+  transform: scaleX(0);
+}
+
+@media screen and (max-width: 991px) {
+  .mn-personalisation {
+    flex-direction: column-reverse;
+    height: auto;
+    padding-top: 5%;
+  }
+  .mn-personalisation .left-col,
+  .mn-personalisation .right-col {
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+  }
+  .mn-personalisation .left-col {
+    background-size: 150%;
+  }
+  .mn-personalisation .text-wrapper {
+    padding: 0 2em;
+  }
+  /* ensure mobile shows image at a decent size */
+  .mn-personalisation .right-image-container {
+    width: 60%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+</style>
+
+<div class="mn-personalisation">
+  <div class="left-col" style="background-image: url('{{ section.settings.left_bg_image | image_url }}');">
+  </div>
+
+  <div class="right-col">
+    <div class="text-wrapper">
+      <p>{{ section.settings.intro_text }}</p>
+      <h1>{{ section.settings.headline }}</h1>
+      <p class="short-description">{{ section.settings.short_description }}</p>
+    </div>
+
+    {% if section.settings.image %}
+      <div class="right-image-container" style="background-image: url('{{ section.settings.image | image_url }}');">
+      </div>
+    {% endif %}
+
+    <div class="text-wrapper">
+      <p>{{ section.settings.main_description }}</p>
+
+      <div class="mn-intro-button-wrapper">
+        <a class="mn-intro-button" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

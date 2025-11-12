@@ -1,0 +1,25 @@
+{% assign collection = collections['mega'] %}
+{% if collection and collection.products.size > 0 %}
+  <div class="mega-products-grid-mob">
+    {% for product in collection.products limit: 2 %}
+      <div class="product-item-mob">
+        <a href="{{ product.url }}">
+          <div class="product-image-wrapper-mobile">
+            {% if product.featured_image %}
+              <img
+                style="z-index: 80; position: relative;max-width: 50vw;"
+                src="{{ product.featured_image | image_url }}"
+                alt="{{ product.title }}">
+            {% endif %}
+            <div class="product-type-overlay">
+              {{ product.type }}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No products found in the "mega" collection.
+  </p>
+{% endif %}

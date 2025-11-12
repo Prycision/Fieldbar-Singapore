@@ -1,0 +1,98 @@
+<div class="fits">
+  <h2 style="text-transform: capitalize;">Fits more than you think</h2>
+  <div class="custom-list-container">
+    <ul class="custom-list">
+      {% assign items = '10 Wine Bottles 750ml/32 standing beer cans 440ml/3 bottles of gin/40 tonic & 3 tennis balls/8 champagne bottles 750ml '
+        | split: '/'
+      %}
+      {% assign images = 'https://cdn.shopify.com/s/files/1/0729/3753/7840/files/GT.png?v=1743124389,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/GT_Option_01.png?v=1743124390,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/GT_Option_2.png?v=1743124390,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/GT_Option_3.png?v=1743124390,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/GT_Option_4.png?v=1743124391'
+        | split: ','
+      %}
+
+      {% for item in items %}
+        <li class="list-item {% if forloop.first %}active{% endif %}" data-image="{{ images[forloop.index0] }}">
+          {{ item }}
+        </li>
+      {% endfor %}
+    </ul>
+    <div style="text-align: end;width: 100%;">
+      <p>Capacity | 10L</p>
+    </div>
+    <div class="image-display">
+      <img
+        id="displayedImage"
+        src="{{ images[4] }}"
+        alt="Displayed Image"
+      >
+    </div>
+  </div>
+  <a class="bottom-right" id="fancy_hover" href="#">Read More</a>
+</div>
+
+<style>
+  .custom-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .fits {
+    padding: 1% 3%;
+  }
+  .custom-list {
+    list-style: decimal-leading-zero;
+    padding: 0 0 0 4%;
+    margin: 0;
+    text-align: left;
+  }
+
+  h2 {
+    font-family: "SurveyorText Book Light Pro";
+    font-size: 2em;
+  }
+
+  .list-item {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: "Gotham Narrow Book" !important;
+    }
+
+  .list-item.active {
+    font-style: italic;
+    color: #01324c;
+  }
+
+  .image-display {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .image-display img {
+    width: 30%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const listItems = document.querySelectorAll(".list-item");
+      const displayedImage = document.getElementById("displayedImage");
+
+      listItems.forEach(item => {
+          item.addEventListener("mouseenter", function () {
+              // Remove active class from all items
+              listItems.forEach(i => i.classList.remove("active"));
+
+              // Add active class to hovered item
+              this.classList.add("active");
+
+              // Change displayed image
+              displayedImage.src = this.dataset.image;
+          });
+      });
+  });
+</script>

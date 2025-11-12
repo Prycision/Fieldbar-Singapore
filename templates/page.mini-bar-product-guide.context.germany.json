@@ -1,0 +1,182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.mini-bar-product-guide.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "intro_text": "WIR STELLEN VOR",
+        "short_description": "4L\n<br><br>\nDie <strong>FIELDBAR Mini Bar</strong> ist eine moderne Neuinterpretation der tragbaren Lunchboxen früherer Arbeitstage. Mit einem <strong>Fassungsvermögen von 4 Litern</strong> für <strong>6 Standard-Bierdosen</strong>, einem <strong>Gewicht von etwas über 1 kg</strong> und einem <strong>optionalen, austauschbaren Schultergurt</strong> ist die Mini Bar die bislang <strong>tragbarste</strong> – und <strong>persönlichste</strong> – FIELDBAR-Kühlbox.",
+        "button_text": "AUF DIE WARTELISTE SETZEN"
+      },
+      "blocks": {}
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_6zhifr": {
+          "settings": {
+            "text": "<h2>Ein genauerer Blick</h2><p>Robust, vielseitig und angenehm zu tragen.</p>"
+          }
+        },
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/mini-bar-waitlist\" id='fancy_hover'>AUF DIE WARTELISTE SETZEN</a></div>"
+          }
+        }
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "title": "Perfekt proportioniert",
+            "text": "<p>Mit einem kompakten Fassungsvermögen von 4 Litern ist die FIELDBAR Mini Bar perfekt proportioniert für stilvolle Aperitivos, kleine Picknicks oder alltägliche Mittagspausen.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "title": "Praktisch tragbar",
+            "text": "<p>Lassen Sie Ihre FIELDBAR nie wieder zu Hause. Mit einem Gewicht von etwas über 1 kg und ausgestattet mit einem Komfortgriff oder einem optionalen langen Schultergurt ist die Mini Bar unsere leichteste und tragbarste Kühlbox bisher.</p><p></p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "title": "Überlegene Kühlleistung",
+            "text": "<p>Vollständig mit Eis gefüllt und im Schatten aufbewahrt, kann die Mini Bar Getränke bis zu 24 Stunden unter 10 °C halten. Möglich macht das ihre thermisch effiziente Form, ein geschlossenzelliger Spezial-Schaum, reflektierende Speziallackierung, ein luftdichter Deckelgummi und ein erhöhter Boden.</p>"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {
+        "right_heading": "SIGNATURE-FARBEN",
+        "right_copy": "Die ikonischen FIELDBAR-Farben, die Sie kennen, lieben… und vielleicht schon besitzen.\nWie die <strong>Drinks Box</strong> und der <strong>Gin Trunk</strong> zeichnet sich auch die Mini Bar durch <strong>klare Linien</strong> und unser <strong>charakteristisches Hochglanz-Finish</strong> aus.\nErhältlich in allen <strong>sechs Signature-Farben</strong>, damit Sie Ihre <strong>Sammlung stilvoll vervollständigen</strong> können."
+      },
+      "blocks": {}
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {
+        "heading": "Mehr Platz, als man denkt",
+        "capacity_text": "Fassungsvermögen | 4L",
+        "link_text": "AUF DIE WARTELISTE SETZEN"
+      },
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "6 Bierdosen 330 ml"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "4 Glasflaschen 330 ml"
+          }
+        },
+        "item_gLC84d": {
+          "settings": {
+            "label": "23 Austern auf Eis, serviert mit Zitrone"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "2 Tonics, 1 Kaviarglas, 4 Räucherlachs-Streifen & 4 Zitronenviertel"
+          }
+        }
+      }
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "heading": "Anwendung & Pflege",
+        "description": "<strong>ANWENDUNGSHINWEISE</strong>\n<br>\n01. Befüllen Sie die Mini Bar mit vorgekühlten Getränken und einer großzügigen Menge Eis oder einer vorgefrorenen Ice Bar\n<br>\n02. Snacks oder Lebensmittel in verschlossenen Behältern zwischen das Eis oder auf die Ice Bar legen, um sie kühl und frisch zu halten\n<br>\n03. Öffnen Sie die Mini Bar nur bei Bedarf, um die Kälte im Inneren zu bewahren\n<br>\n04. Stellen Sie sicher, dass Griff oder Schultergurt korrekt befestigt sind, bevor Sie die Mini Bar tragen\n<br><br>\n<strong>PFLEGE & ALTERUNG</strong>\n<br>\n01. Mit warmem Wasser und einem weichen Tuch reinigen<br>\n02. Innenraum vor längerer Lagerung gut trocknen lassen<br>\n03. Keine Reinigungsmittel verwenden<br>\n04. Kein Hochdruckreiniger***<br>\n05. Nicht spülmaschinengeeignet",
+        "button_text": "AUF DIE WARTELISTE SETZEN"
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_ArkfnL": {
+      "custom_css": [
+        ".mn-feature-product {padding-top: 1em;}"
+      ],
+      "settings": {
+        "heading": "Zwei Tragevarianten für Ihre Mini Bar",
+        "description": "Der Komfortgriff der Mini Bar lässt sich gegen den langen Schultergurt austauschen – für einen stilvollen, freihändigen Transport.",
+        "button_text": "AUF DIE WARTELISTE SETZEN"
+      },
+      "blocks": {}
+    },
+    "multicolumn_mBL6kA": {
+      "settings": {
+        "title": "Anleitung zum Griffwechsel"
+      },
+      "blocks": {}
+    },
+    "specifications_product_guide_wcdjG6": {
+      "settings": {
+        "left_title": "Spezifikationen",
+        "left_subtitle": "Die <strong>FIELDBAR Mini Bar</strong> besteht aus 82 Einzelteilen, alle so konzipiert, dass sie entfernt, repariert oder ersetzt werden können, falls erforderlich. Und wie alle FIELDBAR-Kühlboxen ist sie durch unsere <strong>5-Jahres-Garantie auf Verarbeitung</strong> abgedeckt."
+      },
+      "blocks": {
+        "left_item_HXXt4A": {
+          "settings": {
+            "text": "Austauschbarer Komfortgriff mit gummierter Einlage und optionalem langem Schultergurt"
+          }
+        },
+        "left_item_BhTebJ": {
+          "settings": {
+            "text": "Personalisierungsbereich am Griff"
+          }
+        },
+        "left_item_YBXBVz": {
+          "settings": {
+            "text": "Herausnehmbare Hochleistungs-Isolierung ohne ozonschädigende Stoffe"
+          }
+        },
+        "left_item_FMjXah": {
+          "settings": {
+            "text": "Zum Patent angemeldete Deckelverriegelung"
+          }
+        },
+        "left_item_gVgpP6": {
+          "settings": {
+            "text": "Luftdicht schließender Vollring-Dichtungsring"
+          }
+        },
+        "left_item_3eacJJ": {
+          "settings": {
+            "text": "Lebensmittelechter, BPA-freier und leicht zu reinigender Innenraum"
+          }
+        },
+        "right_item_3hNykU": {
+          "settings": {
+            "text": "Scharniere aus Aluminium in Industriequalität, für ein Leben lang gemacht"
+          }
+        },
+        "right_item_UiyWPE": {
+          "settings": {
+            "text": "Stoß- und kratzfeste Außenschale (durch handgefertigte Lackierung können leichte Farbabweichungen auftreten)"
+          }
+        },
+        "right_item_k3tqeT": {
+          "settings": {
+            "text": "Individuell vorab nummerierte Messingplakette zur Qualitätskontrolle und Rückverfolgbarkeit"
+          }
+        },
+        "right_item_jQwDhN": {
+          "settings": {
+            "text": "Rutschfeste Füße aus Silikon"
+          }
+        }
+      }
+    }
+  }
+}

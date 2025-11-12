@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "waitlist_template_ipKPiL": {
+      "type": "waitlist-template",
+      "custom_css": [
+        ".message.success {border: 1px solid #ff8a3d; position: absolute; z-index: 101; background: #ff8a3d !important; padding: 6px; width: 100%; right: 0; bottom: 0;}",
+        ".globo-form-app .message.success .gfb__content-title {/* display: none; */ color: white; display: block !important; font-family: Gotham Book !important; font-size: 18px !important; font-weight: normal !important; margin-bottom: 10px !important;}",
+        ".globo-form-app {flex-wrap: wrap !important;}",
+        "#100123-country-1 .line-input wide {-webkit-appearance: none !important;}"
+      ],
+      "name": "Waitlist Template",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/MINI-BAR-all.jpg",
+        "intro_text": "COMING SOON TO THE UK",
+        "headline": "The Mini Bar",
+        "short_description": "4L\n<br>\nJoin the list below and be the first to know.",
+        "form_code": "<div class=\"globo-formbuilder\" data-id=\"MTAwMTIz\"></div>",
+        "button_text": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "waitlist_template_ipKPiL"
+  ]
+}

@@ -1,0 +1,216 @@
+<div class="safari-engineered-section">
+  <div class="safari-left">
+    <div class="text-block-saf">
+      <div class="safari-overlay">
+        <h2 class="safari-title">Für Safaris Gemacht
+        </h2>
+        <div class="safaari">
+          <div class="txt1">
+            <p>
+              Abgelegene Safari-Camps vertrauen seit jeher auf Produkte von
+              <strong>einfacher Eleganz
+              </strong>
+              , die
+              <strong>technisch herausragend
+              </strong>
+              ,
+              <strong>nachhaltig sowie haltbar sind
+              </strong>
+              und
+              <strong>
+                einen komfortablen Transport erlauben
+              </strong>
+              .
+            </p>
+          </div>
+          <div class="txt2">
+            <p>
+              Wir nutzen moderne Materialien, um unsere von der klassischen
+              <strong>Safari inspirierten
+              </strong>
+              Artikel nach überliefertem Handwerk und mit viel
+              <strong>Geschick und Kreativität zu fertigen und zu verarbeiten
+              </strong>
+              .
+            </p>
+          </div>
+          <div class="linky">
+            <a href="{{ market_friendly_url }}/pages/about-us" id="fancy_hover">Mehr Lesen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %}
+      <div class="safari-badge">
+      <img
+      src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Layer_1.svg?v=1740763530"
+      alt=""
+      srcset="">
+      </div>
+    {% endcomment %}
+    <video
+      class="safari-video"
+      autoplay
+      muted
+      loop
+      playsinline>
+      <source
+        loading="lazy"
+        src="https://cdn.shopify.com/videos/c/o/v/8ec76a0e570e4420a6003529ec754f19.mp4"
+        type="video/mp4">
+    </video>
+  </div>
+  <div class="safari-right">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Media_5_6283b57c-bd52-41a8-a0fd-8de25a318f93.jpg?v=1742069284"
+      alt="Fieldbar Boxes"
+      class="safari-image">
+  </div>
+</div>
+
+<style>
+  .safari-engineered-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    column-gap: 1em;
+  }
+
+  .txt1 {
+    width: 45%;
+    padding-right: 16px;
+    line-height: 1.5em;
+    align-self: flex-start;
+  }
+
+  .txt2 {
+    width: 45%;
+    padding-right: 16px;
+    line-height: 1.5em;
+  }
+
+  .linky {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+  }
+
+  .safaari {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .text-block-saf {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .linky > a {
+    color: white !important;
+  }
+
+  .safari-right {
+    width: 40%;
+    position: relative;
+  }
+
+
+  /* .safari-left { display: flex; align-items: flex-end; justify-content: flex-start; color: white; padding: 40px; position: relative; width: 60%; background-image: url('https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Media_7.jpg?v=1742069336'); background-repeat: no-repeat; background-size: cover; } */
+
+  .safari-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    color: white;
+    padding: 40px;
+    position: relative;
+    width: 60%;
+  }
+
+  .safari-overlay {
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .safari-title {
+    font-size: 2em;
+    font-family: 'SurveyorText Book Light Pro';
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .safari-text {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    columns: 2;
+  }
+
+  .safari-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    z-index: 1;
+  }
+
+  .safari-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .safari-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .safari-engineered-section {
+      flex-direction: column;
+      height: auto;
+    }
+    .safari-left {
+      height: 60vh;
+    }
+    .safari-overlay {
+      bottom: 20px;
+      left: 20px;
+      padding: 20px;
+    }
+    .safari-right {
+      height: 40vh;
+    }
+  }
+</style>
+
+{% comment %}
+  <video
+  class="safari-video"
+  autoplay
+  muted
+  loop
+  >
+  <source
+  loading="lazy"
+  src="https://cdn.shopify.com/videos/c/o/v/8ec76a0e570e4420a6003529ec754f19.mp4"
+  type="video/mp4"
+  >
+  </video>
+{% endcomment %}

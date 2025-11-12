@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "waitlist_template_4TgaAM": {
+      "type": "waitlist-template",
+      "name": "Waitlist Template",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/content_rsz_shot_5_2794_rt.jpg",
+        "intro_text": "WIN WITH",
+        "headline": "John Legend X Fieldbar",
+        "short_description": "Win a FIELDBAR Drinks Box loaded with \n2 bottles of LVE wine and Loved01 products and a chance to see John Legend perform live.",
+        "form_code": "<div class=\"globo-formbuilder\" data-id=\"OTU1NDE=\"></div>",
+        "button_text": "DISCOVER FIELDBAR",
+        "button_link": "shopify://collections/catalogue"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "waitlist_template_4TgaAM"
+  ]
+}

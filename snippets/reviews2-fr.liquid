@@ -1,0 +1,91 @@
+{% assign reviews_handles = 'homepage-01,homepage-02,homepage-03,homepage-04' | split: ',' %}
+{{ 'reviews.css' | asset_url | stylesheet_tag }}
+
+{% if reviews_handles != blank %}
+  <div class="my-reviews-slider-container">
+    <div class="stars2" style="text-align:center !important">
+      {{ 'stars.svg' | inline_asset_content }}
+    </div>
+    <!-- Swiper main container -->
+    <div class="swiper myReviewsSwiper" style="background-color: #f3efeb;">
+      <!-- Additional wrapper for slides -->
+      <div class="swiper-wrapper" id="rev2-wrapper">
+        {% for handle in reviews_handles %}
+          {% assign review = shop.metaobjects.reviews[handle] %}
+          {% if review %}
+            <div class="swiper-slide" id="rev2-slide">
+              <div class="review-slide-content" id="rev2-content">
+                {% if review.test %}
+                  <div class="rev2" style="font-size: 1.2em; position: relative;">
+                    {{ review.test | rich_text_field }}
+                  </div>
+                {% endif %}
+
+                {% if review.reviewer %}
+                  <p style="text-transform: capitalize;" class="review-author">- {{ review.reviewer.value }}
+                  </p>
+                  <br>
+                {% endif %}
+
+                {% if review.review_image %}
+                  <img
+                    src="{{ review.review_image.value | image_url }}"
+                    alt="Review image"
+                    id="rev2-img"
+                    class="review-image">
+                {% endif %}
+              </div>
+            </div>
+          {% else %}
+            <p style="color: red;">⚠ Review with handle '{{ handle }}' not found.
+            </p>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Navigation (arrows) -->
+      <div id="next_pre_reviews2">
+        <div class="svg-wrapper  swiper-next2-reviews2">
+          {{ 'right.svg' | inline_asset_content }}
+        </div>
+        <div class="svg-wrapper  swiper-prev2-reviews2">
+          {{ 'left.svg' | inline_asset_content }}
+        </div>
+      </div>
+    </div>
+    <div class="custom-pagination2"></div>
+  </div>
+{% else %}
+  <p>No reviews found
+  </p>
+{% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let swiper = new Swiper(".myReviewsSwiper", {
+      slidesPerView: 1,
+      rewind: true,
+      allowTouchMove: true,
+      simulateTouch: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      pagination: {
+        el: ".custom-pagination2",
+        clickable: true,
+        dynamicBullets: false,
+      },
+      navigation: {
+        nextEl: ".swiper-next2-reviews2",
+        prevEl: ".swiper-prev2-reviews2",
+      },
+    });
+  });
+</script>
+<style>
+  .rev2 {
+    line-height: 1em;
+    height: 100%;
+    overflow: visible;
+  }
+</style>

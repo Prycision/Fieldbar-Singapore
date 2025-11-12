@@ -1,0 +1,109 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "mn_personalisation_j47AgF": {
+      "type": "mn-personalisation",
+      "name": "MN Personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/green.webp",
+        "intro_text": "FIELDBAR FOR BUSINESS",
+        "headline": "Business Made Pleasure",
+        "short_description": "<br>Fine companies give the finest gifts.\nReward thirsty work with a tasteful handle or plaque engraving.",
+        "main_description": "",
+        "button_text": "REQUEST A QUOTE",
+        "button_link": "#trade-form"
+      }
+    },
+    "mn_personalisation_YLVgnE": {
+      "type": "mn-personalisation",
+      "name": "MN Personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/WEB_page_enquiry_custom_purple.png",
+        "intro_text": "INTRODUCING",
+        "headline": "Custom Colours",
+        "short_description": "<br>We have a limited number of slots per year to produce custom colour Fieldbars. We reserve the right to select partnerships in line with our brand values.",
+        "main_description": "",
+        "button_text": "ENQUIRE NOW",
+        "button_link": "#trade-form"
+      }
+    },
+    "rich_text_YfjcwY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PcCWhP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Enquire Now",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PcCWhP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 12
+      }
+    },
+    "custom_liquid_nxRB7j": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section id=\"trade-form\" >\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "17533464909e826dca": {
+      "type": "apps",
+      "blocks": {
+        "powerful_form_builder_app_block_JExVcm": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"MTI1Nw==\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_JExVcm"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "mn_personalisation_j47AgF",
+    "mn_personalisation_YLVgnE",
+    "rich_text_YfjcwY",
+    "custom_liquid_nxRB7j",
+    "17533464909e826dca"
+  ]
+}

@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.size-guide.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "size_guide_NpXWkK": {
+      "settings": {
+        "left_heading": "Guide Des Tailles",
+        "left_intro": "Bien que le champagne soit toujours recommandé, les produits Fieldbar sont conçus pour s'adapter à un large éventail de configurations de boissons.",
+        "quote_text": "<h2>\"Le champagne devrait être froid, sec et, espérons-le, gratuit.</h2>"
+      },
+      "blocks": {
+        "product_block_mQTY8t": {
+          "settings": {
+            "title": "La Drinks Box",
+            "link_label": "ACHETER MAINTENANT",
+            "detail_text_1": "2 Bouteilles de Champagne 750ml",
+            "detail_text_2": "10 Bières 330 ml",
+            "detail_text_3": "3 Bouteilles de Vin 750 ml",
+            "detail_text_4": "Pimm's & Limonade, 3 Balles de Tennis"
+          }
+        },
+        "product_block_9KUekR": {
+          "settings": {
+            "title": "La Gin Trunk",
+            "link_label": "ACHETER MAINTENANT",
+            "detail_text_1": "8 Bouteilles de Champagne 750ml",
+            "detail_text_2": "32 Bières 440 ml",
+            "detail_text_3": "10 Bouteilles de Vin 750ml",
+            "detail_text_4": "3 Bouteilles de Gin, 40 Bouteilles de Tonic & 3 Balles de Tennis"
+          }
+        },
+        "product_block_AfyXhT": {
+          "settings": {
+            "title": "La Mini Bar",
+            "link_label": "Liste d’attente",
+            "detail_text_1": "23 Huîtres, Glace & Citron",
+            "detail_text_2": "6 Canettes de Bière 330 ml",
+            "detail_text_3": "4 Bouteilles en Verre 330 ml",
+            "detail_text_4": "2 Tonics, 1 Pot de Caviar, 4 Rubans de Saumon Fumé & 4 Quartiers de Citron"
+          }
+        }
+      }
+    }
+  }
+}

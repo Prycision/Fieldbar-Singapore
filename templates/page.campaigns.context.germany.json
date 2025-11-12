@@ -1,0 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.campaigns.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "campaigns_YBrde6": {
+      "settings": {},
+      "blocks": {
+        "slide_kbEUtg": {
+          "settings": {
+            "slide_title": "Signature Hartschalen-Kühlboxen",
+            "slide_button_text": "Katalog einkaufen"
+          }
+        },
+        "slide_GJwNxj": {
+          "settings": {
+            "slide_title": "Fieldbar Wunderland"
+          }
+        },
+        "slide_mraEAD": {
+          "settings": {
+            "slide_title": "Safari White Verpackungseinführung"
+          }
+        },
+        "slide_egVBk4": {
+          "settings": {
+            "slide_title": "Die Swing Sling"
+          }
+        },
+        "slide_zzd8Bt": {
+          "settings": {
+            "slide_title": "Champions der Stilvollen Freizeit"
+          }
+        }
+      }
+    }
+  }
+}

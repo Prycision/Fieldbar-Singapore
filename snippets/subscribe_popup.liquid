@@ -1,0 +1,177 @@
+<div id="subscribe-popup" class="subscribe-popup">
+  <button class="subscribe-close" aria-label="Close popup">&times;
+  </button>
+  <div class="subscribe-popup-content">
+    <span style="font-size: 1.2em">Invitation to Subscribe
+    </span>
+    <p>Receive personalised offers, early access to new products and loosely verified rumours from time to time.
+    </p>
+    <div class="globo-formbuilder" data-id="OTg0NjM="></div>
+    <div class="sub_bg">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Drinks_Box_Leather_Handle_Hero_Lifestyle_01_Large_ba0ebb37-decc-495f-be67-833d461bb0e0.jpg?v=1742471312"
+        alt=""
+        srcset="">
+    </div>
+  </div>
+</div>
+<style>
+  .message.success .content p {
+    font-size: 14px !important;
+    margin-bottom: 0 !important;
+    font-family: 'Gotham Book' !important;
+    font-weight: normal !important;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .message.success .gfb__content-title {
+    display: none;
+  }
+
+  .gfb__footer.wizard__footer {
+    margin-bottom: 1em;
+  }
+
+  button.subscribe-close {
+    width: 20px !important;
+    justify-self: end;
+  }
+  .message.success .dismiss {
+    display: none;
+  }
+  .message.success {
+    border: 1px solid #FF8A3D;
+    position: absolute;
+    z-index: 101;
+    background: #FF8A3D !important;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 6px;
+    width: 30%;
+    bottom: 15px;
+    right: 0;
+  }
+  .subscribe-close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .subscribe-popup {
+    position: fixed;
+    top: 8em;
+    left: 3.5%;
+    width: 25em;
+    max-width: 600px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .2);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: white;
+    color: #002b4d;
+    transform: translateX(0);
+    transition: opacity .6s ease
+    , transform .6s ease;
+  }
+
+  .subscribe-popup::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 4px dashed white;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  #globo-formbuilder-82110 > div > div > div {
+    background-color: white;
+  }
+
+  #subscribe-popup > div > div.sub_bg > img {
+    max-width: 100%;
+    height: auto;
+  }
+  .sub_bg {
+    width: 100%;
+    height: auto;
+  }
+
+  .subscribe-popup.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .subscribe-popup.closing {
+    opacity: 0;
+    transform: translateX(-150%);
+  }
+  .subscribe-popup.hidden {
+    display: none !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    z-index: -1 !important;
+    transform: translateX(-150%) !important;
+  }
+
+  .subscribe-popup button {
+    padding: .75rem 1.5rem;
+    color: #002b4d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .subscribe-popup button:hover {
+    background: ;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('subscribe-popup');
+    const closeBtn = popup.querySelector('.subscribe-close');
+    const storageKey = 'subscribePopupShown';
+    const durationHours = 3600;
+    const now = new Date().getTime();
+    const shownData = localStorage.getItem(storageKey);
+    let popupShown = false;
+
+    function showPopup() {
+      if (popupShown) return;
+      popupShown = true;
+
+      popup.classList.remove('hidden');
+      popup.classList.add('visible');
+      localStorage.setItem(storageKey, now.toString());
+    }
+  popup.classList.add('hidden'); 
+  if (!shownData || now - parseInt(shownData) > durationHours * 60 * 60 * 1000) {      function handleScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+
+        if (scrollPercent >= 35) {
+          showPopup();
+          window.removeEventListener('scroll', handleScroll);
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+
+      closeBtn.addEventListener('click', () => {
+        popup.classList.remove('visible');
+        popup.classList.add('hidden');
+      });
+    }
+  });
+</script>

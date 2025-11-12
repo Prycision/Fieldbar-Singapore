@@ -1,0 +1,181 @@
+{% schema %}
+{
+  "name": "Specifications",
+  "tag": "section",
+  "class": "specifications-section",
+  "settings": [
+    {"type":"image_picker","id":"left_top_image","label":"Left Top Image"},
+    {"type":"text","id":"left_title","label":"Left Title","default":"Specification Title"},
+    {"type":"textarea","id":"left_subtitle","label":"Left Subtitle","default":"Subtitle text goes here."},
+    {"type":"image_picker","id":"right_background_image","label":"Right Background Image"}
+  ],
+  "blocks": [
+    {
+      "type": "left_item",
+      "name": "Left Column Item",
+      "settings": [
+        {"type": "textarea", "id": "text", "label": "Item Text", "default": "Moulded handle casing wrapped in genuine leather offcuts for comfort"}
+      ]
+    },
+    {
+      "type": "right_item",
+      "name": "Right Column Item",
+      "settings": [
+        {"type": "textarea", "id": "text", "label": "Item Text", "default": "High performance removable and zero ozone-depleting foam insulation"}
+      ]
+    }
+  ],
+  "presets": [{"name": "Specifications"}]
+}
+{% endschema %}
+
+<style>
+.specifications-section {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  gap: 1em;
+  overflow: hidden;
+}
+.spec-left,
+.spec-right {
+  height: 100%;
+}
+.spec-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.spec-left__image {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spec-left__image img {
+  width: 45%; /* 10% smaller */
+  height: auto;
+  object-fit: contain;
+}
+.spec-left__content {
+  flex: 0 0 auto;
+  padding-left: 2em;
+  padding-right: 1em;
+  box-sizing: border-box;
+}
+.spec-left__title {
+  font-family: 'Surveyor Fine Light', serif;
+  font-size: 1.5rem;
+  color: #002B4D;
+  margin: 0 0 0.5em;
+}
+.spec-left__subtitle {
+  font-family: 'Gotham Narrow Book'!important;
+  font-size: 1em;
+  color: #002B4D;
+  margin: 0 0 1em;
+  letter-spacing: 0;
+}
+.spec-left__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+.spec-left__copy {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 0 0.5em;
+  font-family: 'Gotham Narrow Book'!important;
+  color: #002B4D;
+  letter-spacing: 0;
+}
+.spec-left__number,
+.spec-left__text {
+  font-family: 'Gotham Narrow Book'!important;
+  font-weight: 400;
+  color: #002B4D;
+  letter-spacing: 0;
+}
+.spec-left__number {
+  margin-right: 1em;
+}
+.spec-right {
+  width: 50%;
+  display: flex;
+}
+.spec-right__image {
+  width: 100%;
+  height: 100%;
+}
+.spec-right__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .specifications-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .spec-left,
+  .spec-right {
+    width: 100%;
+    height: auto;
+  }
+  .spec-left__image {
+    height: 40vh;
+  }
+  .spec-left__columns {
+    grid-template-columns: 1fr;
+    gap: 0.5em; /* match item spacing */
+  }
+}
+</style>
+
+<div class="specifications-section">
+  <div class="spec-left">
+    {% if section.settings.left_top_image %}
+      <div class="spec-left__image">
+        <img src="{{ section.settings.left_top_image | image_url }}" alt="Left Image" />
+      </div>
+    {% endif %}
+
+    <div class="spec-left__content">
+      <h2 class="spec-left__title">{{ section.settings.left_title }}</h2>
+      <p class="spec-left__subtitle">{{ section.settings.left_subtitle }}</p>
+
+      {% assign left_blocks = section.blocks | where: "type", "left_item" %}
+      {% assign right_blocks = section.blocks | where: "type", "right_item" %}
+      {% assign left_count = left_blocks.size %}
+
+      <div class="spec-left__columns">
+        <div class="spec-left__column">
+          {% for block in left_blocks %}
+            <p class="spec-left__copy">
+              <span class="spec-left__number">{% if forloop.index < 10 %}0{{ forloop.index }}{% else %}{{ forloop.index }}{% endif %}.</span>
+              <span class="spec-left__text">{{ block.settings.text }}</span>
+            </p>
+          {% endfor %}
+        </div>
+        <div class="spec-left__column">
+          {% for block in right_blocks %}
+            {% assign num = left_count | plus: forloop.index %}
+            <p class="spec-left__copy">
+              <span class="spec-left__number">{% if num < 10 %}0{{ num }}{% else %}{{ num }}{% endif %}.</span>
+              <span class="spec-left__text">{{ block.settings.text }}</span>
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-right">
+    {% if section.settings.right_background_image %}
+      <div class="spec-right__image">
+        <img src="{{ section.settings.right_background_image | image_url }}" alt="Background Image" />
+      </div>
+    {% endif %}
+  </div>
+</div>

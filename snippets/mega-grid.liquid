@@ -1,0 +1,84 @@
+{% assign collection = collections['mega'] %}
+{% if collection and collection.products.size > 0 %}
+  <style>
+    .mega-products-grid .product-item {
+      position: relative;
+    }
+    .mega-products-grid .product-image-wrapper {
+      position: relative;
+    }
+    .product-type-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(43, 59, 83, .43);
+      color: #fff !important;
+      font-size: .7em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: .5em 1em;
+      font-family: 'Gotham Book' !important;
+      display: none;
+      z-index: 100;
+      height: 100% !important;
+    }
+    .product-type-overlay:hover {
+      display: flex !important;
+      align-items: flex-end;
+    }
+    .product-image-wrapper:hover {
+      background: none;
+      /* Remove this if not needed */
+      padding: 0 !important;
+      object-fit: fill;
+    }
+    .mega-products-grid .product-item:hover .product-type-overlay {
+      display: block;
+    }
+
+    #grid_one {
+      width: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media screen and (max-width: 80em) {
+      #grid_one {
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+      }
+
+      #grid_one .product-item:nth-child(n + 5) {
+        display: none !important;
+      }
+    }
+
+  </style>
+
+  <div id="grid_one" class="mega-products-grid">
+    {% for product in collection.products limit: 6 %}
+      <div class="product-item">
+        <a href="{{ product.url }}">
+          <div class="product-image-wrapper">
+            {% if product.featured_image %}
+              <img
+                style="z-index: 80; position: relative;"
+                src="{{ product.featured_image | image_url }}"
+                alt="{{ product.title }}">
+            {% endif %}
+            <div class="product-type-overlay">
+              {{ product.type }}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No products found in the "mega" collection.
+  </p>
+{% endif %}

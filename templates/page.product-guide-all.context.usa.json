@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.product-guide-all.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "horizontal_scroll_product_guide_PiUVFi": {
+      "settings": {},
+      "blocks": {
+        "slide_hnJ494": {
+          "settings": {
+            "title": "DRINKS BOX / 10.5 qt"
+          }
+        },
+        "slide_WKMCcf": {
+          "settings": {
+            "title": "GIN TRUNK / 25.5 qt",
+            "left_button_text": "Join Waitlist",
+            "left_button_link": "shopify://pages/gin-trunk-waitlist"
+          }
+        },
+        "slide_eqkEwn": {
+          "settings": {
+            "title": "MINI BAR / 4.2 qt"
+          }
+        }
+      }
+    }
+  }
+}

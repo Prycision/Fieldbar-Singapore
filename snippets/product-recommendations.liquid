@@ -1,0 +1,138 @@
+<div class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=10&intent=related&tag={{ product.tags | join: ',' }}">
+  {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+    <div class="slider-container">
+      {% if recommendations.intent == 'related' %}
+      {% elsif recommendations.intent == 'complementary' %}
+
+      {% endif %}
+
+      <div class="recommendations-slider swiper">
+        <div class="swiper-wrapper">
+          {%- for product in recommendations.products -%}
+            <div class="swiper-slide product">
+              <a href="{{ product.url }}">
+                <img
+                  class="product__img"
+                  src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
+                  alt="{{ product.featured_image.alt }}">
+                <div class="text-block">
+                  <p class="product__title">
+                    {{ product.title }}
+                  </p>
+                  <p class="product__price">
+                    {{ product.price | money }}
+                  </p>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <button class="slider-prev swiper-button-prev">&#10094;
+      </button>
+      <button class="slider-next swiper-button-next">&#10095;
+      </button>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .text-block {
+    margin: 0 5% 0 20%;
+    text-align: left;
+  }
+  ol,
+  ul,
+  dl {
+    margin-top: 0;
+    list-style: none;
+  }
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .recommendations-slider .swiper-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .swiper-slide.product {
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    background-color: #002b4d;
+    padding: 10px 18px;
+    border-radius: 50%;
+    color: #f3efeb;
+    font-size: 13px;
+    font-weight: 100 !important;
+  }
+  @media (max-width: 768px) {
+    .swiper-slide.product {
+      width: 100%;
+    }
+  }
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const productRecommendationsSection = document.querySelector('.product-recommendations');
+
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+
+      observer.unobserve(productRecommendationsSection);
+      const url = productRecommendationsSection.dataset.url;
+
+      fetch(url)
+        .then((response) => response.text())
+        .then((text) => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const recommendations = html.querySelector('.product-recommendations');
+
+          if (recommendations && recommendations.innerHTML.trim().length) {
+            productRecommendationsSection.innerHTML = recommendations.innerHTML;
+            initSwiper();
+          }
+        })
+        .catch((e) => console.error(e));
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, { rootMargin: '0px 0px 200px 0px' });
+    observer.observe(productRecommendationsSection);
+
+    function initSwiper() {
+      new Swiper('.recommendations-slider', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1200: { slidesPerView: 4 },
+        },
+      });
+    }
+  });
+</script>

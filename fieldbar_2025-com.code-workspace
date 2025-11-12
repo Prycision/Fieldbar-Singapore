@@ -1,0 +1,92 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 0,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "html.trace.server": "verbose",
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.settings.applyToAllProfiles": [
+      "editor.wordWrap",
+      "html.trace",
+      "html.format.wrapAttributes",
+      "html-css-class-completion.enableEmmetSupport",
+      "editor.defaultFoldingRangeProvider",
+      "editor.autoIndent",
+      "editor.renderWhitespace",
+      "diffEditor.ignoreTrimWhitespace",
+      "prettier.printWidth",
+      "editor.wrappingIndent",
+      "vscode-json-editor.theme"
+    ],
+    "editor.wordWrapColumn": 500,
+    "[html]": {
+      "editor.defaultFoldingRangeProvider": "vscode.html-language-features",
+      "editor.linkedEditing": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "html.format.wrapAttributes": "preserve-aligned",
+    "editor.wordWrap": "bounded",
+    "prettier.printWidth": 200,
+    "editor.tabSize": 2,
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "gitlens.views.repositories.files.layout": "list",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "yaml.schemas": {
+      "file:///home/corbin/.vscode/extensions/atlassian.atlascode-3.0.15/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.jira.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.largeFileOptimizations": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "vscode-json-editor.theme": "dark",
+    "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "files.associations": {
+      "*.json": "jsonc",
+      "*.liquid": "liquid"
+    },
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false
+    },
+    "[css]": {
+      "editor.suggest.insertMode": "replace",
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "html-css-class-completion.HTMLLanguages": ["html", "vue", "razor", "blade", "handlebars", "twig", "django-html", "php", "markdown", "erb", "ejs", "svelte"],
+    "editor.defaultFoldingRangeProvider": "Zignd.html-css-class-completion",
+    "standard.enableGlobally": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "[php]": {},
+    "themeflow.themeEditorSync": true,
+    "[liquid]": {
+      "editor.defaultFormatter": "sissel.shopify-liquid",
+      "editor.formatOnSave": true
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+      "main"
+    ]
+  }
+}

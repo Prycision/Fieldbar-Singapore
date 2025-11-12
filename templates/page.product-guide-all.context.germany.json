@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.product-guide-all.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "horizontal_scroll_product_guide_PiUVFi": {
+      "settings": {
+        "extra_title": "Produktführer entdecken",
+        "extra_text": "Handgefertigte Kühlboxen & edle Outdoor-Accessoires.",
+        "extra_button_text": "KATALOG ENTDECKEN"
+      },
+      "blocks": {
+        "slide_hnJ494": {
+          "settings": {
+            "left_button_text": "Pflegehinweise & Gebrauch",
+            "right_button_text": "Größentabelle"
+          }
+        },
+        "slide_WKMCcf": {
+          "settings": {
+            "subtitle": "Derzeit nur in Europa und im Vereinigten Königreich erhältlich.",
+            "left_button_text": "Pflegehinweise & Gebrauch",
+            "right_button_text": "Größentabelle"
+          }
+        },
+        "slide_eqkEwn": {
+          "settings": {
+            "subtitle": "Derzeit nur in Südafrika erhältlich.",
+            "left_button_text": "Zur Warteliste anmelden",
+            "right_button_text": "Größentabelle"
+          }
+        }
+      }
+    }
+  }
+}

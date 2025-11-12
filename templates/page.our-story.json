@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mount_nelson_header_dB86DT": {
+      "type": "Mount-nelson-header",
+      "name": "MN Hero Video",
+      "settings": {
+        "background_media_url": "https://cdn.shopify.com/s/files/1/0729/3753/7840/files/About_Us_WEB_HEADER-2000px.png?v=1688115765",
+        "headline": "About Us",
+        "button_text": "DISCOVER THE CATALOGUE",
+        "button_link": "shopify://collections/catalogue"
+      }
+    },
+    "rich_text_E6EnBr": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gUVT7U": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VIEW FROM OUR FACTORY AT ST MICHAELS PARK, OBSERVATORY, CAPE TOWN</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_gUVT7U"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "mn_personalisation_Wwe6FY": {
+      "type": "mn-personalisation",
+      "name": "MN Personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/Testimonials_DB_04.png",
+        "intro_text": "MADE IN CAPE TOWN",
+        "headline": "Handcrafted Outdoor Products of Incredible Quality.",
+        "short_description": "<br>We make our products at our<strong> factory </strong>in <strong>Cape Town</strong> – a city that for centuries has functioned as both trading post and gateway to the African continent. Its people are dexterous and resilient, with a multi-generational instinct for craft, elegance and ingenuity.",
+        "main_description": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "mn_drinkbox_azn9CQ": {
+      "type": "mn-drinkbox",
+      "custom_css": [
+        ".mn-feature-product {padding-top: 1em;}"
+      ],
+      "name": "MN Feature Product",
+      "settings": {
+        "left_image": "shopify://shop_images/Bells_Whistles__ALL_08.jpg",
+        "left_image_link": "shopify://products/orchard-orange",
+        "left_caption": "DRINKS BOX / ORCHARD ORANGE",
+        "main_image": "shopify://shop_images/product_guide.png",
+        "heading": "Safari Engineered",
+        "description": "Remote safari camps have always needed outdoor products that are elegantly simple, technically <strong>excellent</strong>, <strong>sustainably durable</strong> and <strong>conveniently portable</strong>.\n<br><br>\nOur <strong>safari heritage</strong> underlies our product development. It is our <strong>DNA</strong>. It is the very reason <strong>why we are good at what we do.</strong>",
+        "button_text": "SHOP THE DRINKS BOX",
+        "button_link": ""
+      }
+    },
+    "mn_towel_hnGKpp": {
+      "type": "mn-towel",
+      "name": "MN Feature Product Alt",
+      "settings": {
+        "left_image_link": "shopify://products/safari-white",
+        "left_caption": "DRINKS BOX / SAFARI WHITE",
+        "main_media_url": "https://cdn.shopify.com/s/files/1/0729/3753/7840/files/HEADER_Field-Bottle-Launch-2.jpg?v=1747905305",
+        "heading": "Timeless Style",
+        "description": "There was a time when they did outdoor adventure with style. No matter where you live, our view is that outdoor leisure is most enjoyable and memorable when done with\n<strong> elegance, style</strong> and \n<strong>grace</strong>.",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_XHzFpX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"sustainable_craftsmanship\" %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "mn_personalisation_kia46R": {
+      "type": "mn-personalisation",
+      "custom_css": [
+        ".mn-personalisation {padding-top: 1em;}"
+      ],
+      "name": "MN Personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/5000_facebook_jpg.webp",
+        "intro_text": "",
+        "headline": "People Before Productivity",
+        "short_description": "<br>We put people before productivity. We hold each other to high standards, but above all else, we are kind.\n<br><br>\nWe are a diverse people. We have a history that still hurts. A history that we are still trying to mend.\n<br><br>\nWe make our products with the same set of values that we sell them with. Our brand values are our internal values. We work reasonable hours and pay fair wages. We eat lunch together. We share our stories. We put <strong>people before productivity.</strong>\n<br><br>\nAbove all else we operate our <strong>business with kindness.</strong>",
+        "main_description": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "rich_text_JtefD8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FeALyB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Shareholders & Founders",
+            "heading_size": "h1"
+          }
+        },
+        "text_djxBkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Scott Hindmarch, Philip Lambrecht, and Michael Minkley, you believed when it wasn't easy to do so. The team from Invenfin, your confidence in us propels us.<br/><br/>Founded by Lee Hartman and Corban Warrington.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FeALyB",
+        "text_djxBkD"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_FerfqV": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Elfsight Instagram Feed | Untitled Instagram Feed --> <script src=\"https://static.elfsight.com/platform/platform.js\" async></script> <div class=\"elfsight-app-9fa1cdd6-15db-46cf-8f13-656f3f90d4db\" data-elfsight-app-lazy></div>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "mount_nelson_header_dB86DT",
+    "rich_text_E6EnBr",
+    "mn_personalisation_Wwe6FY",
+    "mn_drinkbox_azn9CQ",
+    "mn_towel_hnGKpp",
+    "custom_liquid_XHzFpX",
+    "mn_personalisation_kia46R",
+    "rich_text_JtefD8",
+    "custom_liquid_FerfqV",
+    "main"
+  ]
+}

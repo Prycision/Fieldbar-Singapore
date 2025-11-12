@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.sustainability.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "specifications_product_guide_Ye7dCg": {
+      "settings": {
+        "left_title": "Spécifications de la Drinks Box",
+        "left_subtitle": "La glacière Drinks Box FIELDBAR est composée de 58 pièces qui peuvent toutes être démontées, réparées, et réutilisées si nécessaire. C'est avantageux pour vous, pour nous, et pour la planète sur laquelle nous vivons."
+      },
+      "blocks": {
+        "left_item_EFEBpx": {
+          "settings": {
+            "text": "Poignée double épaisseur en chutes de cuir véritable pour plus de confort lors du transport"
+          }
+        },
+        "left_item_BrhATf": {
+          "settings": {
+            "text": "Peinture réfléchissante pour réduire l'absorption de chaleur"
+          }
+        },
+        "left_item_hneHxq": {
+          "settings": {
+            "text": "Isolation en mousse haute performance amovible sans impact sur la couche d'ozone"
+          }
+        },
+        "left_item_XhbErw": {
+          "settings": {
+            "text": "Verrouillage du couvercle en instance de brevet"
+          }
+        },
+        "left_item_aTp3iV": {
+          "settings": {
+            "text": "Joint hermétique"
+          }
+        },
+        "left_item_riqGLp": {
+          "settings": {
+            "text": "Compartiment intérieur de qualité alimentaire, sans BPA et facile à nettoyer"
+          }
+        },
+        "right_item_3Jxin3": {
+          "settings": {
+            "text": "Charnières invisibles en aluminium conçues pour durer éternellement"
+          }
+        },
+        "right_item_KdWiQz": {
+          "settings": {
+            "text": "\"Oreilles\" de la poignée en aluminium"
+          }
+        },
+        "right_item_wppr9z": {
+          "settings": {
+            "text": "Paroi extérieure résistante aux chocs et aux rayures (en raison de la décoration à la main, de légères variations au niveau de la peinture peuvent se produire)"
+          }
+        },
+        "right_item_wdUCe6": {
+          "settings": {
+            "text": "Plaque en laiton prénumérotée pour le contrôle qualité et le suivi"
+          }
+        },
+        "right_item_4fbTCq": {
+          "settings": {
+            "text": "Pieds en silicone antidérapant"
+          }
+        }
+      }
+    },
+    "specifications_product_guide_9GUP6x": {
+      "settings": {
+        "left_title": "Spécifications de la Gin Trunk",
+        "left_subtitle": "La glacière Gin Trunk FIELDBAR est composée de 135 pièces qui peuvent toutes être démontées, réparées, et remplacées si nécessaire. Comme toutes les glacières FIELDBAR, elle est couverte par la garantie de fabrication FIELDBAR 5 ans."
+      },
+      "blocks": {
+        "left_item_bPyKPW": {
+          "settings": {
+            "text": "Coque de poignée moulée recouverte de chutes de cuir véritable pour le confort"
+          }
+        },
+        "left_item_VUMYYn": {
+          "settings": {
+            "text": "Poignée en aluminium extrudé pour assurer solidité et stabilité lors du transport"
+          }
+        },
+        "left_item_dwQE89": {
+          "settings": {
+            "text": "Peinture réfléchissante pour réduire l'absorption de chaleur"
+          }
+        },
+        "left_item_iVVfaY": {
+          "settings": {
+            "text": "Loquet de couvercle en aluminium"
+          }
+        },
+        "left_item_BXEXEe": {
+          "settings": {
+            "text": "Joint étanche et hermétique"
+          }
+        },
+        "left_item_La8Rha": {
+          "settings": {
+            "text": "Compartiment intérieur de qualité alimentaire, sans BPA et facile à nettoyer"
+          }
+        },
+        "right_item_znPRqV": {
+          "settings": {
+            "text": "Isolation en mousse haute performance amovible sans impact sur la couche d'ozone"
+          }
+        },
+        "right_item_dQzThx": {
+          "settings": {
+            "text": "Charnières invisibles en aluminium conçues pour durer éternellement"
+          }
+        },
+        "right_item_WkbgFm": {
+          "settings": {
+            "text": "Système de verrouillage à pression interne pour garantir l'étanchéité en position fermée"
+          }
+        },
+        "right_item_H4ewnh": {
+          "settings": {
+            "text": "Paroi extérieure résistante aux chocs et aux rayures"
+          }
+        },
+        "right_item_Cm9gre": {
+          "settings": {
+            "text": "Plaque en laiton prénumérotée pour le contrôle qualité et le suivi"
+          }
+        },
+        "right_item_HfbY3P": {
+          "settings": {
+            "text": "Pieds en silicone antidérapant"
+          }
+        }
+      }
+    },
+    "specifications_product_guide_34jgrq": {
+      "settings": {
+        "left_title": "Spécifications de la Mini Bar",
+        "left_subtitle": "Le Mini Bar FIELDBAR est composé de 82 pièces, toutes conçues pour être démontées, réparées et remplacées si nécessaire. Et, comme toutes les glacières FIELDBAR, il est garanti 5 ans contre les défauts de fabrication grâce à la garantie FIELDBAR."
+      },
+      "blocks": {
+        "left_item_Tq7pNP": {
+          "settings": {
+            "text": "Poignée interchangeable avec insert en caoutchouc pour un confort optimal et sangle longue en option"
+          }
+        },
+        "left_item_FiwVRX": {
+          "settings": {
+            "text": "Zone de personnalisation sur la poignée"
+          }
+        },
+        "left_item_jrNhUx": {
+          "settings": {
+            "text": "Isolation amovible haute performance sans impact sur la couche d’ozone"
+          }
+        },
+        "left_item_tF9jR4": {
+          "settings": {
+            "text": "Système de verrouillage du couvercle en instance de brevet"
+          }
+        },
+        "left_item_7X9pqH": {
+          "settings": {
+            "text": "Joint à anneau plein résistant à la circulation d’air"
+          }
+        },
+        "left_item_r6Jjt9": {
+          "settings": {
+            "text": "Compartiment intérieur alimentaire, sans BPA, facile à nettoyer"
+          }
+        },
+        "right_item_7c9dGK": {
+          "settings": {
+            "text": "Charnières en aluminium de qualité professionnelle – conçues pour durer toute une vie"
+          }
+        },
+        "right_item_Ba9x76": {
+          "settings": {
+            "text": "Coque extérieure résistante aux chocs et aux rayures (de légères variations de peinture peuvent apparaître en raison de la décoration artisanale)"
+          }
+        },
+        "right_item_AVQ4PB": {
+          "settings": {
+            "text": "Plaque numérotée en laiton pour le contrôle qualité et le suivi individuel"
+          }
+        },
+        "right_item_FTJwpK": {
+          "settings": {
+            "text": "Pieds en silicone antidérapants"
+          }
+        }
+      }
+    }
+  }
+}

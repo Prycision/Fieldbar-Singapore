@@ -1,0 +1,100 @@
+{{ 'reviews.css' | asset_url | stylesheet_tag }}
+
+{% if product and product.metafields.custom.reviews and product.metafields.custom.reviews.value %}
+  {% assign slide_count = 0 %}
+
+  {% assign reviews_data = product.metafields.custom.reviews.value | parse_json %}
+
+  <div class="my-reviews-slider-container">
+    <!-- Swiper main container -->
+    <div class="text-center" id="stars">
+      {{ 'stars.svg' | inline_asset_content }}
+    </div>
+    <div class="swiper myReviewSwiper" style="background-color: #f3efeb;">
+      <!-- Additional wrapper for slides -->
+      <div class="swiper-wrapper" id="rev1-wrapper">
+        {% for review in reviews_data %}
+          {% assign slide_count = slide_count | plus: 1 %}
+
+          <div class="swiper-slide" id="rev1-swiper">
+            <div class="review-slide-content" id="rev1-content">
+              {% if review.test %}
+                <div class="rev1" style="font-size: 1.2em; position: relative;">
+                  {{ review.test | rich_text_field }}
+                </div>
+              {% endif %}
+
+              {% if review.reviewer %}
+                <p style="text-transform: capitalize;" class="review-author">- {{ review.reviewer }}
+                </p>
+                <br>
+              {% endif %}
+
+              {% if review.review_image %}
+                <img
+                  src="{{ review.review_image | image_url }}"
+                  alt="Review image"
+                  id="rev1-img"
+                  class="review-image">
+              {% endif %}
+
+              {% if review.system and review.system.url %}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if slide_count > 1 %}
+
+        <div id="next_pre">
+          <div class="svg-wrapper swiper-next2">
+            {{ 'right.svg' | inline_asset_content }}
+          </div>
+          <div class="svg-wrapper swiper-prev2">
+            {{ 'left.svg' | inline_asset_content }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="custom-pagination2"></div>
+  {% comment %}
+    <a href="{{ review.system.url }}" id="fancy_hover">
+    Read The Testimonials
+    </a>
+  {% endcomment %}
+  </div>
+{% else %}
+  <p>No reviews found
+  </p>
+{% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let swiper = new Swiper(".myReviewSwiper", {
+      slidesPerView: 1,
+      rewind: true,
+      allowTouchMove: true,
+      simulateTouch: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      pagination: {
+        el: ".custom-pagination2",
+        clickable: true,
+        dynamicBullets: false,
+      },
+      navigation: {
+        nextEl: ".swiper-next2",
+        prevEl: ".swiper-prev2",
+      },
+    });
+  });
+</script>
+
+<style>
+  .rev1 {
+    line-height: 1em;
+    height: 100%;
+    overflow: visible;
+  }
+</style>

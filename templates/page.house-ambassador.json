@@ -1,0 +1,91 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "mount_nelson_splitscreen_higWDg": {
+      "type": "mount-nelson-splitscreen",
+      "settings": {
+        "media_type": "video",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/217f86cf5a1d43e69d13c5cbf290002c.mp4",
+        "intro_text": "FIELDBAR HOUSE AMBASSADOR",
+        "headline": "India Hicks",
+        "short_description": "Introducing <strong>British designer</strong>, <strong>writer</strong>, <strong>humanitarian</strong> and <strong>style icon</strong> India Hicks as FIELDBAR House Ambassador. Admired the world over for her generous spirit and effortless outdoor style, India is <strong> perfectly poised</strong> to share our fine outdoor products with the<strong> world.</strong>",
+        "main_description": "",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "mn_drinkbox_hRjX6g": {
+      "type": "mn-drinkbox",
+      "custom_css": [
+        ".mn-feature-product {padding-top: 1em;}"
+      ],
+      "name": "MN Feature Product",
+      "settings": {
+        "left_image": "shopify://shop_images/drinksbox_india.jpg",
+        "left_image_link": "shopify://products/sea-boat-blue",
+        "left_caption": "DRINKS BOX / SEA BOAT BLUE",
+        "main_image": "shopify://shop_images/SBB_DB_Homepage_discover_01_2_Large_57981e7e-adb4-4222-bbdf-a995dfd49de3.jpg",
+        "heading": "",
+        "description": "\"When my husband launched his rum, there was one key instruction. ‘Drink Responsibly' he said. 'Only Use Fresh Ice.’\nImagine our delight when we discovered a <strong>stylish </strong>cooler made with modern materials but crafted with <strong>old-fashioned charm</strong>,<strong> skill</strong> and <strong>workmanship</strong> that can keep ice cold for up to <strong>FIFTY hours. </strong>\"",
+        "button_text": "SHOP THE DRINKS BOX",
+        "button_link": ""
+      }
+    },
+    "mn_towel_QCXnhE": {
+      "type": "mn-towel",
+      "name": "MN Feature Product Alt",
+      "settings": {
+        "left_image": "shopify://shop_images/drinksbox_white_india_hicks.png",
+        "left_image_link": "shopify://products/safari-white",
+        "left_caption": "DRINKS BOX / SAFARI WHITE",
+        "main_media_url": "https://cdn.shopify.com/s/files/1/0729/3753/7840/files/India_Hicks_Lidestyle.jpg?v=1743079799",
+        "heading": "She's got the Spirit",
+        "description": "Beyond her affinity for artisanal spirits, India personifies the essence of FIELDBAR.\nFrom her regal roots in England to her tropical family life in the Bahamas, India is driven to make the world a better and more stylish place.",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "mn_personalisation_wjDbgb": {
+      "type": "mn-personalisation",
+      "custom_css": [
+        ".mn-personalisation {padding-top: 1em;}"
+      ],
+      "name": "MN Personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/DRINKSBOX__India_Hicks_meadow_Shoot_WEB_01_500x_8dd654cc-14a9-40a6-ad30-b19e9373385e.png",
+        "intro_text": "",
+        "headline": "Hot Style",
+        "short_description": "“If you live on a small island where power cuts are often, a  <strong>superior cooler  </strong>is  <strong>essential </strong>.\n\nIt’s also pretty essential when you are setting up a summer dinner in the middle of a field in the English countryside, or are lingering beside a pickleball court, or have taken a slow boat ride down the river, or are picnicking with your children, or hosting a tented trunk show… in fact I can’t quite imagine how I survived before Fieldbar came along.\n\n <strong>They give us a five year warranty and we give them 5 stars </strong>.”",
+        "main_description": "Follow @fieldbar.co and @indiahicksstyle to watch the adventure unfold.",
+        "button_text": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "mount_nelson_splitscreen_higWDg",
+    "mn_drinkbox_hRjX6g",
+    "mn_towel_QCXnhE",
+    "mn_personalisation_wjDbgb"
+  ]
+}

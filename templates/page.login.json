@@ -1,0 +1,91 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_yP6xKy": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<p style=\"text-align: left\">Subscribe to our newsletter to share our adventure and be the first to receive our offers, stories and surprises.</p>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_mYmMfp": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-family: \"Gotham Medium\" !important; font-size: 1.5em !important;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'size-guide' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_3XPGEL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ehDAEk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be back shortly.",
+            "heading_size": "h1"
+          }
+        },
+        "text_rJeQKE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are busy tinkering with the Owners Club. <br/>Please come back a little later.<br/><br/>If you urgently need to make a warranty claim, please email us on <br/><a href=\"mailto:hello@fieldbar.com\" title=\"mailto:hello@fieldbar.com\">hello@fieldbar.com</a> <br/>or call + 27 (0) 21 300 5875.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ehDAEk",
+        "text_rJeQKE"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/m-page.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_yP6xKy",
+    "custom_liquid_mYmMfp",
+    "image_with_text_3XPGEL"
+  ]
+}

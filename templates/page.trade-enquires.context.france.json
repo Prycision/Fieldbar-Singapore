@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.trade-enquires.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "mn_personalisation_j47AgF": {
+      "settings": {
+        "intro_text": "FIELDBAR POUR LES ENTREPRISES",
+        "headline": "LE PLAISIR DES AFFAIRES",
+        "short_description": "<br>Les belles entreprises offrent les plus beaux cadeaux.Récompensez le travail assoiffé avec une poignée de bon goût ou une gravure sur plaque.",
+        "button_text": "  DEMANDER UN DEVIS"
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_YLVgnE": {
+      "settings": {
+        "headline": "COULEURS PERSONNALISÉES",
+        "intro_text": "",
+        "short_description": "<br>Nous disposons d'un nombre limité de créneaux par an pour produire des Fieldbars de couleurs personnalisées. Nous nous réservons le droit de sélectionner des partenariats en adéquation avec les valeurs de notre marque.",
+        "button_text": "DEMANDER MAINTENANT"
+      },
+      "blocks": {}
+    },
+    "rich_text_YfjcwY": {
+      "settings": {},
+      "blocks": {
+        "heading_PcCWhP": {
+          "settings": {
+            "heading": "DEMANDEZ MAINTENANT"
+          }
+        }
+      }
+    }
+  }
+}

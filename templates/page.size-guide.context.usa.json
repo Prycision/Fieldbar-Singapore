@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.size-guide.json",
+  "context": {
+    "market": "usa"
+  },
+  "sections": {
+    "size_guide_NpXWkK": {
+      "settings": {},
+      "blocks": {
+        "product_block_mQTY8t": {
+          "settings": {
+            "volume": "10.5 qt",
+            "dimension": "14.96 H x  9.84 L x  6.3 D inches",
+            "product_link": "shopify://collections/drinks-box",
+            "detail_text_1": "2 Champagne Bottles 25.4 oz",
+            "detail_text_2": "10 Beers 11.2 oz",
+            "detail_text_3": "3 Wine Bottles 25.4 oz"
+          }
+        },
+        "product_block_9KUekR": {
+          "settings": {
+            "volume": "25.4 qt",
+            "dimension": "14.96 H x 17.72 L x 9.84 D inches",
+            "product_link": "shopify://pages/gin-trunk-waitlist",
+            "link_label": "JOIN WAITLIST",
+            "detail_text_1": "8 Champagne Bottles 25.4 oz",
+            "detail_text_2": "32 Standing Beer Cans 14.9 oz",
+            "detail_text_3": "10 Wine Bottles 25.4 oz"
+          }
+        },
+        "product_block_AfyXhT": {
+          "disabled": false,
+          "settings": {
+            "volume": "4.2 qt",
+            "dimension": "7.48 H x 9.84 L X 6.30 D INCHES",
+            "detail_text_2": "6 Beer Cans 11.2 oz",
+            "detail_text_3": "4 Standard Glass Bottles 11.2 oz"
+          }
+        }
+      }
+    }
+  }
+}

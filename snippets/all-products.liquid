@@ -1,0 +1,133 @@
+<div class="product-list" data-url="{{ routes.all_products_url }}?limit=50">
+  {%- if collections.all.products_count > 0 -%}
+    <div class="slider-container">
+      <div class="product-slider swiper">
+        <div class="swiper-wrapper">
+          {%- for product in collections.all.products -%}
+            <div class="swiper-slide product">
+              <a href="{{ product.url }}">
+                <img
+                  class="product__img"
+                  src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
+                  alt="{{ product.featured_image.alt }}">
+                <div class="text-block">
+                  <p class="product__title">
+                    {{ product.title }}
+                  </p>
+                  <p class="product__price">
+                    {{ product.price | money }}
+                  </p>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <button class="slider-prev swiper-button-prev">&#10094;
+      </button>
+      <button class="slider-next swiper-button-next">&#10095;
+      </button>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .text-block {
+    margin: 0 5% 0 20%;
+    text-align: left;
+  }
+  ol,
+  ul,
+  dl {
+    margin-top: 0;
+    list-style: none;
+  }
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .product-slider .swiper-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .swiper-slide.product {
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    background-color: #002b4d;
+    padding: 10px 18px;
+    border-radius: 50%;
+    color: #f3efeb;
+    font-size: 13px;
+    font-weight: 100 !important;
+  }
+  @media (max-width: 768px) {
+    .swiper-slide.product {
+      width: 100%;
+    }
+  }
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const productListSection = document.querySelector('.product-list');
+
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+
+      observer.unobserve(productListSection);
+      const url = productListSection.dataset.url;
+
+      fetch(url)
+        .then((response) => response.text())
+        .then((text) => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const products = html.querySelector('.product-list');
+
+          if (products && products.innerHTML.trim().length) {
+            productListSection.innerHTML = products.innerHTML;
+            initSwiper();
+          }
+        })
+        .catch((e) => console.error(e));
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, { rootMargin: '0px 0px 200px 0px' });
+    observer.observe(productListSection);
+
+    function initSwiper() {
+      new Swiper('.product-slider', {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1200: { slidesPerView: 4 },
+        },
+      });
+    }
+  });
+</script>

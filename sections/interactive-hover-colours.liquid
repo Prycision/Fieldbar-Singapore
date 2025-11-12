@@ -1,0 +1,264 @@
+{% schema %}
+{
+  "name": "Interactive Hover Section",
+  "tag": "section",
+  "class": "interactive-hover-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_background_image",
+      "label": "Left Column Background Image"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "label": "Right Side Heading",
+      "default": "Discover Our Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "right_copy",
+      "label": "Right Side Copy",
+      "default": "Hover over the options to preview different styles."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "option",
+      "name": "Hover Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Option Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Hover Image"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link (optional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Interactive Hover Section"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.interactive-hover-section {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.interactive-hover__left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.interactive-hover__left-inner {
+  width: 90%;
+  height: 80%;
+  background-size: cover;
+  background-position: center center;
+}
+.interactive-hover__right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 3em;
+  box-sizing: border-box;
+  color: #002B4D;
+}
+.interactive-hover__heading,
+.interactive-hover__copy {
+  margin: 0 0 1em;
+  font-family: "Gotham Narrow Book", sans-serif;
+  width: 65% !important;
+}
+.interactive-hover__content-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-start;
+}
+.interactive-hover__hover-image {
+  width: 53%;
+  aspect-ratio: 3 / 4;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out;
+}
+.interactive-hover__options {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.interactive-hover__option h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #486A7A;
+  text-decoration: none;
+  font-size: 2em;   
+}
+.interactive-hover__option.active h3,
+.interactive-hover__option:hover h3 {
+  font-style: italic;
+  color: #002B4D;
+}
+
+/* MOBILE & TABLET */
+@media screen and (max-width: 991px) {
+  .interactive-hover-section {
+    flex-direction: column;   /* left on top */
+    height: auto;
+    padding-bottom: 1em;
+  }
+  .interactive-hover__left,
+  .interactive-hover__right {
+    width: 100%;
+  }
+  .interactive-hover__left-inner {
+    width: 100%;
+    height: 45vh;
+  }
+  .interactive-hover__right {
+    padding: 0;               /* remove original padding */
+  }
+
+  .interactive-hover__copy {
+    padding-left: 20%;    
+    padding-right: 20%;  
+    padding-bottom: 20%; 
+    padding-top:5%;
+    text-align:center;
+    width: 100% !important;
+  }
+
+   .interactive-hover__heading {
+    padding-left: 20%;  
+    padding-right: 20%; 
+    padding-top: 20%; 
+    text-align:center;
+    width: 100% !important;
+  }
+  .interactive-hover__content-row {
+    gap: 1em;
+  }
+  .interactive-hover__hover-image {
+    background-size: 120% auto; /* zoom in 20% */
+  }
+  .interactive-hover__options {
+    gap: 0.3em;
+  }
+  .interactive-hover__option h3 {
+    font-size: 1.65em;     
+  }
+  /* keep image + options row */
+  .interactive-hover__content-row {
+    flex-direction: row;
+    align-items: center;
+
+  }
+  .interactive-hover__hover-image,
+  .interactive-hover__options {
+    width: 50%;
+  }
+  .interactive-hover__hover-image{
+      aspect-ratio: 3 / 5;
+  }
+  
+}
+</style>
+
+<div class="interactive-hover-section">
+  <!-- LEFT BACKGROUND -->
+  <div class="interactive-hover__left">
+    {% if section.settings.left_background_image %}
+      <div class="interactive-hover__left-inner"
+           style="background-image: url('{{ section.settings.left_background_image | image_url }}');">
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="interactive-hover__right">
+    <p class="interactive-hover__heading">{{ section.settings.right_heading }}</p>
+    <p class="interactive-hover__copy">{{ section.settings.right_copy }}</p>
+
+    <div class="interactive-hover__content-row">
+      {% assign first = section.blocks.first %}
+      {% if first.settings.image %}
+        <div class="interactive-hover__hover-image"
+             data-link="{{ first.settings.product_link }}"
+             style="background-image: url('{{ first.settings.image | image_url }}');">
+        </div>
+      {% endif %}
+
+      <div class="interactive-hover__options">
+        {% for block in section.blocks %}
+          {% if block.settings.image %}
+            <div class="interactive-hover__option"
+                 data-image="{{ block.settings.image | image_url }}"
+                 data-link="{{ block.settings.product_link }}">
+              <h3>{{ block.settings.label }}</h3>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.interactive-hover-section').forEach(function(sectionEl) {
+    const options = sectionEl.querySelectorAll(".interactive-hover__option");
+    const box     = sectionEl.querySelector(".interactive-hover__hover-image");
+    if (!box || !options.length) return;
+
+    // Activate first by default
+    options[0].classList.add("active");
+    if (options[0].dataset.link) {
+      box.style.cursor = "pointer";
+      box.onclick = ()=> window.location.href = options[0].dataset.link;
+    }
+
+    options.forEach(opt => {
+      opt.addEventListener("mouseenter", ()=> {
+        box.style.backgroundImage = `url('${opt.dataset.image}')`;
+        if (opt.dataset.link) {
+          box.style.cursor = "pointer";
+          box.onclick = ()=> window.location.href = opt.dataset.link;
+        } else {
+          box.style.cursor = "default";
+          box.onclick = null;
+        }
+        options.forEach(o=>o.classList.remove("active"));
+        opt.classList.add("active");
+      });
+      opt.addEventListener("click", ()=> {
+        if (opt.dataset.link) window.location.href = opt.dataset.link;
+      });
+    });
+  });
+});
+</script>

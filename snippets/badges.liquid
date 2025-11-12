@@ -1,0 +1,40 @@
+<div class="badges">
+  {% if product.metafields.custom.badge_1 %}
+    <img
+      class="prod1mg"
+      src="{{ product.metafields.custom.badge_1 | image_url }}"
+      alt="{{ product.title }} - Additional Image 1"
+    >
+  {% endif %}
+
+  {% if product.metafields.custom.badge2 %}
+    <img
+      class="prod1mg"
+      src="{{ product.metafields.custom.badge2 | image_url }}"
+      alt="{{ product.title }} - Additional Image 2"
+    >
+  {% endif %}
+
+  {% if product.metafields.custom.badge3 %}
+    <img
+      class="prod1mg"
+      src="{{ product.metafields.custom.badge3 | image_url }}"
+      alt="{{ product.title }} - Additional Image 3"
+    >
+  {% endif %}
+</div>
+
+<style>
+  .prod1mg {
+    height: 80px;
+    width: auto;
+  }
+
+  .badges {
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+  }
+</style>

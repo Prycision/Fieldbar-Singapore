@@ -1,0 +1,128 @@
+{% assign items = 'sea boat blue,orchard orange,bazaruto blue,Parisian green,safari white,oyster grey' | split: ',' %}
+{% assign images = 'https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_03_e598f09c-e980-4d5f-bbea-f84bb6503b42.webp?v=1744705545,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07_45af1f93-d6ae-4f73-8907-e13d6240d106.webp?v=1744705545,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16_5f69a3bc-b425-4852-bd79-18b8e81197d3.webp?v=1744705545,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_20_15726e76-d06d-4549-b061-2d7a8143cef1.webp?v=1744705545,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_11_424d13b8-9b40-4f0f-8320-8b221725a230.webp?v=1744705596,https://cdn.shopify.com/s/files/1/0729/3753/7840/files/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_26_100b4410-9fe8-4ac9-b1e7-6eeee14f3b42.webp?v=1744705545'
+  | split: ','
+%}
+{% assign handles = 'sea-boat-blue,orchard-orange,bazaruto-blue,parisian-green,safari-white,oyster-grey' | split: ',' %}
+
+<div class="custom-list-container-db">
+  <div class="image-display2">
+  <img
+      id="displayedImage2"
+      src="{{ images.first }}"
+      alt="Displayed Image">
+    {%- comment -%}
+      The link text is set here statically to "DRINKS BOX"
+    {%- endcomment -%}
+    {% assign default_product = all_products[handles.first] %}
+
+    <a id="displayedLink2" href="{{ default_product.url | within: collection }}">DRINKS BOX
+    </a>
+
+  </div>
+
+  <div class="listy">
+    <p style="color:#00334c;text-transform: uppercase;">SIGNATUR FARBTÖNE
+    </p>
+    <ul class="custom-list-db">
+      {% for item in items %}
+        {% assign handle = handles[forloop.index0] %}
+        {% assign product = all_products[handle] %}
+        {% if product %}
+          <li
+            class="list-item{% if forloop.first %} active{% endif %}"
+            data-image="{{ images[forloop.index0] }}"
+
+            data-url="{{ product.url | within: collection }}">
+
+            {{ item }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .listy {
+    width: 50%;
+    margin-left: 1em;
+  }
+
+  .custom-list-container-db {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 3em;
+  }
+
+  .custom-list-db {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .list-item {
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'SurveyorText Book Light Pro';
+    font-size: 2em;
+    transition: color .3s ease;
+    list-style: none;
+    text-transform: capitalize;
+  }
+
+  .list-item.active {
+    font-style: italic;
+    color: #002b4c;
+  }
+
+  .image-display2 {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .image-display2 > a {
+    color: #002b4c;
+    text-decoration: none;
+    padding-left: 1em;
+  }
+
+  .image-display2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const listItems = document.querySelectorAll(".list-item");
+      const displayedImage2 = document.getElementById("displayedImage2");
+      const displayedLink2 = document.getElementById("displayedLink2");
+
+      // Set first item as active on load (we keep the link text static)
+      if (listItems.length > 0) {
+          displayedImage2.src = listItems[0].dataset.image;
+          displayedLink2.href = listItems[0].dataset.url;
+          listItems[0].classList.add("active");
+      }
+
+      listItems.forEach(item => {
+          item.addEventListener("mouseenter", function () {
+              // Remove active class from all items
+              listItems.forEach(i => i.classList.remove("active"));
+
+              // Add active class to the hovered item
+              this.classList.add("active");
+
+              // Update displayed image and link href dynamically, but leave the text unchanged
+              displayedImage2.src = this.dataset.image;
+              displayedLink2.href = this.dataset.url;
+              // No change to displayedLink2.textContent here so it always shows "DRINKS BOX"
+          });
+      });
+  });
+</script>

@@ -1,0 +1,298 @@
+{% schema %}
+{
+  "name": "Simple FAQ Section",
+  "tag": "section",
+  "class": "simple-faq-section",
+  "settings": [
+    { "type": "text",        "id": "info_heading",  "label": "Heading",             "default": "Have Questions?" },
+    { "type": "richtext",    "id": "info_text",     "label": "Intro Text",          "default": "<p>Enter introductory text here.</p>" },
+    { "type": "image_picker","id": "right_image",   "label": "Right Column Image" },
+    { "type": "text",        "id": "button1_text",  "label": "Button 1 Text",       "default": "Contact Us" },
+    { "type": "url",         "id": "button1_url",   "label": "Button 1 URL" },
+    { "type": "text",        "id": "button2_text",  "label": "Button 2 Text",       "default": "Support Center" },
+    { "type": "url",         "id": "button2_url",   "label": "Button 2 URL" }
+  ],
+  "blocks": [
+    { "type": "faq_group", "name": "Group Title", "settings": [ { "type":"text","id":"group_name","label":"Group Title","default":"General" } ] },
+    { "type": "faq_item",  "name": "FAQ Item",   "settings": [ { "type":"text","id":"question","label":"Question","default":"Sample Question?" }, { "type":"richtext","id":"answer","label":"Answer","default":"<p>Sample answer content goes here.</p>" } ] }
+  ],
+  "max_blocks": 50,
+  "presets": [ { "name":"Simple FAQ Section","category":"FAQ" } ]
+}
+{% endschema %}
+
+<style>
+.simple-faq-section { 
+  display: flex; 
+  gap: 1em; 
+  height:auto;
+  }
+  
+/* COLUMN 1 */
+.simple-faq-section__col-info {
+  width: 30%; 
+  position: sticky !important; 
+  top: 0; 
+  height: fit-content;
+  padding: 2em;
+}
+  
+.simple-faq-section__col-info h1 {
+  font-family: 'Gotham Medium', sans-serif; 
+  margin: 1em 0 .5em; 
+  text-align: left;
+}
+  
+.simple-faq-section__col-info .intro {
+  font-family: 'Gotham Narrow Book', sans-serif; 
+  color: #002B4D !important;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+  .simple-faq-section__col-info .intro a  {
+  font-family: 'Gotham Narrow Book', sans-serif !important; 
+  color: #002B4D !important;
+  margin-bottom: 1em;
+  transition: color .3s ease;
+}
+
+.simple-faq-section__col-info .intro a:hover,
+.simple-faq-section__col-info .intro a:active {
+  color: #FF8A3D !important;
+  text-decoration-color: #FF8A3D !important;
+}
+/* NAV */
+.faq-nav { margin-bottom: 1em; }
+.faq-nav a {
+  display: block; font-family: 'Gotham Medium', sans-serif !important; 
+  font-size: 1.5rem;
+  margin: .25em 0; 
+  color: #002B4D; 
+  text-decoration: none;
+  transition: color .3s ease;
+}
+  
+.faq-nav a.active,
+.faq-nav a:hover { 
+  color: #FF8A3D; 
+}
+
+/* BUTTONS */
+.info-buttons { 
+  margin-bottom: 2em;
+}
+  
+.info-buttons a {
+  display: inline-block; 
+  width: 100%; 
+  max-width: 400px;
+  margin: .5em 0; 
+  padding: .75em; 
+  background: #002B4D; 
+  color: #fff;
+  font-family: 'Gotham Book', sans-serif; 
+  font-size: 1.3rem;
+  text-transform: uppercase; 
+  text-align: center; 
+  text-decoration: none;
+  border-radius: 2px; 
+  transition: background-color .3s ease-in;
+}
+.info-buttons a:hover { background: #FF8A3D; }
+
+/* COLUMN 2 */
+.simple-faq-section__col-accordions {
+  width: 50%; 
+  padding: 0 1.5em 7em; 
+  margin-top: 2em;
+}
+.faq-group {
+  font-family: 'Gotham Medium', sans-serif;
+  font-size: 1.5rem;
+  margin: 5em 0 .5em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: .5em;
+  color: #002B4D;
+  transition: color .3s ease;
+  scroll-margin-top: 2em;
+}
+.faq-group.active { color: #FF8A3D; }
+.faq-item { 
+  border-bottom: 1px solid #ccc; 
+  padding: .5em 0; 
+}
+  
+.faq-item summary {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+  
+.faq-item summary span:first-child {
+  font-family: 'Gotham Narrow Book', sans-serif !important; 
+  color: #002B4D;
+}
+.faq-item summary::-webkit-details-marker { 
+  display: none; 
+}
+  
+.simple-faq-section .faq-item .accordion-icon { 
+  font-size: 1.2em; 
+}
+  .simple-faq-section .faq-item .accordion-icon::after {
+  content: "+";
+  display: inline-block;
+  font-family: inherit;
+  transition: content 0.2s ease;
+}
+
+.simple-faq-section .faq-item[open] > summary .accordion-icon::after {
+  content: "−";
+}
+  
+.faq-answer {
+  padding-left: 1em;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+}
+
+  .accordion-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+  .faq-item summary .accordion-icon {
+  transform: rotate(0deg);
+}
+details[open] summary .accordion-icon {
+  transform: rotate(180deg);
+}
+details[open] .faq-answer { max-height: 5000px; }
+
+/* COLUMN 3 */
+.simple-faq-section__col-image {
+  width: 20%; position: sticky; top: 0; height: 100vh;
+  display: flex; align-items: flex-end; padding: 1em;
+}
+.simple-faq-section__col-image img { width: 100%; object-fit: cover; }
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  .simple-faq-section__col-info .intro {
+  display: none;
+}
+  .simple-faq-section__col-accordions{
+    position: relative; 
+    width: 100%; 
+    height: auto;
+    margin-top:0;
+    padding: 0 1em;
+  }
+  .simple-faq-section { 
+    flex-direction: column; 
+  }
+  
+  .simple-faq-section__col-info,
+  .simple-faq-section__col-image {
+    position: relative; width: 100%; 
+    height: auto;
+  }
+  .faq-nav { 
+    display: none; 
+  }
+  
+  .simple-faq-section__col-info h1,
+  .simple-faq-section__col-info .intro,
+  .info-buttons { 
+    text-align: center; 
+  }
+}
+</style>
+
+<div class="simple-faq-section">
+  <div class="simple-faq-section__col-info">
+    <h1>{{ section.settings.info_heading }}</h1>
+    <div class="intro">{{ section.settings.info_text }}</div>
+
+    <div class="faq-nav">
+      {% assign gi = -1 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_group' %}
+          {% assign gi = gi | plus: 1 %}
+          <a href="#faq-group-{{ gi }}">{{ block.settings.group_name }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="info-buttons">
+      <a href="{{ section.settings.button1_url }}">{{ section.settings.button1_text }}</a>
+      <a href="{{ section.settings.button2_url }}">{{ section.settings.button2_text }}</a>
+    </div>
+  </div>
+
+  <div class="simple-faq-section__col-accordions">
+    {% assign gi = -1 %}
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_group' %}
+        {% assign gi = gi | plus: 1 %}
+        <div id="faq-group-{{ gi }}" class="faq-group">{{ block.settings.group_name }}</div>
+      {% elsif block.type == 'faq_item' %}
+        <details class="faq-item">
+          <summary>
+            <span>{{ block.settings.question }}</span>
+            <span class="accordion-icon"></span>
+          </summary>
+          <div class="faq-answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="simple-faq-section__col-image">
+    {% if section.settings.right_image %}
+      <img src="{{ section.settings.right_image | image_url }}" alt="">
+    {% endif %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const navLinks = [...document.querySelectorAll('.faq-nav a')];
+  const groups   = [...document.querySelectorAll('.faq-group')];
+  const items    = [...document.querySelectorAll('.faq-item')];
+
+  function setActive(i){
+    navLinks.forEach((l,idx)=>l.classList.toggle('active', idx===i));
+    groups.forEach((g,idx)=>g.classList.toggle('active', idx===i));
+  }
+
+  navLinks.forEach((link,i)=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      document.querySelector(link.getAttribute('href'))
+              .scrollIntoView({behavior:'smooth',block:'start'});
+      setActive(i);
+    });
+  });
+
+  window.addEventListener('scroll', ()=> {
+    let closest=0, minDist=Infinity;
+    groups.forEach((g,i)=>{
+      const t = g.getBoundingClientRect().top;
+      if(t >= 0 && t < minDist){ minDist=t; closest=i; }
+    });
+    setActive(closest);
+  }, { passive: true });
+
+  // only one open at once
+  items.forEach(item=>{
+    item.addEventListener('toggle', ()=>{
+      if(item.open) {
+        items.forEach(o=>{ if(o!==item) o.removeAttribute('open'); });
+      }
+    });
+  });
+});
+</script>

@@ -1,0 +1,179 @@
+<div class="sustainable-craft-section">
+  <div class="craft-left">
+    <video
+      class="craft-video"
+      autoplay
+      muted
+      loop
+      playsinline>
+      <source src="https://cdn.shopify.com/videos/c/o/v/a7ddd934b7af401897cca4307e01ee6f.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="craft-righty">
+    <div class="text-block-craf">
+      <div class="craft-overlay">
+        <h2 class="craft-title">Un Savoir-faire Durable
+        </h2>
+        <p class="craft-text">
+          Nous voulons faire renaître les habitudes de nos grands-parents et des générations précédentes, qui consistent 
+                                                                                                    à acheter quelque chose de
+          <strong>qualité
+          </strong>
+          et
+          <strong>durable
+          </strong>
+          , puis de
+          <strong>le réparer
+          </strong>
+          et d’en prendre soin.
+          <br>
+          <br>
+          Ce
+          <strong>retour à la qualité
+          </strong>
+          est, selon nous,
+          <strong>la base du design durable
+          </strong>
+          . Et c'est pourquoi toutes les pièces de nos produits sont
+          <strong>réparables
+          </strong>
+          et
+          <strong>remplaçables
+          </strong>
+          . 
+                                                                                                    Parce qu’on
+          <strong>fabrique quelque chose différement
+          </strong>
+          quand on sait que cela doit
+          <strong>durer éternellement
+          </strong>
+          .
+        </p>
+        <div class="linky-craf">
+          <a href="{{ market_friendly_url }}/pages/about-us" id="fancy_hover">Découvrez Notre Savoir-faire
+          </a>
+        </div>
+      </div>
+
+      <div class="craft-badge">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Group_17_1.jpg?v=1742116195"
+          alt=""
+          srcset="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sustainable-craft-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    column-gap: 4em;
+    padding: 0 16px;
+    margin-bottom: -5vh;
+  }
+
+  .text-block-craf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  .craft-badge > img {
+    width: 50%;
+    height: auto;
+  }
+
+  .linky-craf {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: first baseline;
+    margin-left: 10px;
+    width: 100%;
+  }
+
+
+  .craft-left {
+    width: 40%;
+    position: relative;
+
+  }
+
+  .craft-righty {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    color: white;
+    padding: 0 40px;
+    position: relative;
+    width: 60%;
+    s
+  }
+
+  .craft-overlay {
+
+    max-width: 100%;
+    z-index: 2;
+  }
+
+  .craft-title {
+    font-size: 2em;
+    font-family: 'SurveyorText Book Light Pro';
+    color: white;
+    margin-bottom: 10px;
+    color: #002f4d;
+
+  }
+
+  .craft-text {
+    margin-bottom: 10px;
+    columns: 2;
+    color: #002f4d;
+    column-gap: 1.5em;
+  }
+
+  strong {
+    font-weight: 900;
+  }
+  .craft-badge {
+    text-align: end;
+  }
+
+  .craft-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .craft-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .sustainable-craft-section {
+      flex-direction: column;
+      height: auto;
+    }
+    .craft-righty {
+      height: 60vh;
+    }
+    .craft-overlay {
+      bottom: 20px;
+      left: 20px;
+      padding: 20px;
+    }
+    .craft-left {
+      height: 40vh;
+    }
+  }
+</style>

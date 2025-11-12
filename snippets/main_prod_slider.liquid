@@ -1,0 +1,78 @@
+{{ 'product_slider.css' | asset_url | stylesheet_tag }}
+
+
+{% if product and product.metafields.custom.main_slide and product.metafields.custom.main_slide.value %}
+  {% assign mainslide_data = product.metafields.custom.main_slide.value | parse_json %}
+  {% assign slide_count = 0 %}
+
+  <div class="custom-swiper-container" id="prod1">
+    <div class="productSlide swiper" id="prod-slide">
+      <div class="swiper-wrapper" id="prod-wrap">
+        {% for image in mainslide_data %}
+          {% assign slide_count = slide_count | plus: 1 %}
+
+          {% if image.src %}
+            <!-- Ensure it's an object with 'src' property -->
+            {% assign image_url = image.src %}
+          {% else %}
+            <!-- If it's a simple list of URLs -->
+            {% assign image_url = image %}
+          {% endif %}
+
+          {% if image_url contains 'files/' %}
+            {% assign full_url = image_url | prepend: 'https://fieldbar.com/cdn/shop/' %}
+          {% else %}
+            {% assign full_url = image_url %}
+          {% endif %}
+          <div
+            class="swiper-slide custom-slide"
+            id="main_prod_slide"
+            style="background-image: url('{{ full_url }}') !important;"></div>
+        {% endfor %}
+      </div>
+
+      {% if slide_count > 1 %}
+        <div class="custom-controls">
+          <div class="swiper-button-prev3">
+            {{ 'left.svg' | inline_asset_content }}
+          </div>
+          <div class="swiper-button-next3">
+            {{ 'right.svg' | inline_asset_content }}
+          </div>
+        </div>
+      {% endif %}
+      <div class="custom-pagination"></div>
+    </div>
+  </div>
+{% else %}
+  <p>
+    No slides available. Ensure the product metafield
+    <code>custom.main_slide
+    </code>
+    is set and contains valid JSON.
+  </p>
+{% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".productSlide", {
+    slidesPerView: 1,
+    rewind: true,
+    allowTouchMove: true,
+    simulateTouch: true,
+    mousewheel: {
+      forceToAxis: true,
+    },
+    pagination: {
+      el: ".custom-pagination",
+      clickable: true,
+      dynamicBullets: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next3",
+      prevEl: ".swiper-button-prev3",
+    },
+  });
+  });
+
+</script>

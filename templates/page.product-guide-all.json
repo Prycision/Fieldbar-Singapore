@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "horizontal_scroll_product_guide_PiUVFi": {
+      "type": "horizontal-scroll-product-guide",
+      "blocks": {
+        "slide_hnJ494": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_03.webp",
+            "title": "DRINKS BOX / 10L",
+            "subtitle": "Available worldwide.",
+            "left_button_text": "Instructions & Care",
+            "left_button_link": "shopify://pages/drinks-box",
+            "right_button_text": "Size Guide",
+            "right_button_link": "shopify://pages/size-guide"
+          }
+        },
+        "slide_WKMCcf": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_19.webp",
+            "title": "GIN TRUNK / 24L",
+            "subtitle": "Available in South Africa, Europe and the United Kingdom. Coming to the United States and Australia soon.",
+            "left_button_text": "Instructions & Care",
+            "left_button_link": "shopify://pages/the-gin-trunk",
+            "right_button_text": "Size Guide",
+            "right_button_link": "shopify://pages/size-guide"
+          }
+        },
+        "slide_eqkEwn": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_08.webp",
+            "title": "MINI BAR / 4L",
+            "subtitle": "Currently only available in South Africa. Coming to the United Kingdom soon.",
+            "left_button_text": "Join Waitlist",
+            "left_button_link": "shopify://pages/mini-bar-waitlist",
+            "right_button_text": "Size Guide",
+            "right_button_link": "shopify://pages/size-guide"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hnJ494",
+        "slide_WKMCcf",
+        "slide_eqkEwn"
+      ],
+      "name": "All Products Guide",
+      "settings": {
+        "prev_icon": "shopify://shop_images/Size_Medium_Direction_Left.svg",
+        "next_icon": "shopify://shop_images/Size_Medium_Direction_Right.svg",
+        "extra_title": "Explore Product Guide",
+        "extra_text": "Handcrafted Cooler Boxes & Fine Outdoor Goods.",
+        "extra_button_text": "SHOP THE CATALOGUE",
+        "extra_button_link": "shopify://collections/catalogue"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "horizontal_scroll_product_guide_PiUVFi"
+  ]
+}

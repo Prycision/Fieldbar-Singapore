@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.trade-enquires.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "mn_personalisation_j47AgF": {
+      "settings": {
+        "intro_text": "FIELDBAR FÜR GESCHÄFTSPARTNER",
+        "headline": "WENN DAS GESCHÄFT FREUDE MACHT",
+        "short_description": "<br>Tolle Unternehmen geben die besten Geschenke. Verleihen Sie Ihrer Anerkennung mit einem geschmackvollen Griff oder einer gravierten Plakette Ausdruck.",
+        "button_text": "ANGEBOT ANFORDERN"
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_YLVgnE": {
+      "settings": {
+        "headline": "KUNDENSPEZIFISCHE FARBEN",
+        "intro_text": "",
+        "short_description": "<br>Wir haben die Möglichkeit, pro Jahr eine limitierte Anzahl von Fieldbars in kundenspezifischen Farben zu fertigen. Wir behalten uns das Recht vor, Partnerschaften entsprechend unseren Markenwerten auszusuchen.",
+        "button_text": "JETZT ANFRAGEN"
+      },
+      "blocks": {}
+    },
+    "rich_text_YfjcwY": {
+      "settings": {},
+      "blocks": {
+        "heading_PcCWhP": {
+          "settings": {
+            "heading": "JETZT ANFRAGEN"
+          }
+        }
+      }
+    }
+  }
+}

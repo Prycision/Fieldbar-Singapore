@@ -1,0 +1,462 @@
+.sc-quantity-selector {
+  display: none;
+}
+
+button>span {
+  font-family: 'Gotham Medium' !important;
+  font-weight: normal !important;
+}
+
+.sc-card-tabs .sc-card-tab.sc-card-tab--active {
+  background-color: #ff8a3d !important;
+}
+
+.description {
+  margin-top: -3%;
+  margin-bottom: 5%;
+}
+
+.sc-builder>div {
+  display: flex;
+  gap: 1em;
+}
+
+.sc-card-options .sc-card-option__value input::placeholder {
+  color: #1f1e22;
+  font-style: italic;
+}
+
+
+h3 {
+  font-family: "Surveyor Text Book" !important;
+}
+
+#testCheckbox:checked {
+  accent-color: #002B4D;
+}
+
+div#scheduleTab_0 {
+  background-color: #002B4D;
+  font-family: "Gotham Narrow Book" !important;
+
+
+  letter-spacing: 0px;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+
+div#scheduleTab_1 {
+  background-color: #002B4D;
+  font-family: "Gotham Narrow Book" !important;
+
+
+  letter-spacing: 0px;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+
+
+
+#scheduleTab_0:hover {
+  background-color: #ff8a3d;
+  border: 1px solid #ff8a3d;
+  color: #002B4D;
+}
+
+#scheduleTab_1:hover {
+  background-color: #ff8a3d;
+  border: 1px solid #ff8a3d;
+  color: #002B4D;
+}
+
+
+.sc-card-tabs .sc-card-tab.sc-card-tab--active,
+.sc-card-tabs .sc-card-tab,
+.sc-card-preview {
+  background-color: #002B4D;
+  color: white;
+  border: 1px solid#002B4D;
+}
+
+.sc-card-options .sc-card-option__value input {
+  padding: 5px 5px 5px 10px;
+}
+
+.sc-textfield {
+  position: relative;
+  font-style: italic;
+}
+
+.sc-card-option__value.sc-card-option__value--custom {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.sc-card-option__value>div {
+  width: 100% !important;
+  text-align: left;
+}
+
+.sc-card-tabs__container p {
+  display: none;
+}
+
+.sc-card-datepicker input {
+  background-color: rgb(255 255 255 / 0%) !important
+}
+
+.sc-card-datepicker {
+  background-color: white !important;
+}
+
+.sc-card-datepicker .sc-send-now span {
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 1em;
+  background-color: #002B4D;
+  padding: 2px 10px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 2px;
+}
+
+textarea#sc-builder__message {
+  padding-bottom: 50px;
+}
+
+
+input#testCheckbox {
+  margin-right: 5px;
+}
+
+.sc-card-text {
+  display: none;
+}
+
+.sc-gift-card__value {
+  display: none;
+}
+
+.sc-builder {
+  background-color: #f3efeb;
+  border-radius: 2px;
+  border-radius: var(--main-gift-border-radius);
+  box-sizing: border-box;
+  display: block !important;
+  font-display: swap;
+  max-width: 1160px;
+  visibility: visible !important;
+  color: #002B4D !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sc-card-options .sc-card-option__value {
+  border-radius: 0px !important;
+  border-radius: var(--main-gift-border-radius);
+  color: #1f1e22;
+  cursor: pointer;
+  display: flex;
+  font-size: .9em;
+  font-weight: 300 !important;
+  margin: 0 15px 15px 0;
+  max-width: calc(25% - 15px);
+  padding: 10px 0;
+  text-align: left !important;
+  transition: all .3s linear;
+  width: 100%;
+  background-color: white;
+  color: #002B4D !important;
+}
+
+.sc-card-options .sc-card-option__value.sc-card-option__value--selected {
+  background-color: #d8d8d8;
+  text-align: left
+}
+
+.sc-card-options .sc-card-option__value input {
+  text-align: left !important
+}
+
+h4#addMessage {
+  color: #002B4D;
+}
+
+h4#amount {
+  color: #002B4D;
+}
+
+input {
+  background-color: #ffffff
+}
+
+.sc-giftr-card__add button {
+  background-color: #002B4D;
+  font-family: "Gotham Narrow Book" !important;
+
+
+  letter-spacing: 0px;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+
+.sc-card-tabs .sc-card-tab.sc-card-tab--active,
+.sc-card-tabs .sc-card-tab,
+.sc-card-preview {
+  border: #002B4D 1px solid;
+}
+
+.sc-builder>h1 {
+  display: block;
+  margin-left: 2em;
+}
+
+.sc-gift-card__container {
+  box-shadow: none !important;
+}
+
+.sc-card-option__value.sc-card-option__value--custom {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(1),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(2),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(3),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(4),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(5),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(6),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(7),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(8),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(9),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(10),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(11),
+#typeTabPanel_2>div.sc-card-options>div>div:nth-child(12) {
+  display: none
+}
+
+.sc-card-option__value.sc-card-option__value--custom {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+select#giftCardDropdown {
+  width: 100%;
+  margin-bottom: 20px;
+  min-height: 30px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  padding: 6px 28px 6px 12px;
+  font-size: 16px;
+  font-family: inherit;
+  color: inherit;
+}
+
+*:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+h4#amount {
+  color: #002B4D;
+  display: none !important;
+}
+
+.sc-cart-preview__container {
+  display: none;
+}
+
+.sc-card-text {
+  border: none !important;
+}
+
+.sc-textfield .sc-textfield__resizable {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: auto !important;
+  background-color: white;
+
+}
+
+#sc-builder__name {
+  background-color: white;
+  z-index: 0;
+}
+
+.sc-card-text .sc-textfield__resizable,
+.sc-card-text input,
+.sc-card-type .sc-textfield__resizable,
+.sc-card-type input {
+  z-index: 0;
+  background-color: rgb(255 255 255);
+}
+
+.sc-card-tabs .sc-card-tab.sc-card-tab--active {
+  border: #002B4D !important;
+  border: #002B4D !important;
+  color: #000;
+  color: white;
+  background-color: #002B4D;
+}
+
+.sc-card-options .sc-card-option__value.sc-card-option__value--selected {
+  border: none;
+  border: none;
+  color: #00334c;
+  background-color: white !important;
+}
+
+.gift-section {
+  max-width: 100vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.image_gift {
+  width: 55%;
+  display: block !important;
+  visibility: inherit !important;
+}
+
+product-info {
+  width: 50%
+}
+
+.sc-gift-card {
+  display: none !important;
+}
+
+.sc-builder .sc-configurator {
+  width: 100% !important;
+  margin: 0 20%;
+}
+
+.sc-card-gallery {
+  display: none;
+}
+
+div.sc-configurator>div>div.sc-giftr-card__price {
+  visibility: hidden;
+}
+
+.sc-giftr-card__add {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sc-giftr-card__price {
+  letter-spacing: 0;
+  color: #002B4D !important;
+  padding-left: 5.5em;
+  font-family: 'Gotham Book' !important;
+  font-weight: normal !important;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+}
+
+
+.sc-giftr-card__price:after {
+  content: ".00";
+  margin-left: -1em;
+  font-family: 'Gotham Book' !important;
+  font-weight: normal !important;
+}
+
+div.sc-configurator>div {
+  margin-top: -2em;
+}
+
+#typeTabPanel_2 * {
+  font-family: "Gotham Narrow Book" !important;
+}
+
+.sc-giftr-card__add button {
+  background-color: #002B4D;
+  font-family: "Gotham Narrow Book" !important;
+  letter-spacing: 0px;
+  font-weight: 500 !important;
+  color: #fff !important;
+  width: 90% !important;
+}
+
+@media screen and (max-width: 61.8125em) {
+  .img_gift>.custom-swiper-container {
+    width: 100%;
+    height: 80vh !important;
+    position: relative;
+    overflow: hidden;
+    background: #0000001a;
+    margin-bottom: 2em;
+  }
+
+  .sc-builder .sc-giftr-card__price {
+    padding-left: 30px !important;
+    margin: 15px 0 !important;
+  }
+
+  .image_gift {
+    width: 100%;
+    display: block !important;
+    visibility: inherit !important;
+    height: auto;
+    margin-bottom: 2em;
+  }
+
+  .sc-builder.sc--sendtome {
+    width: 100% !important;
+    max-width: 90vw !important;
+  }
+
+  .sc-builder>h1 {
+    display: block;
+    margin-left: 0 !important;
+  }
+
+  .sc-giftr-card__price {
+    padding: 0 2em;
+    flex-direction: row !important;
+  }
+
+  div#prod1 {
+    height: auto;
+    width: 100vw !important;
+
+  }
+
+  .sc-builder>div {
+    flex-direction: row !important;
+  }
+
+  .sc-builder .sc-configurator {
+    width: 100% !important;
+    margin: 0 1em !important;
+  }
+
+  div.sc-builder.sc--sendtome>div:nth-child(3)>div.sc-configurator>div {
+    display: none !important;
+  }
+
+  .sc-builder .sc-mobile__container {
+
+    padding: 0;
+  }
+
+  .sc-giftr-card__add button {
+    background-color: #002B4D;
+    font-family: "Gotham Narrow Book" !important;
+    letter-spacing: 0px;
+    font-weight: 500 !important;
+    color: #fff !important;
+    width: auto !important;
+  }
+
+
+}

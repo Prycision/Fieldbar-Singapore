@@ -1,0 +1,252 @@
+{% schema %}
+{
+  "name": "MN Feature Product Alt",
+  "tag": "section",
+  "class": "mn-feature-product-alt",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Small Image (Linked)"
+    },
+    {
+      "type": "url",
+      "id": "left_image_link",
+      "label": "Small Image Link"
+    },
+    {
+      "type": "text",
+      "id": "left_caption",
+      "label": "Image Caption",
+      "default": "DRINKS BOX / NELLIE PINK"
+    },
+    {
+      "type": "url",
+      "id": "main_media_url",
+      "label": "Main Media URL (mp4, webm, png, jpg, svg...)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nellie In A Box"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We spared no effort or expense in developing a pink to perfectly match the Nellie’s blush. A green leather handle alludes to the palms that so elegantly frame our favourite hotel."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP THE DRINKS BOX"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "MN Feature Product Alt"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.mn-feature-product-alt {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  gap: 2em;
+  padding: 0 1em;
+  padding-top: 2em;
+  color: #002B4D;
+  overflow: hidden;
+  align-items: flex-end;
+}
+
+.mn-feature-product-alt__left {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+
+.mn-feature-product-alt__left h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.5em 0;
+}
+
+.mn-feature-product-alt__left p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0 0 1em 0;
+}
+
+.mn-feature-button-alt {
+  position: relative;
+  display: inline-block;
+  color: #002B4D;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.3s ease-in-out;
+  width: fit-content;
+}
+
+.mn-feature-button-alt::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #FF8A3D;
+  width: 100%;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.mn-feature-button-alt:hover {
+  color: #FF8A3D;
+}
+
+.mn-feature-button-alt:hover::after {
+  transform: scaleX(0);
+  background-color: #FF8A3D;
+}
+
+.mn-feature-product-alt__right {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 65%;
+  gap: 1em;
+  align-items: flex-end;
+}
+
+.mn-feature-product-alt__right .small {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-feature-product-alt__right .small img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.mn-feature-product-caption-alt {
+  font-size: 0.9em;
+  font-family: "Gotham Medium" !important;
+  text-align: left;
+  margin-top: 0.5em;
+  color: #002B4D;
+  letter-spacing: normal;
+}
+
+.mn-feature-product-alt__right .large {
+  width: 70%;
+  height: 90%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mn-feature-product-alt__right .large img,
+.mn-feature-product-alt__right .large video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .mn-feature-product-alt {
+    flex-direction: column;
+    height: auto;
+    padding: 2em 1em;
+  }
+
+  .mn-feature-product-alt__left {
+    width: 100%;
+    order: -1;
+  }
+
+  .mn-feature-product-alt__right {
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: flex-start;
+  }
+
+  .mn-feature-product-alt__right .small {
+    width: 45%;
+  }
+
+  .mn-feature-product-alt__right .large {
+    width: 100%;
+    margin-top: 1em;
+    height: auto;
+  }
+
+  .mn-feature-product-alt__right img,
+  .mn-feature-product-alt__right video {
+    height: auto;
+  }
+
+  .mn-feature-product-caption-alt {
+    padding-left: 0.5em;
+  }
+}
+</style>
+
+<!-- AOS REMOVED -->
+
+<div class="mn-feature-product-alt">
+  <div class="mn-feature-product-alt__left">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.description }}</p>
+    <a class="mn-feature-button-alt" href="{{ section.settings.button_link }}">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+
+  <div class="mn-feature-product-alt__right">
+    <div class="small">
+      {% if section.settings.left_image %}
+        <a href="{{ section.settings.left_image_link }}">
+          <img
+            src="{{ section.settings.left_image | image_url: width: 400 }}"
+            alt="{{ section.settings.left_caption | escape }}"
+          >
+        </a>
+        <div class="mn-feature-product-caption-alt">
+          {{ section.settings.left_caption }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="large">
+      {% if section.settings.main_media_url %}
+        {% assign url = section.settings.main_media_url %}
+        {% assign ext = url | split:'.' | last | downcase %}
+        {% if ext == 'mp4' or ext == 'webm' %}
+          <video src="{{ url }}" autoplay muted loop playsinline></video>
+        {% else %}
+          <img src="{{ url }}" alt="{{ section.settings.heading | escape }}">
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>

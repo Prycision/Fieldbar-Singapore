@@ -1,0 +1,673 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "type": "mn-personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/MINI-BAR-all.jpg",
+        "intro_text": "INTRODUCING",
+        "headline": "The Mini Bar",
+        "short_description": "4L\n<br> <br>\nThe <strong>FIELDBAR Mini Bar</strong> is the modern reinterpretation of vintage workmen’s portable lunch boxes. With a <strong>4 litre capacity</strong> accommodating <strong>6 standard beer cans</strong>, a <strong>weight of just over 1kg</strong> and an <strong>optional interchangeable long strap</strong>, the Mini Bar is the most <strong>portable</strong> - and <strong>personal</strong> - FIELDBAR cooler box to date.",
+        "main_description": "",
+        "image": "shopify://shop_images/MB-SBB-01.png",
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/mini-bar-waitlist"
+      }
+    },
+    "multicolumn_yhJUNt": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6zhifr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "<h2>A Closer Look </h2><p>Durable, versatile and comfortable to carry.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dGGVta": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/mini-bar-waitlist\" id='fancy_hover'>JOIN THE WAITLIST</a></div>",
+            "link_label": "",
+            "link": "shopify://collections/field-bottle-product-guide-page"
+          }
+        }
+      },
+      "block_order": [
+        "column_6zhifr",
+        "column_dGGVta"
+      ],
+      "custom_css": [
+        ".rte > *:first-child {margin-top: 0; margin-bottom: 8px;}",
+        ".grid {display: flex; flex-wrap: nowrap; margin-bottom: 2rem; padding: 0; list-style: none; column-gap: var(--grid-mobile-horizontal-spacing); row-gap: var(--grid-mobile-vertical-spacing);}",
+        ".background-none .multicolumn-list {padding-left: 1em;}",
+        " {margin-top: 3%; margin-bottom: -1%;}",
+        "div#full-spec {display: flex; justify-content: flex-end; margin-right: 1.5em; margin-top: 2em;}",
+        "@media screen and (max-width: 61.8125em) {h2 {padding: 0 !important; } .rte {margin-bottom: -1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "closer",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_D9gf44": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_21_6ab90c0f-5f72-4de3-8311-a012b6c8eaca_webp.jpg",
+            "title": "Perfectly Proportioned",
+            "text": "<p>With a compact 4 litre capacity, the FIELDBAR Mini Bar is <strong>perfectly proportioned</strong> for <strong>petite picnics</strong>, <strong>elegant aperitivos</strong> or even <strong>everyday luncheons</strong>.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_n8aAkr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/A_Closer_Look_MB_02_png.webp",
+            "title": "Practically Portable",
+            "text": "<p>Never leave your FIELDBAR at home again. Weighing <strong>just over 1kg</strong> and fitted with a <strong>comfort grip handle</strong> or <strong>optional long strap</strong>, the Mini Bar is our <strong>lightest</strong>, most portable cooler yet.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EYRN9z": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/closer-look-minibar_03_jpg.webp",
+            "title": "Superior Ice Performance",
+            "text": "<p>Packed full of ice, and kept in the shade, the FIELDBAR Mini Bar can keep <strong>drinks below 10°C for up to 24 hours</strong>. That’s thanks to its <strong>thermal effective shape</strong>,<strong> closed cell proprietary foam, radiation reflective paint, airtight lid gaske</strong>t and a <strong>raised floor.</strong></p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_D9gf44",
+        "column_n8aAkr",
+        "column_EYRN9z"
+      ],
+      "custom_css": [
+        "p,h3 {font-family: \"Gotham Narrow Book\" !important;}",
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {margin-left: 0px; margin-right: 0px;}",
+        " {margin-left: 1em; margin-right: 1em; margin-bottom: 2em;}",
+        ".metafield-rich_text_field > p {padding: 0; font-size: 1em;}"
+      ],
+      "settings": {
+        "css-class": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "type": "interactive-hover-colours",
+      "blocks": {
+        "option_cqJB7y": {
+          "type": "option",
+          "settings": {
+            "label": "Sea Boat Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_05.webp",
+            "product_link": ""
+          }
+        },
+        "option_pzfFdx": {
+          "type": "option",
+          "settings": {
+            "label": "Orchard Orange",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_08_2592e657-19f3-4efe-8425-c7330cd90a43.webp",
+            "product_link": ""
+          }
+        },
+        "option_N8dCWQ": {
+          "type": "option",
+          "settings": {
+            "label": "Bazaruto Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_17.webp",
+            "product_link": ""
+          }
+        },
+        "option_wHnfeT": {
+          "type": "option",
+          "settings": {
+            "label": "Parisian Green",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_23.webp",
+            "product_link": ""
+          }
+        },
+        "option_p3Uptj": {
+          "type": "option",
+          "settings": {
+            "label": "Safari White",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_12.webp",
+            "product_link": ""
+          }
+        },
+        "option_ThACtB": {
+          "type": "option",
+          "settings": {
+            "label": "Oyster Grey",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_29.webp",
+            "product_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "option_cqJB7y",
+        "option_pzfFdx",
+        "option_N8dCWQ",
+        "option_wHnfeT",
+        "option_p3Uptj",
+        "option_ThACtB"
+      ],
+      "settings": {
+        "left_background_image": "shopify://shop_images/Testimonials_MB_SS_01_Medium_04bb1676-731e-48b1-bcc7-7b7540a1e8b4.png",
+        "right_heading": "SIGNATURE SHADES",
+        "right_copy": "The iconic FIELDBAR colours you know and love… and possibly already have. As with the FIELDBAR Drinks Box and Gin Trunk, the Mini Bar bears <strong>straight lines</strong> and our <strong>trademark high-gloss finish</strong>. Available in all <strong>six signature colours</strong> for you to <strong>complete your collection</strong>."
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "type": "product-guide-capacity",
+      "blocks": {
+        "item_YkCFCR": {
+          "type": "item",
+          "settings": {
+            "label": "6 Beer Cans 330ml",
+            "image": "shopify://shop_images/mb_beer.webp"
+          }
+        },
+        "item_3QqRr7": {
+          "type": "item",
+          "settings": {
+            "label": "4 Standard Glass Bottles 330ml",
+            "image": "shopify://shop_images/mb_wine.webp"
+          }
+        },
+        "item_gLC84d": {
+          "type": "item",
+          "settings": {
+            "label": "23 Oysters with Ice and Lemon",
+            "image": "shopify://shop_images/mb_champ.webp"
+          }
+        },
+        "item_HCrDDm": {
+          "type": "item",
+          "settings": {
+            "label": "2 Tonics, 1 Jar of Caviar, 4 Smoked Salmon Ribbons and 4 Lemon Quarters",
+            "image": "shopify://shop_images/mb_mixed.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_YkCFCR",
+        "item_3QqRr7",
+        "item_gLC84d",
+        "item_HCrDDm"
+      ],
+      "settings": {
+        "heading": "Fits more than you think",
+        "capacity_text": "Capacity | 4L",
+        "link_text": "JOIN THE WAITLIST",
+        "link_url": "shopify://pages/mini-bar-waitlist",
+        "video_url": "https://cdn.shopify.com/s/files/1/0654/1610/2127/files/A_Closer_Look_MB_02_png.webp?v=1756805404"
+      }
+    },
+    "mn_towel_mzUXri": {
+      "type": "mn-towel",
+      "settings": {
+        "left_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_13_webp.jpg",
+        "left_image_link": "",
+        "left_caption": "",
+        "main_media_url": "https://cdn.shopify.com/s/files/1/0654/1610/2127/files/MINI-BAR_WEB-IMAGES_1_2_jpg.webp?v=1756806643",
+        "heading": "Instructions & Care",
+        "description": "<strong>USE INSTRUCTIONS</strong>\n<br>\n01. Fill Mini Bar with pre-chilled drinks and a generous amount of ice, or a pre-frozen Ice Bar\n<br>\n02. For snacks or food, store in sealed containers and nestle among the ice or on top of the Ice Bar to keep cool and fresh\n<br>\n03. To keep cool air sealed inside the Mini Bar, only open it when necessary\n<br>\n04. Ensure the handle or shoulder strap is secured to the Mini Bar correctly before use\n<br><br>\n<strong>CARE & AGEING</strong>\n<br>\n01. Clean with warm water and a soft cloth<br>\n02. Ensure interior cabinet is dry before long term storage<br>\n03. Do not use cleaning products <br>\n04. Do not pressure hose***<br>\n05. Not dishwasher friendly",
+        "button_text": "JOIN THE WAITLIST",
+        "button_link": "shopify://pages/mini-bar-waitlist"
+      }
+    },
+    "fieldbar_collection_related_9rwTkz": {
+      "type": "Fieldbar_collection_related",
+      "disabled": true,
+      "custom_css": [
+        "a {text-transform: uppercase; font-size: 0.7em;}",
+        " {margin-top: 4.5em;}",
+        "#spec-price {display: none !important;}",
+        "#hprice {display: none !important;}",
+        ".card__information > .card__heading > p {display: none !important;}"
+      ],
+      "name": "t:sections.fieldbar-collection-related.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "drinks-box",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "mn_drinkbox_ArkfnL": {
+      "type": "mn-drinkbox",
+      "custom_css": [
+        ".mn-feature-product {padding-top: 1em;}"
+      ],
+      "name": "MN Feature Product",
+      "settings": {
+        "left_image": "shopify://shop_images/TALYA_BROCKMAN_Tidal_Pool_HR_08_result_result_2_5ec07da6-2121-4a07-9964-101b3da74248_webp.jpg",
+        "left_image_link": "",
+        "left_caption": "",
+        "main_image": "shopify://shop_images/MINI-BAR_WEB-IMAGES_1_jpg.webp",
+        "heading": "Two Ways to Style your Mini Bar",
+        "description": "The Mini Bar’s comfort grip handle is interchangeable with the longer sling, providing a stylish hands-free carry.",
+        "button_text": "JOIN THE WAILIST",
+        "button_link": "shopify://pages/mini-bar-waitlist"
+      }
+    },
+    "multicolumn_QyGrwz": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QLiCXK": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-01_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_cPd6bA": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-02_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YrtwVW": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-03_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4Vwngk": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-04_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QLiCXK",
+        "column_cPd6bA",
+        "column_YrtwVW",
+        "column_4Vwngk"
+      ],
+      "custom_css": [
+        "{display: none;}",
+        "@media screen and (max-width: 61.8125em) {{display: block !important; padding: 0 1em; min-height: 65vh; }}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "css-class": "icare-mobile",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_mBL6kA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_zA66ew": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-05_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_k7FpUR": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/MINI_BAR_swing_sling_instructions_web-06_png.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_zA66ew",
+        "column_k7FpUR"
+      ],
+      "custom_css": [
+        ".icare-desktop {padding: 2em;}",
+        "@media screen and (max-width: 61.8125em) {{display: none !important; }}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "css-class": "icare-desktop",
+        "title": "Interchangeable Handle Instructions",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "personalisation_product_guide_dJdXU7": {
+      "type": "personalisation-product-guide",
+      "disabled": true,
+      "name": "Personalisation Guide",
+      "settings": {
+        "left_image": "shopify://shop_images/GTSBB04-Personalisation1600x2000WEB.webp",
+        "heading": "Your Gin Trunk. Forever.",
+        "body_text": "<p>Personalise the premium leather handle of your Gin Trunk by adding a name or initials. Maybe mention that currently only offering in USA ? maybe even hide this section for now cause we don't have any personalisation in UK </p>",
+        "link_text": "PERSONALISE YOURS NOW",
+        "link_url": "",
+        "badge_image": "shopify://shop_images/DOOR54_TAJ_HR_fieldbar_model_selects_01_jpg.webp"
+      }
+    },
+    "specifications_product_guide_wcdjG6": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_HXXt4A": {
+          "type": "left_item",
+          "settings": {
+            "text": "Interchangeable comfort handle with rubber grip inlay and optional long shoulder strap"
+          }
+        },
+        "left_item_BhTebJ": {
+          "type": "left_item",
+          "settings": {
+            "text": "Area for personalisation on handle"
+          }
+        },
+        "left_item_YBXBVz": {
+          "type": "left_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "left_item_FMjXah": {
+          "type": "left_item",
+          "disabled": true,
+          "settings": {
+            "text": "Patent-pending lid lock"
+          }
+        },
+        "left_item_gVgpP6": {
+          "type": "left_item",
+          "settings": {
+            "text": "Airflow resistant solid ring gasket"
+          }
+        },
+        "left_item_3eacJJ": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free, easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_3hNykU": {
+          "type": "right_item",
+          "settings": {
+            "text": "Commercial grade aluminium hinges - designed to last forever"
+          }
+        },
+        "right_item_UiyWPE": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet (due to hand decorating slight variations in the paint may occur)"
+          }
+        },
+        "right_item_k3tqeT": {
+          "type": "right_item",
+          "settings": {
+            "text": "Individually pre-numbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_jQwDhN": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone non-slip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_HXXt4A",
+        "left_item_BhTebJ",
+        "left_item_YBXBVz",
+        "left_item_FMjXah",
+        "left_item_gVgpP6",
+        "left_item_3eacJJ",
+        "right_item_3hNykU",
+        "right_item_UiyWPE",
+        "right_item_k3tqeT",
+        "right_item_jQwDhN"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_mini_ba.webp-2.png",
+        "left_title": "Specifications",
+        "left_subtitle": "The FIELDBAR Mini Bar is comprised of 82 parts all designed to be removed, repaired, and replaced if required. And, like all FIELDBAR cooler boxes, it comes with the FIELDBAR 5-year workmanship warranty.",
+        "right_background_image": "shopify://shop_images/MINI-BAR_WEB-IMAGES__1.jpg-2.webp"
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jyP4bd": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hwiqEW": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_04_1_6f847bc3-2a5a-4263-9c8c-ee8f93fd1a1d.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Latchless Locking </a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pzegda": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_10.png_3.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eVBBjF": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/safari_engineered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jyP4bd",
+        "column_hwiqEW",
+        "column_pzegda",
+        "column_eVBBjF"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "mn_personalisation_4qaTUd",
+    "multicolumn_yhJUNt",
+    "multicolumn_jyEmw7",
+    "interactive_hover_colours_mtMK99",
+    "product_guide_capacity_cqz6zT",
+    "mn_towel_mzUXri",
+    "fieldbar_collection_related_9rwTkz",
+    "mn_drinkbox_ArkfnL",
+    "multicolumn_QyGrwz",
+    "multicolumn_mBL6kA",
+    "personalisation_product_guide_dJdXU7",
+    "specifications_product_guide_wcdjG6",
+    "multicolumn_JgRcUR",
+    "main"
+  ]
+}

@@ -1,0 +1,198 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.drinks-box-product-guide.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "settings": {
+        "intro_text": "PRÉSENTATION",
+        "headline": "La Drinks Box",
+        "short_description": "10L<br><br>\nLa FIELDBAR Drinks Box est une glacière rigide conçue pour une performance thermique supérieure. Avec son exécution irréprochable et ses proportions parfaites, la Drinks Box offre tout ce que vous pouvez attendre d'une glacière moderne : solide, polyvalente et facile à transporter.",
+        "button_text": "ACHETER MAINTENANT"
+      },
+      "blocks": {}
+    },
+    "multicolumn_yhJUNt": {
+      "settings": {},
+      "blocks": {
+        "column_6zhifr": {
+          "settings": {
+            "text": "<h2>Regardons de plus près </h2><p>Solide, polyvalente et facile à transporter.</p>"
+          }
+        },
+        "column_dGGVta": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"https://fieldbar.com/collections/drinks-box\" id='fancy_hover'>ACHETER LA VÔTRE MAINTENANT</a></div>"
+          }
+        }
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "settings": {},
+      "blocks": {
+        "column_D9gf44": {
+          "settings": {
+            "title": "Des Proportions Parfaites",
+            "text": "<p>Inspirée par les élégants coffrets à boissons en bois de l'époque victorienne, la glacière FIELDBAR 10 litres est conçue pour contenir deux bouteilles de champagne ou trois bouteilles de vin tranquille en position verticale. Des proportions parfaites pour des fêtes et piques-niques tout en élégance.</p>"
+          }
+        },
+        "column_n8aAkr": {
+          "settings": {
+            "title": "Conçue Pour le Safari",
+            "text": "<p>La glacière FIELDBAR ne pèse que 1,8 kg, mais elle peut supporter un poids de 120 kg. Solide, résistante aux rayures et aux chocs. Les glacières FIELDBAR sont fabriquées avec un plastique composite ABS spécial utilisé dans divers produits de protection contre les chocs. C'est pourquoi toutes les Fieldbars bénéficient d'une garantie 5 ans.</p>"
+          }
+        },
+        "column_EYRN9z": {
+          "settings": {
+            "title": "Performance Froid Supérieure",
+            "text": "<p>Remplie de glace et laissée dehors à l'ombre, la glacière Fieldbar permet de conserver une caisse de champagne à moins de 10°C pour une durée incroyable de 50 heures. Efficacité thermique des formes, mousse à cellules fermées brevetée, peinture réfléchissant les rayonnements, joint de couvercle hermétique et fond surélevé.</p>"
+          }
+        }
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "settings": {
+        "right_heading": "COULEURS EMBLÉMATIQUES",
+        "right_copy": "Avec une finition brillante rehaussée de détails dorés. Choisissez parmi six couleurs emblématiques."
+      },
+      "blocks": {}
+    },
+    "product_guide_capacity_cqz6zT": {
+      "settings": {
+        "heading": "Plus de place que vous ne l'auriez pensé",
+        "capacity_text": "Capacité | 10 L",
+        "link_text": "Comparez les tailles"
+      },
+      "blocks": {
+        "item_YkCFCR": {
+          "settings": {
+            "label": "Pimm's & limonade, 3 balles de tennis"
+          }
+        },
+        "item_3QqRr7": {
+          "settings": {
+            "label": "10 bières 330 ml"
+          }
+        },
+        "item_gLC84d": {
+          "settings": {
+            "label": "3 bouteilles de vin 750 ml"
+          }
+        },
+        "item_HCrDDm": {
+          "settings": {
+            "label": "2 bouteilles de champagne 750 ml"
+          }
+        }
+      }
+    },
+    "mn_towel_mzUXri": {
+      "settings": {
+        "heading": "Instructions & Entretien",
+        "description": "INSTRUCTIONS D'UTILISATION\n<br>\n01. Remplissez la glacière Drinks Box avec vos boissons préalablement réfrigérées et avec une quantité généreuse de glace<br>\n02. Pour conserver l'air frais à l'intérieur de la glacière, ne l'ouvrez qu'en cas de nécessité<br>\n03. Pour l'utiliser comme un seau à glace : remplissez à mi-hauteur de glace et d'eau froide, puis ajoutez vos boissons<br>\n\n<br>\nENTRETIEN & EFFETS DU TEMPS<br>\n01. Nettoyer à l'eau tiède avec un chiffon doux<br>\n02. Ne pas utiliser de produits de nettoyage<br>\n03. Ne pas nettoyer au jet d'eau<br>\n04. La poignée en cuir va se patiner avec le temps<br>\n05. De légères égratignures et bosselures peuvent se produire sur la paroi externe<br>\n06. Les éléments plaqués laiton peuvent légèrement s'oxyder<br>\n07. Vérifier que le compartiment interne est bien sec avant le rangement<br>",
+        "button_text": "ACHETER VOTRE DRINKS BOX"
+      },
+      "blocks": {}
+    },
+    "specifications_product_guide_VPLnhc": {
+      "settings": {
+        "left_title": "Caractéristiques",
+        "left_subtitle": "La glacière Drinks Box FIELDBAR est composée de 58 pièces qui peuvent toutes être démontées, réparées, et réutilisées si nécessaire. C'est avantageux pour vous, pour nous, et pour la planète sur laquelle nous vivons."
+      },
+      "blocks": {
+        "left_item_zhxGBV": {
+          "settings": {
+            "text": "Poignée double épaisseur en chutes de cuir véritable pour plus de confort lors du transport"
+          }
+        },
+        "left_item_9N3NtL": {
+          "settings": {
+            "text": "Peinture réfléchissante pour réduire l'absorption de chaleur"
+          }
+        },
+        "left_item_T7dYBR": {
+          "settings": {
+            "text": "Isolation en mousse haute performance amovible sans impact sur la couche d'ozone"
+          }
+        },
+        "left_item_VAqEQj": {
+          "settings": {
+            "text": "Joint hermétique"
+          }
+        },
+        "left_item_cmLi8A": {
+          "settings": {
+            "text": "Compartiment intérieur de qualité alimentaire, sans BPA et facile à nettoyer"
+          }
+        },
+        "right_item_EWTUFj": {
+          "settings": {
+            "text": "Charnières invisibles en aluminium conçues pour durer éternellement"
+          }
+        },
+        "right_item_7kWywW": {
+          "settings": {
+            "text": "\"Oreilles\" de la poignée en aluminium"
+          }
+        },
+        "right_item_7iGixA": {
+          "settings": {
+            "text": "Paroi extérieure résistante aux chocs et aux rayures (en raison de la décoration à la main, de légères variations au niveau de la peinture peuvent se produire)"
+          }
+        },
+        "right_item_Y68Hkf": {
+          "settings": {
+            "text": "Plaque en laiton prénumérotée pour le contrôle qualité et le suivi"
+          }
+        },
+        "right_item_VfJxjr": {
+          "settings": {
+            "text": "Pieds en silicone antidérapant"
+          }
+        }
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {},
+      "blocks": {
+        "column_jyP4bd": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Garantie 5 Ans</a>"
+          }
+        },
+        "column_hwiqEW": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Fermeture Sans Loquet</a>"
+          }
+        },
+        "column_pzegda": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Performance Froid Supérieure</a>"
+          }
+        },
+        "column_eVBBjF": {
+          "settings": {
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Conçue Pour le Safari</a>"
+          }
+        }
+      }
+    }
+  }
+}

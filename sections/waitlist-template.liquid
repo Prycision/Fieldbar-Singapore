@@ -1,0 +1,210 @@
+{% schema %}
+{
+  "name": "Waitlist Template",
+  "tag": "section",
+  "class": "waitlist-template",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "left_bg_image",
+      "label": "Left Column Background Image"
+    },
+    {
+      "type": "text",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Consectetur adipiscing elit"
+    },
+    {
+      "type": "textarea",
+      "id": "short_description",
+      "label": "Short Description",
+      "default": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+      "type": "textarea",
+      "id": "form_code",
+      "label": "Form Embed Code",
+      "default": "<!-- Paste your Powerful Form Builder embed code here -->"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Column Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Lorem Ipsum"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+    }
+  ],
+  "presets": [
+    {
+      "name": "Waitlist Template"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.waitlist-template {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.5em;
+  color: #002B4D;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.waitlist-template .left-col,
+.waitlist-template .right-col {
+  width: 50vw;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.waitlist-template .left-col {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.waitlist-template .right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    
+  gap: 1em;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.waitlist-template .text-wrapper {
+  width: 100%;
+  padding: 0 15%;
+  z-index: 0;
+}
+  
+.waitlist-template .text-wrapper p,
+.waitlist-template .text-wrapper h1 {
+  margin: 0;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  letter-spacing: 0;
+}
+
+.waitlist-template h1 {
+  font-family: 'Surveyor Fine Light', serif;
+}
+
+.waitlist-template .right-image-container {
+  width: 20%;
+  height: 30%;
+  background-size: 130% auto; 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.waitlist-template h1,
+.waitlist-template p {
+  opacity: 1;
+  transition: none;
+}
+
+.waitlist-template .waitlist-button-wrapper {
+  margin-top: 1em;
+}
+
+.waitlist-template .waitlist-button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #002B4D;
+  font-weight: 600;
+  font-size: 1em;
+  transition: color 0.3s ease-in-out;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  letter-spacing: 0;
+}
+
+.waitlist-template .waitlist-button::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background-color: #FF8A3D;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.waitlist-template .waitlist-button:hover {
+  color: #FF8A3D;
+}
+
+.waitlist-template .waitlist-button:hover::after {
+  transform: scaleX(0);
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .waitlist-template {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .waitlist-template .left-col,
+  .waitlist-template .right-col {
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+  }
+  .waitlist-template .left-col {
+    background-size: 150%;
+  }
+  .waitlist-template .text-wrapper {
+    padding: 0 2em;
+  }
+}
+</style>
+
+<div class="waitlist-template">
+  <div class="left-col"
+       style="background-image: url('{{ section.settings.left_bg_image | image_url }}');">
+  </div>
+
+  <div class="right-col">
+    <div class="text-wrapper">
+      <p>{{ section.settings.intro_text }}</p>
+      <h1>{{ section.settings.headline }}</h1>
+      <p>{{ section.settings.short_description }}</p>
+    </div>
+
+    {% if section.settings.image %}
+      <div class="right-image-container"
+           style="background-image: url('{{ section.settings.image | image_url }}');">
+      </div>
+    {% endif %}
+
+    <div class="text-wrapper">
+      {{ section.settings.form_code | raw }}
+
+      <div class="waitlist-button-wrapper">
+        <a class="waitlist-button" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

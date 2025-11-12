@@ -1,0 +1,528 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "type": "mn-personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_02.webp",
+        "intro_text": "INTRODUCING",
+        "headline": "The Gin Trunk",
+        "short_description": "24L\n<br> <br>\nThe FIELDBAR Gin Trunk is a <strong>24 litre hardcase cooler box</strong> designed with generous gatherings in mind. <strong>Properly made</strong> and perfectly proportioned, the Gin Trunk is everything you would expect from a large format cooler. <strong>Durable, versatile</strong> and <strong>comfortable to carry.</strong>",
+        "main_description": "",
+        "image": "shopify://shop_images/GTSBB01-Front1200x1600WEB.webp",
+        "button_text": "SHOP NOW",
+        "button_link": "shopify://collections/the-gin-trunk"
+      }
+    },
+    "multicolumn_yhJUNt": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6zhifr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "<h2>A Closer Look </h2><p>Durable, versatile and comfortable to carry.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dGGVta": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div id=\"full-spec\"><a href=https://fieldbar.com/collections/the-gin-trunk\" id='fancy_hover'>SHOP YOURS NOW</a></div>",
+            "link_label": "",
+            "link": "shopify://collections/field-bottle-product-guide-page"
+          }
+        }
+      },
+      "block_order": [
+        "column_6zhifr",
+        "column_dGGVta"
+      ],
+      "custom_css": [
+        ".rte > *:first-child {margin-top: 0; margin-bottom: 8px;}",
+        ".grid {display: flex; flex-wrap: nowrap; margin-bottom: 2rem; padding: 0; list-style: none; column-gap: var(--grid-mobile-horizontal-spacing); row-gap: var(--grid-mobile-vertical-spacing);}",
+        ".background-none .multicolumn-list {padding-left: 1em;}",
+        " {margin-top: 3%; margin-bottom: -1%;}",
+        "div#full-spec {display: flex; justify-content: flex-end; margin-right: 1.5em; margin-top: 2em;}",
+        "@media screen and (max-width: 61.8125em) {h2 {padding: 0 !important; } .rte {margin-bottom: -1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "closer",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_D9gf44": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_25_4af533ab-377e-494a-bb63-c200d2cae81f.webp-2.jpg",
+            "title": "Capacity",
+            "text": "<p>Fits (even) more than you think. Approximately <strong>2.5x the size of the FIELDBAR Drinks Box</strong>, the FIELDBAR Gin Trunk is a <strong>24 litre </strong>hardcase cooler box that accommodates a broad range of drinks configurations - keeping the party going that much longer.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_n8aAkr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/GT_closer_nesting.jpg",
+            "title": "Nesting",
+            "text": "<p>The only two cooler boxes you will ever need.</p><p>One for excursions, and now one for generous get-togethers. <strong>The FIELDBAR Drinks Box fits snugly into the FIELDBAR Gin Trunk</strong> - making both access and storage easy for the only two cooler boxes you will ever need.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EYRN9z": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/A_Closer_Look_GT_01_af082de5-cbab-4bb7-8b9d-91bf21a0ffd8.png",
+            "title": "Bent Aluminium Lock Handle",
+            "text": "<p>Effortless <strong>latch-free</strong> locking. The FIELDBAR Gin Trunk can be locked closed by moving the handle into an upright position, and opened with the reverse motion. Not only providing a <strong>secure carry</strong> for one to two people, the mechanism provides a <strong>tight seal</strong> increasing ice performance. Finished with genuine sustainable leather offcuts for a <strong>comfort grip</strong>.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_D9gf44",
+        "column_n8aAkr",
+        "column_EYRN9z"
+      ],
+      "custom_css": [
+        "p,h3 {font-family: \"Gotham Narrow Book\" !important;}",
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {margin-left: 0px; margin-right: 0px;}",
+        " {margin-left: 1em; margin-right: 1em; margin-bottom: 2em;}",
+        ".metafield-rich_text_field > p {padding: 0; font-size: 1em;}"
+      ],
+      "settings": {
+        "css-class": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "type": "interactive-hover-colours",
+      "blocks": {
+        "option_cqJB7y": {
+          "type": "option",
+          "settings": {
+            "label": "Sea Boat Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_02.webp",
+            "product_link": "shopify://products/gin-trunk-sea-boat-blue"
+          }
+        },
+        "option_pzfFdx": {
+          "type": "option",
+          "settings": {
+            "label": "Orchard Orange",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_06.webp",
+            "product_link": "shopify://products/gin-trunk-orchard-orange"
+          }
+        },
+        "option_N8dCWQ": {
+          "type": "option",
+          "settings": {
+            "label": "Bazaruto Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_14.webp",
+            "product_link": "shopify://products/gin-trunk-bazaruto-blue"
+          }
+        },
+        "option_wHnfeT": {
+          "type": "option",
+          "settings": {
+            "label": "Parisian Green",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_19.webp",
+            "product_link": "shopify://products/gin-trunk-parisian-green"
+          }
+        },
+        "option_p3Uptj": {
+          "type": "option",
+          "settings": {
+            "label": "Safari White",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_10_b56e8274-38b9-4124-95c2-5afe24417d9f.webp",
+            "product_link": "shopify://products/gin-trunk-safari-white"
+          }
+        },
+        "option_ThACtB": {
+          "type": "option",
+          "settings": {
+            "label": "Oyster Grey",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_25.webp",
+            "product_link": "shopify://products/gin-trunk-oyster-grey"
+          }
+        }
+      },
+      "block_order": [
+        "option_cqJB7y",
+        "option_pzfFdx",
+        "option_N8dCWQ",
+        "option_wHnfeT",
+        "option_p3Uptj",
+        "option_ThACtB"
+      ],
+      "settings": {
+        "left_background_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_14.webp",
+        "right_heading": "SIGNATURE SHADES",
+        "right_copy": "The iconic FIELDBAR colours you know and love… and possibly already have.\n<br><br>\nAs with the FIELDBAR Drinks Box, the Gin Trunk bears straight lines and our trademark high-gloss finish. Available in all six signature colours for you to complete your set."
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "type": "product-guide-capacity",
+      "blocks": {
+        "item_YkCFCR": {
+          "type": "item",
+          "settings": {
+            "label": "10 Wine Bottles 750ml",
+            "image": "shopify://shop_images/GT_Option_01_png.webp"
+          }
+        },
+        "item_3QqRr7": {
+          "type": "item",
+          "settings": {
+            "label": "32 Standing Beer Cans 440ml",
+            "image": "shopify://shop_images/GT_Option_2_png.webp"
+          }
+        },
+        "item_gLC84d": {
+          "type": "item",
+          "settings": {
+            "label": "3 Bottles of Gin, 40 Tonic & 3 Tennis Balls",
+            "image": "shopify://shop_images/GT_Option_3_png.webp"
+          }
+        },
+        "item_HCrDDm": {
+          "type": "item",
+          "settings": {
+            "label": "8 Champagne Bottles 750ml",
+            "image": "shopify://shop_images/GT_Option_4_png.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_YkCFCR",
+        "item_3QqRr7",
+        "item_gLC84d",
+        "item_HCrDDm"
+      ],
+      "settings": {
+        "heading": "Fits more than you think",
+        "capacity_text": "Capacity | 24 L",
+        "link_text": "Compare Sizes",
+        "link_url": "https://fieldbar.com/pages/size-guide",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/058d32e5a92e4512b3124df8ee01b288.mp4"
+      }
+    },
+    "mn_towel_mzUXri": {
+      "type": "mn-towel",
+      "settings": {
+        "left_image_link": "shopify://products/gin-trunk-parisian-green",
+        "left_caption": "",
+        "main_media_url": "https://cdn.shopify.com/videos/c/o/v/50c92d4804a7414fa2eacdbea9a03d6c.mp4",
+        "heading": "Instructions & Care",
+        "description": "<strong>USE INSTRUCTIONS</strong>\n<br>\n01. Fill Gin Trunk with pre-chilled drinks and a generous amount of ice<br>\n02. To keep cool air trapped inside the Gin Trunk, only open it when necessary<br>\n03. To open: push handle back and down, then lift brass latch<br>\n04. To lock: close lid, then pull handle back to upright position<br>\n<br>\n<strong>CARE & AGEING</strong>\n<br>\n01. Clean with warm water and a soft cloth<br>\n02. Do not use cleaning products<br>\n03. Do not pressure hose<br>\n04. The leather handle will weather<br>\n05. The outer cabinet may incur minor scratches and dents <br>\n06. Brass-coated hardware may oxidise slightly <br>\n07. Ensure interior cabinet is dry before long term storage <br>",
+        "button_text": "SHOP YOUR GIN TRUNK",
+        "button_link": "shopify://collections/the-gin-trunk"
+      }
+    },
+    "fieldbar_collection_related_9rwTkz": {
+      "type": "Fieldbar_collection_related",
+      "custom_css": [
+        "a {text-transform: uppercase; font-size: 0.7em;}",
+        " {margin-top: 4.5em;}",
+        "#spec-price {display: none !important;}",
+        "#hprice {display: none !important;}",
+        ".card__information > .card__heading > p {display: none !important;}"
+      ],
+      "name": "t:sections.fieldbar-collection-related.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "the-gin-trunk",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "personalisation_product_guide_dJdXU7": {
+      "type": "personalisation-product-guide",
+      "disabled": true,
+      "name": "Personalisation Guide",
+      "settings": {
+        "left_image": "shopify://shop_images/GTSBB04-Personalisation1600x2000WEB.webp",
+        "heading": "Your Gin Trunk. Forever.",
+        "body_text": "<p>Personalise the premium leather handle of your Gin Trunk by adding a name or initials. Maybe mention that currently only offering in USA ? maybe even hide this section for now cause we don't have any personalisation in UK </p>",
+        "link_text": "PERSONALISE YOURS NOW",
+        "link_url": "",
+        "badge_image": "shopify://shop_images/DOOR54_TAJ_HR_fieldbar_model_selects_01_jpg.webp"
+      }
+    },
+    "specifications_product_guide_bKaBaY": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_84FjFH": {
+          "type": "left_item",
+          "settings": {
+            "text": "Moulded handle casing wrapped in genuine leather offcuts for comfort"
+          }
+        },
+        "left_item_WUnBti": {
+          "type": "left_item",
+          "settings": {
+            "text": "Extruded aluminium handle for strength and anti-wobble when carrying"
+          }
+        },
+        "left_item_NU9GCt": {
+          "type": "left_item",
+          "settings": {
+            "text": "Reflective paint to reduce heat absorption"
+          }
+        },
+        "left_item_jkcCfz": {
+          "type": "left_item",
+          "settings": {
+            "text": "Aluminium lid latch"
+          }
+        },
+        "left_item_JzHBec": {
+          "type": "left_item",
+          "settings": {
+            "text": "Water- and airtight gasket"
+          }
+        },
+        "left_item_rqVfPz": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free and easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_ARrniW": {
+          "type": "right_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "right_item_ThEfCK": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium hidden hinges designed to last forever"
+          }
+        },
+        "right_item_jfFgCP": {
+          "type": "right_item",
+          "settings": {
+            "text": "Internal pressure lock system to ensure an airtight seal when in the closed position"
+          }
+        },
+        "right_item_69dywz": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet"
+          }
+        },
+        "right_item_LTRwin": {
+          "type": "right_item",
+          "settings": {
+            "text": "Prenumbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_qPP7Jk": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone non-slip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_84FjFH",
+        "left_item_WUnBti",
+        "left_item_NU9GCt",
+        "left_item_jkcCfz",
+        "left_item_JzHBec",
+        "left_item_rqVfPz",
+        "right_item_ARrniW",
+        "right_item_ThEfCK",
+        "right_item_jfFgCP",
+        "right_item_69dywz",
+        "right_item_LTRwin",
+        "right_item_qPP7Jk"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_view_gin_trunk_png.webp",
+        "left_title": "Specifications",
+        "left_subtitle": "The FIELDBAR Gin Trunk is comprised of 135 parts all designed to be removed, repaired, and replaced if required. And, like all FIELDBAR cooler boxes, it comes with the FIELDBAR 5-year workmanship warranty.",
+        "right_background_image": "shopify://shop_images/Testimonials_GT_01.png"
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jyP4bd": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hwiqEW": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_04_1_6f847bc3-2a5a-4263-9c8c-ee8f93fd1a1d.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Latchless Locking </a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pzegda": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_10.png_3.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eVBBjF": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/safari_engineered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jyP4bd",
+        "column_hwiqEW",
+        "column_pzegda",
+        "column_eVBBjF"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "mn_personalisation_4qaTUd",
+    "multicolumn_yhJUNt",
+    "multicolumn_jyEmw7",
+    "interactive_hover_colours_mtMK99",
+    "product_guide_capacity_cqz6zT",
+    "mn_towel_mzUXri",
+    "fieldbar_collection_related_9rwTkz",
+    "personalisation_product_guide_dJdXU7",
+    "specifications_product_guide_bKaBaY",
+    "multicolumn_JgRcUR",
+    "main"
+  ]
+}

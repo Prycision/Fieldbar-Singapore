@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "custom_liquid_b6wJCT": {
+          "settings": {
+            "custom_liquid": "{% assign tags = product.tags | join: ',' | downcase %}\n{% if tags contains 'gin trunk' or tags contains 'drinks box' %}\n<div id=\"size-guide\">\n  <p>\n    <strong>Sie brauchen Hilfe?</strong> Finden Sie die perfekte Kühlbox mit unserer \n    <a href=\"#\" id=\"openDimensionsModal\" class=\"dimensions-link\">Größentabelle</a>\n  </p>\n</div>\n\n{% endif %}"
+          }
+        }
+      }
+    },
+    "multicolumn_yRctHQ": {
+      "custom_css": [
+        "ul > li {background-color: #fffbf6 !important;}",
+        ".multicolumn-card-spacing {margin: 0;}",
+        ".multicolumn-card.content-container {height: 100% !important; color: #f3efeb;}",
+        "div:empty {display: block !important;}",
+        ".multicolumn-card__image {width: 100%; max-width: 50vw; padding: 0 !important; height: 100%; max-height: 120vh;}",
+        "@media screen and (max-width: 61.8125em) {.multicolumn-card__image {width: 100%; max-width: 100vw !important; padding: 0 !important; height: 100%; max-height: 120vh; }}"
+      ],
+      "settings": {},
+      "blocks": {
+        "column_amwXzq": {
+          "settings": {
+            "custom_liquid": "<div id=\"fits_cen\">{% render 'drinks_box_size-gr' %}</div>"
+          }
+        }
+      }
+    },
+    "multicolumn_jRBkJV": {
+      "settings": {},
+      "blocks": {
+        "column_tm36Yr": {
+          "settings": {
+            "text": "<h2>Genauer Hingeschaut </h2><p>Langlebig, vielseitig und bequem zu tragen.</p>"
+          }
+        },
+        "column_UNPXet": {
+          "settings": {
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/product-guide\" id='fancy_hover'>Volle Spezifikationen</a></div>"
+          }
+        }
+      }
+    },
+    "custom_liquid_76TgPX": {
+      "settings": {
+        "custom_liquid": "{% render 'slider-de' %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_9MYEdi": {
+      "settings": {
+        "custom_liquid": "{% render 'sustainable_craftsmanship2-gr' %}\n{% render 'breadcrumbs' %}"
+      },
+      "blocks": {}
+    },
+    "custom_liquid_9qj6Hy": {
+      "settings": {
+        "custom_liquid": "<script src=\"https://a.klaviyo.com/media/js/onsite/onsite.js\"></script>\n<script>\n    var klaviyo = klaviyo || [];\n    klaviyo.init({\n      account: \"RLiGCP\",\n      list: \"X9KtgB\",\n      platform: \"shopify\",\n    });\n    klaviyo.enable(\"backinstock\", { \n      trigger: {\n        product_page_text: \"Benachrichtigen Sie mich, wenn dieses Produkt verfügbar ist\",\n        product_page_class: 'btn',\n        product_page_text_align: \"center\",\n        product_page_margin: \"0px\",\n        replace_anchor: false\n      },\n      modal: {\n        headline: \"{product_name}\",\n         additional_styles: \"@import url('https://cdn.shopify.com/s/files/1/0654/1610/2127/files/klav-3.css');\",\n        body_content: \"Registrieren Sie sich, um benachrichtigt zu werden, sobald dieses Produkt wieder verfügbar ist.\",\n        newsletter_subscribe_label: \"Abonnieren Sie unseren Newsletter und erhalten Sie personalisierte Angebote, frühen Zugang zu neuen Produkten und gelegentlich lose verifizierte Gerüchte.\",\n        subscribe_checked: true,\n        email_field_label: \"Email\",\n        button_label: \"BENACHRICHTIGEN SIE MICH\",\n        subscription_success_label: \"DANKE!\",\n      }\n    });\n</script>"
+      },
+      "blocks": {}
+    }
+  }
+}

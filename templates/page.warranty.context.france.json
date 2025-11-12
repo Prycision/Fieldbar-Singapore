@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.warranty.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "mount_nelson_splitscreen_higWDg": {
+      "settings": {
+        "intro_text": "L'HÔPITAL FIELD",
+        "headline": "Garantie & Réparations",
+        "main_description": "Nous voulons revenir aux pratiques de nos grands-parents et des générations passées, qui consistaient à acheter des produits de qualité et durables, puis de les réparer et d'en prendre soin.\n<br><br>\nCe retour à la qualité est, selon nous, la base du design durable. C'est pourquoi toutes les pièces de nos produits sont réparables et remplaçables. Parce qu'on ne fabrique pas de la même manière quand on sait que cela doit durer éternellement."
+      },
+      "blocks": {}
+    },
+    "warranty_scroll_sticky_wkCfK6": {
+      "settings": {
+        "warranty_heading": "Garantie de fabrication 5 ans",
+        "warranty_copy": "<p>Fieldbar (Pty) Ltd (\"Fieldbar\", \"nous\", \"notre\", ou \"nos\") s'efforce de fabriquer des produits de haute<strong> qualité, fonctionnels, et élégants.</strong></p><p>C'est pourquoi nous offrons aux propriétaires enregistrés (\"vous\") une garantie limitée de fabrication de 5 ans relative à certains défauts de fabrication et défauts esthétiques, sous réserve des conditions indiquées ci-dessous.*</p><p>*Note : Nos glacières et bouteilles sont décorées à la main et peuvent présenter de légères imperfections de peinture. Celles-ci ne sont pas considérées comme des défauts de fabrication ou esthétiques.</p>",
+        "accordion_heading": "Conditions de garantie",
+        "button_1_text": "ENREGISTREZ VOTRE PRODUIT",
+        "button_2_text": "CONNECTEZ-VOUS POUR FAIRE UNE RÉCLAMATION",
+        "accordion_1_title": "Produits couverts",
+        "accordion_1_content": "<p>- La glacière Drinks Box<br/>- La glacière Gin Trunk<br/>- La glacière Mini Bar<br/>- La bouteille Field Bottle</p><p><br/>Les produits en textile et en papier ne sont pas couverts par la garantie.</p>",
+        "accordion_2_title": "Ce qui est couvert par notre garantie de fabrication 5 ans",
+        "accordion_2_content": "<p><strong>Défauts de fabrication fonctionnels : </strong></p><p>Défauts de fabrication survenus à cause d'erreurs lors du processus de création du produit, qui entraînent une non-conformité du produit aux normes de qualité qu'il est conçu pour satisfaire (ce qui signifie qu'il ne peut plus être utilisé conformément à son utilisation prévue).<br/></p><p><br/><strong>Défauts esthétiques importants lors de la fabrication : </strong></p><p>Un défaut esthétique important signifie toute caractéristique qui altère considérablement l'aspect esthétique du produit, par exemple de multiples éraflures, marques ou rayures de peinture, ou encore des variations de couleur marquées entre les éléments. Tout dommage esthétique résultant de votre utilisation du produit n'est pas couvert par la garantie, mais peut être réparé à vos frais.</p>",
+        "accordion_3_title": "Critères de garantie",
+        "accordion_3_content": "<p>- Le type de produit doit être couvert par la garantie (Drinks Box, Gin Truck ou Field Bottle).<br/><br/>- Vous devez avoir acheté votre produit sur la boutique du site Fieldbar ou auprès d'un revendeur agréé de produits Fieldbar.<br/><br/>- Vous devez avoir enregistré votre produit dans les 60 jours suivants l'achat sur le Club des Propriétaires Fieldbar (même s'il a été reçu en cadeau).<br/><br/>- Vous devez avoir utilisé le produit uniquement dans le cadre de son utilisation prévue et conformément aux instructions d'entretien du produit. La garantie ne couvre pas l'usure normale, la détérioration naturelle des couleurs et des matériaux sur une période prolongée, une mauvaise utilisation ou une utilisation abusive.<br/><br/>- Vous devez soumettre votre réclamation sous garantie durant la période de garantie.<br/><br/>- Pour ce qui est des réclamations sous garantie concernant de présumés défauts esthétiques, le produit ne doit pas avoir été utilisé et doit être rendu dans son emballage d'origine.<br/><br/>- En dehors de la législation applicable relative aux consommateurs, notre garantie couvre les frais de réparation et ne s'applique pas aux remboursements. Si nous ne pouvons pas réparer votre produit qui remplit les conditions de la garantie, nous le remplacerons. Les réparations n'aboutiront pas forcément à un produit \"comme neuf\".<br/><br/>- Vous pourrez être amené à effectuer vous-même certaines réparations avec des kits de réparation que nous vous enverrons.<br/><br/>- Il vous incombe d'emballer soigneusement le produit pour le retour sous garantie. Tout dommage survenu au cours du transport n'est pas couvert par cette garantie.<br/><br/>- Il peut arriver que des éditions limitées de produits Fieldbar ou que certaines couleurs de peinture ne soient pas disponibles pour effectuer des réparations ou remplacements. Les défauts de fabrication fonctionnels peuvent tout de même être réparés sur les produits en édition limitée. Dans les cas où un produit en édition limitée ou discontinuée couvert pas la garantie ne peut pas être remplacé par un produit identique, le produit sera remplacé par un modèle ou une couleur similaires ou équivalents selon les disponibilités.<br/><br/>- La garantie ne s'applique pas aux produits qui ont été modifiés, personnalisés, réparés ou remplacés par un tiers.<br/><br/>- La garantie exclut les dommages résultant d'une utilisation commerciale, à moins que le produit n'ait été acheté dans le cadre du Programme Fieldbar Hôtellerie.</p>",
+        "accordion_4_title": "Comment faire une réclamation",
+        "accordion_4_content": "<p>Si vous avez enregistré avec succès votre produit éligible Fieldbar dans les 60 jours suivant l'achat et qu'il est toujours couvert par la garantie 5 ans, vous pouvez soumettre une réclamation sous garantie.<br/><br/>Connectez-vous à votre compte Club des Propriétaires sur fieldbar.co.za (Afrique du Sud) ou fieldbar.com (international) et suivez les indications.</p><p>Les délais d'évaluation et de réparation peuvent varier. Une fois la demande de réclamation envoyée, la plupart des réparations sont effectuées en l'espace de quelques semaines.</p>",
+        "accordion_5_title": "Clause de non-responsabilité",
+        "accordion_5_content": "<p>Dans toute la mesure où la loi l'autorise, Fieldbar décline toute garantie, expresse ou implicite, incluant, mais sans s'y limiter, les garanties implicites de qualité marchande et de convenance à une fin particulière. Fieldbar ne pourra être tenu responsable de dommages de quelque nature que ce soit résultat de l'utilisation de ses produits, incluant, sans s'y limiter, les dommages directs, indirects, accessoires, punitifs ou consécutifs.<br/><br/>La seule obligation de Fieldbar en vertu de cette garantie sera de réparer ou remplacer tout produit qui satisfait les critères de garantie détaillés ci-dessus.</p>",
+        "accordion_6_title": "Conditions de garantie antérieures",
+        "accordion_6_content": "<p>Vous pouvez consulter la garantie pour les produits achetés avant le 1er septembre 2024 ici.<br/><br/>LA GARANTIE FIELDBAR DE 5 ANS SANS QUESTIONS POSÉES</p><p>Fieldbar s'efforce de produire des produits de haute qualité, fonctionnels et élégants. C'est pourquoi <strong>nous offrons aux propriétaires enregistrés une garantie de 5 ans </strong>sans poser de questions contre tous les dommages et défauts de fabrication.</p><ul><li> Ne couvre que les produits achetés directement chez nous ou auprès d'un partenaire commercial agréé.  </li><li> <strong>Enregistrement du produit </strong>requis. Vous ne pouvez faire valoir cette garantie que si vous vous êtes enregistré en tant que propriétaire de Fieldbar.<br/><br/>CONDITIONS</li><li> Vous devez avoir enregistré votre produit FIELDBAR dans les 60 jours suivant l'achat (même s'il a été reçu en cadeau). </li><li> En dehors de la législation applicable en matière de consommation, notre garantie couvre les frais de réparation et ne s'applique pas aux remboursements. Si nous ne pouvons pas réparer votre produit, nous le remplacerons. Les réparations ne donneront pas lieu à un produit aussi bon qu'un nouveau produit. </li><li>   Les dommages et défauts de fabrication excluent les dommages esthétiques dus à une usure raisonnable.  </li><li> Vous pourrez être amené à effectuer vous-même certaines réparations à partir des kits de réparation qui vous seront envoyés.</li></ul>"
+      },
+      "blocks": {}
+    }
+  }
+}

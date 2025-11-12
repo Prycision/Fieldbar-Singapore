@@ -1,0 +1,537 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-family: 'Gotham Medium' !important;
+    color: #002b4d;
+  }
+
+  .owners-club-wrapper {
+    background: #f3efeb;
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Gotham Narrow Book' !important;
+    text-align: center;
+    color: #002b4d;
+  }
+
+  .product-register {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .owners-login-section {
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  .form-field {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .form-field input,
+  .form-field select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Gotham Narrow Book' !important;
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-top: 6px;
+  }
+
+  .owners-register-section {
+    margin-top: 20px;
+  }
+
+  .owners-register-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .owners-register-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form-errors {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  label {
+    font-family: 'Gotham Narrow Book' !important;
+    font-weight: normal !important;
+  }
+
+  .consent-checkbox input[type='checkbox'] {
+    margin-top: 5px;
+  }
+{%- endstyle -%}
+{% assign country_code = localization.country.iso_code | default: 'GB' | upcase %}
+{% case country_code %}
+  {% when 'FR' %}
+    <div class="owners-club-wrapper">
+      <h2 style="font-family:'Gotham Book' !important">JOIN OWNERS CLUB
+      </h2>
+      <p>
+        In addition to the obvious bragging rights, Owners Club members receive
+        <strong>product warranties
+        </strong>
+        ,
+        <strong>personalised
+        </strong>
+        offers,
+        <strong>
+          early access
+        </strong>
+        to new products and
+        <strong>secret perks
+        </strong>
+        .
+        <br>
+        <br>
+        Already a member? Please
+        <a href="{{ routes.account_login_url }}">log in
+        </a>
+      </p>
+
+      {%- form 'create_customer'
+        , novalidate: 'novalidate' -%}
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ 'templates.contact.form.error_heading' | t }}
+            <ul>
+              {%- for field in form.errors -%}
+                <li>
+                  {% if field == 'form' %}
+                    {{ form.errors.messages[field] }}
+                  {% else %}
+                    <a href="#RegisterForm-{{ field }}">
+                      {{ form.errors.translated_fields[field] | capitalize }}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  {% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="form-field">
+          <label for="RegisterForm-FirstName">FIRST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[first_name]"
+            id="RegisterForm-FirstName"
+            placeholder="Enter First Name"
+            autocomplete="given-name"
+            {% if form.first_name %}
+              value="{{ form.first_name }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-LastName">LAST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[last_name]"
+            id="RegisterForm-LastName"
+            placeholder="Enter Last Name"
+            autocomplete="family-name"
+            {% if form.last_name %}
+              value="{{ form.last_name }}"
+            {% endif %}
+            required>
+        </div>
+        {% comment %}
+          <div class="form-field">
+          <label for="RegisterForm-Country">COUNTRY/REGION</label>
+          <select name="customer[note][country]" id="RegisterForm-Country">
+          <option value="">Select Country/Region</option>
+          <option value="South Africa">South Africa</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          </select>
+          </div>
+
+          <div class="form-field">
+          <label for="RegisterForm-Language">PREFERRED LANGUAGE</label>
+          <select name="customer[note][language]" id="RegisterForm-Language">
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Afrikaans">Afrikaans</option>
+          <!-- Add more if needed -->
+          </select>
+          </div>
+        {% endcomment %}
+
+        <div class="form-field">
+          <label for="RegisterForm-email">E-MAIL ADDRESS*
+          </label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="RegisterForm-email"
+            placeholder="Enter E-Mail Address"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.email %}
+              value="{{ form.email }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-password">PASSWORD*
+          </label>
+          <input
+            type="password"
+            name="customer[password]"
+            id="RegisterForm-password"
+            placeholder="Enter Password"
+            required>
+        </div>
+
+        <div class="consent-checkbox">
+          <input
+            type="checkbox"
+            name="customer[accepts_marketing]"
+            id="marketing-consent">
+          <label for="marketing-consent">
+            I consent to FIELDBAR processing my personal data in order to send me personalised marketing material and to
+                                                        share my personal data with FIELDBAR's marketing partners in accordance with the privacy policy.
+          </label>
+        </div>
+
+        <button type="submit" class="fieldbar_button">CREATE AN ACCOUNT
+        </button>
+      {%- endform -%}
+    </div>
+  {% when 'DE' %}
+    <div class="owners-club-wrapper">
+      <h2 style="font-family:'Gotham Book' !important">JOIN OWNERS CLUB
+      </h2>
+      <p>
+        In addition to the obvious bragging rights, Owners Club members receive
+        <strong>product warranties
+        </strong>
+        ,
+        <strong>personalised
+        </strong>
+        offers,
+        <strong>
+          early access
+        </strong>
+        to new products and
+        <strong>secret perks
+        </strong>
+        .
+        <br>
+        <br>
+        Already a member? Please
+        <a href="{{ routes.account_login_url }}">log in
+        </a>
+      </p>
+
+      {%- form 'create_customer'
+        , novalidate: 'novalidate' -%}
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ 'templates.contact.form.error_heading' | t }}
+            <ul>
+              {%- for field in form.errors -%}
+                <li>
+                  {% if field == 'form' %}
+                    {{ form.errors.messages[field] }}
+                  {% else %}
+                    <a href="#RegisterForm-{{ field }}">
+                      {{ form.errors.translated_fields[field] | capitalize }}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  {% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="form-field">
+          <label for="RegisterForm-FirstName">FIRST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[first_name]"
+            id="RegisterForm-FirstName"
+            placeholder="Enter First Name"
+            autocomplete="given-name"
+            {% if form.first_name %}
+              value="{{ form.first_name }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-LastName">LAST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[last_name]"
+            id="RegisterForm-LastName"
+            placeholder="Enter Last Name"
+            autocomplete="family-name"
+            {% if form.last_name %}
+              value="{{ form.last_name }}"
+            {% endif %}
+            required>
+        </div>
+        {% comment %}
+          <div class="form-field">
+          <label for="RegisterForm-Country">COUNTRY/REGION</label>
+          <select name="customer[note][country]" id="RegisterForm-Country">
+          <option value="">Select Country/Region</option>
+          <option value="South Africa">South Africa</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          </select>
+          </div>
+
+          <div class="form-field">
+          <label for="RegisterForm-Language">PREFERRED LANGUAGE</label>
+          <select name="customer[note][language]" id="RegisterForm-Language">
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Afrikaans">Afrikaans</option>
+          <!-- Add more if needed -->
+          </select>
+          </div>
+        {% endcomment %}
+
+        <div class="form-field">
+          <label for="RegisterForm-email">E-MAIL ADDRESS*
+          </label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="RegisterForm-email"
+            placeholder="Enter E-Mail Address"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.email %}
+              value="{{ form.email }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-password">PASSWORD*
+          </label>
+          <input
+            type="password"
+            name="customer[password]"
+            id="RegisterForm-password"
+            placeholder="Enter Password"
+            required>
+        </div>
+
+        <div class="consent-checkbox">
+          <input
+            type="checkbox"
+            name="customer[accepts_marketing]"
+            id="marketing-consent">
+          <label for="marketing-consent">
+            I consent to FIELDBAR processing my personal data in order to send me personalised marketing material and to
+                                                        share my personal data with FIELDBAR's marketing partners in accordance with the privacy policy.
+          </label>
+        </div>
+
+        <button type="submit" class="fieldbar_button">CREATE AN ACCOUNT
+        </button>
+      {%- endform -%}
+    </div>
+  {% else %}
+    <div class="owners-club-wrapper">
+      <h2 style="font-family:'Gotham Book' !important">JOIN OWNERS CLUB
+      </h2>
+      <p>
+        In addition to the obvious bragging rights, Owners Club members receive
+        <strong>product warranties
+        </strong>
+        ,
+        <strong>personalised
+        </strong>
+        offers,
+        <strong>
+          early access
+        </strong>
+        to new products and
+        <strong>secret perks
+        </strong>
+        .
+        <br>
+        <br>
+        Already a member? Please
+        <a href="{{ routes.account_login_url }}">log in
+        </a>
+      </p>
+
+      {%- form 'create_customer'
+        , novalidate: 'novalidate' -%}
+        {% if form.errors %}
+          <div class="form-errors">
+            {{ 'templates.contact.form.error_heading' | t }}
+            <ul>
+              {%- for field in form.errors -%}
+                <li>
+                  {% if field == 'form' %}
+                    {{ form.errors.messages[field] }}
+                  {% else %}
+                    <a href="#RegisterForm-{{ field }}">
+                      {{ form.errors.translated_fields[field] | capitalize }}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  {% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="form-field">
+          <label for="RegisterForm-FirstName">FIRST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[first_name]"
+            id="RegisterForm-FirstName"
+            placeholder="Enter First Name"
+            autocomplete="given-name"
+            {% if form.first_name %}
+              value="{{ form.first_name }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-LastName">LAST NAME*
+          </label>
+          <input
+            type="text"
+            name="customer[last_name]"
+            id="RegisterForm-LastName"
+            placeholder="Enter Last Name"
+            autocomplete="family-name"
+            {% if form.last_name %}
+              value="{{ form.last_name }}"
+            {% endif %}
+            required>
+        </div>
+        {% comment %}
+          <div class="form-field">
+          <label for="RegisterForm-Country">COUNTRY/REGION</label>
+          <select name="customer[note][country]" id="RegisterForm-Country">
+          <option value="">Select Country/Region</option>
+          <option value="South Africa">South Africa</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          </select>
+          </div>
+
+          <div class="form-field">
+          <label for="RegisterForm-Language">PREFERRED LANGUAGE</label>
+          <select name="customer[note][language]" id="RegisterForm-Language">
+          <option value="">Select Language</option>
+          <option value="English">English</option>
+          <option value="Afrikaans">Afrikaans</option>
+          <!-- Add more if needed -->
+          </select>
+          </div>
+        {% endcomment %}
+
+        <div class="form-field">
+          <label for="RegisterForm-email">E-MAIL ADDRESS*
+          </label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="RegisterForm-email"
+            placeholder="Enter E-Mail Address"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.email %}
+              value="{{ form.email }}"
+            {% endif %}
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="RegisterForm-password">PASSWORD*
+          </label>
+          <input
+            type="password"
+            name="customer[password]"
+            id="RegisterForm-password"
+            placeholder="Enter Password"
+            required>
+        </div>
+
+        <div class="consent-checkbox">
+          <input
+            type="checkbox"
+            name="customer[accepts_marketing]"
+            id="marketing-consent">
+          <label for="marketing-consent">
+            I consent to FIELDBAR processing my personal data in order to send me personalised marketing material and to
+                                                        share my personal data with FIELDBAR's marketing partners in accordance with the privacy policy.
+          </label>
+        </div>
+
+        <button type="submit" class="fieldbar_button">CREATE AN ACCOUNT
+        </button>
+      {%- endform -%}
+    </div>
+{% endcase %}

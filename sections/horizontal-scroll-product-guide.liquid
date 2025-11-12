@@ -1,0 +1,446 @@
+{% stylesheet %}
+.all-products-guide-section-wrapper {
+
+  /* ── Carousel container ── */
+  .all-products-guide {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    height: 75vh;
+    gap: 1em;
+    padding: 0 1em;
+    box-sizing: border-box;
+  }
+
+  .all-products-guide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide {
+    flex: 0 0 35vw;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    box-sizing: border-box;
+    padding: 2em 1em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1em;
+  }
+
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+  }
+
+  .slide.clone {}
+
+  .slide-number {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    margin: 0;
+    color: white;
+    font-family: "Gotham Narrow Book", sans-serif !important;
+    font-size: 1em;
+    z-index: 1;
+  }
+
+  .slide h1 {
+    margin: 0;
+    font-family: "Gotham Medium", sans-serif !important;
+    font-size: 1.7em !important;
+
+    color: white;
+    z-index: 1;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+  }
+
+  .buttons a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-family: "Gotham Narrow Book", sans-serif !important;
+    padding-bottom: 0.1em;
+  }
+
+  .buttons a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FF8A3D;
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .buttons a:hover {
+    color: #FF8A3D;
+  }
+
+  .buttons a:hover::after {
+    transform: scaleX(0);
+  }
+
+  .all-products-extra {
+    display: flex;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 1em;
+    gap: 1em 2em;
+  }
+
+  .all-products-extra .col {
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  .all-products-extra .col:first-child {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .all-products-extra .col:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .all-products-extra .col h1 {
+    font-family: "SurveyorText Book Light Pro", serif;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  .all-products-extra .col p {
+    font-family: "Gotham Narrow Book", sans-serif;
+    text-align: left;
+    margin: 0.5em 0 0;
+  }
+
+  .all-products-extra .col .btn {
+    display: inline-block;
+    background-color: #002B4D;
+    color: white;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    font-family: "Gotham Medium", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .all-products-extra .col .btn:hover {
+    background-color: #FF8A3D;
+    color: white;
+  }
+
+  .all-products-extra .col .nav-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-left: 1em;
+  }
+
+  .all-products-extra .col .nav-buttons img {
+    width: 0.75em;
+    height: auto;
+    cursor: pointer;
+    transition: filter 0.3s;
+  }
+
+  .all-products-extra .col .nav-buttons img:hover {
+    filter: brightness(1.2);
+  }
+
+  .slide-subtitle {
+  margin: 0;
+  color: white;
+  font-family: "Gotham Narrow Book", sans-serif;
+  font-size: 1em;
+  z-index: 1;
+}
+
+  @media (max-width: 768px) {
+    .all-products-guide {
+      flex-direction: column;
+      height: auto;
+      gap: .5em;
+      padding: 0;
+    }
+
+    .all-products-guide .slide.clone {
+      display: none;
+    }
+
+    .slide {
+      flex: 0 0 auto;
+      width: 100vw;
+      height: 35vh;
+      padding: 1em;
+    }
+
+    .slide h1 {
+      font-size: 1.5em !important;
+    }
+
+    .all-products-extra {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      flex-direction: column;
+      background-color: #F3EFEB;
+      gap: 0.2em;
+      padding: 0.5em;
+      box-shadow: 10px 10px 70px 10px #000;
+      border-radius: 0.5em 0.5em 0 0;
+    }
+
+    .all-products-extra .col {
+      justify-content: center !important;
+      padding: .5em 0;
+      display: block;
+    }
+
+    .all-products-extra .col .nav-buttons {
+      display: none;
+    }
+
+    .all-products-extra .col h1 {
+      text-align: center;
+      font-size: 2.2em !important;
+      letter-spacing: -0.1em;
+    }
+
+    .all-products-extra .col p {
+      text-align: center;
+      font-size: 1em !important;
+    }
+  }
+
+}
+{% endstylesheet %}
+
+<div class="all-products-guide-section-wrapper">
+  <div id="scrollable-slider" class="all-products-guide">
+    {% assign originals = section.blocks %}
+    {% assign count = originals.size %}
+
+    {% for block in originals %}
+      <div class="slide clone" style="background-image:url('{{ block.settings.bg_image | image_url }}')">
+        <p class="slide-number">{{ forloop.index | prepend: "0" }}.</p>
+        <h1>{{ block.settings.title }}</h1>
+
+{% if block.settings.subtitle != blank %}
+  <p class="slide-subtitle">{{ block.settings.subtitle }}</p>
+{% endif %}
+        <div class="buttons">
+          <a href="{{ block.settings.left_button_link }}">{{ block.settings.left_button_text }}</a>
+          <a href="{{ block.settings.right_button_link }}">{{ block.settings.right_button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for block in originals %}
+      <div class="slide" style="background-image:url('{{ block.settings.bg_image | image_url }}')">
+        <p class="slide-number">{{ forloop.index | prepend: "0" }}.</p>
+        <h1>{{ block.settings.title }}</h1>
+
+{% if block.settings.subtitle != blank %}
+  <p class="slide-subtitle">{{ block.settings.subtitle }}</p>
+{% endif %}
+        <div class="buttons">
+          <a href="{{ block.settings.left_button_link }}">{{ block.settings.left_button_text }}</a>
+          <a href="{{ block.settings.right_button_link }}">{{ block.settings.right_button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for block in originals %}
+      <div class="slide clone" style="background-image:url('{{ block.settings.bg_image | image_url }}')">
+        <p class="slide-number">{{ forloop.index | prepend: "0" }}.</p>
+        <h1>{{ block.settings.title }}</h1>
+
+{% if block.settings.subtitle != blank %}
+  <p class="slide-subtitle">{{ block.settings.subtitle }}</p>
+{% endif %}
+        <div class="buttons">
+          <a href="{{ block.settings.left_button_link }}">{{ block.settings.left_button_text }}</a>
+          <a href="{{ block.settings.right_button_link }}">{{ block.settings.right_button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="all-products-extra">
+    <div class="col">
+      <h1>{{ section.settings.extra_title }}</h1>
+      <p>{{ section.settings.extra_text }}</p>
+    </div>
+    <div class="col">
+      <a href="{{ section.settings.extra_button_link }}" class="btn">{{ section.settings.extra_button_text }}</a>
+      <div class="nav-buttons">
+        {% if section.settings.prev_icon %}
+          <img id="prevSlide" src="{{ section.settings.prev_icon | image_url }}" alt="Prev">
+        {% endif %}
+        {% if section.settings.next_icon %}
+          <img id="nextSlide" src="{{ section.settings.next_icon | image_url }}" alt="Next">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const container = document.getElementById("scrollable-slider");
+  const slides = Array.from(container.children);
+  const originalCount = {{ count }};
+  let slideWidth, gap;
+
+  function measure() {
+    const style = getComputedStyle(container);
+    gap = parseFloat(style.gap) || parseFloat(style.columnGap) || 0;
+    slideWidth = slides[0].getBoundingClientRect().width + gap;
+  }
+
+  function resetScroll() {
+    container.scrollLeft = slideWidth * originalCount;
+  }
+
+  measure();
+  resetScroll();
+  window.addEventListener("resize", () => {
+    measure();
+    resetScroll();
+  });
+
+  container.addEventListener("scroll", () => {
+    const maxScroll = slideWidth * (originalCount * 2);
+    const threshold = slideWidth * 0.15;
+    if (container.scrollLeft < threshold) {
+      container.scrollLeft += slideWidth * originalCount;
+    } else if (container.scrollLeft > maxScroll - threshold) {
+      container.scrollLeft -= slideWidth * originalCount;
+    }
+  });
+
+  document.getElementById('prevSlide')?.addEventListener('click', () => {
+    container.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+  });
+
+  document.getElementById('nextSlide')?.addEventListener('click', () => {
+    container.scrollBy({ left: slideWidth, behavior: 'smooth' });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "All Products Guide",
+  "tag": "section",
+  "class": "all-products-guide-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "prev_icon",
+      "label": "Previous Arrow Icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "next_icon",
+      "label": "Next Arrow Icon"
+    },
+    {
+      "type": "text",
+      "id": "extra_title",
+      "label": "Extra Section Title",
+      "default": "Explore More"
+    },
+    {
+      "type": "textarea",
+      "id": "extra_text",
+      "label": "Extra Section Text",
+      "default": "A quick guide to all our products."
+    },
+    {
+      "type": "text",
+      "id": "extra_button_text",
+      "label": "Extra Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "extra_button_link",
+      "label": "Extra Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Slide Title",
+          "default": "Product Name"
+        },
+        {
+  "type": "text",
+  "id": "subtitle",
+  "label": "Subtitle (optional)",
+},
+        {
+          "type": "text",
+          "id": "left_button_text",
+          "label": "Left Button Text",
+          "default": "View Details"
+        },
+        {
+          "type": "url",
+          "id": "left_button_link",
+          "label": "Left Button Link"
+        },
+        {
+          "type": "text",
+          "id": "right_button_text",
+          "label": "Right Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "right_button_link",
+          "label": "Right Button Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "All Products Guide"
+    }
+  ]
+}
+{% endschema %}

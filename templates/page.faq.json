@@ -1,0 +1,450 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "faq_4dVF7r": {
+      "type": "faq",
+      "blocks": {
+        "faq_group_H4zmBA": {
+          "type": "faq_group",
+          "name": "SHIPPING & DELIVERY",
+          "settings": {
+            "group_name": "SHIPPING & DELIVERY"
+          }
+        },
+        "faq_item_7qcpML": {
+          "type": "faq_item",
+          "name": "When will my order arrive?",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Shipping times vary according to where you are in the world. Orders are dispatched from the nearest warehouse within 2 business days and thereafter standard courier times apply. As a general rule orders are usually shipped within the following time frames:</p><p>Australia: 5-10 business days<br/>Europe: 3-5 business days<br/>USA: 3-5 business days<br/>UK: 1-2 business days<br/>South Africa: 5-7 business days (from our South African site <a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><strong>fieldbar.co.za</strong></a>)</p>"
+          }
+        },
+        "faq_item_iVCUWP": {
+          "type": "faq_item",
+          "name": "Is shipping free?",
+          "settings": {
+            "question": "Is shipping free?",
+            "answer": "<p>If your region qualifies for free shipping you will not be charged for shipping at checkout.</p>"
+          }
+        },
+        "faq_item_rUNC68": {
+          "type": "faq_item",
+          "name": "How do I track my order?",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>You will be notified once your order has left our factory and your courier tracking information will be sent to you via email. If you are having difficulty tracking your order once it has been shipped, please email us at <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com </strong></a>- and don't forget to include your order number.</p>"
+          }
+        },
+        "faq_item_nPPy8r": {
+          "type": "faq_item",
+          "name": "Do you ship to P.O. Boxes?",
+          "settings": {
+            "question": "Do you ship to P.O. Boxes?",
+            "answer": "<p>Unfortunately, we do not deliver to P.O. Boxes.</p>"
+          }
+        },
+        "faq_item_wfWtGH": {
+          "type": "faq_item",
+          "name": "Where will my order be shipped from?",
+          "settings": {
+            "question": "Where will my order be shipped from?",
+            "answer": "<p>UK orders are shipped from our warehouse in Brandon, EU orders are shipped from our warehouse in the Netherlands, Australia orders are shipped from our warehouse in Sydney and US orders are shipped from our warehouse in Virginia.</p><p>For orders to delivery addresses in South Africa please visit<a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><strong>fieldbar.co.za</strong></a><strong>.</strong></p><p>For other international queries please contact us on<a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com</strong></a>.</p>"
+          }
+        },
+        "faq_item_bMjhi7": {
+          "type": "faq_item",
+          "name": "Can I cancel or amend my order?",
+          "settings": {
+            "question": "Can I cancel or amend my order?",
+            "answer": "<p>If your order is yet to be shipped, we will try our best to amend it. Please email us at <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com</strong></a>.<br/><br/>If you have already received your order, we are unable to exchange it for an alternative colour or product. You will need to log a return and make a new purchase.</p>"
+          }
+        },
+        "faq_item_KyaGJc": {
+          "type": "faq_item",
+          "name": "Why does the pricing vary in different markets?",
+          "settings": {
+            "question": "Why does the pricing vary in different markets?",
+            "answer": "<p>Every effort has been taken to achieve pricing parity across markets, accommodating the inclusion of shipping and taxes for each respective territory.</p>"
+          }
+        },
+        "faq_item_9hFjTB": {
+          "type": "faq_item",
+          "name": "Will I be liable for duties and tax charges?",
+          "settings": {
+            "question": "Will I be liable for duties and tax charges?",
+            "answer": "<p>UK, EU, AUS and US orders will not be liable for taxes and duties.</p>"
+          }
+        },
+        "faq_item_bFXUVc": {
+          "type": "faq_item",
+          "name": "Why should I create an account at checkout?",
+          "settings": {
+            "question": "Why should I create an account at checkout?",
+            "answer": "<p>By creating an account you will be able to check out faster, save past order information, manage your personal information and, most importantly, register for the FIELDBAR Owners Club and claim your 5-year limited warranty. Click <a href=\"https://fieldbar.com/account/\" target=\"_self\"><strong>here</strong></a> to create an account.</p>"
+          }
+        },
+        "faq_group_rycPTe": {
+          "type": "faq_group",
+          "name": "WARRANTY",
+          "settings": {
+            "group_name": "WARRANTY"
+          }
+        },
+        "faq_item_KytjGL": {
+          "type": "faq_item",
+          "name": "How do I secure my 5-year warranty?",
+          "settings": {
+            "question": "How do I secure my 5-year warranty?",
+            "answer": "<p>Secure your 5-year warranty by joining the <a href=\"https://fieldbar.com/account/login\">FIELDBAR Owners Club</a> and registering your FIELDBAR product on our website within 60 days of purchase. Read more about what's covered on our <a href=\"https://fieldbar.co.za/pages/warranty\" target=\"_self\">Warranty page</a>.</p>"
+          }
+        },
+        "faq_item_8kcA3E": {
+          "type": "faq_item",
+          "name": "How do I lodge a warranty claim?",
+          "settings": {
+            "question": "How do I lodge a warranty claim?",
+            "answer": "<p>If you have successfully registered your FIELDBAR product within 60 days of purchase and your product falls within its 5-year warranty window, you will be able to submit a warranty claim. Log into your <a href=\"https://fieldbar.com/account/\"><strong>Owners Club Account</strong></a> and follow the prompts.</p>"
+          }
+        },
+        "faq_group_NhwMeJ": {
+          "type": "faq_group",
+          "name": "OWNERS CLUB",
+          "settings": {
+            "group_name": "OWNERS CLUB"
+          }
+        },
+        "faq_item_wyeX6U": {
+          "type": "faq_item",
+          "name": "What is the FIELDBAR Owners Club?",
+          "settings": {
+            "question": "What is the FIELDBAR Owners Club?",
+            "answer": "<p>In addition to the obvious bragging rights, Owners Club members receive extended product warranties, exclusive offers, on new products and secret perks.</p>"
+          }
+        },
+        "faq_item_p34eNd": {
+          "type": "faq_item",
+          "name": "How do I join the FIELDBAR Owners Club?",
+          "settings": {
+            "question": "How do I join the FIELDBAR Owners Club?",
+            "answer": "<p>You can join the FIELDBAR Owners Club on our website <a href=\"https://www.fieldbar.com\" title=\"https://www.fieldbar.com\"><strong>fieldbar.com</strong></a>, by creating an account and registering your FIELDBAR product within 60 days of purchase. You will find your unique serial code engraved on the plaque on the back of your FIELDBAR product. For some products, the golden plaque appears on the Certificate of Authenticity.</p>"
+          }
+        },
+        "faq_group_HhWqBy": {
+          "type": "faq_group",
+          "name": "PERSONALISATION & GIFTING",
+          "settings": {
+            "group_name": "PERSONALISATION & GIFTING"
+          }
+        },
+        "faq_item_pyww3R": {
+          "type": "faq_item",
+          "name": "How do I personalise my FIELDBAR product?",
+          "settings": {
+            "question": "How do I personalise my FIELDBAR product?",
+            "answer": "<p>Personalisation is currently only available in the United States and South Africa.<br/><br/>Navigate to your product of choice. Once you have made your selection, scroll down to the field on the product page where you can input the name or initials to be engraved. Please note this comes at an additional charge and thatthe personalisation of both handles and slings is written on the main order item's box to aid in identification. If an order contains a FIELDBAR cooler box, any additional slings and handles ordered are shipped inside the cooler box.</p>"
+          }
+        },
+        "faq_item_ab4UAg": {
+          "type": "faq_item",
+          "name": "How do I get my order gift-wrapped with a hand-written card?",
+          "settings": {
+            "question": "How do I get my order gift-wrapped with a hand-written card?",
+            "answer": "<p>Gift wrapping is not yet available outside of South Africa.</p>"
+          }
+        },
+        "faq_group_HyWf87": {
+          "type": "faq_group",
+          "name": "INSTRUCTIONS & CARE",
+          "settings": {
+            "group_name": "INSTRUCTIONS & CARE"
+          }
+        },
+        "faq_item_AqtGPg": {
+          "type": "faq_item",
+          "name": "How do I use and care for my FIELDBAR product?",
+          "settings": {
+            "question": "How do I use and care for my FIELDBAR product?",
+            "answer": "<p>Individual product use and care instructions can be accessed from the FIELDBAR <a href=\"https://apps.pagefly.io/pages/product-guide\" target=\"_self\"><strong>Product Guide</strong></a>.</p>"
+          }
+        },
+        "faq_group_gX8BAp": {
+          "type": "faq_group",
+          "name": "RETURNS & REFUNDS",
+          "settings": {
+            "group_name": "RETURNS & REFUNDS"
+          }
+        },
+        "faq_item_Lzr6aX": {
+          "type": "faq_item",
+          "name": "Can I return my FIELDBAR product?",
+          "settings": {
+            "question": "Can I return my FIELDBAR product?",
+            "answer": "<p>If you are not completely in love with your FIELDBAR product purchased from our online store, you can return it to us, in saleable condition, and in its original packaging, within 30 days of delivery for a full refund.<br/><br/>Simply email us at <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com </strong></a>with your order number and we will initiate the process. You are responsible for the costs of returning the product. FIELDBAR reserves the right to refuse a return if the product shows signs of use, has been damaged, or is not in the original packaging.</p>"
+          }
+        },
+        "faq_item_QRFVUq": {
+          "type": "faq_item",
+          "name": "How long does it take to process a refund after a return?",
+          "settings": {
+            "question": "How long does it take to process a refund after a return?",
+            "answer": "<p>We aim to process all returns as quickly as possible, but in busier periods this could take up to three weeks from when the item is received by us. You will receive a notification once a refund has been issued and, depending on your bank, it can take up to a further five business days for the funds to revert to your account. All refunds are returned to the initial form of payment. This means if you are returning a gift, we have to return the funds to the purchaser.</p>"
+          }
+        },
+        "faq_item_CeyJke": {
+          "type": "faq_item",
+          "name": "What are the refund options available for a return?",
+          "settings": {
+            "question": "What are the refund options available for a return?",
+            "answer": "<p><strong>Replacement: </strong>If your product arrives damaged or defective, we will gladly offer a replacement.<br/><br/><strong>Refund: </strong>Refunds are issued for products that are unused in accordance with our refund policy.</p>"
+          }
+        },
+        "faq_item_H3Gy6r": {
+          "type": "faq_item",
+          "name": "Are there any products that can’t be returned?",
+          "settings": {
+            "question": "Are there any products that can’t be returned?",
+            "answer": "<p>Customised or personalised products may not be returned, in addition to any products that have been used or altered in any way.</p>"
+          }
+        },
+        "faq_item_CNTpqb": {
+          "type": "faq_item",
+          "name": "Can I return an item purchased from a third-party retailer?",
+          "settings": {
+            "question": "Can I return an item purchased from a third-party retailer?",
+            "answer": "<p>Items purchased from third-party retailers must be handled directly with the retailer. Our returns policy applies only to purchases made directly from our online store.</p>"
+          }
+        },
+        "faq_group_EndVCk": {
+          "type": "faq_group",
+          "name": "REPAIRS",
+          "settings": {
+            "group_name": "REPAIRS"
+          }
+        },
+        "faq_item_DY8G4r": {
+          "type": "faq_item",
+          "name": "What repair services does FIELDBAR offer?",
+          "settings": {
+            "question": "What repair services does FIELDBAR offer?",
+            "answer": "<p>Our Field Hospital Programme allows registered owners to have cosmetic defects from reasonable wear and tear repaired. Read more about what's covered on our <a href=\"/pages/warranty\" title=\"Warranty & Repairs\">Warranty & Repairs page.</a></p>"
+          }
+        },
+        "faq_group_gT839w": {
+          "type": "faq_group",
+          "name": "PRODUCT RANGE",
+          "settings": {
+            "group_name": "PRODUCT RANGE"
+          }
+        },
+        "faq_item_QGCGBM": {
+          "type": "faq_item",
+          "name": "What are the different types of FIELDBAR cooler boxes?",
+          "settings": {
+            "question": "What are the different types of FIELDBAR cooler boxes?",
+            "answer": "<p>To date, FIELDBAR has designed three different hardcase cooler box models.<br/><br/>The FIELDBAR Drinks Box, Gin Trunk and Mini Bar are all currently available through <a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><strong>fieldbar.co.za </strong></a>(South Africa) as well as several hand-selected retailers.<br/><br/>The FIELDBAR Drinks Box is also available through <a href=\"https://wwwfieldbar.com/\" target=\"_self\"><strong>fieldbar.com </strong></a>(International) and at several hand-selected retailers internationally. The FIELDBAR Gin Trunk is currently only available in the United Kingdom, while the Mini Bar is only available in South Africa. <br/><br/>More information about FIELDBAR cooler boxes and products can be found on the FIELDBAR <a href=\"https://fieldbar.co.za/pages/product-guide\" target=\"_self\"><strong>Product Guide</strong></a>.</p><p>We invite you to acquire our products from our <a href=\"/pages/fieldbar-authorised-retailers\" target=\"_blank\" title=\"Fieldbar Authorised Retailers\"><strong>Authorised retailers</strong></a>.</p>"
+          }
+        },
+        "faq_item_4T3Dg4": {
+          "type": "faq_item",
+          "name": "Why are certain Fieldbar products not available in my region?",
+          "settings": {
+            "question": "Why are certain Fieldbar products not available in my region?",
+            "answer": "<p>We launch in South Africa first to thoroughly test products in our home market before bringing to our international audiences.<br/><br/>More information about FIELDBAR cooler boxes and products can be found on the FIELDBAR <a href=\"/pages/product-guide\" title=\"Product Guide\"><strong>Product Guide</strong></a>.</p><p>We invite you to acquire our products directly from us or from our <a href=\"/pages/fieldbar-retailers\" title=\"FIELDBAR RETAILERS\"><strong>Authorised retailers</strong>.</a></p>"
+          }
+        },
+        "faq_item_x4cCBh": {
+          "type": "faq_item",
+          "name": "What is the difference in capacity between the Drinks Box, the Gin Trunk and the Mini Bar?",
+          "settings": {
+            "question": "What is the difference in capacity between the Drinks Box, the Gin Trunk and the Mini Bar?",
+            "answer": "<p>Please view our <a href=\"/pages/size-guide\" title=\"SIZE GUIDE\"><strong>Size Guide</strong></a> to compare the different FIELDBAR cooler box models.</p>"
+          }
+        },
+        "faq_item_k7xdhd": {
+          "type": "faq_item",
+          "name": "When will you have more stock?",
+          "disabled": true,
+          "settings": {
+            "question": "When will you have more stock?",
+            "answer": "<p>As our products are handcrafted, we can only make so much each month. We release new stock of the Drinks Box on the 1st of the month at 12 noon.</p>"
+          }
+        },
+        "faq_item_AD4UQq": {
+          "type": "faq_item",
+          "name": "What does limited edition mean?",
+          "settings": {
+            "question": "What does limited edition mean?",
+            "answer": "<p>At Fieldbar, we occasionally release limited-edition products. These items are produced in small quantities and are only available for a short period or while stocks last. Once a limited edition is sold out, it will not be restocked for a period of at least twelve calendar months. To ensure you don't miss out, sign up for our newsletter or join the Owners Club for early access and exclusive offers. Due to the exclusive nature of limited edition items, the warranty terms may differ from our standard product warranty. Visit our <a href=\"/pages/warranty\" title=\"Warranty & Repairs\">Warranty Page</a> for more information. </p>"
+          }
+        },
+        "faq_group_p3My6w": {
+          "type": "faq_group",
+          "name": "GIFT CARDS",
+          "settings": {
+            "group_name": "GIFT CARDS"
+          }
+        },
+        "faq_item_NXyH6V": {
+          "type": "faq_item",
+          "name": "Do you offer gift cards on your online store?",
+          "settings": {
+            "question": "Do you offer gift cards on your online store?",
+            "answer": "<p>Gift cards can be purchased <a href=\"/collections/gift-cards\" title=\"Gift Cards\">here</a>.</p>"
+          }
+        },
+        "faq_item_YdmWVG": {
+          "type": "faq_item",
+          "name": "How do I redeem a gift card I already have?",
+          "settings": {
+            "question": "How do I redeem a gift card I already have?",
+            "answer": "<p>You redeem a gift card by entering your gift card code during the checkout process.<br/><br/><strong>Gift card terms and conditions: </strong>FIELDBAR Gift Cards (“Gift Cards”) may only be redeemed at <a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><strong>fieldbar.co.za</strong></a> or <a href=\"https://www.fieldbar.co.za/\"><strong>fieldbar.com</strong></a> Gift Cards are not returnable, exchangeable, or refundable for cash except to the extent required by applicable law. The resale of Gift Cards is not permitted without our consent.<br/><br/>You cannot redeem a Gift Card in conjunction with any other voucher or discount code.<br/><br/>Lost or stolen cards will not be replaced. The risk of loss and title for Gift Cards pass to the purchaser upon sale. FIELDBAR shall have no liability to you for lost, damaged or stolen Gift Cards or the unauthorised use of your Gift Card by third parties.<br/><br/>Balance inquiries can be made by emailing <a href=\"mailto:hello@fieldbar.com\"><strong>hello@fieldbar.com</strong></a>. Gift Cards are not reloadable.<br/><br/>Gift Cards are valid for 5 years, however the gift card holder is responsible for paying any additional outstanding amount. Gift Cards purchased from FIELDBAR expire on the later of the first anniversary of the date of purchase, or any longer expiration period required by applicable law.</p>"
+          }
+        },
+        "faq_group_fMHXx7": {
+          "type": "faq_group",
+          "name": "SAFE SHOPPING",
+          "settings": {
+            "group_name": "SAFE SHOPPING"
+          }
+        },
+        "faq_item_3mP9ie": {
+          "type": "faq_item",
+          "name": "Where can I purchase your authenticated products?",
+          "settings": {
+            "question": "Where can I purchase your authenticated products?",
+            "answer": "<p>To ensure a safe purchase, shop directly from our official website, <a href=\"https://www.fieldbar.co.za/\" target=\"_self\"><span style=\"text-decoration:underline\"><strong>www.fieldbar.co.za </strong></span></a>(South Africa) or <a href=\"https://www.fieldbar.com/\" target=\"_self\"><span style=\"text-decoration:underline\"><strong>www.fieldbar.com </strong></span></a>(International).<br/><br/>Scammers are becoming increasingly sophisticated. Please beware of websites with similar URLs to our own (the spelling will be different to that specified here). A list of our authorised retailers can be found at <a href=\"https://fieldbar.co.za/pages/fieldbar-retailers\"><span style=\"text-decoration:underline\"><strong>https://fieldbar.com/pages/fieldbar-retailers</strong></span></a><span style=\"text-decoration:underline\"><strong>.<br/><br/></strong></span>Please email <a href=\"mailto:sales@fieldbar.com\"><strong>sales@fieldbar.com</strong></a> for further information.</p>"
+          }
+        },
+        "faq_group_wkBiwX": {
+          "type": "faq_group",
+          "name": "PRE-ORDERS",
+          "settings": {
+            "group_name": "PRE-ORDERS"
+          }
+        },
+        "faq_item_tGQLmE": {
+          "type": "faq_item",
+          "name": "How do pre-orders work?",
+          "settings": {
+            "question": "How do pre-orders work?",
+            "answer": "<p>From time to time, FIELDBAR offers pre-orders on new product launches. Pre-order products require either a deposit or the full value amount to be paid to secure an item that is yet to be produced. This is done in advance for new products, to ensure the correct opening colour mix is produced.<br/><br/><strong>BEFORE ORDERING A PRE-ORDER PRODUCT, PLEASE READ THE RULES & REGULATIONS BELOW:</strong></p><p>FIELDBAR cannot be held liable for any unforeseen delays that may occur if you wish to pre-order an item, so please take extra care when placing your order. We will, however, update you after pre-order when your items are available and are ready to be dispatched from our factory.<br/><br/><strong>Once you place an order with us, it means that you are willing to accept these terms and conditions:<br/><br/></strong>1. Pre-orders require payment of either a deposit or the full value of the item. If a deposit is paid, the balance of the payment must be paid once the product is ready to be shipped.<br/><br/>2. Pre-orders can be cancelled at any time before they have been shipped from our factory. Pre-order deposits are fully refundable at any time, but should you request a refund you will forfeit your place on the Pre-Orders List.<br/><br/>3. We cannot guarantee a specific shipping date and estimated shipping dates are subject to change. We will ship orders the moment they are available and the balance of payment for the product has been received.<br/><br/>4. if you don't like your product you can return it in its original packaging (unused) within 30 days and get a full refund (standard returns policy).<br/><br/>5. Please do not order if you are not able to wait.<br/><br/>6. Once you place an order with us, it means that you are willing to accept these terms and conditions.</p>"
+          }
+        },
+        "faq_item_qLLfNt": {
+          "type": "faq_item",
+          "name": "The Pre-Order List",
+          "settings": {
+            "question": "The Pre-Order List",
+            "answer": "<p>This list allows you to reserve a FIELDBAR product for future delivery, on a first-come, first-served basis. You need to pay the deposit or the full value of the product to secure your place on this list. You will be asked to pay any outstanding balances of the purchase price when the product is ready to be shipped. If you do not make payment within 20 days from being requested, the order will be cancelled.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_group_H4zmBA",
+        "faq_item_7qcpML",
+        "faq_item_iVCUWP",
+        "faq_item_rUNC68",
+        "faq_item_nPPy8r",
+        "faq_item_wfWtGH",
+        "faq_item_bMjhi7",
+        "faq_item_KyaGJc",
+        "faq_item_9hFjTB",
+        "faq_item_bFXUVc",
+        "faq_group_rycPTe",
+        "faq_item_KytjGL",
+        "faq_item_8kcA3E",
+        "faq_group_NhwMeJ",
+        "faq_item_wyeX6U",
+        "faq_item_p34eNd",
+        "faq_group_HhWqBy",
+        "faq_item_pyww3R",
+        "faq_item_ab4UAg",
+        "faq_group_HyWf87",
+        "faq_item_AqtGPg",
+        "faq_group_gX8BAp",
+        "faq_item_Lzr6aX",
+        "faq_item_QRFVUq",
+        "faq_item_CeyJke",
+        "faq_item_H3Gy6r",
+        "faq_item_CNTpqb",
+        "faq_group_EndVCk",
+        "faq_item_DY8G4r",
+        "faq_group_gT839w",
+        "faq_item_QGCGBM",
+        "faq_item_4T3Dg4",
+        "faq_item_x4cCBh",
+        "faq_item_k7xdhd",
+        "faq_item_AD4UQq",
+        "faq_group_p3My6w",
+        "faq_item_NXyH6V",
+        "faq_item_YdmWVG",
+        "faq_group_fMHXx7",
+        "faq_item_3mP9ie",
+        "faq_group_wkBiwX",
+        "faq_item_tGQLmE",
+        "faq_item_qLLfNt"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "info_heading": "Frequently Asked Questions & Support",
+        "info_text": "<p>Call: <a href=\"tel:+27213005875\">+27 (0) 21 300 5875<br/></a>E-Mail Us: <a href=\"mailto:hello@fieldbar.com\" target=\"_blank\">hello@fieldbar.com</a></p>",
+        "right_image": "shopify://shop_images/Artboard_16_png.webp",
+        "button1_text": "secure my 5-year warranty",
+        "button1_url": "https://fieldbar.com/account?view=registered-products",
+        "button2_text": "contact customer service",
+        "button2_url": "mailto:hello@fieldbar.com"
+      }
+    },
+    "rich_text_mYgiJf": {
+      "type": "rich-text",
+      "blocks": {
+        "text_8EERV6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you do not receive the answers you seek, please contact us at<br/><br/>Call: <a href=\"tel:+27213005875\">+27 (0) 21 300 5875</a></p><p>Email Us: <a href=\"mailto:hello@fieldbar.com\" target=\"_blank\">hello@fieldbar.com</a></p><p><br/>Monday - Thursday, 9am - 4pm<br/>Friday, 9am - 2pm UTC+2<br/><br/>We aim to reply to all emails within 24 hours (weekends and holidays excluded).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_8EERV6"
+      ],
+      "custom_css": [
+        "{display: none; font-size: 0.8em; padding: 1em; color: #002b4d;}",
+        "@media screen and (max-width: 61.8125em) {{display: block !important; padding: 0px 1em; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_4dVF7r",
+    "rich_text_mYgiJf"
+  ]
+}

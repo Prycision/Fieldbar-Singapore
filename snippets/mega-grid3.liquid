@@ -1,0 +1,18 @@
+<div
+  id="imgrid1"
+  class="mega-menu-grid imgrid"
+  style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+  {% for menu_item in shop.metaobjects.product_guide_mega_menu.values limit: 2 %}
+    <div class="mega-menu-item2">
+      <a href="{{ menu_item.system.url }}">
+        {% if menu_item.img %}
+          <img
+            id="imgrid"
+            src="{{ menu_item.img | file_url }}"
+            alt="Mega menu image {{ forloop.index }}"
+            loading="lazy">
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,2907 @@
+{% schema %}
+{
+  "name": "Authorised Retailers",
+  "tag": "section",
+  "class": "fieldbar-retailers-map",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Authorised Retailers"
+    }
+  ]
+}
+{% endschema %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+<style>
+
+.fieldbar-retailers-map {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Gotham Narrow Book', sans-serif;
+}
+.fieldbar-retailers-map__map {
+  flex: 2;
+  height: 100%;
+  z-index: 0;
+}
+.fieldbar-retailers-map__panel {
+  flex: 1;
+  background: #F3EFEB;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  padding: 0 1em;
+}
+.fieldbar-retailers-map__header {
+  position: sticky;
+  top: 0;
+  height: 12em;
+  background-color: #F3EFEB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1;
+  padding-bottom: 1em;
+}
+.fieldbar-retailers-map__header h2 {
+  font-size: 1.5em;
+  color: #002B4D;
+  margin: 0;
+  text-align: center;
+}
+.fieldbar-retailers-map__search {
+  position: relative;
+  margin-top: 0.5em;
+}
+.fieldbar-retailers-map__search input {
+  width: 100%;
+  padding: 0.75em 2.5em 0.75em 0.75em;
+  background: #F3EFEB;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #002B4D;
+}
+.fieldbar-retailers-map__search input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.fieldbar-retailers-map__search::after {
+  content: '';
+  position: absolute;
+  right: 0.75em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0729/3753/7840/files/serc_icon_18153d24-c5f5-4871-ab1e-cb1a8a9b34fa.svg?v=1750153912');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.fieldbar-retailers-map__list {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.flagship-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  display: inline-block;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 1em 1.5em !important;
+  color: #002B4D;
+  font-family: 'Gotham Narrow Book', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  font-family: 'Gotham Medium', sans-serif;
+  text-transform: uppercase;
+  color: #002B4D;
+  font-size: 1.4em; /* Adjusted size */
+  margin-bottom: 0.4em;
+}
+
+.leaflet-popup-content .popup-button {
+  display: inline-block;
+  margin-top: 1em;
+  background: #002B4D;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+  text-transform: uppercase; /* Button text in uppercase */
+  letter-spacing: 0.05em;
+}
+
+.leaflet-popup-content .popup-button:hover {
+  background: #FF8A3D;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #002B4D;
+  font-size: 1.5em;
+  padding: 0.5em 0.75em;
+  line-height: 1em;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+.retailer-card {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 8em;
+}
+.retailer-card h3 {
+  margin: 0;
+  font-family: 'Gotham Medium', sans-serif !important;
+  text-transform: uppercase;
+  color: #002B4D;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.retailer-card:hover h3,
+.retailer-card.active h3 {
+  color: #FF8A3D;
+}
+.retailer-card details {
+  margin-top: 0.5em;
+}
+.retailer-card summary {
+  list-style: none;
+  position: relative;
+  padding-right: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Gotham Narrow Book', sans-serif;
+}
+.retailer-card summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+.retailer-card details[open] summary::after {
+  content: '−';
+}
+.retailer-card details div {
+  margin-top: 0.5em;
+  padding-left: 0.5em;
+}
+.retailer-card .online-only-note {
+  color: #FF8A3D;
+  font-style: italic;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 0.25em;
+}
+.view-all-button {
+  padding: 1em;
+  text-align: center;
+  background: #002B4D;
+  color: white;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: auto;
+}
+.fieldbar-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 350px;
+  height: 100vh;
+  max-height: 100vh;
+  background: white;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+.fieldbar-drawer.open {
+  right: 0;
+}
+.fieldbar-drawer-close {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 10;
+}
+.fieldbar-drawer h3 {
+  font-family: 'Gotham Medium', sans-serif;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 5;
+  padding: 1em 1.5em;
+  border-bottom: 1px solid #eee;
+}
+#fbRegionList {
+  padding-left: 2em;
+  padding-right: 1.5em;
+  padding-bottom: 2em;
+}
+#fbRegionList strong {
+  font-family: 'Gotham Narrow Book', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  display: block;
+  margin: 1em 0 0.5em;
+}
+
+.fb-no-results {
+  display: none;
+  text-align: center;
+  color: #486A7A;
+  font-size: 0.9em;
+  margin-top: 1em;
+  line-height: 1.6em;
+}
+
+.fb-underline-link {
+  position: relative;
+  text-decoration: none;
+  color: #486A7A;
+  transition: color 0.4s ease;
+  padding-bottom: 2px;
+}
+
+.fb-underline-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #486A7A;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.fb-underline-link:hover {
+  color: #FF8A3D;
+}
+
+.fb-underline-link:hover::after {
+  transform: scaleX(0);
+  background-color: #FF8A3D;
+}
+
+@media screen and (max-width: 768px) {
+  .fieldbar-retailers-map {
+    flex-direction: column;
+    height: auto;
+   min-height: 135vh;
+  }
+
+  .fieldbar-retailers-map__map {
+    order: -1; /* Ensure map comes first */
+    width: 100%;
+    height: 60vh; /* Updated from 80vh to 60vh */
+  }
+
+  .fieldbar-retailers-map__panel {
+    order: 2;
+    width: 100%;
+    padding: 1.5em 1em;
+    background: #F3EFEB;
+  }
+
+  .fieldbar-retailers-map__header {
+    position: static;
+    height: auto;
+    padding-bottom: 1em;
+  }
+
+  .fieldbar-retailers-map__header h2 {
+    font-size: 1.2em;
+  }
+
+  .fieldbar-retailers-map__list {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .view-all-button {
+    font-size: 0.95em;
+    padding: 1em;
+  }
+
+  .leaflet-popup-content {
+    font-size: 1em;
+    padding: 1em 1.2em !important;
+  }
+
+  .leaflet-popup-content strong {
+    font-size: 1.2em;
+  }
+
+  .leaflet-popup-content .popup-button {
+    font-size: 0.75em;
+    width: 100%;
+  }
+
+  .fieldbar-drawer {
+    width: 100%;
+  }
+}
+
+
+
+
+</style>
+
+<div class="fieldbar-retailers-map">
+  <div id="fb-map" class="fieldbar-retailers-map__map"></div>
+  <div class="fieldbar-retailers-map__panel">
+    <div class="fieldbar-retailers-map__header">
+      <h2>Fieldbar Authorised Retailers</h2>
+      <div class="fieldbar-retailers-map__search">
+        <input type="text" id="fbSearch" placeholder="Search by name or city..." />
+      </div>
+    </div>
+     <p id="fbNoResults" class="fb-no-results">
+  Nothing here, yet.<br/>
+  We didn’t find a match this time, <br/>but our list of authorised retailers <br/>is always expanding.<br/>
+  Feel free to explore another region or <br/> <a href="/collections/all" class="fb-underline-link">BROWSE THE CATALOGUE</a>.
+</p>
+    <div class="fieldbar-retailers-map__list" id="fbRetailerList"></div>
+    <div class="view-all-button" onclick="toggleDrawer()">View All Stores</div>
+  </div>
+</div>
+
+<div id="fbDrawer" class="fieldbar-drawer">
+  <div class="fieldbar-drawer-close" onclick="toggleDrawer()">×</div>
+  <h3>All Stores by Region</h3>
+  <div id="fbRegionList"></div>
+</div>
+
+<script>
+const retailers = [
+  {
+    "name": "fieldbar.co.za",
+    "region": "South Africa (nationwide)",
+    "online_only": true,
+    "flagship": true,
+    "locations": [
+      {
+        "address": "",
+        "lat": -33.9249,
+        "lng": 18.4241,
+        "opening": "Monday - Thursday, 9am - 4pm; Friday 9am - 2pm UTC+2"
+      }
+    ]
+  },
+  {
+    "name": "Yuppiechef",
+    "region": "South Africa (nationwide)",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Shop 146A, Victoria Wharf Shopping Centre, Breakwater Blvd, V&A Waterfront, Cape Town 8001, South Africa",
+  "lat": -33.9062,
+  "lng": 18.4225,
+  "opening": "Mon-Sun: 09:00-21:00"
+}
+
+    ]
+  },
+  {
+    "name": "Pantry by Marble",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "170 Jan Smuts Avenue, Rosebank, Johannesburg, Gauteng 2196, South Africa",
+        "lat": -26.1243,
+        "lng": 28.0341,
+        "opening": "Open 24 hours daily"
+      }
+    ]
+  },
+  {
+    "name": "Iconomy",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Shop 46 Design Quarter, Cnr Leslie Ave and William Nicol Drive, Fourways Johannesburg Gauteng 2055 South Africa",
+         "lat": -26.03052,
+         "lng": 28.01136,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Reflecting Africa",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "1 Ludwig Muhl Road Somerset West Cape Town 7130 South Africa",
+        "lat": -34.060152,
+        "lng": 18.845837,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Kitchenique",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Shop 58, Woodmead Retail Park, 1 Waterval Cres, Woodmead, Sandton, 2191, South Afrca",
+        "lat": -26.055686,
+        "lng": 28.0928672,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Kloppers",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Loch Logan Waterfront Mall, 105-107 Henry Street, Willows, Bloemfontein 9300, South Africa",
+  "lat": -29.1155,
+  "lng": 26.2095,
+  "opening": "Mon-Fri: 09:00-18:00; Sat: 09:00-17:00; Sun: 09:00-15:00 (Public Holidays: 09:00-14:00)"
+}
+
+    ]
+  },
+  {
+    "name": "Truestory",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "1 Jones Road, Kempton Park (Ekurhuleni), Gauteng 1459, South Africa",
+  "lat": -26.09844,
+  "lng": 28.23508,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Morrie's Pantry",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "204 Florence Ribeiro Avenue, Nieuw-Muckleneuk, Pretoria, Gauteng, South Africa",
+        "lat": -25.772222,
+        "lng": 28.229167,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Zar World",
+    "region": "Gauteng",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Shop 107, Fourways Mall, 11 Ruby Close, Fourways, Gauteng 2192, South Africa",
+        "lat": -26.0189,
+        "lng": 28.0042,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Armitage Outfitters",
+    "region": "KwaZulu-Natal",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Shop 8, Park Square, 1 Park Ave, Umhlanga Ridge, uMhlanga, 4321, South Africa",
+        "lat": -29.725278,
+        "lng": 31.085833,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "The Private Collection",
+    "region": "KwaZulu-Natal",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Piggly Wiggly Centre  R103 Dargle Road Lions River, Howick KZN 3270 South Africa",
+        "lat": -29.45831,
+        "lng": 30.135739,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Bespoke Home",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+       "address": "6 Beach Road, Woodstock, Cape Town WC 7925, South Africa",
+  "lat": -33.9259,
+  "lng": 18.4645,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Thistle & King",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "UNIT 6 & 7, next to the Tourism Office, Thistle & King on Voortrekker Sentrum, Reitz Street, Robertson 6705, South Africa",
+        "lat": -33.805883,
+       "lng": 19.883147,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Il Bespoke",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Shop 9, 104 Main Rd, Hermanus, 7200, South Africa",
+          "lat": -34.4195,
+           "lng": 19.2430,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Metelerkamps",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "3 Union Street Knysna Western Cape 6570 South Africa",
+         "lat": -34.039986,
+         "lng": 23.051507,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Windmill Junction",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "52 Somerset Street, GRAAFF-REINET 6280 Graaff-Reinetet Eastern Cape 6280 South Africa",
+        "lat": -32.2539,
+        "lng": 24.5366,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Vacay Living",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "1 Lyme Road South  Port Elizabeth  Eastern Cape  6312 South Africa",
+       "lat": -34.157273,
+       "lng": 24.831161,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Lush Lodges",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Stand 2, Black Rhino Game Reserve, Pilanesberg National Park, 7130, South Africa",
+        "lat": -25.164088,
+        "lng": 26.937911,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Art de Olivia",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "2 Faure Street, Swellendam, Western Cape 6740, South Africa",
+         "lat": -34.033333,
+         "lng": 20.433333,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "In House",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Steenberg Village, Cape Town 7945, South Africa",
+       "lat": -34.067,
+  "lng": 18.467,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      },
+      {
+        "address": "Fountains Mall, Jeffreys Bay 6331, South Africa",
+        "lat": -34.033333,
+        "lng": 24.916668,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      },
+      {
+        "address": "Village Shopping Centre, St Francis Bay 6312, South Africa",
+        "lat": -34.0306924,
+        "lng": 24.9006559,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Wildsprout",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "278 Main Road, Kenilworth 7708, South Africa",
+        "lat": -33.99585,
+        "lng": 18.47805,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      },
+      {
+        "address": "Constantia Village Courtyard, Constantia 7806, South Africa",
+        "lat":  -34.03139,
+        "lng": 18.41833,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      },
+      {
+        "address": "267 Main Road, Sea Point 8005, South Africa",
+        "lat": -33.91742,
+        "lng": 18.38627,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Mia M\u00e9lange",
+    "region": "Western Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "375 Albert Rd, Woodstock Cape Town 7915, South Africa",
+        "lat": -33.92765,
+        "lng": 18.45788,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      },
+      {
+        "address":  "7 Bird St, Stellenbosch Central Stellenbosch 7600, South Africa",
+        "lat": -33.92907,
+        "lng": 18.85713,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Graham Beck",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Devon Valley Hotel, 1 Devon Valley Rd, Stellenbosch 7600, Western Cape, South Africa",
+  "lat": -33.90353,
+  "lng": 18.81467,
+  "opening": "Mon-Sun: Various (hotel open 24 h; restaurant & spa by reservation)"
+}
+    ]
+  },
+  {
+    "name": "Tokara Wine Estate",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Helshoogte Rd, Stellenbosch 7600, South Africa",
+  "lat": -33.92251,
+  "lng": 18.91821,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Waterford Estate",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+       "address": "Upper Blaauwklippen Rd, Helderberg Rural, Stellenbosch 7600, South Africa",
+  "lat": -33.9632096,
+  "lng": 18.8507034,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Warwick Wine Estate",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address":"R44, Stellenbosch 7607, South Africa",
+  "lat": -33.9333,
+  "lng": 18.8500,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Glen Carlou Vineyards",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address": "Klapmuts Simondium Rd, Simondium/Klapmuts 7625, South Africa",
+  "lat": -33.8457867,
+  "lng": 18.9328741,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Buitenverwachting",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address": "Buitenverwachting, 37 Klein Constantia Rd, Constantia 7806, South Africa",
+  "lat": -34.03972,
+  "lng": 18.42333,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Spier",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Cowshed, Spier Wine Farm, Baden Powell Drive (R310), Stellenbosch Western Cape 7599, South Africa",
+  "lat": -33.9730,
+  "lng": 18.7853,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 11:00-18:00"
+}
+
+    ]
+  },
+  {
+    "name": "Vergelegen",
+    "region": "Wine partners",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address":"Lourensford Rd, Somerset West 7130, South Africa",
+  "lat": -34.06781,
+  "lng": 18.89544,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Baubles & Bling",
+    "region": "Eastern Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address":"2 Rochester Rd, Vincent, East London 5217, South Africa",
+  "lat": -33.0000,
+  "lng": 27.9500,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Mi Designs",
+    "region": "Eastern Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address":  "1 Bridge St, South End, Gqeberha 6001, South Africa",
+  "lat": -33.96956,
+  "lng": 25.61865,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Windmill Junction",
+    "region": "Eastern Cape",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "52 Somerset St, Graaff-Reinet 6280, South Africa",
+  "lat": -32.25138,
+  "lng": 24.53389,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Miru Living",
+    "region": "Free State",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "EnStyle Building, 100 Bree St, Parys 9585, South Africa",
+  "lat": -26.89777,
+  "lng": 27.45496,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Muse Gifts and Decor",
+    "region": "North West",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address":  "Platinum Square, 74 Gareth Roberts Ave, Cashan, Rustenburg 0299, South Africa",
+  "lat": -25.7013885,
+  "lng": 27.2530643,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "fieldbar.com",
+    "region": "International",
+    "online_only": true,
+    "flagship": true,
+    "locations": []
+  },
+  {
+    "name": "Harrods",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "87-135 Brompton Rd, London SW1X 7XL, United Kingdom",
+  "lat": 51.499393,
+  "lng": -0.163355,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Fortnum & Mason",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "81 Piccadilly, London W1A 1ER, United Kingdom",
+  "lat": 51.51008,
+  "lng": -0.13633,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Anthropologie",
+    "region": "United Kingdom",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+       "lat": 51.5135,
+       "lng": -0.1388,
+       "opening": "Mon-Sat: 09:30-19:00; Sun: 12:00-18:00"
+    }
+  ]
+  },
+  {
+    "name": "Always Sunday",
+    "region": "United Kingdom",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ ]
+  },
+  {
+    "name": "Hudson House & Home",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "The Studio, Black and White Farmhouse, Hollington, Newbury RG20 9XN, United Kingdom",
+  "lat": 51.3469,
+  "lng": -1.3853,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "The Home Library",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Home Library, 25 Alderley Road, Wilmslow SK9 1HY, United Kingdom",
+  "lat": 53.326,
+  "lng": -2.232,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 11:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "Misty & Claridge",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "14 Chapel St, Guildford GU1 3UW, United Kingdom",
+  "lat": 51.234747,
+  "lng": -0.572973,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Willow + Co",
+    "region": "United Kingdom",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "Willow & Co Lifestyle Store & Café, Wheelwrights Corner, Old Market, Nailsworth GL6 0DU, United Kingdom",
+  "lat": 51.7180,
+  "lng": -2.2255,
+  "opening": "Tue-Thu: 09:00-15:00; Fri-Sat: 09:00-16:00; Sun: 10:00-15:00; Mon: Closed"
+}
+    ]
+  },
+  {
+    "name": "The Magnum Company",
+    "region": "United Kingdom",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+ "address": "Unit 16, Waldegraves Business Park, Waldegraves Lane West Mersea, Colchester, Essex CO5 8SE, United Kingdom",
+  "lat": 51.7929,
+  "lng": 0.9261,
+  "opening": "Tue-Sat: 10:00-17:00; Sun: 10:00-14:00; Mon: Closed"
+     }
+     ]
+  },
+  {
+    "name": "Whitebox Cocktails",
+    "region": "United Kingdom",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+       "lat": 51.5135,
+       "lng": -0.1388,
+       "opening": "Mon-Sat: 09:30-19:00; Sun: 12:00-18:00"
+    }
+    ]
+  },
+  {
+    "name": "Dallmayr",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Dienerstraße 14-15, 80331 München, Germany",
+  "lat": 48.13760,
+  "lng": 11.57500,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Weinraum Sylt",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "WeinRaum Sylt, Bismarckstraße 12, Westerland 25980, Germany",
+  "lat": 54.9070,
+  "lng": 8.3088,
+  "opening": "Mon-Sat: 13:00-00:00; Sun: Closed"
+}
+    ]
+  },
+   {
+    "name": "RAUM concept store",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Marktstraße 6, 90530 Wendelstein, Germany",
+  "lat": 49.35606,
+  "lng": 11.14377,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+   {
+    "name": "* elbsterne *",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "elbsterne, Hasenhöhe 6, 22587 Hamburg, Germany",
+  "lat": 53.5458,
+  "lng": 9.8684,
+  "opening": "Mon-Fri: 09:30-18:30; Sat: 10:00-14:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Garten-Stuhl",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+       "address": "Bahnhofstraße 14, 18055 Rostock, Mecklenburg-Vorpommern, Germany",
+  "lat": 54.0830,
+  "lng": 12.1327,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "The Cape House",
+    "region": "Germany",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address":"Kirschgarten 22, 55116 Mainz, Germany",
+  "lat": 49.9922,
+  "lng": 8.2725,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+   {
+    "name": "Twin GmbH",
+    "region": "Germany",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+       
+  "address": "Louisenstraße 99, 61348 Bad Homburg, Germany",
+  "lat": 50.2298,
+  "lng": 8.6072,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+     ]
+  },
+   {
+    "name": "Magazin",
+    "region": "Austria",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Magazin Handels GmbH & Co KG, Augustinergasse 13, 5020 Salzburg, Austria",
+  "lat": 47.8019,
+  "lng": 13.0320,
+  "opening": "Tue-Sat: 10:00-00:00; Sun & Mon: Closed"
+}
+     ]
+  },
+  {
+    "name": "Lördag Interiör",
+    "region": "Sweden",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Lördag Interiör, Norra Rudbecksgatan 8, 752 36 Uppsala, Sweden",
+  "lat": 59.8600,
+  "lng": 17.6380,
+  "opening": "Fri-Sat: Open (exact hours not listed); Sun-Thu: Closed"
+}
+     ]
+  },
+  {
+    "name": "Newport Collection",
+    "region": "Sweden",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Nordiska Kompaniet (NK), Hamngatan 18-20, 11147 Stockholm, Sweden",
+  "lat": 59.3349,
+  "lng": 18.0640,
+  "opening": "Mon-Fri: 10:00-19:00; Sat: 10:00-18:00; Sun: 11:00-17:00"
+}
+     ]
+  },
+  {
+    "name": "Griin",
+    "region": "France",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ ]
+  },
+   {
+    "name": "Gueuleton",
+    "region": "France",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "Impasse du Centre de Secours 24, Cozes 17120, France",
+  "lat": 45.5843,
+  "lng": -0.8320,
+  "opening": "—"
+}
+    ]
+  },
+    {
+    "name": "WAHO",
+    "region": "France",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "12 Avenue Albert Schweitzer, Saint-Rémy-de-Provence 13210, France",
+  "lat": 43.7914,
+  "lng": 4.8336,
+  "opening": "—"
+}
+    ]
+  },
+   {
+    "name": "Via Garibaldi 12 Lifestylestore",
+    "region": "Italy",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "Via Giuseppe Garibaldi 12, Genoa 16124, Italy",
+  "lat": 44.41102,
+  "lng": 8.93296,
+  "opening": "Tue-Sat: 10:00-14:00, 16:00-19:00; Sun-Mon: Closed"
+}
+    ]
+  },
+  {
+    "name": "York Living",
+    "region": "Denmark",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Skomagergade 33A, 4000 Roskilde, Denmark",
+  "lat": 55.6359,
+  "lng": 12.0854,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+   {
+    "name": "A'more lifestyle boutique",
+    "region": "Croatia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Medulićeva 12, 10000 Zagreb, Croatia",
+  "lat": 45.81187,
+  "lng": 15.96669,
+  "opening": "Mon-Sat: 09:00-23:00; Sun: Closed"
+}
+
+    ]
+  },
+{
+    "name": "Firehouse Living",
+    "region": "Cyprus",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+     {
+ "address": "Shop 4, Agios Pavlos Building, 228 Arch. Makariou III Ave, Limassol 3030, Cyprus",
+  "lat": 34.8631,
+  "lng": 33.0458,
+  "opening": "Tue-Fri: 14:30-19:00 (10:00-13:00 by appointment); Sat: 10:30-13:00; Sun-Mon: Closed"
+     }
+   ]
+  },
+    {
+    "name": "La Perla Rosa",
+    "region": "Spain",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+     {
+  "address": "Carrer del Bisbe Verger 20, 07650 Santanyí, Illes Balears, Spain",
+  "lat": 39.3575,
+  "lng": 3.1258,
+  "opening": "Tue-Fri: 14:30-19:00 (10:00-13:00 by appointment); Sat: 10:30-13:00; Sun-Mon: Closed"
+     }
+   ]
+  },
+   {
+    "name": "Gavetão- Decoração de interiores",
+    "region": "Portugal",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+     {
+  "address": "Rua Sampaio Bruno 3A, 1350-281 Lisboa, Portugal",
+  "lat": 38.7158,
+  "lng": -9.1600,
+  "opening": "Tue-Fri: 14:30-19:00 (10:00-13:00 by appointment); Sat: 10:30-13:00; Sun-Mon: Closed"
+     }
+   ]
+  },
+  {
+    "name": "Boma",
+    "region": "Mauritius",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Bel Ombre Territory, 61002 Bel Ombre, Mauritius",
+  "lat": -20.50192,
+  "lng": 57.42551,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Cotton Cloud",
+    "region": "Botswana",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Gaborone, Botswana",
+  "lat": -24.6282,
+  "lng": 25.9231,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Leon Engelbrecht Design",
+    "region": "Namibia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "30 Julius K Nyerere St, Windhoek 10005, Namibia",
+  "lat": -22.58093,
+  "lng": 17.08475,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Ideal Range",
+    "region": "Zimbabwe",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address":"The Jacobs Park, 46 Duiker Road, Borrowdale, Harare (Postal code unavailable), Zimbabwe",
+  "lat": -17.75583,
+  "lng": 31.08683,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Accoutrement",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "611 Military Rd, Mosman NSW 2088, Australia",
+  "lat": -33.8390,
+  "lng": 151.2396,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+   {
+    "name": "Aura Home",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "529 Malvern Road, Toorak VIC 3142, Australia",
+  "lat": -37.8460,
+  "lng": 145.0035,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 10:00-16:00"
+},
+{
+  "address": "278 Coventry Street, South Melbourne VIC 3205, Australia",
+  "lat": -37.8330,
+  "lng": 144.9611,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "Avenue Luxe",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "10 Railway Ave, Wahroonga NSW 2076, Australia",
+  "lat": -33.71751,
+  "lng": 151.11031,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Brookfield Gardens",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+     {
+  "address": "Brookfield Gardens & Wild Canary, 2371 Moggill Road, Brookfield QLD 4069, Australia",
+  "lat": -27.5025,
+  "lng": 152.9458,
+  "opening": "Garden Centre: Mon-Fri: 08:30-17:00; Sat-Sun: 08:00-17:00 • Bistro: Mon-Fri: 08:30-15:00 (kitchen til 14:00); Sat-Sun: 08:00-15:00 (kitchen til 14:00)"
+}
+
+    ]
+  },
+   {
+    "name": "BY KIM",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+     {
+  "address": "MONPERE Salon & Academy, 3-5/686 New South Head Rd, Rose Bay NSW 2029, Australia",
+  "lat": -33.8741,
+  "lng": 151.2729,
+  "opening": "By appointment only"
+},
+{
+  "address": "Angel Hanna Eyebrow Specialist, Shop 5, 686 New South Head Rd, Rose Bay NSW 2029, Australia",
+  "lat": -33.8741,
+  "lng": 151.2730,
+  "opening": "Tue-Thu: 09:30-20:00; Fri: 09:30-18:00; Sat: 08:30-17:00; Sun & Mon: Closed"
+},
+{
+  "address": "The Ballet Class Studio, 686 New South Head Rd, Rose Bay NSW 2029, Australia",
+  "lat": -33.8741,
+  "lng": 151.2729,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "Confetti Emporium",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Confetti Emporium, 194 Baylis Street, Wagga Wagga NSW 2650, Australia",
+  "lat": -35.1124,
+  "lng": 147.3590,
+  "opening": "Mon-Wed: 09:30-17:30; Thu: 09:30-18:30; Fri: 09:30-17:30; Sat: 09:00-16:00; Sun: Closed"
+}
+    ]
+  },
+   {
+    "name": "EvvE COLLECTIVE",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "112 Bathurst Street, Condobolin NSW 2877, Australia",
+  "lat": -33.0880,
+  "lng": 147.1490,
+  "opening": "Mon-Wed: 09:30-17:30; Thu: 09:30-18:30; Fri: 09:30-17:30; Sat: 09:00-16:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Few & Far",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Unit 17, 115-151 Dunning Avenue, Rosebery NSW 2018, Australia",
+  "lat": -33.9176,
+  "lng": 151.1814,
+  "opening": "Mon-Sun: 10:00-17:00"
+},
+{
+  "address": "133 Queen Street, Berry NSW 2535, Australia",
+  "lat": -34.7742,
+  "lng": 150.6960,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-16:00"
+},
+{
+  "address": "351 Bong Bong Street, Bowral NSW 2576, Australia",
+  "lat": -34.4792,
+  "lng": 150.4181,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-16:00"
+},
+{
+  "address": "10 Currambene Street, Huskisson NSW 2540, Australia",
+  "lat": -35.0418,
+  "lng": 150.6713,
+  "opening": "Mon-Thu: 10:00-17:00; Fri-Sat: 10:00-16:00; Sun: 10:00-16:00"
+},
+{
+  "address": "11 Erina Road, Huskisson NSW 2540, Australia",
+  "lat": -35.0418,
+  "lng": 150.6713,
+  "opening": "Mon-Sat: 10:00-16:00; Sun: 10:00-15:00"
+},
+{
+  "address": "351 Lawrence Hargrave Drive, Thirroul NSW 2515, Australia",
+  "lat": -34.3132,
+  "lng": 150.9203,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-16:00"
+}
+    ]
+  },
+   {
+    "name": "Good Living Home",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Quarry Centre, 57 Hilton Avenue, Hilton 3245, KwaZulu-Natal, South Africa",
+  "lat": -29.560, 
+  "lng": 30.300, 
+  "opening": "Mon-Fri: 09:00-17:00; Sat: 09:00-14:00; Sun: 09:00-14:00"
+}
+
+    ]
+  },
+  {
+    "name": "Michael Reid Murrurundi",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "Corner of Boyd Street & Mayne Street, Murrurundi NSW 2338, Australia",
+  "lat": -31.9609,
+  "lng": 150.7015,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Magnolia Interiors Pty Ltd",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Albion Fine Trades (Wineism), 97 Sandgate Rd, Albion QLD 4010, Australia",
+  "lat": -27.4032,
+  "lng": 153.0521,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 09:00-15:00"
+}
+    ]
+  },
+  {
+    "name": "Meg + Me",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Meg + Me Boutique & Espresso, Shop 12, 6-14 Clarence St, Port Macquarie NSW 2444, Australia",
+  "lat": -31.4305,
+  "lng": 152.9084,
+  "opening": "Mon-Fri: 09:00-17:00; Sat: 09:00-14:00; Sun: Closed"
+}
+    ]
+  },
+   {
+    "name": "Parade Store",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Parade Store, 87 Kedron Brook Rd, Wilston QLD 4051, Australia",
+  "lat": -27.4240,
+  "lng": 153.0212,
+  "opening": "Mon-Fri: 09:00-17:00; Sat: 09:00-16:00; Sun: 09:00-13:00"
+}
+    ]
+  },
+  {
+    "name": "Pepperwhites Pty Ltd",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Pepperwhites by Tara Dennis, 250 Darling Street, Balmain NSW 2041, Australia",
+  "lat": -33.8597,
+  "lng": 151.1850,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-16:00"
+}
+    ]
+  },
+   {
+    "name": "SoHi Spirits",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "SoHi Spirits (Boutique Bottle Shop), Shop 3B, 391-397 Bong Bong Street, Bowral NSW 2576, Australia",
+  "lat": -34.4848,
+  "lng": 150.3544,
+  "opening": "Thu-Sat: 11:00-17:00; Sun: 11:00-15:00; Mon-Wed: Closed"
+}
+    ]
+  },
+  {
+    "name": "Emporium on James",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Emporium on James, 1/50 James Street, Burleigh Heads QLD 4220, Australia",
+  "lat": -28.0676,
+  "lng": 153.4153,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 09:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "The Bird Bath",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Bird Bath, 32C Hawthorne Street, Roma QLD 4455, Australia",
+  "lat": -26.5716,
+  "lng": 148.7905,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "The Farmers Wife",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Unit 3/26 Vincent Street, Daylesford VIC 3460, Australia",
+  "lat": -37.3430,
+  "lng": 144.1425,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 09:00-16:00"
+}
+    ]
+  },
+   {
+    "name": "the LemonTree",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+     {
+  "address": "The LemonTree, Shop 12 & 13, Centrepoint Shopping Centre, 55 Dunn Bay Rd, Dunsborough WA 6281, Australia",
+  "lat": -33.6226,
+  "lng": 115.1202,
+  "opening": "Mon-Sat: 09:00-17:00; Sun (Winter): 10:00-15:00; Sun (Summer): 10:00-17:00"
+}
+
+    ]
+  },
+   {
+    "name": "Green Tangerine",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+     {
+  "address": "Green Tangerine, 157 Latrobe Terrace, Paddington QLD 4064, Australia",
+  "lat": -27.46705,
+  "lng": 153.01498,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 10:00-15:00"
+}
+    ]
+  },
+  {
+    "name": "Hadley & Home",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "529 Toorak Rd, Toorak VIC 3142, Australia",
+  "lat": -37.8416141,
+  "lng": 145.0176215,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+   {
+    "name": "Hunt & Gather Home",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Hunt & Gather Home, Shop 45, 119 Belair Rd, Torrens Park SA 5062, Australia",
+  "lat": -34.9825,
+  "lng": 138.6246,
+  "opening": "Mon-Sat: 09:00-17:00; Sun: 11:00-16:00"
+}
+
+    ]
+  },
+  {
+    "name": "Soul Food Design Depot & Gallery",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address": "1 Dandaloo Street, Narromine NSW 2821, Australia",
+  "lat": -32.2312,
+  "lng": 148.2405,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Karori Drinks",
+    "region": "New Zealand",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+         "address": "Saddleback Grove, Karori 6012, New Zealand",
+  "lat": -41.29414,
+  "lng": 174.72545,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Olive Paddington",
+    "region": "New Zealand",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Olive Paddington, 218 Given Terrace, Paddington QLD 4064, Australia",
+  "lat": -27.4389,
+  "lng": 153.0128,
+  "opening": "Mon-Fri: 09:00-17:00; Sat: 09:00-16:00; Sun: 10:00-14:00"
+}
+
+    ]
+  },
+  {
+    "name": "Mint Gifts",
+    "region": "Australia",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ {
+  "address": "Mint Gifts, 130 Cotham Road, Kew VIC 3101, Australia",
+  "lat": -37.8008,
+  "lng": 145.0285,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 11:00-16:00"
+}
+]
+  },
+  {
+    "name": "Table Culture",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Table Culture, 126 Rokeby Rd, Subiaco WA 6008, Australia",
+  "lat": -31.9761,
+  "lng": 115.8274,
+  "opening": "Mon-Fri: 09:30-17:30; Sat: 09:30-17:00; Sun: Closed"
+}
+,
+       {
+        "address": "126 Rokeby Rd, Subiaco WA 6008, Australia",
+  "lat": -31.948999,
+  "lng": 115.827003,
+  "opening": "Mon-Fri: 09:30-17:30; Sat: 09:30-17:00; Sun: Closed"
+      },
+    ]
+  },
+  {
+    "name": "The Lush Lilly",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Shop 12b, Logan Hyperdome, Pacific Hwy & Bryants Rd, Loganholme QLD 4129, Australia",
+  "lat": -27.6567,
+  "lng": 153.1700,
+  "opening": "Mon-Fri: 09:00-17:30; Sat: 09:00-17:00; Sun: 10:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "The Bay Tree",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "82 Queen St, Woollahra NSW 2025, Australia",
+  "lat": -33.8891,
+  "lng": 151.2455,
+  "opening": "Mon-Sat: 10:00-17:30; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "The Ten Mile Eatery",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "120 Albury St, Holbrook NSW 2644, Australia",
+  "lat": -35.71944,
+  "lng": 147.31694,
+  "opening": "Mon & Wed-Fri: 08:00-14:00; Sat-Sun: 09:00-15:00; Tue: Closed"
+}
+    ]
+  },
+  {
+    "name": "Wine Selectors",
+    "region": "Australia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Australian Wine Selectors Pty Ltd, 1 Wright Lane, Newcastle NSW 2300, Australia",
+  "lat": -32.9261,
+  "lng": 151.7818,
+  "opening": "Mon-Fri: 08:30-18:00; Sat & Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Field + Fort",
+    "region": "United States - California",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "2580 Lillie Ave, Summerland CA 93067, United States",
+  "lat": 34.41937,
+  "lng": -119.59130,
+  "opening": "Mon-Sun: 09:00-17:00"
+      }
+    ]
+  },
+  {
+    "name": "Fleur De Lys",
+    "region": "United States - California",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Fleur De Lys Modern Mercantile, 369 E 17th St #14, Costa Mesa CA 92627, United States",
+  "lat": 33.6418,
+  "lng": -117.9239,
+  "opening": "Mon-Fri: 10:00-18:00; Sat: 10:00-17:00; Sun: 10:00-15:00"
+}
+
+     ]
+  },
+  {
+    "name": "Geary's Beverly Hills",
+    "region": "United States - California",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "351 N Beverly Dr, Beverly Hills CA 90210, United States",
+  "lat": 34.06928,
+  "lng": -118.40178,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: Closed"
+      }
+    ]
+  },
+  {
+    "name": "Misto Lino",
+    "region": "United States - California",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Danville Livery, 704 Sycamore Valley Road West, Danville CA 94526, United States",
+  "lat": 37.8212,
+  "lng": -122.0090,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: 12:00-17:00"
+},
+{
+  "address": "Lafayette Mercantile, 3585 Mount Diablo Blvd, Lafayette CA 94549, United States",
+  "lat": 37.8841,
+  "lng": -122.1227,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 12:00-17:00"
+}
+    ]
+  },
+  {
+    "name": "Pennyweight",
+    "region": "United States - California",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Pennyweight, 1337 Main St, Saint Helena CA 94574, United States",
+  "lat": 38.5050,
+  "lng": -122.4700,
+  "opening": "Daily: 10:00-17:30"
+}
+
+     ]
+  },
+  {
+    "name": "Salutations Home",
+    "region": "United States - California",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Salutations Home, 900 Granite Dr, Pasadena CA 91101, United States",
+  "lat": 34.14778,
+  "lng": -118.14452,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Agency 44",
+    "region": "United States - California",
+     "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "lat": 34.13778,
+  "lng": -118.54452,
+}
+    ]
+  },
+  {
+    "name": "Chequers",
+    "region": "United States - Colorado",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "Chequers (high-end homeware boutique), 602 E Hyman Ave, Aspen CO 81611, United States",
+  "lat": 39.1910,
+  "lng": -106.8181,
+  "opening": "Mon-Sat: 10:30-17:30; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Bungalow Decor",
+    "region": "United States - Connecticut",
+    "online_only": true,
+    "flagship": false,
+    "locations": [ 
+      {
+  "address": "Bungalow (home decor & gifts), 4 Sconset Square, Westport CT 06880, United States",
+  "lat": 41.1418,
+  "lng": -73.3605,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: By appointment only"
+}
+
+    ]
+  },
+  {
+    "name": "Saybrook Home",
+    "region": "United States - Connecticut",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Saybrook Home, Old Saybrook & Glastonbury, Connecticut, United States",
+  "lat": 41.3100,
+  "lng": -72.3687,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: 11:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "Boca Raton Hotel & Club",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Beach Club at The Boca Raton, 900 S Ocean Blvd, Boca Raton FL 33432, United States",
+  "lat": 26.3409,
+  "lng": -80.0718,
+  "opening": "Mon-Sun: Open 24 hours (resort grounds/guest facilities)"
+}
+
+    ]
+  },
+  {
+    "name": "Hearth and Soul",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Hearth & Soul, 1410 Market St, Suite D1, Tallahassee FL 32312, United States",
+  "lat": 30.4523,
+  "lng": -84.2808,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: 12:00-17:00"
+}
+    ]
+  },
+  {
+    "name": "Hive Home",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "HIVE Home, Gift & Garden, 424 Palm St, West Palm Beach FL 33401, United States",
+  "lat": 26.6989,
+  "lng": -80.0551,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Home & Salvage",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Home & Salvage, 5400 Taylor Rd Ste 109, Naples FL 34109, United States",
+  "lat": 26.2124,
+  "lng": -81.7827,
+  "opening": "Mon-Fri: 10:00-17:00; Sat: 10:00-15:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Hunt and Hostess",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Hunt & Hostess, 915 N Pennsylvania Ave, Winter Park FL 32789, United States",
+  "lat": 28.6000,
+  "lng": -81.3507,
+  "opening": "Tue-Sat: 10:00-16:00; Sun & Mon: Closed"
+}
+    ]
+  },
+  {
+    "name": "Matilda's",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Matilda’s Lifestyle Boutique, 15 SW Flagler Ave, Stuart FL 34994, United States",
+  "lat": 27.1974,
+  "lng": -80.2520,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Sarasota Wine Co.",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Sarasota Wine Company, 64 S Palm Ave, Sarasota FL 34236, United States",
+  "lat": 27.3339,
+  "lng": -82.5307,
+  "opening": "Tue-Thu: 12:00-18:00; Fri: 12:00-19:00; Sat: 11:00-18:00; Sun-Mon: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "The Breakers Palm Beach",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Breakers Palm Beach, 1 S County Rd, Palm Beach FL 33480, United States",
+  "lat": 26.71496,
+  "lng": -80.03765,
+  "opening": "Hotel: 24 hours daily; Spa & restaurants vary by venue"
+}
+
+    ]
+  },
+  {
+    "name": "The Write Touch",
+    "region": "United States - Florida",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Write Touch, 1967 San Marco Blvd, Jacksonville FL 32207, United States",
+  "lat": 30.3171,
+  "lng": -81.6583,
+  "opening": "Mon-Fri: 10:00-17:30; Sat: 11:00-16:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Lucy's Market",
+    "region": "United States - Georgia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+{
+  "address": "Lucy's Market (gourmet food & gifts), 56 E Andrews Dr NW, Ste 35, Atlanta GA 30305, United States",
+  "lat": 33.8430,
+  "lng": -84.3810,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 11:00-17:00"
+}
+    ]
+  },
+  {
+    "name": "Perryander Studio",
+    "region": "United States - Georgia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Perryander Studio, 1093 Baxter St, Athens GA 30606, United States",
+  "lat": 30.3171,
+  "lng": -81.6583,
+  "opening": "Mon-Fri: 10:00-17:00; Sat: 10:00-14:00; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "The Lighting Studio",
+    "region": "United States - Georgia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Lighting Studio, 30 Barnes St Ste 101, Senoia GA 30276, United States",
+  "lat": 33.3018,
+  "lng": -84.5535,
+  "opening": "Mon-Fri: 10:00-17:00; Sat: 10:00-15:00; Sun: By appointment"
+}
+    ]
+  },
+  {
+    "name": "The Paris Market & Brocante",
+    "region": "United States - Georgia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Paris Market & Brocante, 36 W Broughton St, Savannah GA 31401, United States",
+  "lat": 32.0809,
+  "lng": -81.0960,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: 11:00-17:00"
+}
+    ]
+  },
+  {
+    "name": "The Proper House",
+    "region": "United States - Georgia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Proper House, 118 1st Street SE, Moultrie GA 31768, United States",
+  "lat": 31.1667,
+  "lng": -83.7777,
+  "opening": "Tue-Fri: 10:00-17:00; Sat: 10:00-15:00; Mon & Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Style Shack",
+    "region": "United States - Illinois",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Style Shack, 1839 2nd St, Highland Park IL 60035, United States",
+  "lat": 42.1831,
+  "lng": -87.7970,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 12:00-17:00"
+}
+
+    ]
+  },
+  {
+    "name": "The Protea Collective",
+    "region": "United States - Iowa",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Protea Collective (boutique store), 1010 13th St N, Humboldt IA 50548, United States",
+  "lat": 42.7365,
+  "lng": -94.1997,
+  "opening": "—"
+}
+    ]
+  },
+  {
+    "name": "Addendum Gallery",
+    "region": "United States - Indiana",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Addendum Gallery, 800 S Rangeline Rd Ste 270, Carmel IN 46032, United States",
+  "lat": 39.9688,
+  "lng": -86.1279,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: 11:00-17:00"
+}
+
+    ]
+  },
+  {
+    "name": "Eclectic Home",
+    "region": "United States - Louisiana",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Eclectic Home, 8211 Oak St, New Orleans LA 70118, United States",
+  "lat": 29.9485,
+  "lng": -90.1308,
+  "opening": "Mon-Fri: 10:00-17:30; Sat: 10:30-16:30; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Flora Home",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "354 Elm St, South Dartmouth MA 02748, United States",
+  "lat": 41.6289,
+  "lng": -70.9195,
+  "opening": "Tue-Sat: 10:00-16:00; Sun: 10:00-15:00; Mon: Closed (by appointment)"
+}
+    ]
+  },
+  {
+    "name": "J. Grady",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "J Grady Home, 133 Charles St, Boston MA 02114, United States",
+  "lat": 42.3572,
+  "lng": -71.0646,
+  "opening": "—"
+}
+    ]
+  },
+  {
+    "name": "Made Collective",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "MadeCollectiveCo. Interiors & Design, 2 Central St Suite 103, Middleton MA 01949, United States",
+  "lat": 42.5863,
+  "lng": -70.9547,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "Thacher & Spring",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Thacher & Spring Home, 109 North St, Unit C-1, Hingham MA 02043, United States",
+  "lat": 42.2367,
+  "lng": -70.8975,
+  "opening": "Tue-Sat: 10:30-17:00; Sun & Mon: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Junebug",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Junebug, 211 Main St, Charlestown MA 02129, United States",
+  "lat": 42.3765,
+  "lng": -71.0640,
+  "opening": "Tue-Fri: 10:00-18:00; Sat: 10:00-17:00; Sun: 11:00-15:00; Mon: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Centre Pointe",
+    "region": "United States - Massachusetts",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Centre Pointe, 22 Centre Street, Nantucket MA 02554, United States",
+  "lat": 41.2837,
+  "lng": -70.1000,
+  "opening": "Mon-Fri: 09:30-18:00; Sat: 10:00-17:00; Sun: 11:00-16:00"
+}
+
+    ]
+  },
+  {
+    "name": "Joie de Vie Antiques",
+    "region": "United States - Michigan",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "901 M-119, Petoskey MI 49770, United States",
+  "lat": 45.3728,
+  "lng": -84.9425,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "Julia Moss Designs",
+    "region": "United States - Minnesota",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Julia Moss Designs (home décor & gifts), 647 Lake St E, Wayzata MN 55391, United States",
+  "lat": 44.9690,
+  "lng": -93.4940,
+  "opening": "Mon-Fri: 10:00-17:00; Sat: 11:00-17:00; Sun: 12:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "The Beach Home Life",
+    "region": "United States - New Jersey",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Beach Home (coastal home & gift boutique), 1904 Grand Central Ave, Lavallette NJ 08735, United States",
+  "lat": 39.7420,
+  "lng": -74.0838,
+  "opening": "Open year-round (specific daily hours not published)"
+}
+    ]
+  },
+  {
+    "name": "Bentley Waters Designs",
+    "region": "United States - New York",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Bentley Waters Designs, 75 S Greeley Ave, Chappaqua NY 10514, United States",
+  "lat": 41.1520,
+  "lng": -73.7760,
+  "opening": "Mon-Sat: approx. 10:00-18:00; Sun: approximate"
+}
+    ]
+  },
+  {
+    "name": "Design Solutions",
+    "region": "United States - New York",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Design Solutions (home furnishings & gifts), 55 Westchester Ave, Pound Ridge NY 10576, United States",
+  "lat": 41.1895,
+  "lng": -73.5489,
+  "opening": "Mon-Sat: 11:00-17:00; Sun: 12:00-16:00"
+}
+    ]
+  },
+  {
+    "name": "Montauk Yacht Club",
+    "region": "United States - New York",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+     {
+  "address": "Montauk Yacht Club Resort & Marina, 32 Star Island Rd, Montauk NY 11954, United States",
+  "lat": 41.0688,
+  "lng": -71.9328,
+  "opening": "Resort: Open 24 h; Marina & dining by reservation"
+}
+    ]
+  },
+  {
+    "name": "SARZA",
+    "region": "United States - New York",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "SARZA Store (boutique), 84 Purchase St, Rye NY 10580, United States",
+  "lat": 40.9756,
+  "lng": -73.6862,
+  "opening": "Mon-Sat: 10:00-17:30; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Over The Moon",
+    "region": "United States - New York",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Little Chateau boutique, 13 & 15 Touro St, Newport RI 02840, United States",
+  "lat": 41.4840,
+  "lng": -71.3123,
+  "opening": "Sun-Thu: 12:00-17:00; Fri-Sat: 11:00-18:00"
+}
+    ]
+  },
+  {
+    "name": "Beaucoup Maison",
+    "region": "United States - Rhode Island",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Beaucoup Maison (café + boutique), 580 Thames St, Newport RI 02840, United States",
+  "lat": 41.4900,
+  "lng": -71.3131,
+  "opening": "Daily: 07:00-15:00 (café); Boutique hours similar"
+}
+    ]
+  },
+  {
+    "name": "Little Chateau",
+    "region": "United States - Rhode Island",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Little Chateau boutique, 13 & 15 Touro St, Newport RI 02840, United States",
+  "lat": 41.4840,
+  "lng": -71.3123,
+  "opening": "Sun-Thu: 12:00-17:00; Fri-Sat: 11:00-18:00"
+}
+    ]
+  },
+  {
+    "name": "Stewart House",
+    "region": "United States - Rhode Island",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Stewart House (home decor & gifts), 97 Hope Street, Providence RI 02906, United States",
+  "lat": 41.8335,
+  "lng": -71.3800,
+  "opening": "Tue-Sat: 10:00-17:00 (Closed Sun & Mon)"
+}
+
+    ]
+  },
+  {
+    "name": "Hedge Design",
+    "region": "United States - South Carolina",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "536 Yachting Road, Lexington SC 29072, United States",
+  "lat": 34.0067,
+  "lng": -81.2420,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "Kiawah River Finery",
+    "region": "United States - South Carolina",
+    "online_only": true,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Kiawah River Finery (online boutique), Johns Island SC 29926, United States",
+  "lat": 32.6928,
+  "lng": -80.0950,
+  "opening": "—"
+}
+    ]
+  },
+  {
+    "name": "Kudzu Bakery & Market Columbia",
+    "region": "United States - South Carolina",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Kudzu Bakery & Market Columbia, 4600 Forest Dr Ste 10, Columbia SC 29206, United States",
+  "lat": 34.0628,
+  "lng": -81.0483,
+  "opening": "Mon-Fri: 09:00-18:00; Sat: 09:00-15:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "Blackberry Farm",
+    "region": "United States - Tennessee",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Blackberry Farm (luxury resort), 1471 W Millers Cove Rd, Walland TN 37886, United States",
+  "lat": 35.8161,
+  "lng": -83.9698,
+  "opening": "—"
+}
+    ]
+  },
+  {
+    "name": "Epergne",
+    "region": "United States - Tennessee",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Epergne (gift & home boutique), 6592 TN-100 Suite 100, Nashville TN 37205, United States",
+  "lat": 36.1234,
+  "lng": -86.8250,
+  "opening": "Mon-Fri: 10:00-17:00; Sat: 10:00-17:00; Sun: Closed"
+}
+    ]
+  },
+  {
+    "name": "The Iron Place",
+    "region": "United States - Tennessee",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "The Iron Place, 115 N Poplar St, Paris TN 38242, United States",
+  "lat": 36.3023,
+  "lng": -88.3250,
+  "opening": "Mon-Sat: 10:00-17:00; Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Divine Goods",
+    "region": "United States - Tennessee",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "100 Stephenson Ave, Lookout Mountain TN 37350, United States",
+  "lat": 35.0052,
+  "lng": -85.3091,
+  "opening": "—"
+}
+
+    ]
+  },
+  {
+    "name": "Blue Print",
+    "region": "United States - Texas",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Blue Print Showroom, 1505 Oak Lawn Ave Suite 100, Dallas TX 75207, United States",
+  "lat": 32.7953,
+  "lng": -96.8077,
+  "opening": "Mon-Fri: 10:00-17:00; Sat-Sun: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Banks and Beach",
+    "region": "United States - Virginia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+        "address": "1701 Hunt Meet Circle, Virginia Beach VA 23454, United States",
+  "lat": 36.8798,
+  "lng": -76.1260,
+        "opening": "Mon\u2013Fri: 09:00\u201317:00"
+      }
+    ]
+  },
+  {
+    "name": "Black Tie Beach",
+    "region": "United States - Virginia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Black Tie Beach Luxury Decor & Gifts, 2208 General Booth Blvd Suite 300, Virginia Beach VA 23454, United States",
+  "lat": 36.8520,
+  "lng": -76.1205,
+  "opening": "Mon-Sat: 10:00-18:00; Sun: 12:00-17:00"
+}
+
+    ]
+  },
+  {
+    "name": "Hampton House",
+    "region": "United States - Virginia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Hampton House (bridal registry & gift boutique), 310 Libbie Avenue, Richmond VA 23226, United States",
+  "lat": 37.5615,
+  "lng": -77.5065,
+  "opening": "Tue-Fri: 11:00-17:00; Sat: 11:00-16:00; Sun & Mon: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Nectar",
+    "region": "United States - Virginia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Nectar (home accessories & gift boutique), 1614 Hilltop West Shopping Center, Virginia Beach VA 23451, United States",
+  "lat": 36.8570,
+  "lng": -76.2325,
+  "opening": "Tue-Fri: 11:00-17:00; Sat: 11:00-16:00; Sun & Mon: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Waters Edge Winery",
+    "region": "United States - Virginia",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Waters Edge Winery & Bistro, 6464 Hampton Blvd, Norfolk VA 23508, United States",
+  "lat": 36.9143,
+  "lng": -76.2165,
+  "opening": "Wed, Thu & Sun: 12:00-20:00; Fri & Sat: 12:00-22:00; Mon & Tue: Closed"
+}
+
+    ]
+  },
+  {
+    "name": "Lodge and Letter",
+    "region": "United States - Wyoming",
+    "online_only": false,
+    "flagship": false,
+    "locations": [
+      {
+  "address": "Lodge and Letter, 170 E Deloney Ave, Jackson WY 83001, United States",
+  "lat": 43.47996,
+  "lng": -110.75994,
+  "opening": "Mon-Sat: 09:00-18:00; Sun: Closed"
+}
+
+    ]
+  }
+];
+
+function toggleDrawer() {
+  document.getElementById("fbDrawer").classList.toggle("open");
+}
+
+function isOpenNow(openingHoursStr) {
+  return true;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const map = L.map("fb-map", {
+    minZoom: 2,
+    maxBounds: [[-85, -180], [85, 180]],
+    maxBoundsViscosity: 0.8
+  });
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: "© OpenStreetMap, CartoDB"
+  }).addTo(map);
+
+  const bounds = L.latLngBounds();
+  const markerMap = {};
+  const retailerList = document.getElementById("fbRetailerList");
+  const regionList = {};
+
+  retailers.forEach((retailer, index) => {
+    const card = document.createElement("div");
+    card.className = "retailer-card";
+
+    // Collect search terms: name + addresses
+    let searchTerms = retailer.name.toLowerCase();
+    retailer.locations.forEach(loc => {
+      if (loc.address) {
+        searchTerms += ' ' + loc.address.toLowerCase();
+      }
+    });
+    card.dataset.search = searchTerms;
+
+    card.id = `retailer-${index}`;
+
+    const heading = document.createElement("h3");
+    heading.innerHTML = `${retailer.flagship ? `<img src="https://cdn.shopify.com/s/files/1/0729/3753/7840/files/favicon.png?v=1678097297" alt="Flagship" class="flagship-icon" /> ` : ''}${retailer.name}`;
+    card.appendChild(heading);
+
+    heading.addEventListener("click", () => {
+      card.classList.toggle("active");
+
+      const marker = markerMap[index];
+      if (marker) {
+        map.flyTo(marker.getLatLng(), 12, {
+          animate: true,
+          duration: 2.2,
+          easeLinearity: 0.15 
+        });
+      }
+
+      const mapEl = document.getElementById("fb-map");
+      if (window.innerWidth < 768) {
+        mapEl.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.retailer-card details').forEach((el, i) => {
+        if (i !== index) el.open = false;
+      });
+
+      const details = card.querySelector('details');
+      if (details) details.open = true;
+    });
+
+    retailer.locations.forEach(loc => {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      summary.textContent = retailer.online_only
+        ? "Available online only"
+        : loc.address;
+
+      const content = document.createElement("div");
+      if (loc.opening) {
+        const open = document.createElement("p");
+        open.textContent = loc.opening;
+        content.appendChild(open);
+      }
+      if (retailer.online_only) {
+        const note = document.createElement("span");
+        note.className = "online-only-note";
+        note.textContent = "Available online only";
+        content.appendChild(note);
+      }
+
+      details.appendChild(summary);
+      details.appendChild(content);
+      card.appendChild(details);
+
+      const iconUrl = 'https://cdn.shopify.com/s/files/1/0729/3753/7840/files/f-icon-map.svg?v=1750163830';
+      const marker = L.marker([loc.lat, loc.lng], {
+        icon: L.divIcon({
+          html: `<div style="width: 32px; height: 48px; clip-path: path('M16 0 C24 0 32 8 32 16 C32 24 16 48 16 48 C16 48 0 24 0 16 C0 8 8 0 16 0 Z'); background-color: #002B4D; display: flex; align-items: center; justify-content: center;">
+            <img src="${iconUrl}" width="24" height="24" style="transform: translateY(-6px);" />
+          </div>`,
+          iconSize: [32, 48],
+          iconAnchor: [16, 48],
+          className: ''
+        })
+      }).addTo(map);
+
+      markerMap[index] = marker;
+
+      marker.bindPopup(`
+        <strong>${retailer.name}</strong><br/>
+        ${loc.address}<br/>
+       ${retailer.online_only
+  ? `<div class="online-only-note">Available online only</div>`
+  : `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}" target="_blank" class="popup-button">Get Directions</a>`}
+      `);
+
+      bounds.extend([loc.lat, loc.lng]);
+
+      marker.on('click', () => {
+        map.flyTo([loc.lat, loc.lng], 12, {
+          animate: true,
+          duration: 1.2,
+          easeLinearity: 0.25
+        });
+
+        const cardEl = document.getElementById(`retailer-${index}`);
+        if (cardEl) {
+          cardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          cardEl.classList.add('active');
+
+          const details = cardEl.querySelector('details');
+          if (details) details.open = true;
+
+          document.querySelectorAll('.retailer-card details').forEach((el, i) => {
+            if (i !== index) el.open = false;
+          });
+
+          setTimeout(() => cardEl.classList.remove('active'), 2000);
+        }
+      });
+    });
+
+    retailerList.appendChild(card);
+
+    if (!regionList[retailer.region]) regionList[retailer.region] = [];
+    regionList[retailer.region].push(retailer);
+  });
+
+  map.fitBounds(bounds.pad(0.3));
+
+  document.getElementById("fbSearch").addEventListener("input", e => {
+    const term = e.target.value.toLowerCase();
+    let anyMatch = false;
+
+    document.querySelectorAll(".retailer-card").forEach(card => {
+      const match = card.dataset.search.includes(term);
+      card.style.display = match ? "block" : "none";
+      if (match) anyMatch = true;
+    });
+
+    document.getElementById("fbNoResults").style.display = anyMatch ? "none" : "block";
+  });
+
+  const regionContainer = document.getElementById("fbRegionList");
+  for (const region in regionList) {
+    const group = document.createElement("div");
+    group.innerHTML = `<strong>${region}</strong><ul style="margin:0 0 1em;padding-left:1em">` +
+      regionList[region].map(r => `<li>${r.name}</li>`).join("") +
+      `</ul>`;
+    regionContainer.appendChild(group);
+  }
+});
+</script>
+
+

@@ -1,0 +1,606 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
+  <div class="js-contents" {{ block.shopify_attributes }}></div>
+  {% comment %}
+    <div class="page-width">
+      <div class="cart__footer isolate section-{{ section.id }}-padding">
+        {%- if settings.show_cart_note -%}
+          <cart-note class="cart__note field">
+            <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+            <textarea
+              class="text-area field__input"
+              name="note"
+              form="cart"
+              id="Cart-note"
+              placeholder="{{ 'sections.cart.note' | t }}"
+            >{{ cart.note }}</textarea>
+          </cart-note>
+        {%- endif -%}
+
+        <div class="cart__blocks">
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'subtotal' -%}
+                <div class="js-contents" {{ block.shopify_attributes }}>
+                  <div>
+                    {%- if cart.cart_level_discount_applications.size > 0 -%}
+                      <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                        {%- for discount in cart.cart_level_discount_applications -%}
+                          <li class="discounts__discount discounts__discount--position">
+                            {{- 'icon-discount.svg' | inline_asset_content -}}
+                            {{ discount.title | escape }}
+                            (-{{ discount.total_allocated_amount | money }})
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="totals">
+                    <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+                    <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  </div>
+
+                  <small class="tax-note caption-large rte">
+                    {%- if cart.duties_included and cart.taxes_included -%}
+                      {%- if shop.shipping_policy.body == blank -%}
+                        {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+                      {%- else -%}
+                        {{
+                          'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                          | t: link: shop.shipping_policy.url
+                        }}
+                      {%- endif -%}
+                    {%- elsif cart.duties_included == false and cart.taxes_included -%}
+                      {%- if shop.shipping_policy.body == blank -%}
+                        {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                      {%- else -%}
+                        {{
+                          'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                          | t: link: shop.shipping_policy.url
+                        }}
+                      {%- endif -%}
+                    {%- elsif cart.duties_included and cart.taxes_included == false -%}
+                      {%- if shop.shipping_policy.body == blank -%}
+                        {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                      {%- else -%}
+                        {{
+                          'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                          | t: link: shop.shipping_policy.url
+                        }}
+                      {%- endif -%}
+                    {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+                      {%- if shop.shipping_policy.body == blank -%}
+                        {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                      {%- else -%}
+                        {{
+                          'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                          | t: link: shop.shipping_policy.url
+                        }}
+                      {%- endif -%}
+                    {%- endif -%}
+                  </small>
+                </div>
+              {%- else -%}
+                <div class="cart__ctas" {{ block.shopify_attributes }}>
+                  <button
+                    type="submit"
+                    id="checkout"
+                    class="cart__checkout-button button"
+                    name="checkout"
+                    {% if cart == empty %}
+                      disabled
+                    {% endif %}
+                    form="cart"
+                  >
+                    {{ 'sections.cart.checkout' | t }}
+                  </button>
+                </div>
+
+                {%- if additional_checkout_buttons -%}
+                  <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                    {{ content_for_additional_checkout_buttons }}
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          {% endfor %}
+
+          <div id="cart-errors"></div>
+        </div>
+      </div>
+    </div>
+  {% endcomment %}
+
+  <div id="cart-footer-custom" class="cfc">
+    <div class="totals_inner ">
+      <span id="carty">
+        <h2 id="sc" style="color: #002b4d; padding-right:10px">
+          {% case localization.country.iso_code %}
+            {% when 'DE' %}
+              Dein Warenkorb
+            {% when 'FR' %}
+              Votre Panier
+            {% else %}
+              Shopping Cart
+          {% endcase %}
+        </h2>
+        <h2 id="sc" class="cart-count bracks">{{ cart.item_count }}</h2>
+      </span>
+
+      {% if customer %}
+        <p style="color: #002b4d;text-transform:capitalize">
+          {% case localization.country.iso_code %}
+            {% when 'DE' %}
+              Willkommen zurück,
+            {% when 'FR' %}
+              Content de te revoir,
+            {% else %}
+              Welcome Back,
+          {% endcase %}
+          {{ customer.first_name }}
+        </p>
+      {% else %}
+        <p style="color: #002b4d;">
+          {% case localization.country.iso_code %}
+            {% when 'DE' %}
+              Sind Sie bereits Mitglied im Owners Club? Bitte
+            {% when 'FR' %}
+              Vous êtes déjà membre du Club des propriétaires ?
+            {% else %}
+              Already part of the Owners Club? Please
+          {% endcase %}
+          <a style=" color: #002b4d;" href="{{ routes.account_login_url }}">log in </a>
+        </p>
+      {% endif %}
+
+      {%- if settings.show_cart_note -%}
+        <div class="totals_notes">
+          <label for="Cart-note" style="font-family: 'Gotham Medium' !important; color: #002b4d;">
+            {%- case localization.country.iso_code %}
+              {% when 'DE' %}
+                Spezielle Bestellanweisungen
+              {% when 'FR' %}
+                Instructions spéciales concernant la commande
+              {% else %}
+                ORDER NOTES
+            {% endcase %}
+          </label>
+          <textarea
+            class="totals_notes-input"
+            name="note"
+            id="Cart-note"
+            form="cart"
+            rows="1"
+            placeholder="Add Special Instructions For Your Order"
+          >
+          {{ cart.note }}
+        </textarea>
+        </div>
+      {%- endif -%}
+
+      {%- if cart.cart_level_discount_applications.size > 0 -%}
+        <ul
+          class="totals_discounts"
+          role="list"
+          aria-label="{{ 'customer.order.discount' | t }}"
+        >
+          {%- for discount in cart.cart_level_discount_applications -%}
+            <li class="totals_discount">
+              {{ discount.title | escape }} (-{{ discount.total_allocated_amount | money }})
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="totals_total">
+        <span class="totals_total-label">
+          {%- case localization.country.iso_code %}
+            {% when 'DE' %}
+              Geschätzte Gesamtkosten
+            {% when 'FR' %}
+              Total estimé
+            {% else %}
+              ESTIMATED TOTAL
+          {% endcase -%}
+        </span>
+        <span class="totals_total-value">
+          <div class="totals">
+            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          </div>
+        </span>
+      </div>
+
+      <div class="totals_cta">
+        <button
+          type="submit"
+          class="fieldbar_button uppercase"
+          id="checkout"
+          name="checkout"
+          class="totals_checkout"
+          form="cart"
+          {% if cart == empty %}
+            disabled
+          {% endif %}
+        >
+          {% case localization.country.iso_code %}
+            {% when 'DE' %}
+              Sicher bezahlen
+            {% when 'FR' %}
+              PAIEMENT SÉCURISÉ
+            {% else %}
+              CHECKOUT SECURELY
+          {% endcase %}
+        </button>
+      </div>
+
+      {%- if additional_checkout_buttons -%}
+        <div class="totals_dynamic">
+          {{ content_for_additional_checkout_buttons }}
+        </div>
+      {%- endif -%}
+
+      <p>
+        {%- liquid
+          if cart.duties_included and cart.taxes_included
+            if shop.shipping_policy.body == blank
+              echo 'Taxes included. Duties included. '
+            else
+              echo 'Taxes and duties included. '
+            endif
+          elsif cart.duties_included == false and cart.taxes_included
+            echo 'Taxes included. '
+          elsif cart.duties_included and cart.taxes_included == false
+            echo 'Duties included. '
+          endif
+        -%}
+        {% case localization.country.iso_code %}
+          {% when 'DE' %}
+            Inkl. Steuern. Rabatte und
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >Versand
+            </a>
+            werden beim Checkout berechnet.
+          {% when 'FR' %}
+            Taxes incluses. Réductions et
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >frais d’expédition
+            </a>
+            calculés à l’étape du paiement.
+          {% else %}
+            Discounts and
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >shipping
+            </a>
+            calculated at checkout.
+        {% endcase %}
+      </p>
+
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Akzeptierte Zahlungsarten: Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro und mehr."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Zahlungsmöglichkeiten </span>
+            </div>
+            <div class="payment-icon-wrap shipping-info-box" data-tooltip="Sichere Transaktionen mit FIELDBAR">
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Sichere Transaktionen </span>
+            </div>
+          </div>
+        {% when 'FR' %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Types de paiement acceptés : Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro et plus encore."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Types de paiement acceptés </span>
+            </div>
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Des transactions sûres et sécurisées avec FIELDBAR"
+            >
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Des transactions </span>
+            </div>
+          </div>
+        {% else %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Accepted payment types: VISA, MASTERCARD, Apple Pay, Google Pay, American Express, Diners Club, Maestro and more."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Payment options </span>
+            </div>
+            <div class="payment-icon-wrap shipping-info-box" data-tooltip="Safe and secure transactions with FIELDBAR">
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Secure Transactions </span>
+            </div>
+          </div>
+      {% endcase %}
+
+      <p style="color: #002b4d;">
+        <a style="color: #002b4d;" href="{{ routes.all_products_collection_url | default: routes.root_url }}">
+          {%- case localization.country.iso_code %}
+            {% when 'DE' %}
+              WEITER EINKAUFEN
+            {% when 'FR' %}
+              CONTINUER VOS ACHATS
+            {% else %}
+              CONTINUE SHOPPING
+          {% endcase %}
+        </a>
+      </p>
+    </div>
+    <div id="cart-errors"></div>
+  </div>
+</div>
+
+<style>
+  #cart-footer-custom.cfc {
+    --cfc-max: 520px;
+    --cfc-gap: 16px;
+  }
+
+  .totals_notes-input {
+    width: 100%;
+    border: 1px solid rgb(0 0 0 / 0.15);
+    border-radius: 3px;
+    padding: 12px 14px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    overflow: hidden;
+  }
+  .product-data {
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1em;
+  }
+  #cart-footer-custom .totals_inner {
+    max-width: var(--cfc-max);
+    margin-inline: auto;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .totals_hint a {
+    text-decoration: underline;
+  }
+
+  .totals_notes {
+    text-align: left;
+    margin: 0 auto 18px;
+  }
+  .totals_notes-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #002b4d;
+    margin: 0 0 8px;
+  }
+  .totals_notes-input {
+    width: 100%;
+    border: 1px solid rgb(0 0 0 / 0.15);
+    border-radius: 3px;
+    padding: 12px 14px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+  .totals_notes-input:focus {
+    color: #002b4d;
+  }
+
+  .totals_discounts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: #002b4d;
+  }
+
+  .totals_total {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0;
+    color: #002b4d;
+
+    text-align: left;
+  }
+  .totals_total-label {
+    font-family: 'Gotham Medium' !important;
+    color: #002b4d;
+  }
+  .totals__total-value {
+    font-family: 'Gotham Medium' !important;
+    color: #002b4d;
+  }
+
+  .totals_cta {
+    margin-top: 10px;
+  }
+  .totals_checkout {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #01324c;
+    color: #fff;
+  }
+  .totals_checkout[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .totals_dynamic {
+    margin-top: 10px;
+  }
+
+  .totals_fine {
+    margin: 10px 0;
+    color: #002b4d;
+  }
+  .totals_fine a {
+    text-decoration: underline;
+  }
+
+  .totals_continue {
+    margin: 8px 0 0;
+    font-size: 12px;
+  }
+  span {
+    color: #002b4d;
+  }
+  .totals_continue a {
+    text-decoration: underline;
+  }
+
+  .shipping-info-box {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .nfo > svg {
+    margin-bottom: -5px;
+  }
+
+  .shipping-info-box::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -500%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #01324c;
+    padding: 8px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+    max-width: 70vw;
+    white-space: pre-wrap;
+    font-family: 'Gotham Narrow Book';
+  }
+
+  .shipping-info-box::before {
+    content: '';
+    position: absolute;
+    bottom: -48%;
+    left: 32%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #33333300 #2c6ecb00 #ffffff #ffffff00;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .shipping-info-box:hover::after,
+  .shipping-info-box:hover::before {
+    opacity: 1;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

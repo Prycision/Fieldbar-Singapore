@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.house-ambassador.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "mount_nelson_splitscreen_higWDg": {
+      "settings": {
+        "intro_text": "AMBASSADRICE MAISON FIELDBAR",
+        "short_description": "Nous sommes fiers de présenter la <strong>designer, écrivaine, humanitaire et icône de style britannique India Hicks en tant qu'Ambassadrice Maison FIELDBAR.</strong>\n<br><br>\nAdmirée dans le monde entier pour son esprit généreux et son style plein air sans effort, India est <strong>parfaitement prête à partager nos produits plein air de qualité avec le monde entier.</strong>"
+      },
+      "blocks": {}
+    },
+    "mn_drinkbox_hRjX6g": {
+      "settings": {
+        "description": "\"Lorsque mon mari a lancé son rhum, il y avait une instruction clé. Buvez de manière responsable, a-t-il dit. Utilisez uniquement de la glace fraîche.\"\n<br><br>\nImaginez notre plaisir lorsque nous avons découvert une glacière élégante fabriquée avec des matériaux modernes mais également avec un charme, une compétence et un savoir-faire d'antan qui peut garder la glace froide jusqu'à CINQUANTE heures.",
+        "button_text": "ACHETER LA DRINKS BOX",
+        "button_link": "shopify://collections/drinks-box"
+      },
+      "blocks": {}
+    },
+    "mn_towel_QCXnhE": {
+      "settings": {
+        "heading": "ELLE A L’ESPRIT",
+        "description": "Au-delà de son affinité pour les spiritueux artisanaux, India incarne l'essence de FIELDBAR.\n<br><br>\nDe ses racines royales en Angleterre à sa vie tropicale en famille aux Bahamas, <strong>India est déterminée à rendre le monde meilleur et plus élégant.</strong>"
+      },
+      "blocks": {}
+    },
+    "mn_personalisation_wjDbgb": {
+      "settings": {
+        "headline": "UN STYLE CHAUD",
+        "short_description": "<br><br>\n\"Si vous vivez sur une petite île où les coupures de courant sont fréquentes, une glacière de qualité supérieure est essentielle.\n<br><br>\nC'est également essentiel lorsque vous organisez un dîner d'été au milieu d'un champ dans la campagne anglaise, ou que vous, vous attardez près d'un terrain de pickleball, ou que vous avez fait une lente promenade en bateau sur la rivière, ou que vous pique-niquez avec vos enfants, ou organiser un spectacle de malle sous tente… en fait, je ne peux pas vraiment imaginer comment j'ai survécu avant l'arrivée de Fieldbar.\n<br><br>\nIls nous accordent une garantie de cinq ans et nous leur attribuons 5 étoiles.\"",
+        "main_description": "Suivez <strong>@fieldbar.co</strong> et <strong>@indiahicksstyle</strong> pour regarder l'aventure."
+      },
+      "blocks": {}
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{% if product and product.metafields.custom.image_highlights and product.metafields.custom.image_highlights.value and product.metafields.custom.image_highlights.value.list %}
+  {% assign highlights_string = product.metafields.custom.image_highlights.value.list | metafield_text %}
+  {% assign highlights_array = highlights_string | split: ',' %}
+
+  {% if highlights_array.size > 0 %}
+
+    {% assign new_list = '' %}
+    {% for item in highlights_array %}
+      {% if forloop.last %}
+
+        {% assign last_item = item  | replace: ' and ', ','  | replace: ' und ', ','  | replace: ' et ', ',' %}
+        {% assign last_items = last_item | split: ',' %}
+        {% for li in last_items %}
+          {% assign new_list = new_list | append: li | append: ',' %}
+        {% endfor %}
+      {% else %}
+        {% assign new_list = new_list | append: item | append: ',' %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign cleaned_list = new_list | split: ',' %}
+
+    <ul id="list" class="hid_mob">
+      {% for item in cleaned_list %}
+        {% assign trimmed_item = item | strip %}
+        {% if trimmed_item != '' %}
+          <li class="hov" data-index="{{ forloop.index0 }}">
+            {{ trimmed_item }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+  {% else %}
+    <p>No highlights found in
+      <code>list
+      </code>
+      .
+    </p>
+  {% endif %}
+{% else %}
+  <p>No
+    <code>custom.image_highlights
+    </code>
+    or
+    <code>list
+    </code>
+    field found.
+  </p>
+{% endif %}
+
+<style>
+  .hov:hover,
+  .hov.highlight {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+  ol {
+    list-style: decimal-leading-zero !important;
+    direction: rtl;
+  }
+  #list {
+    list-style: none !important;
+    direction: rtl;
+  }
+  .hov:hover {
+    font-weight: bold;
+  }
+  .product__media-item {
+    transition: opacity .3s ease;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const highlightItems = document.querySelectorAll('ul > li[data-index]');
+    const mediaItems = document.querySelectorAll('.product__media-item[data-index]');
+
+    highlightItems.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        const index = item.getAttribute('data-index');
+
+        mediaItems.forEach((media) => {
+          if (media.getAttribute('data-index') === index) {
+            media.style.opacity = '1';
+          } else {
+            media.style.opacity = '0.5';
+          }
+        });
+      });
+
+      item.addEventListener('mouseleave', () => {
+        mediaItems.forEach((media) => {
+          media.style.opacity = '1';
+        });
+      });
+    });
+
+    mediaItems.forEach((media) => {
+      media.addEventListener('mouseenter', () => {
+        const index = media.getAttribute('data-index');
+
+        highlightItems.forEach((item) => {
+          if (item.getAttribute('data-index') === index) {
+            item.classList.add('highlight');
+          }
+        });
+
+        mediaItems.forEach((m) => {
+          if (m.getAttribute('data-index') === index) {
+            m.style.opacity = '1';
+          } else {
+            m.style.opacity = '0.5';
+          }
+        });
+      });
+
+      media.addEventListener('mouseleave', () => {
+        highlightItems.forEach((item) => {
+          item.classList.remove('highlight');
+        });
+
+        mediaItems.forEach((m) => {
+          m.style.opacity = '1';
+        });
+      });
+    });
+  });
+</script>

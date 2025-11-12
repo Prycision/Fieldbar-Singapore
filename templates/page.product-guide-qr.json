@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_tr6ry9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RPwfGP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Guide",
+            "heading_size": "h1"
+          }
+        },
+        "text_bW3YnB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Handcrafted outdoor products of incredible quality.<br/><br/>CHOOSE YOUR LOCATION</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RPwfGP",
+        "text_bW3YnB"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_wgi3W4": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_iwnLL6": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"https://fieldbar.co.za/pages/product-guide\" id=\"fancy_hover\">South Africa</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_m6Rh9e": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"{{ market_friendly_url }}/pages/product-guide\" id=\"fancy_hover\">International</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_iwnLL6",
+        "column_m6Rh9e"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #f3efeb;}",
+        " {padding: 3% 0; background-color: #f3efeb;}",
+        "slider-component.slider-mobile-gutter {background-color: #f3efeb;}",
+        " {margin-top: 3%;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_3rNn8n": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Safari_Engineered_rleft_column_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_tr6ry9",
+    "multicolumn_wgi3W4",
+    "image_banner_3rNn8n"
+  ]
+}

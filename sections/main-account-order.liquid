@@ -1,0 +1,244 @@
+{{ 'account-owners-club.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  strong {
+    font-weight: 500 !important;
+  }
+  .tt-shop-info .tt-item .tt-title + .tt-description {
+    margin-top: 15px;
+    font-weight: 300;
+    color: #333;
+  }
+  h6.tt-title {
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    padding-bottom: 1px !important;
+  }
+  thead {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .tt-shopping-layout .tt-title {
+    padding-bottom: 0px !important;
+  }
+  .order-note {
+    text-align: center;
+    color: #00334d;
+    font-size: 12px;
+    border-top: 1px dashed #a4a4a4 !important;
+  }
+  .order-note span {
+    padding-right: 10px;
+  }
+
+  @media (max-width: 575px) {
+    .bsm-shop-info {
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    .bsm-item {
+      flex: 1 1 auto;
+      width: 100%;
+      margin-bottom: 20px !important;
+    }
+    .tt-table-shop-03 tr td:not(:nth-child(1)),
+    .tt-table-shop-03 tr th:not(:nth-child(1)) {
+      text-align: left;
+    }
+  }
+{%- endstyle -%}
+
+{% if order.note %}
+  {%- style -%}.order-total{border-bottom:0px!important}{%- endstyle -%}
+{% endif %}
+
+<div class="container-indent bsm-customer-container nomargin">
+  <div class="container">
+    <h4 class="bsm-welcome">
+      Welcome {{ customer.first_name }}
+      <span class="bsm-span-mobile">
+        <a href="/account?view=profile" class="bsm-profile"> View profile</a
+        ><a class="bsm-logout" href="{{ routes.account_logout_url }}">Log out </a>
+      </span>
+    </h4>
+
+    <div class="tt-wrapper">
+      <div class="row row-account">
+        <div class="col-account">
+          <a href="/account?view=register" class="bsm-acc-btn btn btn-top">REGISTER A NEW PRODUCT</a>
+        </div>
+        <div class="col-account">
+          <a href="/account?view=registered-products" class="bsm-acc-btn btn btn-top">MAKE A CLAIM</a>
+        </div>
+        <div class="col-account">
+          <a href="/account?view=summary" class="bsm-acc-btn btn btn-top bsm-acc-btn-selected">VIEW ORDER HISTORY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bsm-static-section">
+  <div class="container-indent">
+    <div class="container">
+      <div class="tt-shopping-layout">
+        <div class="tt-wrapper">
+          <h2 class="tt-title ">
+            {{ 'customer.order.title' | t: name: order.name }}
+            <span class="tt-data bsm-span"> | {{ order.created_at | date: '%B %d, %Y' }}</span>
+          </h2>
+          <a href="/account?view=summary" class="tt-link-back"> <i class="icon-e-19"></i> Return to Order History </a>
+        </div>
+
+        <div class="tt-wrapper">
+          {% if order.cancelled %}
+            <div>
+              <p>
+                <strong>
+                  {{- 'customer.order.cancelled' | t }}
+                  {{ order.cancelled_at | date: '%B %d, %Y %R' -}}
+                </strong>
+              </p>
+              <span>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</span>
+            </div>
+            <br>
+          {% endif %}
+          <div class="tt-table-responsive bsm-table-order">
+            <table class="tt-table-shop-03">
+              <thead>
+                <tr>
+                  <th>{{ 'customer.order.product' | t }}</th>
+                  <th>{{ 'customer.order.price' | t }}</th>
+                  <th>{{ 'customer.order.quantity' | t }}</th>
+                  <th>{{ 'customer.order.total' | t }}</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for line_item in order.line_items %}
+                  <tr class="order-items">
+                    <td>
+                      {{ line_item.title | link_to: line_item.product.url }}
+                      {% if line_item.fulfillment %}
+                        <div class="fulfilled">
+                          {{ 'customer.order.fulfilled' | t }}
+                          {{ line_item.fulfillment.created_at | date: format: 'short' }}
+                          {% if line_item.fulfillment.tracking_number %}
+                            <a href="{{ line_item.fulfillment.tracking_url }}">
+                              {{- line_item.fulfillment.tracking_company }} #
+                              {{- line_item.fulfillment.tracking_number -}}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </td>
+                    <td>{{ line_item.price | money }}</td>
+                    <td>{{ line_item.quantity }}</td>
+                    <td>{{ line_item.quantity | times: line_item.price | money }}</td>
+                  </tr>
+
+                  {%- if line_item.line_level_discount_allocations != blank -%}
+                    <tr class="discount">
+                      {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                        <td colspan="3">DISCOUNT - {{ discount_allocation.discount_application.title }}</td>
+                        <td>
+                          <div>
+                            <span class="cart-discount">{{- discount_allocation.amount | money -}}</span>
+                          </div>
+                        </td>
+                      {%- endfor -%}
+                    </tr>
+                  {%- endif -%}
+                {% endfor %}
+
+                <tr class="subtotal">
+                  <td colspan="3">{{ 'customer.order.subtotal' | t }}</td>
+                  <td>{{ order.subtotal_price | money }}</td>
+                </tr>
+
+                {% for shipping_method in order.shipping_methods %}
+                  <tr class="shipping">
+                    <td colspan="3">SHIPPING - {{ shipping_method.title }}</td>
+                    <td>{{ shipping_method.price | money }}</td>
+                  </tr>
+                {% endfor %}
+
+                {% for tax_line in order.tax_lines %}
+                  <tr>
+                    <td colspan="3">
+                      {{ tax_line.title }}
+                      {{ tax_line.rate | times: 100 }}%
+                    </td>
+                    <td>{{ tax_line.price | money }}</td>
+                  </tr>
+                {% endfor %}
+                <tr class="order-total">
+                  <td colspan="3">{{ 'customer.order.total' | t }}</td>
+                  <td>{{ order.total_price | money }}</td>
+                </tr>
+                {% if order.note %}
+                  <tr class="order-note">
+                    <td colspan="4"><span>ORDER NOTES: </span> {{ order.note }}</td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tt-wrapper">
+          <div class="tt-shop-info bsm-shop-info">
+            <div class="tt-item bsm-item">
+              <h6 class="tt-title">{{ 'customer.order.billing_address' | t }}</h6>
+              <div class="tt-description">
+                <strong>{{ 'customer.order.payment_status' | t }}: {{ order.financial_status_label }}</strong>
+                <p>{{ order.billing_address.name }}</p>
+                <p>{{ order.billing_address.company }}</p>
+                <p>{{ order.billing_address.street }}</p>
+                <p>{{ order.billing_address.city }}, {{ order.billing_address.province }}</p>
+                <p>
+                  {{ order.billing_address.country }}
+                  {{ order.billing_address.zip }}
+                </p>
+                <p>{{ order.billing_address.phone }}</p>
+              </div>
+            </div>
+            {% if order.shipping_address %}
+              <div class="tt-item bsm-item">
+                <h6 class="tt-title">{{ 'customer.order.shipping_address' | t }}</h6>
+                <div class="tt-description">
+                  <strong>{{ 'customer.order.fulfillment_status' | t }}: {{ order.fulfillment_status_label }}</strong>
+                  <p>{{ order.shipping_address.name }}</p>
+                  <p>{{ order.shipping_address.company }}</p>
+                  <p>{{ order.shipping_address.street }}</p>
+                  <p>{{ order.shipping_address.city }}, {{ order.shipping_address.province }}</p>
+                  <p>
+                    {{ order.shipping_address.country }}
+                    {{ order.shipping_address.zip }}
+                  </p>
+                  <p>{{ order.shipping_address.phone }}</p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- section ends -->
+
+{% schema %}
+{
+  "name": "Acc Order Details",
+  "settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

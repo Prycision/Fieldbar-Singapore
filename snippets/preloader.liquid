@@ -1,0 +1,27 @@
+<div id="preloader">
+  <div id="lottie-preloader"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-preloader'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '{{ "https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Lottie_Lucy_Loader_Updated.json?v=1743372162" }}', // Replace with your Lottie file URL
+    });
+  });
+
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease-out';
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  });
+</script>

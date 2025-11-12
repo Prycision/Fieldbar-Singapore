@@ -1,0 +1,16 @@
+<div class="mega-products-grid-mob">
+  {% for menu_item in shop.metaobjects.mega_menu.values limit: 2 %}
+    <div class="product-item-mob2">
+      {% if menu_item.img %}
+        <img
+          class="gimg"
+          src="{{ menu_item.img | file_url }}"
+          alt="Mega menu image {{ forloop.index }}"
+          loading="lazy">
+      {% endif %}
+    </div>
+  {% else %}
+    <p class="mega-menu-empty">No mega menu items found.
+    </p>
+  {% endfor %}
+</div>

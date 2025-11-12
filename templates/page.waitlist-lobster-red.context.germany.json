@@ -1,0 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.waitlist-lobster-red.json",
+  "context": {
+    "market": "germany"
+  },
+  "sections": {
+    "waitlist_lobster_red_UykyYP": {
+      "settings": {
+        "subtitle_top": "SICHERN SIE SICH IHREN PLATZ AUF",
+        "title": "Der Lobster-Liste",
+        "subtitle_bottom": "ERHÄLTLICH IM NOVEMBER",
+        "body_text": "Nach einer ausverkauften Saison in Südafrika letzten Weihnachten stechen unsere begehrtesten Krustentiere nun in Ihre Gewässer.<br><br>\nTragen Sie sich ein, um exklusiven Vorabzugang zu diesem unverkennbaren Rotton zu erhalten."
+      },
+      "blocks": {}
+    }
+  }
+}

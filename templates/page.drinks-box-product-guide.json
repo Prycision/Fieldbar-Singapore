@@ -1,0 +1,515 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mn_personalisation_4qaTUd": {
+      "type": "mn-personalisation",
+      "settings": {
+        "left_bg_image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_03.webp",
+        "intro_text": "INTRODUCING",
+        "headline": "The Drinks Box",
+        "short_description": "10L<br><br>\nThe FIELDBAR Drinks Box is a <strong>10 litre hardcase cooler box</strong> designed for <strong>superior thermal performance. Properly made</strong> and perfectly proportioned, the Drinks Box is everything you would expect from a modern cooler. <strong>Durable, versatile</strong> and <strong>comfortable to carry.</strong>",
+        "main_description": "",
+        "image": "shopify://shop_images/DBSBB01-Front1200x1600WEB.webp",
+        "button_text": "SHOP NOW",
+        "button_link": "shopify://collections/drinks-box"
+      }
+    },
+    "multicolumn_yhJUNt": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_6zhifr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "<h2>A Closer Look </h2><p>Durable, versatile and comfortable to carry.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dGGVta": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"https://fieldbar.com/collections/drinks-box\" id='fancy_hover'>SHOP YOURS NOW</a></div>",
+            "link_label": "",
+            "link": "shopify://collections/field-bottle-product-guide-page"
+          }
+        }
+      },
+      "block_order": [
+        "column_6zhifr",
+        "column_dGGVta"
+      ],
+      "custom_css": [
+        ".rte > *:first-child {margin-top: 0; margin-bottom: 8px;}",
+        ".grid {display: flex; flex-wrap: nowrap; margin-bottom: 2rem; padding: 0; list-style: none; column-gap: var(--grid-mobile-horizontal-spacing); row-gap: var(--grid-mobile-vertical-spacing);}",
+        ".background-none .multicolumn-list {padding-left: 1em;}",
+        " {margin-top: 3%; margin-bottom: -1%;}",
+        "div#full-spec {display: flex; justify-content: flex-end; margin-right: 1.5em; margin-top: 2em;}",
+        "@media screen and (max-width: 61.8125em) {h2 {padding: 0 !important; } .rte {margin-bottom: -1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "closer",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_jyEmw7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_D9gf44": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16_f91a1e66-4845-4c15-9133-3adc6ce80b92.webp",
+            "title": "Perfectly Proportioned",
+            "text": "<p>Inspired by the elegant wooden ‘Drinks Boxes’ of the Victorian era, the <strong>10 litre </strong>FIELDBAR Drinks Box is <strong>designed to accommodate two bottles of Champagne</strong>, or three bottles of still wine in an upright position. Perfectly proportioned for stylish parties and picnics.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_n8aAkr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/A_Closer_Look_DB_02_1.png",
+            "title": "Safari Engineered",
+            "text": "<p>The FIELDBAR Drinks Box <strong>only weighs 1.8kg </strong>but can <strong>withstand a weight of 120kg. Durable, scratch resistant and shockproof</strong>. FIELDBAR coolers are made from a special composite ABS plastic that's used in various high-impact protection products. That's why all Fieldbars come with a <strong>5‒year warranty.</strong></p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EYRN9z": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/A_Closer_Look_GT_03_35a439a7-9aad-495e-8600-8dbc84b71213.png",
+            "title": "Superior Ice Performance",
+            "text": "<p>Packed full of ice, and left outside in the shade, the FIELDBAR Drinks Box can <strong>keep Champagne below 10°C for an incredible 50 hours</strong>. Thermal effective shape, closed cell proprietary foam, radiation reflective paint, airtight lid gasket and a raised floor.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_D9gf44",
+        "column_n8aAkr",
+        "column_EYRN9z"
+      ],
+      "custom_css": [
+        "p,h3 {font-family: \"Gotham Narrow Book\" !important;}",
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {margin-left: 0px; margin-right: 0px;}",
+        " {margin-left: 1em; margin-right: 1em; margin-bottom: 2em;}",
+        ".metafield-rich_text_field > p {padding: 0; font-size: 1em;}"
+      ],
+      "settings": {
+        "css-class": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "interactive_hover_colours_mtMK99": {
+      "type": "interactive-hover-colours",
+      "blocks": {
+        "option_cqJB7y": {
+          "type": "option",
+          "settings": {
+            "label": "Sea Boat Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_03.webp",
+            "product_link": "shopify://products/sea-boat-blue"
+          }
+        },
+        "option_pzfFdx": {
+          "type": "option",
+          "settings": {
+            "label": "Orchard Orange",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_07.webp",
+            "product_link": "shopify://products/orchard-orange"
+          }
+        },
+        "option_N8dCWQ": {
+          "type": "option",
+          "settings": {
+            "label": "Bazaruto Blue",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_16.webp",
+            "product_link": "shopify://products/bazaruto-blue"
+          }
+        },
+        "option_wHnfeT": {
+          "type": "option",
+          "settings": {
+            "label": "Parisian Green",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_HR20.jpg",
+            "product_link": "shopify://products/parisian-green"
+          }
+        },
+        "option_p3Uptj": {
+          "type": "option",
+          "settings": {
+            "label": "Safari White",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_11.webp",
+            "product_link": "shopify://products/safari-white"
+          }
+        },
+        "option_ThACtB": {
+          "type": "option",
+          "settings": {
+            "label": "Oyster Grey",
+            "image": "shopify://shop_images/FRANCES_MARAIS_Outdoor_Shoot_No_Romance_WEB_26.webp",
+            "product_link": "shopify://products/oyster-grey"
+          }
+        }
+      },
+      "block_order": [
+        "option_cqJB7y",
+        "option_pzfFdx",
+        "option_N8dCWQ",
+        "option_wHnfeT",
+        "option_p3Uptj",
+        "option_ThACtB"
+      ],
+      "settings": {
+        "left_background_image": "shopify://shop_images/Drinks_Box_Leather_Handle_Hero_Lifestyle_01_Large_ba0ebb37-decc-495f-be67-833d461bb0e0.jpg",
+        "right_heading": "SIGNATURE SHADES",
+        "right_copy": "With a high gloss finish and gold hardware accents. Choose from six signature shades."
+      }
+    },
+    "product_guide_capacity_cqz6zT": {
+      "type": "product-guide-capacity",
+      "blocks": {
+        "item_YkCFCR": {
+          "type": "item",
+          "settings": {
+            "label": "Pimm's & Lemonade, 3 Tennis Balls",
+            "image": "shopify://shop_images/DB_Capacity_Option_05.svg"
+          }
+        },
+        "item_3QqRr7": {
+          "type": "item",
+          "settings": {
+            "label": "10 Beers 330ml",
+            "image": "shopify://shop_images/DB_Option_beer_2.svg"
+          }
+        },
+        "item_gLC84d": {
+          "type": "item",
+          "settings": {
+            "label": "3 Wine Bottles 750ml",
+            "image": "shopify://shop_images/DB_Capacity_Option_03.svg"
+          }
+        },
+        "item_HCrDDm": {
+          "type": "item",
+          "settings": {
+            "label": "2 Champagne Bottles 750ml",
+            "image": "shopify://shop_images/DB_Capacity_Option_04.svg"
+          }
+        }
+      },
+      "block_order": [
+        "item_YkCFCR",
+        "item_3QqRr7",
+        "item_gLC84d",
+        "item_HCrDDm"
+      ],
+      "settings": {
+        "heading": "Fits more than you think",
+        "capacity_text": "Capacity | 10 L",
+        "link_text": "Compare Sizes",
+        "link_url": "https://fieldbar.com/pages/size-guide",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/fe9dcdee54fb486aadb4f9ac35b8950e.mp4"
+      }
+    },
+    "mn_towel_mzUXri": {
+      "type": "mn-towel",
+      "settings": {
+        "left_image": "shopify://shop_images/Swing_Sling_St-Tropez_Hero_Lifestyle_01_Large_67a09e3c-159b-4f69-9b0b-b075bf14b03e.jpg",
+        "left_image_link": "shopify://products/sea-boat-blue",
+        "left_caption": "",
+        "main_media_url": "https://cdn.shopify.com/s/files/1/0729/3753/7840/files/Swing_Sling_St-Tropez_Hero_Lifestyle_02_Large_4651aa93-3354-474d-ab88-b83093ea9bc8.jpg?v=1742471050",
+        "heading": "Instructions & Care",
+        "description": "USE INSTRUCTIONS\n<br>\n01. Fill Drinks Box with pre-chilled drinks and a generous amount of ice<br>\n02. To keep cool air trapped inside the Drinks Box, only open it when necessary<br>\n03. For use as an ice bucket: fill halfway with ice and cold water, then add drinks<br>\n\n<br>\nCARE & AGEING<br>\n01. Clean with warm water and a soft cloth<br>\n02. Do not use cleaning products<br>\n03. Do not pressure hose<br>\n04. The leather handle will weather<br>\n05. The outer cabinet may incur minor scratches and dents<br>\n06. Brass-coated hardware may oxidise slightly<br>\n07. Ensure interior cabinet is dry before long term storage",
+        "button_text": "SHOP YOUR DRINKS BOX",
+        "button_link": "shopify://collections/drinks-box"
+      }
+    },
+    "fieldbar_collection_related_9rwTkz": {
+      "type": "Fieldbar_collection_related",
+      "custom_css": [
+        "a {text-transform: uppercase; font-size: 0.7em;}",
+        " {margin-top: 4.5em;}",
+        "#spec-price {display: none !important;}",
+        "#hprice {display: none !important;}",
+        ".card__information > .card__heading > p {display: none !important;}"
+      ],
+      "name": "t:sections.fieldbar-collection-related.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "drinks-box",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "personalisation_product_guide_dJdXU7": {
+      "type": "personalisation-product-guide",
+      "disabled": true,
+      "name": "Personalisation Guide",
+      "settings": {
+        "left_image": "shopify://shop_images/GTSBB04-Personalisation1600x2000WEB.webp",
+        "heading": "Your Gin Trunk. Forever.",
+        "body_text": "<p>Personalise the premium leather handle of your Gin Trunk by adding a name or initials. Maybe mention that currently only offering in USA ? maybe even hide this section for now cause we don't have any personalisation in UK </p>",
+        "link_text": "PERSONALISE YOURS NOW",
+        "link_url": "",
+        "badge_image": "shopify://shop_images/DOOR54_TAJ_HR_fieldbar_model_selects_01_jpg.webp"
+      }
+    },
+    "specifications_product_guide_VPLnhc": {
+      "type": "specifications-product-guide",
+      "blocks": {
+        "left_item_zhxGBV": {
+          "type": "left_item",
+          "settings": {
+            "text": "Genuine off-cut double-sided leather handle for extra carry comfort"
+          }
+        },
+        "left_item_9N3NtL": {
+          "type": "left_item",
+          "settings": {
+            "text": "Reflective paint to reduce heat absorption"
+          }
+        },
+        "left_item_T7dYBR": {
+          "type": "left_item",
+          "settings": {
+            "text": "High performance removable and zero ozone-depleting foam insulation"
+          }
+        },
+        "left_item_VAqEQj": {
+          "type": "left_item",
+          "settings": {
+            "text": "Airflow resistant gasket"
+          }
+        },
+        "left_item_cmLi8A": {
+          "type": "left_item",
+          "settings": {
+            "text": "Food-grade, BPA-free, easy-to-clean interior cabinet"
+          }
+        },
+        "right_item_EWTUFj": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium hidden hinges - designed to last forever"
+          }
+        },
+        "right_item_7kWywW": {
+          "type": "right_item",
+          "settings": {
+            "text": "Aluminium handle “ears”"
+          }
+        },
+        "right_item_7iGixA": {
+          "type": "right_item",
+          "settings": {
+            "text": "Impact- and scratch-resistant outer cabinet (due to hand decorating slight variations in the paint may occur)"
+          }
+        },
+        "right_item_Y68Hkf": {
+          "type": "right_item",
+          "settings": {
+            "text": "Pre-numbered brass plaque for quality control and tracking"
+          }
+        },
+        "right_item_VfJxjr": {
+          "type": "right_item",
+          "settings": {
+            "text": "Silicone nonslip feet"
+          }
+        }
+      },
+      "block_order": [
+        "left_item_zhxGBV",
+        "left_item_9N3NtL",
+        "left_item_T7dYBR",
+        "left_item_VAqEQj",
+        "left_item_cmLi8A",
+        "right_item_EWTUFj",
+        "right_item_7kWywW",
+        "right_item_7iGixA",
+        "right_item_Y68Hkf",
+        "right_item_VfJxjr"
+      ],
+      "settings": {
+        "left_top_image": "shopify://shop_images/exploded_view_drinks_box.png-2.webp",
+        "left_title": "Specifications",
+        "left_subtitle": "There are 58 parts in a FIELDBAR Drinks Box, all designed to be removed, repaired, and recirculated if required. That's good for you, ourselves, and the planet we live on.",
+        "right_background_image": "shopify://shop_images/Swing_Sling_Capri_Hero_Lifestyle_03_Large_0afbb7af-ff1d-4e45-aec3-cd36a93099b0.jpg"
+      }
+    },
+    "multicolumn_JgRcUR": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_jyP4bd": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/5_year_home.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">5-Year Warranty</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hwiqEW": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_04_1_6f847bc3-2a5a-4263-9c8c-ee8f93fd1a1d.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Latchless Locking </a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pzegda": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/WEB_ICONS_SB_10.png_3.png",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Superior Ice Performance</a>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_eVBBjF": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "image": "shopify://shop_images/safari_engineered.webp",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a href=\"/pages/about-us\" id=\"fancy_hover\">Safari Engineered</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jyP4bd",
+        "column_hwiqEW",
+        "column_pzegda",
+        "column_eVBBjF"
+      ],
+      "custom_css": [
+        "#fancy_hover {font-family: \"Gotham Book\"; width: fit-content; text-align: center; margin-top: 16px;}",
+        ".multicolumn-card.content-container {display: flex; flex-direction: column-reverse; align-items: center; background-color: #fffbf6;}",
+        " {padding: 3% 0; background-color: #fffbf6;}",
+        "slider-component.slider-mobile-gutter {background-color: #fffbf6;}",
+        "@media screen and (max-width: 61.8125em) {.media {height: 10vh !important; } {margin: 1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "icon-blocks",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "{text-align: left;}"
+      ],
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "mn_personalisation_4qaTUd",
+    "multicolumn_yhJUNt",
+    "multicolumn_jyEmw7",
+    "interactive_hover_colours_mtMK99",
+    "product_guide_capacity_cqz6zT",
+    "mn_towel_mzUXri",
+    "fieldbar_collection_related_9rwTkz",
+    "personalisation_product_guide_dJdXU7",
+    "specifications_product_guide_VPLnhc",
+    "multicolumn_JgRcUR",
+    "main"
+  ]
+}

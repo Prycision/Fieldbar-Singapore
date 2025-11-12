@@ -1,0 +1,91 @@
+ <!-- Logo Slider Markup -->
+<div class="logo-slider">
+  <!-- Title above the marquee, vertically centered within header area -->
+  <div class="slider-title">
+    <p></p>In Kapstadt gefertigt.<br>Weltweit verkauft.</p>
+  </div>
+
+  <!-- Marquee Track -->
+  <div class="slide-track">
+    <!-- Original set of logos -->
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Fortnum_Mason.png?v=1749715201" alt="Fortnum & Mason"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Harrods.png?v=1749715199"      alt="Harrods"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Field_Fort.png?v=1749715200"   alt="Field & Fort"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Anthropologie.png?v=1749715199"alt="Anthropologie"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Glassette.png?v=1749715200"    alt="Glassette"></div>
+    <!-- Duplicate set for seamless loop -->
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Fortnum_Mason.png?v=1749715201" alt="Fortnum & Mason"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Harrods.png?v=1749715199"      alt="Harrods"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Field_Fort.png?v=1749715200"   alt="Field & Fort"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Anthropologie.png?v=1749715199"alt="Anthropologie"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Glassette.png?v=1749715200"    alt="Glassette"></div>
+     <!-- Duplicate set for seamless loop -->
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Fortnum_Mason.png?v=1749715201" alt="Fortnum & Mason"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Harrods.png?v=1749715199"      alt="Harrods"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Field_Fort.png?v=1749715200"   alt="Field & Fort"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Anthropologie.png?v=1749715199"alt="Anthropologie"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Glassette.png?v=1749715200"    alt="Glassette"></div>
+     <!-- Duplicate set for seamless loop -->
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Fortnum_Mason.png?v=1749715201" alt="Fortnum & Mason"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Harrods.png?v=1749715199"      alt="Harrods"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Field_Fort.png?v=1749715200"   alt="Field & Fort"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Anthropologie.png?v=1749715199"alt="Anthropologie"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Glassette.png?v=1749715200"    alt="Glassette"></div>
+     <!-- Duplicate set for seamless loop -->
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Fortnum_Mason.png?v=1749715201" alt="Fortnum & Mason"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Harrods.png?v=1749715199"      alt="Harrods"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Field_Fort.png?v=1749715200"   alt="Field & Fort"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Anthropologie.png?v=1749715199"alt="Anthropologie"></div>
+    <div class="slide"><img src="https://cdn.shopify.com/s/files/1/0654/1610/2127/files/Glassette.png?v=1749715200"    alt="Glassette"></div>
+  </div>
+</div>
+
+<!-- Logo Slider Styles -->
+<style>
+  :root {
+    --slide-gap: 3em;
+    --marquee-duration: 180s; 
+  }
+
+  .logo-slider {
+    background-color: #002d53;
+    padding: 1em 0;           
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .slider-title {
+    margin: 0 0 0px;         
+    text-align: center;
+    color: #FFFBF6;
+    text-transform: uppercase;
+    font-family: 'Gotham Narrow Book', sans-serif;
+    letter-spacing: 0;
+  }
+
+  .slide-track {
+    display: flex;
+    width: fit-content;
+    animation: marquee var(--marquee-duration) linear infinite;
+    will-change: transform;
+  }
+
+  .slide {
+    flex: 0 0 auto;
+    margin-right: var(--slide-gap);
+  }
+
+  .slide img {
+    display: block;
+    height: 30px;
+    width: auto;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>

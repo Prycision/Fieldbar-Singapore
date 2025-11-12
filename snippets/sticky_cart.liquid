@@ -1,0 +1,175 @@
+<div id="stck" class="stick">
+  <div
+    style="margin-boottom:2em"
+    id="cart-footer-custom"
+    class="cfc "
+  >
+    <div class="totals_inner">
+      <div class="custom-accordion">
+        <div class="accordion-item totals_notes">
+          <div class="accordion-title">
+            <label for="Cart-note" style="font-family: 'Gotham Medium' !important; color: #002b4d;">
+              {%- case localization.country.iso_code %}
+                {% when 'DE' %}
+                  Spezielle Bestellanweisungen
+                {% when 'FR' %}
+                  Instructions spéciales concernant la commande
+                {% else %}
+                  ORDER NOTES
+              {% endcase %}
+            </label>
+            <span>+ </span>
+          </div>
+          <div class="accordion-content">
+            <textarea
+              class="totals_notes-input"
+              name="note"
+              id="Cart-note"
+              form="cart"
+              rows="1"
+              placeholder="Add Special Instructions For Your Order"
+            >
+              {{ cart.note }}
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="totals_inner">
+      <div class="totals_total">
+        <span class="totals_total-label">
+          {%- case localization.country.iso_code %}
+            {% when 'DE' %}
+              Geschätzte Gesamtkosten
+            {% when 'FR' %}
+              Total estimé
+            {% else %}
+              ESTIMATED TOTAL
+          {% endcase -%}
+        </span>
+        <span class="totals_total-value">
+          <div class="totals">
+            <p class="totals__total-value">
+              {{ cart.total_price | money_with_currency }}
+            </p>
+          </div>
+        </span>
+      </div>
+
+      <div class="totals_cta">
+        <button
+          type="submit"
+          class="fieldbar_button uppercase"
+          id="checkout"
+          name="checkout"
+          class="totals_checkout"
+          form="cart"
+          {% if cart == empty %}
+            disabled
+          {% endif %}
+        >
+          {% case localization.country.iso_code %}
+            {% when 'DE' %}
+              Sicher bezahlen
+            {% when 'FR' %}
+              PAIEMENT SÉCURISÉ
+            {% else %}
+              CHECKOUT SECURELY
+          {% endcase %}
+        </button>
+      </div>
+      {% case localization.country.iso_code %}
+        {% when 'DE' %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Akzeptierte Zahlungsarten: Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro und mehr."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Zahlungsmöglichkeiten </span>
+            </div>
+            <div class="payment-icon-wrap shipping-info-box" data-tooltip="Sichere Transaktionen mit FIELDBAR">
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Sichere Transaktionen </span>
+            </div>
+          </div>
+        {% when 'FR' %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Types de paiement acceptés : Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro et plus encore."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Types de paiement acceptés </span>
+            </div>
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Des transactions sûres et sécurisées avec FIELDBAR"
+            >
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Des transactions </span>
+            </div>
+          </div>
+        {% else %}
+          <div id="small" class="product-data">
+            <div
+              class="payment-icon-wrap shipping-info-box"
+              data-tooltip="Accepted payment types: VISA, MASTERCARD, Apple Pay, Google Pay, American Express, Diners Club, Maestro and more."
+            >
+              {{ 'Shield.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Payment options </span>
+            </div>
+            <div class="payment-icon-wrap shipping-info-box" data-tooltip="Safe and secure transactions with FIELDBAR">
+              {{ 'lock.svg' | inline_asset_content }}
+              <span style="padding-left:5px">Secure Transactions </span>
+            </div>
+          </div>
+      {% endcase %}
+
+      <p class="taxes_text">
+        {%- liquid
+          if cart.duties_included and cart.taxes_included
+            if shop.shipping_policy.body == blank
+              echo 'Taxes included. Duties included. '
+            else
+              echo 'Taxes and duties included. '
+            endif
+          elsif cart.duties_included == false and cart.taxes_included
+            echo 'Taxes included. '
+          elsif cart.duties_included and cart.taxes_included == false
+            echo 'Duties included. '
+          endif
+        -%}
+        {% case localization.country.iso_code %}
+          {% when 'DE' %}
+            Inkl. Steuern. Rabatte und
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >Versand
+            </a>
+            werden beim Checkout berechnet.
+          {% when 'FR' %}
+            Taxes incluses. Réductions et
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >frais d’expédition
+            </a>
+            calculés à l’étape du paiement.
+          {% else %}
+            Discounts and
+            <a
+              style="color: #002b4d;"
+              href="/pages/shipping-policy"
+              class="totals_fine-link"
+              >shipping
+            </a>
+            calculated at checkout.
+        {% endcase %}
+      </p>
+    </div>
+  </div>
+</div>

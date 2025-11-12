@@ -1,0 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.waitlist-lobster-red.json",
+  "context": {
+    "market": "france"
+  },
+  "sections": {
+    "waitlist_lobster_red_UykyYP": {
+      "settings": {
+        "subtitle_top": "RÉSERVEZ VOTRE PLACE SUR",
+        "title": "La Liste Lobster",
+        "subtitle_bottom": "DISPONIBLE EN NOVEMBRE",
+        "body_text": "Après une saison épuisée en Afrique du Sud lors du dernier Noël, nos crustacés les plus convoités prennent le large vers de nouveaux horizons.<br><br>\nInscrivez-vous pour bénéficier d’un accès exclusif à cette nuance de rouge absolument inimitable."
+      },
+      "blocks": {}
+    }
+  }
+}

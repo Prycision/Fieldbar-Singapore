@@ -1,0 +1,422 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_4bcWUb": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div id=\"skip\" class=\"product-title\">\n  {% if product.title contains '/' %}\n    {% assign split-product-title = product.title | split: '/' %}\n    <span clsss=\"title-first\" >\n      {{- split-product-title[0] -}}\n    </span> <span>/</span> <span style=\"font-style: italic;\">{{- split-product-title[1] }}</span>\n  {%- else -%}\n    <span class=\"title-plain\">{{ product.title }}</span>\n  {%- endif -%}\n</div>"
+          }
+        },
+        "price_RLnYW6": {
+          "type": "price",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_C6wpMU": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "custom_liquid_8fA8PW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"color:#01324c\" class=\"product-data\">\n  <div>{{ product.metafields.description.custom_html }}</div>\n \n  <div class=\"linked-option-variants-container\"></div>\n\n  \n</div>"
+          }
+        },
+        "custom_liquid_b6wJCT": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign tags = product.tags | join: ',' | downcase %}\n{% if tags contains 'gin trunk' or tags contains 'drinks box' %}\n  <div id=\"size-guide\">\n    <p>\n      <strong>Need help?</strong> Find the perfect cooler with our\n      <a href=\"#\" id=\"openDimensionsModal\" class=\"dimensions-link\">Size Guide</a>\n    </p>\n  </div>\n{% endif %}"
+          }
+        },
+        "custom_liquid_yACHpr": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "buy_buttons_NF8jyB": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_3czzF6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'badges' %}\n<div id='skip'></div>"
+          }
+        },
+        "custom_liquid_RwMwji": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "custom_liquid_GEN4c6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% case localization.country.iso_code %}\n  {% when 'DE' %}\n    <div class=\"product-data\">\n      <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Akzeptierte Zahlungsarten: Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro und mehr.\">\n        {{ 'Shield.svg' | inline_asset_content }}\n        <span style=\"padding-left:5px\">Zahlungsmöglichkeiten\n        </span>\n      </div>\n      <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Sichere Transaktionen mit FIELDBAR\">\n        {{ 'lock.svg' | inline_asset_content }}\n        <span style=\"padding-left:5px\">Sichere Transaktionen\n        </span>\n      </div>\n    </div>\n  {% when 'FR' %}\n    <div class=\"product-data\">\n      <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Types de paiement acceptés : Visa, Mastercard, Apple Pay, Google Pay, American Express, Diners Club, Maestro et plus encore.\">\n        {{ 'Shield.svg' | inline_asset_content }}\n        <span style=\"padding-left:5px\">Types de paiement acceptés\n        </span>\n      </div>\n      <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Des transactions sûres et sécurisées avec FIELDBAR\">\n        {{ 'lock.svg' | inline_asset_content }}\n        <span style=\"padding-left:5px\">Des transactions\n        </span>\n      </div>\n    </div>\n  {% else %}\n  <div class=\"product-data\">\n    <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Accepted payment types: VISA, MASTERCARD, Apple Pay, Google Pay, American Express, Diners Club, Maestro and more.\">\n      {{ 'Shield.svg' | inline_asset_content }}\n      <span style=\"padding-left:5px\">Payment options\n      </span>\n    </div>\n    <div class=\"payment-icon-wrap shipping-info-box\" data-tooltip=\"Safe and secure transactions with FIELDBAR\">\n      {{ 'lock.svg' | inline_asset_content }}\n      <span style=\"padding-left:5px\">Secure Transactions\n      </span>\n    </div>\n  </div>\n{% endcase %}"
+          }
+        },
+        "custom_liquid_iCHxNY": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'accordian' %}"
+          }
+        },
+        "custom_liquid_9GjMr7": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"hid-mob gal-list-highlights\" style='padding-top: 5em; margin-bottom: 2.3em;' >{% render 'list_highlites' %}</div>"
+          }
+        },
+        "custom_liquid_gh6c9D": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class='gal'>{% render 'fieldbar-gallery' %}</div>\n\n<style>\n.lv-option-swatch.lv-option-image-swatch {\n  border: 4px solid white !important;\n}\n</style>"
+          }
+        },
+        "custom_liquid_4GW3nL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.tpo_option-set-wrapper.tpo_has-option-set {\n  display: none !important;\n}\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_4bcWUb",
+        "price_RLnYW6",
+        "judge_me_reviews_preview_badge_C6wpMU",
+        "custom_liquid_8fA8PW",
+        "custom_liquid_b6wJCT",
+        "custom_liquid_yACHpr",
+        "buy_buttons_NF8jyB",
+        "custom_liquid_3czzF6",
+        "custom_liquid_RwMwji",
+        "custom_liquid_GEN4c6",
+        "custom_liquid_iCHxNY",
+        "custom_liquid_9GjMr7",
+        "custom_liquid_gh6c9D",
+        "custom_liquid_4GW3nL"
+      ],
+      "custom_css": [
+        ".price__badge-sold-out {display: none !important;}",
+        " {width: 100%; max-width: 100%;}",
+        ".product-form {padding: 0 20%;}",
+        "@media screen and (max-width: 61.8125em) {{padding: 0 !important; }}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "columns",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "multicolumn_yRctHQ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_amwXzq": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div id=\"fits_cen\">{% render 'drinks_box_size' %}</div>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HtErVw": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "video": "{{ product.metafields.custom.capacity_lifestyle_media.value }}",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<a class=\"fh\" id='fancy_hover' href='{{ market_friendly_url }}/pages/size-guide'>View All Sizes</a>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_amwXzq",
+        "column_HtErVw"
+      ],
+      "custom_css": [
+        "ul > li {background-color: #fffbf6 !important;}",
+        ".multicolumn-card-spacing {margin: 0;}",
+        ".multicolumn-card.content-container {height: 100% !important; color: #f3efeb;}",
+        "div:empty {display: block !important;}",
+        ".multicolumn-card__image {width: 100%; max-width: 50vw; padding: 0 !important; height: 100%; max-height: 120vh;}",
+        "div.multicolumn-card__info {display: none !important;}",
+        "@media screen and (max-width: 61.8125em) {.multicolumn-card__image {width: 100%; max-width: 100vw !important; padding: 0 !important; height: 100%; max-height: 120vh; }}"
+      ],
+      "settings": {
+        "css-class": "fits-section",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_jRBkJV": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tm36Yr": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "<h2>A Closer Look </h2><p>Durable, versatile and comfortable to carry.</p>",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UNPXet": {
+          "type": "column",
+          "settings": {
+            "div-link": "",
+            "title": "",
+            "text": "",
+            "custom_liquid": "<div id=\"full-spec\"><a href=\"/pages/product-guide\" id='fancy_hover'>Full Specifications</a></div>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_tm36Yr",
+        "column_UNPXet"
+      ],
+      "custom_css": [
+        ".rte > *:first-child {margin-top: 0; margin-bottom: 8px;}",
+        ".grid {display: flex; flex-wrap: nowrap; margin-bottom: 2rem; padding: 0; list-style: none; column-gap: var(--grid-mobile-horizontal-spacing); row-gap: var(--grid-mobile-vertical-spacing);}",
+        ".background-none .multicolumn-list {padding-left: 1em;}",
+        " {margin-top: 3%; margin-bottom: -1%;}",
+        "div#full-spec {display: flex; justify-content: flex-end; margin-right: 1.5em; margin-top: 2em;}",
+        "@media screen and (max-width: 61.8125em) {h2 {padding: 0 !important; } .rte {margin-bottom: -1em !important; }}"
+      ],
+      "settings": {
+        "css-class": "closer",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_LCYy6R": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_UEWFdW": {
+          "type": "column",
+          "repeater": "{{ product.metafields.custom.a_closer_look.value }}",
+          "settings": {
+            "div-link": "",
+            "image": "{{ block.repeater.background_image.value }}",
+            "title": "{{ block.repeater.heading.value }}",
+            "text": "{{ block.repeater.body_text | metafield_tag }}",
+            "custom_liquid": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_UEWFdW"
+      ],
+      "custom_css": [
+        "p,h3 {font-family: \"Gotham Narrow Book\" !important;}",
+        ".multicolumn-card__image-wrapper.multicolumn-card__image-wrapper--full-width.multicolumn-card-spacing {margin-left: 0px; margin-right: 0px;}",
+        " {margin-left: 1em; margin-right: 1em; margin-bottom: 2em;}",
+        ".metafield-rich_text_field > p {padding: 0; font-size: 1em;}"
+      ],
+      "settings": {
+        "css-class": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 32
+      }
+    },
+    "custom_liquid_76TgPX": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "{% render 'slider' %}",
+        "color_scheme": "",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_x3Eqdf": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{text-align: center;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'reviews' %}",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 16
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        "a {text-transform: uppercase; font-size: 0.7em;}",
+        " {margin-top: 4.5em;}",
+        "#spec-price {display: block !important; font-size: 0.8rem;}",
+        "#hprice {display: none !important;}"
+      ],
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 100,
+        "columns_desktop": 4,
+        "full_width": true,
+        "enable_desktop_slider": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "custom_liquid_3xEGmz": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "a {color: white !important;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'bells' %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_9MYEdi": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "{padding: 0;}",
+        "@media screen and (max-width: 61.8125em) {.craft-overlay {padding: 0 !important; } .sustainable-craft-section {padding-top: 20px !important; }}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'sustainable_craftsmanship2' %}\n{% render 'breadcrumbs' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 32
+      }
+    },
+    "custom_liquid_GYfrAi": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".price {font-size: 1.6rem; letter-spacing: 0.1rem; line-height: calc(1 + 0.5 / var(--font-body-scale)); color: rgb(var(--color-foreground)); font-family: \"Gotham Medium\" !important;}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'sticky_atc' %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_9qj6Hy": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<script src=\"https://a.klaviyo.com/media/js/onsite/onsite.js\"></script>\n<script>\n    var klaviyo = klaviyo || [];\n    klaviyo.init({\n      account: \"RLiGCP\",\n      list: \"RTHjhr\",\n      platform: \"shopify\",\n    });\n    klaviyo.enable(\"backinstock\", { \n      trigger: {\n        product_page_text: \"Notify me when this product is available\",\n        product_page_class: 'btn',\n        product_page_text_align: \"center\",\n        product_page_margin: \"0px\",\n        replace_anchor: false\n      },\n      modal: {\n        headline: \"{product_name}\",\n         additional_styles: \"@import url('https://cdn.shopify.com/s/files/1/0654/1610/2127/files/klav-3.css');\",\n        body_content: \"Register to receive a notification when this item comes back in stock.\",\n        newsletter_subscribe_label: \"Subscribe to our newsletter to share our adventure and be the first to receive our offers, stories and surprises.\",\n        subscribe_checked: true,\n        email_field_label: \"Email\",\n        button_label: \"Notify Me\",\n        subscription_success_label: \"You're in! We'll let you know when it's back.\",\n      }\n    });\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "17563818049c32d814": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_PHtAfX": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_PHtAfX"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_yRctHQ",
+    "multicolumn_jRBkJV",
+    "multicolumn_LCYy6R",
+    "custom_liquid_76TgPX",
+    "custom_liquid_x3Eqdf",
+    "related-products",
+    "custom_liquid_3xEGmz",
+    "custom_liquid_9MYEdi",
+    "custom_liquid_GYfrAi",
+    "custom_liquid_9qj6Hy",
+    "17563818049c32d814"
+  ]
+}
